@@ -1,9 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback } from "react";
-import dynamic from "next/dynamic";
-
-const BurnOverlay = dynamic(() => import("./BurnOverlay"), { ssr: false });
 
 function useParallax() {
   const scrollY = useRef(0);
@@ -106,11 +103,6 @@ export default function Home() {
   const [navScrolled, setNavScrolled] = useState(false);
   const subscribe = useParallax();
 
-  /* burn state */
-  const [burnTriggered, setBurnTriggered] = useState(false);
-  const [burnDone, setBurnDone] = useState(false);
-  const hasScrolled = useRef(false);
-
   /* parallax refs */
   const layerFar = useRef<HTMLDivElement>(null);
   const layerMid = useRef<HTMLDivElement>(null);
@@ -129,18 +121,6 @@ export default function Home() {
   const [heroLoaded, setHeroLoaded] = useState(false);
   useEffect(() => {
     setTimeout(() => setHeroLoaded(true), 100);
-  }, []);
-
-  /* trigger burn on very first scroll */
-  useEffect(() => {
-    const onFirstScroll = () => {
-      if (!hasScrolled.current) {
-        hasScrolled.current = true;
-        setBurnTriggered(true);
-      }
-    };
-    window.addEventListener("scroll", onFirstScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onFirstScroll);
   }, []);
 
   useEffect(() => {
@@ -335,12 +315,6 @@ export default function Home() {
           nav { padding: 16px 24px !important; }
         }
       `}</style>
-
-      {/* ── BURN OVERLAY ── */}
-      <BurnOverlay
-        triggered={burnTriggered}
-        onComplete={() => setBurnDone(true)}
-      />
 
       <div className="scanline" />
 
@@ -800,9 +774,8 @@ export default function Home() {
           }}
         />
 
-        {/* scroll indicator — pulses until burn is done */}
-        {!burnTriggered && (
-          <div
+        {/* scroll indicator */}
+        <div
             style={{
               position: "absolute",
               bottom: "32px",
@@ -834,7 +807,6 @@ export default function Home() {
               }}
             />
           </div>
-        )}
       </section>
 
       {/* ══ COLOR SHIFT SECTION ══ */}
