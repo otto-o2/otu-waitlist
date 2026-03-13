@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 
 interface BurnOverlayProps {
   triggered: boolean;
@@ -13,11 +13,11 @@ export default function BurnOverlay({ triggered, onComplete }: BurnOverlayProps)
   const programRef = useRef<WebGLProgram | null>(null);
   const bufferRef = useRef<WebGLBuffer | null>(null);
   const rafRef = useRef<number>(0);
-  const progressRef = useRef(0); // 0 = covering everything, 1 = fully burned away
+  const progressRef = useRef(0);
   const startTimeRef = useRef<number | null>(null);
   const [visible, setVisible] = useState(true);
 
-  const DURATION = 1800; // ms for full burn
+  const DURATION = 1800;
 
   const VS = `
     attribute vec2 a_position;
@@ -31,7 +31,7 @@ export default function BurnOverlay({ triggered, onComplete }: BurnOverlayProps)
   const FS = `
     precision mediump float;
     varying vec2 v_uv;
-    uniform float u_progress;     // 0 = full cover, 1 = gone
+    uniform float u_progress;
     uniform float u_time;
     uniform vec2 u_resolution;
     uniform vec3 u_color;
@@ -59,13 +59,8 @@ export default function BurnOverlay({ triggered, onComplete }: BurnOverlayProps)
 
     void main() {
       float aspect = u_resolution.x / u_resolution.y;
-
-      // burn line moves from bottom (progress=0) to top (progress=1)
-      // at progress=0: baseLine=0.0 (burn at very bottom, whole screen dark)
-      // at progress=1: baseLine=1.3 (burn past top, whole screen clear)
       float baseLine = -0.15 + u_progress * 1.45;
 
-      // wavy edge using FBM
       vec2 noiseCoord = vec2(
         v_uv.x * aspect * 4.5 + u_time * 0.08,
         v_uv.y * 2.5 + u_time * 0.04
@@ -73,7 +68,6 @@ export default function BurnOverlay({ triggered, onComplete }: BurnOverlayProps)
       float edgeNoise = fbm(noiseCoord);
       float mainEdge = baseLine + (edgeNoise - 0.5) * 0.18;
 
-      // uneven thickness
       vec2 thickCoord = vec2(
         v_uv.x * aspect * 9.0 + u_time * 0.05,
         v_uv.y * 4.0 + u_time * 0.03 + 100.0
@@ -84,13 +78,11 @@ export default function BurnOverlay({ triggered, onComplete }: BurnOverlayProps)
       float lowerBound = mainEdge - localThickness * 0.4;
       float upperBound = mainEdge + localThickness * 0.6;
 
-      // grain / fibers
       float grain = fbm(vec2(v_uv.x * aspect * 80.0 + u_time * 0.3, v_uv.y * 80.0 + u_time * 0.2));
       float fiber = noise(vec2(v_uv.x * aspect * 200.0 + u_time * 0.2, v_uv.y * 50.0 + u_time * 0.1));
       float combinedGrain = grain * 0.6 + fiber * 0.4;
 
       if (v_uv.y < lowerBound) {
-        // fully dark below burn line
         gl_FragColor = vec4(u_color, 1.0);
       } else if (v_uv.y < mainEdge) {
         float t = (v_uv.y - lowerBound) / max(mainEdge - lowerBound, 0.001);
@@ -109,11 +101,43 @@ export default function BurnOverlay({ triggered, onComplete }: BurnOverlayProps)
           gl_FragColor = vec4(0.0, 0.0, 0.0, 0.0);
         }
       } else {
-        // fully transparent above burn line
         gl_FragColor = vec4(0.0);
       }
     }
   `;
+
+  // FIX: wrap renderFrame in useCallback so it's stable and can be safely
+  // referenced across multiple useEffect calls without stale closure issues
+  const renderFrame = useCallback((
+    gl: WebGLRenderingContext,
+    prog: WebGLProgram,
+    buf: WebGLBuffer,
+    progress: number,
+    time: number,
+    w: number,
+    h: number
+  ) => {
+    gl.viewport(0, 0, w, h);
+    gl.clearColor(0, 0, 0, 0);
+    gl.clear(gl.COLOR_BUFFER_BIT);
+    gl.enable(gl.BLEND);
+    gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+
+    gl.useProgram(prog);
+    gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+
+    const pos = gl.getAttribLocation(prog, "a_position");
+    gl.enableVertexAttribArray(pos);
+    gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+
+    gl.uniform1f(gl.getUniformLocation(prog, "u_progress"), progress);
+    gl.uniform1f(gl.getUniformLocation(prog, "u_time"), time);
+    gl.uniform2f(gl.getUniformLocation(prog, "u_resolution"), w, h);
+    gl.uniform3f(gl.getUniformLocation(prog, "u_color"), 0.039, 0.059, 0.039);
+    gl.uniform3f(gl.getUniformLocation(prog, "u_fire_color"), 0.788, 0.416, 0.247);
+
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+  }, []);
 
   // init WebGL
   useEffect(() => {
@@ -150,49 +174,17 @@ export default function BurnOverlay({ triggered, onComplete }: BurnOverlayProps)
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
     bufferRef.current = buf;
 
-    // initial render — full cover (progress = 0)
     renderFrame(gl, prog, buf, 0, 0, canvas.width, canvas.height);
 
     return () => {
       window.removeEventListener("resize", resize);
       cancelAnimationFrame(rafRef.current);
     };
-  }, []);
+  }, [renderFrame]);
 
-  function renderFrame(
-    gl: WebGLRenderingContext,
-    prog: WebGLProgram,
-    buf: WebGLBuffer,
-    progress: number,
-    time: number,
-    w: number,
-    h: number
-  ) {
-    gl.viewport(0, 0, w, h);
-    gl.clearColor(0, 0, 0, 0);
-    gl.clear(gl.COLOR_BUFFER_BIT);
-    gl.enable(gl.BLEND);
-    gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
-
-    gl.useProgram(prog);
-    gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-
-    const pos = gl.getAttribLocation(prog, "a_position");
-    gl.enableVertexAttribArray(pos);
-    gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
-
-    gl.uniform1f(gl.getUniformLocation(prog, "u_progress"), progress);
-    gl.uniform1f(gl.getUniformLocation(prog, "u_time"), time);
-    gl.uniform2f(gl.getUniformLocation(prog, "u_resolution"), w, h);
-    // dark void colour
-    gl.uniform3f(gl.getUniformLocation(prog, "u_color"), 0.039, 0.059, 0.039);
-    // terracotta fire glow
-    gl.uniform3f(gl.getUniformLocation(prog, "u_fire_color"), 0.788, 0.416, 0.247);
-
-    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-  }
-
-  // animate when triggered
+  // FIX: added onComplete to dependency array to prevent stale closure —
+  // previously the animation could call an outdated version of onComplete
+  // if the parent re-rendered before the animation finished
   useEffect(() => {
     if (!triggered) return;
     startTimeRef.current = null;
@@ -201,10 +193,10 @@ export default function BurnOverlay({ triggered, onComplete }: BurnOverlayProps)
       if (startTimeRef.current === null) startTimeRef.current = now;
       const elapsed = now - startTimeRef.current;
       const rawProgress = Math.min(elapsed / DURATION, 1);
-      // ease in-out cubic
-      const p = rawProgress < 0.5
-        ? 4 * rawProgress * rawProgress * rawProgress
-        : 1 - Math.pow(-2 * rawProgress + 2, 3) / 2;
+      const p =
+        rawProgress < 0.5
+          ? 4 * rawProgress * rawProgress * rawProgress
+          : 1 - Math.pow(-2 * rawProgress + 2, 3) / 2;
 
       progressRef.current = p;
 
@@ -219,7 +211,6 @@ export default function BurnOverlay({ triggered, onComplete }: BurnOverlayProps)
       if (rawProgress < 1) {
         rafRef.current = requestAnimationFrame(animate);
       } else {
-        // done — hide overlay
         setTimeout(() => {
           setVisible(false);
           onComplete();
@@ -229,7 +220,7 @@ export default function BurnOverlay({ triggered, onComplete }: BurnOverlayProps)
 
     rafRef.current = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(rafRef.current);
-  }, [triggered]);
+  }, [triggered, onComplete, renderFrame]);
 
   if (!visible) return null;
 
@@ -238,8 +229,10 @@ export default function BurnOverlay({ triggered, onComplete }: BurnOverlayProps)
       ref={canvasRef}
       style={{
         position: "fixed",
-        top: 0, left: 0,
-        width: "100vw", height: "100vh",
+        top: 0,
+        left: 0,
+        width: "100vw",
+        height: "100vh",
         zIndex: 600,
         pointerEvents: triggered ? "none" : "auto",
       }}
