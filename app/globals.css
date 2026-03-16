@@ -52,3 +52,19 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--deep-botanical);
 }
+
+@keyframes scroll-line {
+  0% {
+    transform: translateY(-100%);
+  }
+  50% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(300%);
+  }
+}
+
+.animate-scroll-line {
+  animation: scroll-line 2.5s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
+}

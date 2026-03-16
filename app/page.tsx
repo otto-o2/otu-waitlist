@@ -109,31 +109,33 @@ export default function Home() {
         </div>
 
         {/* Title */}
-        <div className="relative z-10 text-center space-y-4">
-          <p className="text-4xl md:text-6xl font-black tracking-[0.1em] text-[#1B261B] ml-[0.1em] lowercase py-2">
-            otu
+        <div className="relative z-10 text-center flex flex-col items-center gap-6">
+          <p className="text-sm md:text-base font-medium tracking-[0.4em] text-[#1B261B]/40 ml-[0.4em] lowercase">
+            (otu)
           </p>
           <h1
             style={{
               fontFamily: "'Outfit', sans-serif",
               fontWeight: 800,
-              fontSize: "clamp(2rem, 8vw, 5.5rem)",
-              letterSpacing: "0.22em",
-              lineHeight: "1.1",
+              fontSize: "clamp(3.5rem, 14vw, 10rem)",
+              letterSpacing: "0.15em",
+              lineHeight: "0.95",
               textTransform: "uppercase",
               color: "#1B261B", 
               maxWidth: "1400px",
-              marginLeft: "0.22em", 
-              opacity: 0.8,
+              marginLeft: "0.15em", 
             }}
           >
             haus der<br />grünen
           </h1>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-12 flex flex-col items-center opacity-20 animate-bounce">
-          <ChevronDown className="h-10 w-10 text-[#1B261B] stroke-[1px]" />
+        {/* Scroll Indicator: Minimalist Vertical Line */}
+        <div className="absolute bottom-16 flex flex-col items-center gap-4 group">
+          <span className="text-[10px] uppercase tracking-[0.5em] text-[#1B261B]/30 font-bold mb-2">Explore</span>
+          <div className="w-[1px] h-12 bg-[#1B261B]/10 relative overflow-hidden rounded-full">
+            <div className="absolute top-0 left-0 w-full h-1/2 bg-[#9CA764]/40 animate-scroll-line" />
+          </div>
         </div>
       </section>
 
