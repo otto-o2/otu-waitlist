@@ -109,25 +109,26 @@ export default function Home() {
         </div>
 
         {/* Title */}
-        <div className="relative z-10 text-center space-y-6">
+        <div className="relative z-10 text-center space-y-4">
+          <p className="text-4xl md:text-6xl font-black tracking-[0.1em] text-[#1B261B] ml-[0.1em] lowercase py-2">
+            otu
+          </p>
           <h1
             style={{
               fontFamily: "'Outfit', sans-serif",
               fontWeight: 800,
-              fontSize: "clamp(3rem, 12vw, 8.5rem)",
-              letterSpacing: "0.18em",
-              lineHeight: "1.0",
+              fontSize: "clamp(2rem, 8vw, 5.5rem)",
+              letterSpacing: "0.22em",
+              lineHeight: "1.1",
               textTransform: "uppercase",
               color: "#1B261B", 
               maxWidth: "1400px",
-              marginLeft: "0.18em", 
+              marginLeft: "0.22em", 
+              opacity: 0.8,
             }}
           >
             haus der<br />grünen
           </h1>
-          <p className="text-3xl md:text-5xl font-black tracking-[0.2em] text-[#1B261B] ml-[0.2em] lowercase">
-            otu
-          </p>
         </div>
 
         {/* Scroll Indicator */}
