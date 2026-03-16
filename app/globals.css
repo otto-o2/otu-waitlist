@@ -1,156 +1,20 @@
-/* ═══════════════════════════════════════════════════════════
-   OTU WAITLIST — BOTANICAL GARDEN (LIGHT EDITION)
-   Inspired by soft, airy Ghibli botanical illustrations
-   ═══════════════════════════════════════════════════════════ */
-
-/* ── RESET ── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-/* ── CSS VARIABLES ── */
-:root {
-  /* LIGHT THEME PALETTE */
-  --bg-main:    #fdfdfb;
-  --bg-soft:    #f5f7f2;
-  --bg-card:    #ffffff;
-  --bg-accent:  #ecf1e9;
-  
-  /* Greens — Soft and natural */
-  --text-primary: #1d261d;
-  --text-secondary: #4f5f4f;
-  --text-muted:    #7a8a7a;
-  
-  --green-dark:   #3d5a3d;
-  --green-mid:    #6b9f5e;
-  --green-leaf:   #8fba7a;
-  --green-mist:   #b8cfb0;
-  --green-pale:   #e4ede0;
-  
-  /* Warm accents — Dappled sunlight */
-  --amber:        #d4b47a;
-  --amber-light:  #e4cc9e;
-  --terra:        #d49a7a;
-  --terra-warm:   #e8b090;
-  
-  /* Neutrals */
-  --cream:        #fcfaf5;
-  --stone:        #a8a090;
-  --border:       #e0e4dc;
-  
-  /* Typography */
-  --serif: 'DM Serif Display', Georgia, serif;
-  --sans: 'Inter', -apple-system, sans-serif;
-  
-  /* Spacing */
-  --space-xl: 48px;
-  --space-2xl: 80px;
-  
-  /* Transitions */
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
-  
-  /* Border radius */
-  --radius-sm: 8px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
-  --radius-xl: 32px;
-  --radius-full: 9999px;
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* ── BASE ── */
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background: var(--bg-main);
-  color: var(--text-primary);
-  font-family: var(--sans);
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #0d1a0d;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-  line-height: 1.6;
-}
-
-/* Subtle grain texture overlay */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  opacity: 0.5;
-  mix-blend-mode: multiply;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: crosshair;
 }
 
 ::selection {
-  background: var(--green-pale);
-  color: var(--text-primary);
-}
-
-a { text-decoration: none; color: inherit; }
-
-/* ── BUTTONS ── */
-.btn-primary {
-  background: var(--text-primary);
-  color: #ffffff;
-  border: none;
-  padding: 14px 32px;
-  font-weight: 500;
-  font-size: 14px;
-  border-radius: var(--radius-full);
-  cursor: pointer;
-  transition: all 0.3s var(--ease-out);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  background: var(--green-dark);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-}
-
-/* ── CARDS (FRAMER STYLE) ── */
-.card-stack {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-xl);
-  box-shadow: 0 20px 60px -15px rgba(0,0,0,0.05);
-  overflow: hidden;
-  transition: all 0.5s var(--ease-out);
-}
-
-.tab-btn {
-  padding: 20px 24px;
-  border-radius: var(--radius-md);
-  cursor: pointer;
-  transition: all 0.3s var(--ease-out);
-  border: 1px solid transparent;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.tab-btn.active {
-  background: var(--bg-card);
-  border-color: var(--border);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-}
-
-.tab-btn:hover:not(.active) {
-  background: var(--bg-soft);
-}
-
-/* ── ANIMATIONS ── */
-@keyframes leafDrift {
-  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-  10% { opacity: 0.4; }
-  90% { opacity: 0.4; }
-  100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
-}
-
-/* ── RESPONSIVE ── */
-@media (max-width: 1024px) {
-  .hero-title { font-size: clamp(40px, 8vw, 72px) !important; }
-  .split-section { flex-direction: column !important; }
-  .split-section > * { width: 100% !important; }
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
 }
