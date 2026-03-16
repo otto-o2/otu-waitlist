@@ -15,7 +15,6 @@ export default function Home() {
           className="w-full h-full absolute inset-0"
           colors={["#000000", "#1a1a1a", "#333333", "#ffffff"]}
           speed={speed}
-          backgroundColor="#000000"
         />
       )}
 
@@ -37,8 +36,7 @@ export default function Home() {
             className="w-full h-full absolute inset-0"
             colors={["#000000", "#1a1a1a", "#333333", "#ffffff"]}
             speed={speed * 0.5}
-            wireframe="true"
-            backgroundColor="#000000"
+            wireframe={true}
           />
           <div className="w-full h-full absolute inset-0 opacity-60">
             <DotOrbit
