@@ -109,7 +109,7 @@ export default function Home() {
         </div>
 
         {/* Title */}
-        <div className="relative z-10 text-center">
+        <div className="relative z-10 text-center space-y-6">
           <h1
             style={{
               fontFamily: "'Outfit', sans-serif",
@@ -118,19 +118,21 @@ export default function Home() {
               letterSpacing: "0.18em",
               lineHeight: "1.0",
               textTransform: "uppercase",
-              color: "#1B261B", // Deep Botanical for visibility
+              color: "#1B261B", 
               maxWidth: "1400px",
               marginLeft: "0.18em", 
             }}
           >
             haus der<br />grünen
           </h1>
+          <p className="text-xl md:text-3xl font-light tracking-[0.8em] text-[#1B261B]/30 ml-[0.8em] lowercase">
+            otu
+          </p>
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-12 flex flex-col items-center gap-2 opacity-50 animate-bounce">
-          <span className="text-[10px] uppercase tracking-[0.4em] font-semibold text-[#1B261B]">Scroll</span>
-          <ChevronDown className="h-4 w-4 text-[#1B261B]" />
+        <div className="absolute bottom-12 flex flex-col items-center opacity-20 animate-bounce">
+          <ChevronDown className="h-10 w-10 text-[#1B261B] stroke-[1px]" />
         </div>
       </section>
 
