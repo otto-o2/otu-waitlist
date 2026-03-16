@@ -5,7 +5,6 @@ import { MeshGradient, DotOrbit } from "@paper-design/shaders-react";
 
 export default function Home() {
   const [speed] = useState(1.0);
-  const [intensity] = useState(1.5);
   const [activeEffect] = useState("mesh");
 
   return (
@@ -25,7 +24,6 @@ export default function Home() {
             colors={["#333333"]}
             colorBack="#1a1a1a"
             speed={speed}
-            intensity={intensity}
           />
         </div>
       )}
@@ -44,7 +42,6 @@ export default function Home() {
               colors={["#333333"]}
               colorBack="#1a1a1a"
               speed={speed * 1.5}
-              intensity={intensity * 0.8}
             />
           </div>
         </>
