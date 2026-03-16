@@ -6,7 +6,7 @@ import { useState, useEffect, useRef } from "react";
    UTILITY HOOKS
    ═══════════════════════════════════════════════ */
 
-function useReveal(threshold = 0.12) {
+function useReveal(threshold = 0.1) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   useEffect(() => {
@@ -42,13 +42,13 @@ function WordReveal({
   return (
     <span style={{ display: "inline", fontFamily: serif ? "var(--serif)" : "inherit" }}>
       {words.map((word, i) => (
-        <span key={i} style={{ display: "inline-block", overflow: "hidden", marginRight: "0.28em" }}>
+        <span key={i} style={{ display: "inline-block", overflow: "hidden", marginRight: "0.24em" }}>
           <span
             style={{
               display: "inline-block",
               transform: visible ? "translateY(0)" : "translateY(110%)",
               opacity: visible ? 1 : 0,
-              transition: `transform 0.75s cubic-bezier(0.16,1,0.3,1) ${delay + i * 0.06}s, opacity 0.5s ease ${delay + i * 0.06}s`,
+              transition: `transform 0.8s cubic-bezier(0.16,1,0.3,1) ${delay + i * 0.05}s, opacity 0.5s ease ${delay + i * 0.05}s`,
             }}
           >
             {word}
@@ -58,10 +58,6 @@ function WordReveal({
     </span>
   );
 }
-
-/* ═══════════════════════════════════════════════
-   FLOATING LEAF PARTICLE
-   ═══════════════════════════════════════════════ */
 
 function FloatingLeaf({ delay, left, size }: { delay: number; left: string; size: number }) {
   return (
@@ -73,7 +69,7 @@ function FloatingLeaf({ delay, left, size }: { delay: number; left: string; size
         width: `${size}px`,
         height: `${size}px`,
         opacity: 0,
-        animation: `leafDrift ${12 + Math.random() * 8}s ${delay}s linear infinite`,
+        animation: `leafDrift ${15 + Math.random() * 10}s ${delay}s linear infinite`,
         pointerEvents: "none",
         zIndex: 1,
       }}
@@ -82,7 +78,7 @@ function FloatingLeaf({ delay, left, size }: { delay: number; left: string; size
         <path
           d="M12 2C6.5 2 2 8 2 14c0 2.5 1 4.5 2.5 6 1.5-1.5 3-3 5.5-4 2.5-1 5-1.5 6-1.5-1-4-3-8-4-12.5z"
           fill="var(--green-leaf)"
-          opacity="0.15"
+          opacity="0.3"
         />
       </svg>
     </div>
@@ -98,33 +94,18 @@ export default function Home() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "already" | "error">("idle");
   const [navScrolled, setNavScrolled] = useState(false);
   const [heroLoaded, setHeroLoaded] = useState(false);
-  const [mousePos, setMousePos] = useState({ x: 0.5, y: 0.5 });
+  const [activeTab, setActiveTab] = useState(0);
 
-  const r1 = useReveal();
-  const r2 = useReveal();
-  const r3 = useReveal();
-  const r4 = useReveal();
-  const r5 = useReveal();
-  const r6 = useReveal();
-  const r7 = useReveal();
-  const r8 = useReveal();
+  const rHero = useReveal(0);
+  const rPhilosophy = useReveal(0.2);
+  const rFeatures = useReveal(0.1);
+  const rWaitlist = useReveal(0.1);
 
   useEffect(() => {
-    setTimeout(() => setHeroLoaded(true), 100);
-  }, []);
-
-  useEffect(() => {
-    const onScroll = () => setNavScrolled(window.scrollY > 60);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => {
-    const onMove = (e: MouseEvent) => {
-      setMousePos({ x: e.clientX / window.innerWidth, y: e.clientY / window.innerHeight });
-    };
-    window.addEventListener("mousemove", onMove, { passive: true });
-    return () => window.removeEventListener("mousemove", onMove);
+    const handleScroll = () => setNavScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", handleScroll);
+    setHeroLoaded(true);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   async function handleSubmit(e: React.FormEvent) {
@@ -138,1212 +119,267 @@ export default function Home() {
         body: JSON.stringify({ email }),
       });
       const data = await res.json();
-      if (data.success && data.alreadySignedUp) {
-        setStatus("already");
-      } else if (data.success) {
-        setStatus("success");
-      } else {
-        setStatus("error");
-      }
+      if (data.success && data.alreadySignedUp) setStatus("already");
+      else if (data.success) setStatus("success");
+      else setStatus("error");
     } catch {
       setStatus("error");
     }
   }
 
-  const features = [
+  const sections = [
     {
-      icon: "🌱",
-      tag: "ward mode",
-      title: "full care reports",
-      body: "point your camera at any plant. otu builds a complete care profile — watering schedule, light, soil, stress flags, common problems.",
-      color: "var(--green-leaf)",
-      gradient: "linear-gradient(135deg, rgba(107,159,94,0.12), rgba(74,122,74,0.06))",
+      id: "ward",
+      title: "Ward Mode",
+      subtitle: "Complete care intelligence",
+      description: "Point your camera at any plant. otu builds a complete care profile — watering schedule, light, soil, stress flags, and common problems. Your plant finally has a voice.",
+      emoji: "🛡️",
+      color: "var(--green-mid)"
     },
     {
-      icon: "🌿",
-      tag: "wild mode",
-      title: "instant identification",
-      body: "out in the world and something catches your eye? identify any plant in seconds. its name, its story, where it comes from.",
-      color: "var(--green-mist)",
-      gradient: "linear-gradient(135deg, rgba(168,196,154,0.12), rgba(107,159,94,0.06))",
-    },
-    {
-      icon: "🪴",
-      tag: "farmer's market",
-      title: "every plant. delivered.",
-      body: "a marketplace for plants, pots, soil, and everything your collection deserves. browse, discover, acquire.",
-      color: "var(--terra-soft)",
-      gradient: "linear-gradient(135deg, rgba(212,154,122,0.12), rgba(201,106,63,0.06))",
-    },
-    {
-      icon: "📖",
-      tag: "encyclopedia",
-      title: "the full archive",
-      body: "every plant. every fact. a complete botanical encyclopedia so when your monstera looks wrong at 2am, you have answers.",
-      color: "var(--amber-light)",
-      gradient: "linear-gradient(135deg, rgba(219,184,110,0.12), rgba(200,164,90,0.06))",
-    },
-  ];
-
-  const steps = [
-    {
-      n: "01",
-      emoji: "📸",
-      title: "take a photo",
-      desc: "any plant. anywhere. potted on your shelf, wild on a trail, slowly dying in the corner you keep ignoring.",
-    },
-    {
-      n: "02",
-      emoji: "🔍",
-      title: "otu identifies it",
-      desc: "species name, common name, origin, personality. delivered in seconds. no more guessing.",
-    },
-    {
-      n: "03",
+      id: "wild",
+      title: "Wild Mode",
+      subtitle: "Identify anything instantly",
+      description: "Out in the world and something catches your eye? Identify any plant in seconds. Its name, its story, its origin, and its hidden uses. Curiosity satisfied, immediately.",
       emoji: "🌿",
-      title: "know everything",
-      desc: "care guide, watering rhythm, light needs, warning signs. the full picture — finally.",
+      color: "var(--amber)"
     },
+    {
+      id: "market",
+      title: "Market",
+      subtitle: "Every plant. Delivered.",
+      description: "A curated marketplace for plants, pots, soil, and everything your collection deserves. Browse, discover, and acquire. Currently growing in the background.",
+      emoji: "🛒",
+      color: "var(--terra)"
+    },
+    {
+      id: "archive",
+      title: "Encyclopedia",
+      subtitle: "The full botanical archive",
+      description: "Every plant. Every fact. A complete botanical encyclopedia built into the app — so when your monstera looks wrong at 2am, you have answers.",
+      emoji: "📖",
+      color: "var(--stone)"
+    }
   ];
 
   const isConfirmed = status === "success" || status === "already";
 
   return (
     <>
-      {/* ═══════════════════════════════════════════
-          NAVIGATION
-          ═══════════════════════════════════════════ */}
+      {/* ── NAVIGATION ── */}
       <nav
         style={{
           position: "fixed",
-          top: 0,
-          left: 0,
-          right: 0,
+          top: 0, left: 0, right: 0,
           zIndex: 1000,
-          padding: "18px 48px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          background: navScrolled ? "rgba(26,22,18,0.92)" : "transparent",
-          backdropFilter: navScrolled ? "blur(24px) saturate(1.2)" : "none",
-          WebkitBackdropFilter: navScrolled ? "blur(24px) saturate(1.2)" : "none",
-          borderBottom: navScrolled ? "1px solid rgba(168,196,154,0.06)" : "1px solid transparent",
-          transition: "all 0.5s cubic-bezier(0.16,1,0.3,1)",
+          padding: navScrolled ? "14px 40px" : "24px 40px",
+          display: "flex", alignItems: "center", justifyContent: "space-between",
+          background: navScrolled ? "rgba(253, 253, 251, 0.8)" : "transparent",
+          backdropFilter: navScrolled ? "blur(12px)" : "none",
+          borderBottom: navScrolled ? "1px solid var(--border)" : "1px solid transparent",
+          transition: "all 0.5s var(--ease-out)",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-          {/* Leaf logo mark */}
-          <div
-            style={{
-              width: "32px",
-              height: "32px",
-              borderRadius: "50%",
-              background: "linear-gradient(135deg, var(--green-dark), var(--green-mid))",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: "16px",
-              boxShadow: "0 2px 12px rgba(74,122,74,0.2)",
-            }}
-          >
-            🌿
-          </div>
-          <span
-            style={{
-              fontFamily: "var(--serif)",
-              fontSize: "24px",
-              letterSpacing: "-0.02em",
-              color: "var(--cream)",
-            }}
-          >
-            otu
-          </span>
+        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <span style={{ fontSize: "22px" }}>🌿</span>
+          <span style={{ fontFamily: "var(--serif)", fontSize: "24px", letterSpacing: "-0.01em" }}>otu</span>
         </div>
-
         <div style={{ display: "flex", alignItems: "center", gap: "32px" }}>
-          <a
-            href="#features"
-            style={{
-              fontSize: "12px",
-              fontWeight: 500,
-              letterSpacing: "0.06em",
-              color: "rgba(240,235,224,0.45)",
-              transition: "color 0.3s",
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "var(--cream)")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(240,235,224,0.45)")}
-          >
-            features
-          </a>
-          <a
-            href="#how"
-            style={{
-              fontSize: "12px",
-              fontWeight: 500,
-              letterSpacing: "0.06em",
-              color: "rgba(240,235,224,0.45)",
-              transition: "color 0.3s",
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.color = "var(--cream)")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(240,235,224,0.45)")}
-          >
-            how it works
-          </a>
-          <a
-            href="#waitlist"
-            className="btn-primary"
-            style={{ padding: "10px 24px", fontSize: "11px" }}
-          >
-            join waitlist
-          </a>
+          <a href="#how" style={{ fontSize: "14px", fontWeight: 500, color: "var(--text-secondary)" }}>How it works</a>
+          <a href="#waitlist" className="btn-primary" style={{ padding: "10px 24px" }}>Join the list</a>
         </div>
       </nav>
 
-      {/* ═══════════════════════════════════════════
-          HERO SECTION
-          ═══════════════════════════════════════════ */}
-      <section
-        style={{
-          position: "relative",
-          minHeight: "100vh",
-          display: "flex",
-          alignItems: "center",
-          overflow: "hidden",
-        }}
-      >
-        {/* Hero background image with parallax */}
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            backgroundImage: "url(/images/hero.png)",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            transform: `scale(1.1) translate(${(mousePos.x - 0.5) * -10}px, ${(mousePos.y - 0.5) * -10}px)`,
-            transition: "transform 0.8s ease-out",
-            filter: "brightness(0.5) saturate(1.2)",
-          }}
+      {/* ── HERO ── */}
+      <section style={{ position: "relative", minHeight: "95vh", display: "flex", alignItems: "center", overflow: "hidden", background: "var(--bg-soft)" }}>
+        <div 
+          style={{ 
+            position: "absolute", inset: 0, 
+            backgroundImage: "url(/images/hero_4k.png)", 
+            backgroundSize: "cover", backgroundPosition: "center",
+            filter: "brightness(1.05) saturate(1.1)",
+            zIndex: 0
+          }} 
         />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(253,253,251,0.95) 20%, rgba(253,253,251,0.2) 100%)", zIndex: 1 }} />
+        
+        {/* Floating Leaves */}
+        <FloatingLeaf delay={0} left="15%" size={20} />
+        <FloatingLeaf delay={4} left="40%" size={14} />
+        <FloatingLeaf delay={8} left="70%" size={22} />
 
-        {/* Warm gradient overlays */}
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background: "linear-gradient(135deg, rgba(26,22,18,0.85) 0%, rgba(26,22,18,0.5) 40%, rgba(26,22,18,0.7) 100%)",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background: "radial-gradient(ellipse at 20% 80%, rgba(107,159,94,0.08) 0%, transparent 60%)",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background: "radial-gradient(ellipse at 80% 20%, rgba(200,164,90,0.06) 0%, transparent 60%)",
-          }}
-        />
-
-        {/* Floating leaves */}
-        {heroLoaded && (
-          <>
-            <FloatingLeaf delay={0} left="10%" size={18} />
-            <FloatingLeaf delay={3} left="25%" size={14} />
-            <FloatingLeaf delay={6} left="45%" size={20} />
-            <FloatingLeaf delay={9} left="65%" size={16} />
-            <FloatingLeaf delay={12} left="80%" size={22} />
-            <FloatingLeaf delay={2} left="92%" size={15} />
-          </>
-        )}
-
-        {/* Bottom gradient fade */}
-        <div
-          style={{
-            position: "absolute",
-            bottom: 0,
-            left: 0,
-            right: 0,
-            height: "200px",
-            background: "linear-gradient(to top, var(--bg-deep) 0%, transparent 100%)",
-            zIndex: 5,
-          }}
-        />
-
-        {/* Hero content */}
-        <div
-          className="hero-content"
-          style={{
-            position: "relative",
-            zIndex: 10,
-            padding: "0 64px",
-            width: "100%",
-            maxWidth: "1200px",
-            margin: "0 auto",
-            paddingTop: "120px",
-          }}
-        >
-          {heroLoaded && (
-            <div style={{ maxWidth: "680px" }}>
-              {/* Tag line */}
-              <div
-                className="hero-anim-1 breathe"
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: "10px",
-                  background: "rgba(107,159,94,0.1)",
-                  border: "1px solid rgba(107,159,94,0.15)",
-                  borderRadius: "var(--radius-full)",
-                  padding: "8px 20px",
-                  marginBottom: "32px",
-                }}
-              >
-                <span style={{ fontSize: "14px" }}>🌱</span>
-                <span
-                  style={{
-                    fontSize: "11px",
-                    letterSpacing: "0.14em",
-                    textTransform: "uppercase",
-                    color: "var(--green-mist)",
-                    fontWeight: 500,
-                  }}
-                >
-                  plant intelligence — opening soon
-                </span>
-              </div>
-
-              {/* Main headline */}
-              <h1
-                className="hero-anim-2 hero-title"
-                style={{
-                  fontFamily: "var(--serif)",
-                  fontSize: "clamp(44px, 7vw, 96px)",
-                  fontWeight: 400,
-                  letterSpacing: "-0.035em",
-                  lineHeight: 1.05,
-                  marginBottom: "28px",
-                  color: "var(--cream)",
-                }}
-              >
-                the world grows
-                <br />
-                around you.
-                <br />
-                <em
-                  style={{
-                    color: "var(--green-mist)",
-                    fontStyle: "italic",
-                    textShadow: "0 0 60px rgba(168,196,154,0.15)",
-                  }}
-                >
-                  otu sees it all.
-                </em>
-              </h1>
-
-              {/* Sub text */}
-              <p
-                className="hero-anim-3"
-                style={{
-                  fontSize: "clamp(15px, 1.6vw, 18px)",
-                  color: "var(--cream-dim)",
-                  maxWidth: "460px",
-                  lineHeight: 1.8,
-                  marginBottom: "44px",
-                  fontWeight: 300,
-                }}
-              >
-                identify any plant. receive full care reports.
-                know what&apos;s growing everywhere you go.
-              </p>
-
-              {/* CTA buttons */}
-              <div
-                className="hero-anim-4"
-                style={{
-                  display: "flex",
-                  gap: "16px",
-                  alignItems: "center",
-                  flexWrap: "wrap",
-                }}
-              >
-                <a href="#waitlist" className="btn-primary">
-                  join the waitlist
-                </a>
-                <a
-                  href="#features"
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "8px",
-                    padding: "16px 28px",
-                    fontSize: "13px",
-                    fontWeight: 500,
-                    color: "var(--cream-dim)",
-                    border: "1px solid rgba(240,235,224,0.1)",
-                    borderRadius: "var(--radius-full)",
-                    transition: "all 0.3s var(--ease-out)",
-                    letterSpacing: "0.04em",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = "rgba(168,196,154,0.3)";
-                    e.currentTarget.style.color = "var(--cream)";
-                    e.currentTarget.style.background = "rgba(168,196,154,0.05)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = "rgba(240,235,224,0.1)";
-                    e.currentTarget.style.color = "var(--cream-dim)";
-                    e.currentTarget.style.background = "transparent";
-                  }}
-                >
-                  learn more
-                  <span style={{ fontSize: "16px", transition: "transform 0.3s" }}>↓</span>
-                </a>
-              </div>
-
-              {/* Trust line */}
-              <p
-                className="hero-anim-5"
-                style={{
-                  marginTop: "24px",
-                  fontSize: "12px",
-                  color: "var(--stone)",
-                  letterSpacing: "0.06em",
-                }}
-              >
-                🔒 free · no spam · one email when we launch
-              </p>
+        <div style={{ position: "relative", zIndex: 10, padding: "0 80px", maxWidth: "1200px", margin: "0 auto", width: "100%" }}>
+          <div style={{ maxWidth: "600px" }}>
+            <div style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "var(--green-pale)", padding: "6px 16px", borderRadius: "100px", marginBottom: "32px", border: "1px solid var(--green-mist)" }}>
+              <span style={{ fontSize: "14px" }}>✨</span>
+              <span style={{ fontSize: "11px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--green-dark)" }}>Redesigned for light</span>
             </div>
-          )}
+            
+            <h1 style={{ fontFamily: "var(--serif)", fontSize: "clamp(48px, 8vw, 100px)", lineHeight: 1, letterSpacing: "-0.04em", color: "var(--text-primary)", marginBottom: "32px" }}>
+              The world grows<br />around you.<br />
+              <span style={{ color: "var(--green-mid)", fontStyle: "italic" }}>otu sees it all.</span>
+            </h1>
+            
+            <p style={{ fontSize: "18px", color: "var(--text-secondary)", lineHeight: 1.6, marginBottom: "48px", maxWidth: "480px" }}>
+              Identify any plant with 4K clarity. Receive detailed care intelligence. Build your botanical archive.
+            </p>
+            
+            <div style={{ display: "flex", gap: "20px" }}>
+              <a href="#waitlist" className="btn-primary" style={{ padding: "18px 40px", fontSize: "15px" }}>Get early access</a>
+              <a href="#how" style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "15px", fontWeight: 500, color: "var(--text-primary)" }}>
+                Watch the story <span style={{ fontSize: "20px" }}>→</span>
+              </a>
+            </div>
+          </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div
-          className={heroLoaded ? "hero-anim-5" : ""}
-          style={{
-            position: "absolute",
-            bottom: "36px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            zIndex: 20,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gap: "10px",
-          }}
-        >
-          <span
-            style={{
-              fontSize: "10px",
-              letterSpacing: "0.16em",
-              textTransform: "uppercase",
-              color: "rgba(240,235,224,0.2)",
-            }}
-          >
-            scroll
-          </span>
-          <div
-            style={{
-              width: "1px",
-              height: "36px",
-              background: "linear-gradient(to bottom, rgba(240,235,224,0.25), transparent)",
-              animation: "breathe 3s ease infinite",
-            }}
-          />
-        </div>
+        {/* Bottom Fade */}
+        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "120px", background: "linear-gradient(to top, var(--bg-main), transparent)", zIndex: 5 }} />
       </section>
 
-      {/* ═══════════════════════════════════════════
-          QUOTE / PHILOSOPHY SECTION
-          ═══════════════════════════════════════════ */}
-      <section
-        className="quote-section"
-        style={{
-          padding: "120px 64px",
-          background: "linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-warm) 50%, var(--bg-deep) 100%)",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        {/* Subtle radial glow */}
-        <div
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: "700px",
-            height: "700px",
-            background: "radial-gradient(circle, rgba(107,159,94,0.04) 0%, transparent 65%)",
-            pointerEvents: "none",
-          }}
-        />
-
-        <div
-          ref={r1.ref}
-          style={{
-            maxWidth: "800px",
-            margin: "0 auto",
-            textAlign: "center",
-            position: "relative",
-            zIndex: 2,
-          }}
-        >
-          {/* Decorative botanical element */}
-          <div
-            style={{
-              fontSize: "32px",
-              marginBottom: "32px",
-              opacity: r1.visible ? 0.6 : 0,
-              transition: "opacity 1s ease 0.2s",
-            }}
-          >
-            🍃
-          </div>
-          <p
-            style={{
-              fontFamily: "var(--serif)",
-              fontSize: "clamp(24px, 3.5vw, 48px)",
-              fontStyle: "italic",
-              fontWeight: 400,
-              letterSpacing: "-0.02em",
-              lineHeight: 1.35,
-              color: "rgba(240,235,224,0.55)",
-            }}
-          >
-            <WordReveal
-              text="most people walk through a forest and see trees."
-              visible={r1.visible}
-              serif
-              delay={0}
-            />{" "}
-            <span style={{ color: "var(--green-mist)" }}>
-              <WordReveal
-                text="otu walks through and sees everything else."
-                visible={r1.visible}
-                serif
-                delay={0.4}
-              />
+      {/* ── PHILOSOPHY ── */}
+      <section ref={rPhilosophy.ref} style={{ padding: "140px 80px", background: "var(--bg-main)", textAlign: "center", position: "relative" }}>
+        <div style={{ maxWidth: "900px", margin: "0 auto" }}>
+          <p style={{ fontFamily: "var(--serif)", fontSize: "clamp(24px, 4vw, 44px)", lineHeight: 1.4, color: "var(--text-secondary)", fontStyle: "italic" }}>
+            <WordReveal text="Most people walk through a forest and see trees." visible={rPhilosophy.visible} serif />{" "}
+            <span style={{ color: "var(--green-mid)" }}>
+              <WordReveal text="otu walks through and sees everything else." visible={rPhilosophy.visible} serif delay={0.4} />
             </span>
           </p>
-          {/* Decorative line */}
-          <div
-            style={{
-              width: "60px",
-              height: "2px",
-              background: "linear-gradient(to right, transparent, var(--green-mid), transparent)",
-              margin: "40px auto 0",
-              opacity: r1.visible ? 0.5 : 0,
-              transition: "opacity 1s ease 1s",
-            }}
-          />
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════
-          FEATURES SECTION
-          ═══════════════════════════════════════════ */}
-      <section
-        id="features"
-        className="section-pad"
-        style={{
-          padding: "120px 64px",
-          background: "var(--bg-deep)",
-          position: "relative",
-        }}
-      >
-        <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
-          {/* Section header */}
-          <div
-            ref={r2.ref}
-            style={{
-              marginBottom: "72px",
-              textAlign: "center",
-            }}
-          >
-            <div
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "8px",
-                padding: "6px 16px",
-                background: "rgba(107,159,94,0.08)",
-                borderRadius: "var(--radius-full)",
-                marginBottom: "24px",
-                opacity: r2.visible ? 1 : 0,
-                transition: "opacity 0.6s ease",
-              }}
-            >
-              <span style={{ fontSize: "12px" }}>✦</span>
-              <span
-                style={{
-                  fontSize: "11px",
-                  letterSpacing: "0.14em",
-                  textTransform: "uppercase",
-                  color: "var(--green-mist)",
-                  fontWeight: 500,
-                }}
-              >
-                what otu does
-              </span>
-            </div>
-            <h2
-              style={{
-                fontFamily: "var(--serif)",
-                fontSize: "clamp(32px, 4vw, 56px)",
-                fontWeight: 400,
-                letterSpacing: "-0.03em",
-                color: "var(--cream)",
-                lineHeight: 1.15,
-              }}
-            >
-              <WordReveal text="everything your plants" visible={r2.visible} serif />
-              <br />
-              <span style={{ color: "var(--green-mist)", fontStyle: "italic" }}>
-                <WordReveal text="have been trying to tell you." visible={r2.visible} serif delay={0.25} />
-              </span>
-            </h2>
+      {/* ── FRAMER STYLE TABS SECTION ── */}
+      <section id="how" style={{ padding: "120px 80px", background: "var(--bg-soft)" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+          <div style={{ marginBottom: "80px", textAlign: "left" }}>
+            <span style={{ fontSize: "12px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.15em", color: "var(--green-mid)" }}>Intelligence</span>
+            <h2 style={{ fontFamily: "var(--serif)", fontSize: "clamp(36px, 5vw, 64px)", color: "var(--text-primary)", marginTop: "12px" }}>The full botanical suite.</h2>
           </div>
 
-          {/* Feature cards grid */}
-          <div
-            className="features-grid"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(2, 1fr)",
-              gap: "24px",
-            }}
-          >
-            {features.map((f, i) => {
-              const revealRef = [r3, r4, r5, r6][i];
-              return (
-                <div
-                  key={f.tag}
-                  ref={revealRef.ref}
-                  className="feature-card"
-                  style={{
-                    opacity: revealRef.visible ? 1 : 0,
-                    transform: revealRef.visible ? "translateY(0)" : "translateY(40px)",
-                    transition: `all 0.8s cubic-bezier(0.16,1,0.3,1) ${i * 0.1}s`,
-                    background: f.gradient,
-                  }}
+          <div style={{ display: "flex", gap: "64px", alignItems: "flex-start" }} className="split-section">
+            {/* Left side: Tabs */}
+            <div style={{ width: "380px", display: "flex", flexDirection: "column", gap: "12px" }}>
+              {sections.map((s, i) => (
+                <div 
+                  key={s.id} 
+                  className={`tab-btn ${activeTab === i ? "active" : ""}`}
+                  onClick={() => setActiveTab(i)}
+                  onMouseEnter={() => setActiveTab(i)}
                 >
-                  {/* Icon */}
-                  <div
-                    style={{
-                      width: "56px",
-                      height: "56px",
-                      borderRadius: "var(--radius-md)",
-                      background: "rgba(0,0,0,0.2)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      fontSize: "28px",
-                      marginBottom: "24px",
-                    }}
-                  >
-                    {f.icon}
+                  <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                    <span style={{ fontSize: "20px", opacity: activeTab === i ? 1 : 0.6 }}>{s.emoji}</span>
+                    <span style={{ fontWeight: 600, fontSize: "16px", color: activeTab === i ? "var(--text-primary)" : "var(--text-muted)" }}>{s.title}</span>
                   </div>
-
-                  {/* Tag */}
-                  <div
-                    style={{
-                      fontSize: "10px",
-                      letterSpacing: "0.12em",
-                      textTransform: "uppercase",
-                      color: f.color,
-                      marginBottom: "12px",
-                      fontWeight: 600,
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "8px",
-                    }}
-                  >
-                    {f.tag}
-                    {i >= 2 && (
-                      <span
-                        style={{
-                          fontSize: "9px",
-                          padding: "2px 8px",
-                          border: "1px solid rgba(240,235,224,0.1)",
-                          borderRadius: "var(--radius-full)",
-                          color: "var(--stone)",
-                          fontWeight: 400,
-                        }}
-                      >
-                        soon
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Title */}
-                  <h3
-                    style={{
-                      fontFamily: "var(--serif)",
-                      fontSize: "clamp(22px, 2.5vw, 30px)",
-                      fontWeight: 400,
-                      letterSpacing: "-0.02em",
-                      color: "var(--cream)",
-                      lineHeight: 1.2,
-                      marginBottom: "14px",
-                    }}
-                  >
-                    {f.title}
-                  </h3>
-
-                  {/* Body */}
-                  <p
-                    style={{
-                      fontSize: "14px",
-                      lineHeight: 1.8,
-                      color: "var(--cream-dim)",
-                      fontWeight: 300,
-                      maxWidth: "380px",
-                    }}
-                  >
-                    {f.body}
+                  <p style={{ fontSize: "13px", color: "var(--text-muted)", marginLeft: "32px", opacity: activeTab === i ? 1 : 0.7, lineHeight: 1.4 }}>
+                    {s.subtitle}
                   </p>
                 </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════
-          IMAGE DIVIDER — BOTANICAL BREAK
-          ═══════════════════════════════════════════ */}
-      <section
-        style={{
-          position: "relative",
-          height: "50vh",
-          minHeight: "400px",
-          overflow: "hidden",
-        }}
-      >
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            backgroundImage: "url(/images/cozy.png)",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            filter: "brightness(0.45) saturate(1.1)",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background: "linear-gradient(180deg, var(--bg-deep) 0%, transparent 25%, transparent 75%, var(--bg-deep) 100%)",
-          }}
-        />
-        <div
-          ref={r7.ref}
-          style={{
-            position: "absolute",
-            inset: 0,
-            zIndex: 2,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            flexDirection: "column",
-            gap: "16px",
-            opacity: r7.visible ? 1 : 0,
-            transition: "opacity 1.2s ease",
-          }}
-        >
-          <p
-            style={{
-              fontFamily: "var(--serif)",
-              fontStyle: "italic",
-              fontSize: "clamp(20px, 2.5vw, 34px)",
-              color: "rgba(168,196,154,0.5)",
-              letterSpacing: "-0.015em",
-              textAlign: "center",
-              maxWidth: "500px",
-              lineHeight: 1.4,
-              textShadow: "0 2px 20px rgba(0,0,0,0.5)",
-            }}
-          >
-            &ldquo;nothing that grows
-            <br />
-            is a stranger to otu.&rdquo;
-          </p>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════
-          HOW IT WORKS
-          ═══════════════════════════════════════════ */}
-      <section
-        id="how"
-        className="section-pad"
-        style={{
-          padding: "120px 64px",
-          background: "linear-gradient(180deg, var(--bg-deep) 0%, var(--bg-warm) 50%, var(--bg-deep) 100%)",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        {/* Background glow */}
-        <div
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: "600px",
-            height: "600px",
-            background: "radial-gradient(circle, rgba(200,164,90,0.04) 0%, transparent 65%)",
-            pointerEvents: "none",
-          }}
-        />
-
-        <div style={{ maxWidth: "1000px", margin: "0 auto", position: "relative", zIndex: 2 }}>
-          {/* Section header */}
-          <div ref={r8.ref} style={{ marginBottom: "80px", textAlign: "center" }}>
-            <div
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "8px",
-                padding: "6px 16px",
-                background: "rgba(200,164,90,0.08)",
-                borderRadius: "var(--radius-full)",
-                marginBottom: "24px",
-                opacity: r8.visible ? 1 : 0,
-                transition: "opacity 0.6s ease",
-              }}
-            >
-              <span style={{ fontSize: "12px" }}>◉</span>
-              <span
-                style={{
-                  fontSize: "11px",
-                  letterSpacing: "0.14em",
-                  textTransform: "uppercase",
-                  color: "var(--amber-light)",
-                  fontWeight: 500,
-                }}
-              >
-                how it works
-              </span>
+              ))}
             </div>
-            <h2
-              style={{
-                fontFamily: "var(--serif)",
-                fontSize: "clamp(32px, 4vw, 56px)",
-                fontWeight: 400,
-                letterSpacing: "-0.03em",
-                color: "var(--cream)",
-                lineHeight: 1.15,
-              }}
-            >
-              <WordReveal text="three steps to knowing" visible={r8.visible} serif />
-              <br />
-              <span style={{ color: "var(--amber-light)", fontStyle: "italic" }}>
-                <WordReveal text="every plant around you." visible={r8.visible} serif delay={0.25} />
-              </span>
-            </h2>
-          </div>
 
-          {/* Steps — horizontal cards */}
-          <div
-            className="steps-grid"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
-              gap: "24px",
-            }}
-          >
-            {steps.map((step, i) => (
-              <div
-                key={step.n}
-                style={{
-                  background: "var(--bg-card)",
-                  border: "1px solid rgba(200,164,90,0.06)",
-                  borderRadius: "var(--radius-lg)",
-                  padding: "40px 32px",
-                  position: "relative",
-                  overflow: "hidden",
-                  opacity: r8.visible ? 1 : 0,
-                  transform: r8.visible ? "translateY(0)" : "translateY(40px)",
-                  transition: `all 0.8s cubic-bezier(0.16,1,0.3,1) ${0.3 + i * 0.15}s`,
-                }}
-              >
-                {/* Step number */}
-                <span
-                  style={{
-                    fontFamily: "var(--serif)",
-                    fontSize: "64px",
-                    fontWeight: 400,
-                    color: "rgba(200,164,90,0.08)",
-                    position: "absolute",
-                    top: "16px",
-                    right: "24px",
-                    lineHeight: 1,
-                  }}
-                >
-                  {step.n}
-                </span>
+            {/* Right side: Content Card (Framer Style) */}
+            <div style={{ flex: 1 }}>
+              <div className="card-stack" style={{ position: "relative", minHeight: "560px", display: "flex", flexDirection: "column" }}>
+                <div style={{ 
+                  position: "absolute", inset: 0, 
+                  background: activeTab === 0 ? "linear-gradient(135deg, #fdfdfb, #ecf1e9)" : 
+                              activeTab === 1 ? "linear-gradient(135deg, #fcfaf5, #f5f0e0)" :
+                              activeTab === 2 ? "linear-gradient(135deg, #fdfdfb, #f5e9e2)" :
+                              "linear-gradient(135deg, #fdfdfb, #f2f2f2)",
+                  opacity: 0.4,
+                  transition: "background 0.5s ease"
+                }} />
+                
+                <div style={{ position: "relative", zIndex: 1, padding: "60px", display: "flex", flexDirection: "column", height: "100%", justifyContent: "space-between" }}>
+                  <div>
+                    <span style={{ fontSize: "64px", display: "block", marginBottom: "32px", transform: "scale(1.2)", transformOrigin: "left" }}>
+                      {sections[activeTab].emoji}
+                    </span>
+                    <h3 style={{ fontFamily: "var(--serif)", fontSize: "40px", color: "var(--text-primary)", marginBottom: "20px" }}>
+                      {sections[activeTab].title}
+                    </h3>
+                    <p style={{ fontSize: "18px", color: "var(--text-secondary)", lineHeight: 1.8, maxWidth: "500px" }}>
+                      {sections[activeTab].description}
+                    </p>
+                  </div>
 
-                {/* Emoji */}
-                <div
-                  style={{
-                    fontSize: "36px",
-                    marginBottom: "24px",
-                    filter: "grayscale(0.2)",
-                  }}
-                >
-                  {step.emoji}
+                  <div style={{ marginTop: "auto", display: "flex", alignItems: "center", gap: "12px", borderTop: "1px solid var(--border)", paddingTop: "40px" }}>
+                    <div style={{ width: "10px", height: "10px", borderRadius: "50%", background: sections[activeTab].color }} />
+                    <span style={{ fontSize: "12px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--text-muted)" }}>
+                      Part of the core otu engine
+                    </span>
+                  </div>
                 </div>
 
-                <h3
-                  style={{
-                    fontFamily: "var(--serif)",
-                    fontSize: "clamp(22px, 2vw, 28px)",
-                    fontWeight: 400,
-                    letterSpacing: "-0.02em",
-                    color: "var(--cream)",
-                    marginBottom: "14px",
-                    lineHeight: 1.2,
-                  }}
-                >
-                  {step.title}
-                </h3>
-                <p
-                  style={{
-                    fontSize: "14px",
-                    lineHeight: 1.8,
-                    color: "var(--cream-dim)",
-                    fontWeight: 300,
-                  }}
-                >
-                  {step.desc}
-                </p>
-
-                {/* Connecting line to next step */}
-                {i < 2 && (
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: "50%",
-                      right: "-14px",
-                      width: "28px",
-                      height: "2px",
-                      background: "linear-gradient(to right, rgba(200,164,90,0.15), rgba(200,164,90,0.05))",
-                      zIndex: 10,
-                      display: "none", // Hidden on mobile, visible on desktop via CSS
-                    }}
-                    className="step-connector"
-                  />
-                )}
+                {/* Decorative 4K Background Element */}
+                <div style={{ 
+                  position: "absolute", right: "-100px", bottom: "-50px", 
+                  width: "400px", height: "400px", 
+                  backgroundImage: "url(/images/hero_4k.png)", backgroundSize: "cover", opacity: 0.08,
+                  maskImage: "radial-gradient(circle, black, transparent)",
+                  WebkitMaskImage: "radial-gradient(circle, black, transparent)",
+                  filter: "grayscale(1) contrast(1.2)"
+                }} />
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════
-          DIVIDER IMAGE
-          ═══════════════════════════════════════════ */}
-      <div
-        style={{
-          height: "8px",
-          background: "linear-gradient(90deg, transparent 0%, var(--green-dark) 50%, transparent 100%)",
-          opacity: 0.2,
-        }}
-      />
-
-      {/* ═══════════════════════════════════════════
-          WAITLIST SECTION
-          ═══════════════════════════════════════════ */}
-      <section
-        id="waitlist"
-        style={{
-          padding: "0",
-          background: "var(--bg-deep)",
-          position: "relative",
-          overflow: "hidden",
-        }}
-      >
-        {/* Background botanical image */}
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            backgroundImage: "url(/images/divider.png)",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            filter: "brightness(0.15) saturate(0.7)",
-            opacity: 0.5,
-          }}
-        />
-
-        {/* Gradient overlays */}
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background: "radial-gradient(ellipse at 70% 70%, rgba(201,106,63,0.06) 0%, transparent 60%)",
-          }}
-        />
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background: "radial-gradient(ellipse at 20% 30%, rgba(107,159,94,0.04) 0%, transparent 60%)",
-          }}
-        />
-
-        <div
-          className="waitlist-inner"
-          style={{
-            maxWidth: "700px",
-            margin: "0 auto",
-            padding: "120px 64px",
-            position: "relative",
-            zIndex: 2,
-            textAlign: "center",
-          }}
-        >
-          {/* Decorative element */}
-          <div
-            style={{
-              fontSize: "28px",
-              marginBottom: "28px",
-              opacity: 0.7,
-            }}
-          >
-            🌿
+      {/* ── WAITLIST ── */}
+      <section id="waitlist" style={{ padding: "140px 80px", background: "var(--bg-main)", position: "relative" }}>
+        <div style={{ maxWidth: "680px", margin: "0 auto", textAlign: "center" }}>
+          <div style={{ marginBottom: "48px" }}>
+            <span style={{ fontSize: "11px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.15em", color: "var(--terra)" }}>Waitlist</span>
+            <h2 style={{ fontFamily: "var(--serif)", fontSize: "clamp(40px, 6vw, 80px)", color: "var(--text-primary)", marginTop: "16px", marginBottom: "24px" }}>
+              Be there before it opens.
+            </h2>
+            <p style={{ fontSize: "17px", color: "var(--text-muted)", lineHeight: 1.7 }}>
+              Join the list for early access to the 4K botanical encyclopedia. 
+              We&apos;ll send one email when it&apos;s ready. No spam, ever.
+            </p>
           </div>
 
-          <p
-            style={{
-              fontSize: "11px",
-              letterSpacing: "0.16em",
-              textTransform: "uppercase",
-              color: "var(--terra-warm)",
-              marginBottom: "24px",
-              fontWeight: 500,
-            }}
-          >
-            early access
-          </p>
-
-          <h2
-            style={{
-              fontFamily: "var(--serif)",
-              fontSize: "clamp(36px, 5vw, 64px)",
-              fontWeight: 400,
-              letterSpacing: "-0.035em",
-              color: "var(--cream)",
-              lineHeight: 1.1,
-              marginBottom: "20px",
-            }}
-          >
-            be there
-            <br />
-            <em style={{ color: "var(--cream-dim)" }}>before it opens.</em>
-          </h2>
-
-          <p
-            style={{
-              fontSize: "16px",
-              color: "var(--stone)",
-              lineHeight: 1.8,
-              marginBottom: "48px",
-              fontWeight: 300,
-              maxWidth: "420px",
-              margin: "0 auto 48px",
-            }}
-          >
-            join the waitlist. get early access when otu launches.
-            we&apos;ll send one email — when it&apos;s ready.
-          </p>
-
           {isConfirmed ? (
-            <div
-              style={{
-                padding: "48px 40px",
-                background: "rgba(107,159,94,0.06)",
-                border: "1px solid rgba(107,159,94,0.15)",
-                borderRadius: "var(--radius-lg)",
-                animation: "fadeInScale 0.6s var(--ease-out) both",
-              }}
-            >
-              <div style={{ fontSize: "32px", marginBottom: "16px" }}>
-                {status === "already" ? "🌻" : "🌱"}
-              </div>
-              <p
-                style={{
-                  fontFamily: "var(--serif)",
-                  fontSize: "clamp(24px, 3vw, 36px)",
-                  fontWeight: 400,
-                  letterSpacing: "-0.025em",
-                  color: "var(--green-mist)",
-                  marginBottom: "12px",
-                }}
-              >
-                {status === "already" ? "already there." : "you're in."}
-              </p>
-              <p
-                style={{
-                  fontSize: "14px",
-                  color: "var(--cream-dim)",
-                  lineHeight: 1.75,
-                  fontWeight: 300,
-                }}
-              >
-                {status === "already"
-                  ? "you're already on the list. we'll reach out when otu is ready."
-                  : "we'll reach out when otu is ready for you.\nin the meantime — really look at your plants."}
-              </p>
+            <div style={{ padding: "48px", background: "var(--bg-soft)", border: "1px solid var(--border)", borderRadius: "var(--radius-xl)" }}>
+              <span style={{ fontSize: "40px" }}>🌱</span>
+              <h3 style={{ fontFamily: "var(--serif)", fontSize: "28px", marginTop: "16px", marginBottom: "8px" }}>
+                {status === "already" ? "You're already on the list" : "You're in."}
+              </h3>
+              <p style={{ color: "var(--text-muted)" }}>We&apos;ll reach out soon. In the meantime, look closely at your plants.</p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit}>
-              <div
-                className="form-row"
-                style={{
-                  display: "flex",
-                  gap: "0",
-                  maxWidth: "520px",
-                  margin: "0 auto",
-                }}
-              >
+            <form onSubmit={handleSubmit} style={{ maxWidth: "500px", margin: "0 auto" }}>
+              <div style={{ display: "flex", gap: "10px" }} className="form-row">
                 <input
                   type="email"
-                  placeholder="your@email.com"
+                  placeholder="name@email.com"
+                  required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  required
                   style={{
-                    flex: "1 1 240px",
-                    padding: "18px 22px",
-                    background: "rgba(240,235,224,0.04)",
-                    border: "1px solid rgba(168,196,154,0.12)",
-                    borderRight: "none",
-                    borderRadius: "var(--radius-full) 0 0 var(--radius-full)",
-                    color: "var(--cream)",
-                    fontSize: "14px",
-                    fontFamily: "var(--sans)",
-                    letterSpacing: "0.02em",
-                    transition: "all 0.3s ease",
+                    flex: 1, padding: "18px 24px", borderRadius: "100px",
+                    border: "1px solid var(--border)", background: "#fff",
+                    fontSize: "15px", transition: "all 0.3s"
                   }}
-                  onFocus={(e) => {
-                    e.target.style.borderColor = "rgba(107,159,94,0.35)";
-                    e.target.style.background = "rgba(240,235,224,0.06)";
-                  }}
-                  onBlur={(e) => {
-                    e.target.style.borderColor = "rgba(168,196,154,0.12)";
-                    e.target.style.background = "rgba(240,235,224,0.04)";
-                  }}
+                  onFocus={(e) => e.target.style.borderColor = "var(--green-mid)"}
                 />
-                <button
-                  type="submit"
-                  disabled={status === "loading"}
-                  style={{
-                    background:
-                      status === "loading"
-                        ? "rgba(107,159,94,0.3)"
-                        : "linear-gradient(135deg, var(--green-mid), var(--green-dark))",
-                    color: "var(--cream)",
-                    padding: "18px 32px",
-                    border: "none",
-                    borderRadius: "0 var(--radius-full) var(--radius-full) 0",
-                    fontSize: "12px",
-                    fontWeight: 600,
-                    fontFamily: "var(--sans)",
-                    letterSpacing: "0.08em",
-                    textTransform: "uppercase",
-                    flexShrink: 0,
-                    cursor: status === "loading" ? "not-allowed" : "pointer",
-                    transition: "all 0.3s var(--ease-out)",
-                    boxShadow: "0 4px 20px rgba(74,122,74,0.2)",
-                  }}
-                  onMouseEnter={(e) => {
-                    if (status !== "loading") {
-                      e.currentTarget.style.boxShadow = "0 8px 30px rgba(74,122,74,0.35)";
-                    }
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.boxShadow = "0 4px 20px rgba(74,122,74,0.2)";
-                  }}
-                >
-                  {status === "loading" ? "..." : "join →"}
+                <button type="submit" disabled={status === "loading"} className="btn-primary" style={{ padding: "0 40px" }}>
+                  {status === "loading" ? "..." : "Join →"}
                 </button>
               </div>
-              {status === "error" && (
-                <p
-                  style={{
-                    color: "var(--terra-warm)",
-                    marginTop: "16px",
-                    fontSize: "13px",
-                    fontWeight: 400,
-                  }}
-                >
-                  something didn&apos;t work — try again.
-                </p>
-              )}
+              {status === "error" && <p style={{ color: "var(--terra)", marginTop: "12px", fontSize: "13px" }}>Something went wrong. Try again.</p>}
             </form>
           )}
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════
-          FOOTER
-          ═══════════════════════════════════════════ */}
-      <footer
-        style={{
-          padding: "40px 64px",
-          background: "var(--bg-warm)",
-          borderTop: "1px solid rgba(168,196,154,0.05)",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          flexWrap: "wrap",
-          gap: "16px",
-        }}
-      >
-        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-          <div
-            style={{
-              width: "24px",
-              height: "24px",
-              borderRadius: "50%",
-              background: "linear-gradient(135deg, var(--green-dark), var(--green-mid))",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: "12px",
-              opacity: 0.5,
-            }}
-          >
-            🌿
-          </div>
-          <span
-            style={{
-              fontFamily: "var(--serif)",
-              fontSize: "18px",
-              color: "rgba(240,235,224,0.25)",
-              letterSpacing: "-0.02em",
-            }}
-          >
-            otu
-          </span>
-        </div>
-        <p
-          style={{
-            fontSize: "11px",
-            color: "rgba(240,235,224,0.15)",
-            letterSpacing: "0.06em",
-            textTransform: "uppercase",
-          }}
-        >
-          plant intelligence · © {new Date().getFullYear()}
+      {/* ── FOOTER ── */}
+      <footer style={{ padding: "80px", background: "var(--bg-soft)", textAlign: "center", borderTop: "1px solid var(--border)" }}>
+        <p style={{ fontFamily: "var(--serif)", fontSize: "20px", color: "var(--text-muted)", marginBottom: "12px" }}>otu</p>
+        <p style={{ fontSize: "11px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--stone)" }}>
+          Made with care for growing things.
         </p>
       </footer>
     </>
