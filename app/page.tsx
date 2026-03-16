@@ -39,14 +39,12 @@ function RainCanvas() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
+    const canvas = canvasRef.current as HTMLCanvasElement;
     if (!canvas) return;
     const ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
-    if (!ctx) return;
 
     let W = window.innerWidth;
     let H = window.innerHeight;
-    // eslint-disable-next-line prefer-const
     let animId: number;
 
     canvas.width = W;
