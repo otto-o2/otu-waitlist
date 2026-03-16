@@ -29,6 +29,12 @@ const features = [
     cta: "View details",
     className: "md:col-span-2",
     Icon: Stethoscope,
+    highlights: [
+      "Precision Diagnosis: Instant scanning for pests, deficiencies, and fungal issues.",
+      "In-Depth Care Packages: Bespoke schedules tailored to your specific micro-climate.",
+      "The Doctor’s Ledger: Time-stamped medical reports creating a historical health record.",
+      "Intelligent Notifications: 'Stat-Check' alerts based on real-time environmental data."
+    ],
     background: <div className="absolute inset-0 bg-gradient-to-br from-[#9CA764]/20 to-transparent" />,
   },
   {
@@ -39,46 +45,76 @@ const features = [
     cta: "Join expedition",
     className: "md:col-span-1",
     Icon: Compass,
+    highlights: [
+      "'Sprout & About' Exploration: Identify plants in the wild using a capture mechanic.",
+      "GPS Botanical Journal: Geo-tag every encounter into a personal exploration map.",
+      "Rare Variant Hunting: Track down ultra-rare mutations and regional phenotypes.",
+      "Survivalist Mode: Instant toxicity and edibility insights for urban forage."
+    ],
     background: <div className="absolute inset-0 bg-gradient-to-tr from-[#9CA764]/20 to-transparent" />,
   },
   {
     id: "genesis-engine",
     name: "The Genesis Engine",
-    description: "Every plant scanned is assigned a Unique Genome to spawn a living digital species in your archives.",
+    description: "Every plant scanned is assigned a Unique Genome to spawn a living digital species.",
     href: "#genesis-engine-detail",
     cta: "Synthesize species",
     className: "md:col-span-1",
     Icon: Zap,
+    highlights: [
+      "Digital Growth Vault: Your physical scans spawn immortal digital species.",
+      "Genome Synthesis: Tweak genetic markers to influence digital growth rates.",
+      "Cross-Breeding: Merge the genomes of different plants to create hybrid species.",
+      "State-of-the-Art AR: Visualize your digital garden in your physical space."
+    ],
     background: <div className="absolute inset-0 bg-gradient-to-bl from-[#9CA764]/20 to-transparent" />,
   },
   {
     id: "botanical-sonification",
     name: "The Symphony of Flora",
-    description: "Our algorithm translates DNA and health metrics into a unique ambient track. Your garden is your soundtrack.",
+    description: "Our algorithm translates DNA and health metrics into a unique ambient track.",
     href: "#botanical-sonification-detail",
     cta: "Listen to flora",
     className: "md:col-span-2",
     Icon: Volume2,
+    highlights: [
+      "Plant-to-MIDI: Real-time translation of health metrics into generative audio.",
+      "Garden Soundscapes: Your entire collection creates a spatial ambient atmosphere.",
+      "DNA Melodies: Each species has a unique base 'frequency' and melodic loop.",
+      "Wellness Integration: Use your garden's song for meditation and focus."
+    ],
     background: <div className="absolute inset-0 bg-gradient-to-r from-[#9CA764]/20 to-transparent" />,
   },
   {
     id: "marketplace",
-    name: "The Farmer’s Market",
-    description: "Connect directly with local experts, buy rare seeds, or call a physical plant-sitter to your home.",
+    name: "The Marketplace",
+    description: "Connect with local experts, buy rare seeds, or call a plant-sitter to your home.",
     href: "#marketplace-detail",
     cta: "Visit market",
     className: "md:col-span-2",
     Icon: Store,
+    highlights: [
+      "The Farmer’s Market: Peer-to-peer trading of rare clippings and seeds.",
+      "On-Call Botanists: Hire local physical plant-sitters or recovery specialists.",
+      "Seed Auctions: Access limited-run genetics found during Wild Mode expeditions.",
+      "Curated Supply: Expert-veted fertilizers, pots, and lighting hardware."
+    ],
     background: <div className="absolute inset-0 bg-gradient-to-l from-[#9CA764]/20 to-transparent" />,
   },
   {
     id: "compendium",
     name: "The Compendium",
-    description: "A deep-dive database of 4,000+ species with digital yield stats and synthesis probabilities.",
+    description: "A deep-dive database of 4,000+ species with digital yield stats.",
     href: "#compendium-detail",
     cta: "Browse library",
     className: "md:col-span-1",
     Icon: Library,
+    highlights: [
+      "Living Encyclopedia: 4,000+ species with detailed botanical datasets.",
+      "The Completionist Quest: Rewards for scanning entire plant families.",
+      "Digital Yield Stats: Project the growth potential of any plant you scanning.",
+      "Community Wiki: Contribute care data to the global Otu health graph."
+    ],
     background: <div className="absolute inset-0 bg-gradient-to-t from-[#9CA764]/20 to-transparent" />,
   },
 ];
@@ -138,6 +174,25 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Sticky Navigation Bar */}
+      <nav className="sticky top-0 z-[100] bg-[#FDFBF7]/80 backdrop-blur-xl border-b border-[#9CA764]/10 px-6 py-4 overflow-x-auto no-scrollbar">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-8 min-w-max">
+          <a href="#" className="font-serif italic text-xl text-[#1B261B] hover:text-[#9CA764] transition-colors shrink-0">otu</a>
+          <div className="flex items-center gap-6 md:gap-8">
+            {features.map((feature) => (
+              <a 
+                key={feature.id} 
+                href={feature.href}
+                className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-[#1B261B]/40 hover:text-[#9CA764] transition-colors"
+              >
+                {feature.id.replace("-", " ")}
+              </a>
+            ))}
+          </div>
+          <div className="w-24 shrink-0 hidden md:block" /> {/* Spacer */}
+        </div>
+      </nav>
+
       {/* Bento Grid Section */}
       <section className="relative z-20 px-6 py-32 md:px-12 lg:px-24 bg-[#FDFBF7]">
         <div className="max-w-7xl mx-auto">
@@ -181,10 +236,10 @@ export default function Home() {
                 </p>
               </div>
               <ul className="space-y-6">
-                {[1,2,3].map(i => (
+                {feature.highlights.map((highlight, i) => (
                   <li key={i} className="flex gap-4 items-start">
-                    <div className="h-2 w-2 rounded-full bg-[#9CA764] mt-3" />
-                    <p className="text-lg text-[#1B261B]/80 font-medium">Core feature highlight detail {i} explaining the depth of {feature.name}.</p>
+                    <div className="h-2 w-2 rounded-full bg-[#9CA764] mt-3 shrink-0" />
+                    <p className="text-lg text-[#1B261B]/80 font-medium">{highlight}</p>
                   </li>
                 ))}
               </ul>
@@ -192,16 +247,20 @@ export default function Home() {
             
             <div className="relative aspect-square rounded-[60px] bg-[#EBE7DD]/50 border border-[#9CA764]/20 overflow-hidden flex items-center justify-center p-12">
                {/* Visual placeholder for the feature specific illustration/image */}
-               <div className="w-full h-full rounded-[40px] bg-[#9CA764]/5 border border-[#9CA764]/10 flex flex-col items-center justify-center group">
+               <div className="w-full h-full rounded-[40px] bg-[#9CA764]/5 border border-[#9CA764]/10 flex flex-col items-center justify-center group overflow-hidden relative">
+                  <div className="absolute inset-0 opacity-10 bg-gradient-to-br from-[#9CA764] to-transparent" />
                   <feature.Icon className="h-32 w-32 text-[#9CA764]/20 group-hover:scale-110 transition-transform duration-700" />
-                  <p className="mt-8 text-sm uppercase tracking-widest text-[#9CA764]/40 font-bold">Otu {feature.name.split(":")[0]} Engine</p>
+                  <p className="mt-8 text-sm uppercase tracking-widest text-[#9CA764]/40 font-bold relative z-10">Otu {feature.name.split(":")[0]} Engine</p>
+                  
+                  {/* Abstract floating botanical elements */}
+                  <div className="absolute -top-10 -left-10 w-40 h-40 bg-[#9CA764]/10 rounded-full blur-[80px]" />
+                  <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-[#9CA764]/10 rounded-full blur-[100px]" />
                </div>
                
                {/* Floating elements */}
                <div className="absolute top-10 right-10 w-24 h-24 bg-white/80 rounded-3xl shadow-xl flex items-center justify-center animate-bounce" style={{animationDuration: "3s"}}>
-                 <Dna className="text-[#9CA764]" />
+                 <Dna className="text-[#9CA764] h-8 w-8" />
                </div>
-               <div className="absolute bottom-10 left-10 w-32 h-32 bg-[#9CA764]/10 rounded-full blur-3xl" />
             </div>
           </div>
         </section>
@@ -226,8 +285,19 @@ export default function Home() {
           </div>
           
           <div className="mt-32 pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8">
-            <p className="font-serif text-2xl italic">haus der grünen</p>
-            <p className="text-white/30 text-xs uppercase tracking-[0.5em] font-bold">© 2026 Biology 2.0 Ecosystem</p>
+            <div className="flex flex-col items-center md:items-start gap-2">
+              <p className="font-serif text-2xl italic">haus der grünen</p>
+              <p className="text-white/30 text-[10px] uppercase tracking-[0.4em] font-bold">Biology 2.0 Ecosystem</p>
+            </div>
+            
+            <button 
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="px-8 py-3 rounded-full border border-white/10 hover:bg-white/5 transition-colors text-xs uppercase tracking-widest font-bold"
+            >
+              Back to Top
+            </button>
+
+            <p className="text-white/30 text-[10px] uppercase tracking-[0.5em] font-bold">© 2026 Otu Collective</p>
           </div>
         </div>
       </section>
