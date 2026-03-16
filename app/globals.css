@@ -8,11 +8,40 @@
   padding: 0;
 }
 
-html, body {
+html {
+  scroll-behavior: smooth;
+}
+
+body {
   width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background: #000000;
+  min-height: 100vh;
+  background: #050805;
+  color: #F5F2EA;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+::selection {
+  background: rgba(42, 56, 42, 0.9);
+  color: #F5F2EA;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050805;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1B261B;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2A382A;
 }
