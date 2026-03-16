@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { cn } from "@/lib/utils";
 import { MeshGradient } from "@paper-design/shaders-react";
 import { BentoGrid, BentoCard } from "./components/Bento";
 import { 
