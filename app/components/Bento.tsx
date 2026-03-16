@@ -43,38 +43,46 @@ const BentoCard = ({
   <div
     key={name}
     className={cn(
-      "group relative col-span-3 flex flex-col justify-between overflow-hidden rounded-3xl",
-      "bg-[#0D140D] border border-white/5",
-      "transform-gpu transition-all duration-300 hover:border-white/20",
-      "box-shadow-[0_-20px_80px_-20px_#ffffff0a_inset]",
+      "group relative col-span-3 flex flex-col justify-between overflow-hidden rounded-[2.5rem]",
+      "bg-[#F1E8C7] border border-[#9CA764]/20", // Milky Honey background, Matcha border
+      "transition-all duration-300 hover:shadow-xl hover:translate-y-[-4px]",
       className,
     )}
   >
-    <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
+    <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
       {background}
     </div>
-    <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-2 p-8 transition-all duration-300 group-hover:-translate-y-12">
-      <Icon className="h-10 w-10 origin-left transform-gpu text-white/50 transition-all duration-300 ease-in-out group-hover:scale-75 group-hover:text-white/90" />
-      <h3 className="text-2xl font-light text-white/90 font-serif tracking-tight">
-        {name}
-      </h3>
-      <p className="max-w-lg text-white/40 font-light leading-relaxed">{description}</p>
+    
+    <div className="z-10 flex flex-col gap-3 p-10 transition-all duration-300">
+      <div className="bg-[#9CA764]/10 p-3 rounded-2xl w-fit">
+        <Icon className="h-8 w-8 text-[#9CA764]" /> 
+      </div>
+      <div>
+        <h3 className="text-3xl font-serif font-medium text-[#1B261B] tracking-tight mb-2">
+          {name}
+        </h3>
+        <p className="max-w-md text-[#1B261B]/60 font-light leading-relaxed text-lg">
+          {description}
+        </p>
+      </div>
     </div>
 
     <div
       className={cn(
-        "pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-6 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100",
+        "absolute bottom-0 flex w-full flex-row items-center p-8 opacity-100 transition-all duration-300",
       )}
     >
       <a 
         href={href}
-        className="pointer-events-auto flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-white/60 hover:text-white transition-colors"
+        className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#9CA764] hover:text-[#1B261B] transition-colors"
       >
         {cta}
-        <ArrowRightIcon className="h-4 w-4" />
+        <ArrowRightIcon className="h-5 w-5" />
       </a>
     </div>
-    <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-white/[.02]" />
+    
+    {/* Subtle gloss effect */}
+    <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-white/[0.05]" />
   </div>
 );
 
