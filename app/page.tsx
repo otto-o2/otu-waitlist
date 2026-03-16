@@ -125,7 +125,7 @@ export default function Home() {
           >
             haus der<br />grünen
           </h1>
-          <p className="text-xl md:text-3xl font-light tracking-[0.8em] text-[#1B261B]/30 ml-[0.8em] lowercase">
+          <p className="text-3xl md:text-5xl font-black tracking-[0.2em] text-[#1B261B] ml-[0.2em] lowercase">
             otu
           </p>
         </div>
