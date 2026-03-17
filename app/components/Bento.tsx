@@ -31,6 +31,7 @@ const BentoCard = ({
   description,
   href,
   cta,
+  ...props
 }: {
   name: string;
   className: string;
@@ -39,6 +40,7 @@ const BentoCard = ({
   description: string;
   href: string;
   cta: string;
+  [key: string]: any;
 }) => (
   <div
     key={name}

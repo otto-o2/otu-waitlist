@@ -28,6 +28,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   overflow-y: auto;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+h1, h2, h3, h4, h5, h6, .font-sans {
+  font-family: 'Outfit', sans-serif !important;
+}
+
+.font-serif {
+  font-family: 'Cormorant Garamond', serif !important;
 }
 
 ::selection {

@@ -5,103 +5,105 @@ import { cn } from "@/lib/utils";
 import { MeshGradient } from "@paper-design/shaders-react";
 import { BentoGrid, BentoCard } from "./components/Bento";
 import Mixtape from "./components/Mixtape";
+import WardScanner from "./components/WardScanner";
+import WildViewfinder from "./components/WildViewfinder";
+import GenesisEngine from "./components/GenesisEngine";
+import MarketplaceVisual from "./components/MarketplaceVisual";
+import CompendiumVisual from "./components/CompendiumVisual";
 import { 
   ShieldAlert, 
   Map, 
   Dna, 
   Music, 
   ShoppingBag, 
-  Search,
-  ChevronDown,
-  Stethoscope,
-  Compass,
-  Zap,
-  Volume2,
-  Store,
   Library
 } from "lucide-react";
 
 const features = [
   {
-    id: "ward-mode",
-    name: "The Clinical Hub: Ward Mode",
-    description: "A full-spectrum plant clinic that lives in your pocket. Diagnose, treat, and watch your green babies actually flourish for once.",
-    href: "#ward-mode-detail",
-    cta: "Enter the ward →",
-    className: "md:col-span-2",
-    Icon: Stethoscope,
+    id: "botanical-sonification",
+    name: "Leaf Notes: Sonification",
+    description: "Your monstera is singing. No, really. Transform bio-data into adaptive frequencies and finally understand what 'thirsty' sounds like.",
+    href: "#botanical-sonification-detail",
+    cta: "Listen to the leaves →",
+    className: "md:col-span-1",
+    Icon: Music,
     highlights: [
-      "Diagnose in seconds, not days — Point, scan, and otu identifies 50+ pests, diseases, and nutrient deficiencies in under 3 seconds.",
-      "Micro-climate memory — Ward Mode maps your home's unique conditions (light, humidity) and builds care schedules that actually work.",
-      "A nurse on call, 24/7 — Real-time health alerts ping you before things go sideways. No paperwork. Just thriving plants."
+      "Real-time biofeedback — Witness the literal song of your plants as we translate xylem movement into custom soundscapes.",
+      "Studio-grade fidelity — Adaptive frequencies shift with humidity and light, creating a living ambient soundtrack for your home.",
+      "Emotional baseline tracking — Identify 'distress chords' before visual symptoms occur, becoming a proactive plant parent."
     ],
     background: <div className="absolute inset-0 bg-gradient-to-br from-[#9CA764]/20 to-transparent" />,
   },
   {
-    id: "wild-mode",
-    name: "The Field Trip: Wild Mode",
-    description: "Your field guide to every green thing. Catch, log, and fall in love with plants you didn't know existed.",
-    href: "#wild-mode-detail",
-    cta: "Head outside →",
-    className: "md:col-span-1",
-    Icon: Compass,
+    id: "ward-mode",
+    name: "Ward Mode: Health Hub",
+    description: "A full-spectrum plant clinic that lives in your pocket. Diagnose, treat, and watch your green babies actually flourish for once.",
+    href: "#ward-mode",
+    cta: "System scan →",
+    className: "md:col-span-2",
+    Icon: ShieldAlert,
     highlights: [
-      "Tap to catch, no net required — Snap any leaf in the wild and otu identifies it instantly with a satisfying capture animation.",
-      "A map that grows with every walk — Every find is geo-tagged to your personal adventure map, building a living catalog.",
-      "Go further, get rewarded — Seasonal challenges and biome badges nudge you to wander a little further than usual."
+      "Clinical diagnostic core — Our neural engine identifies 400+ pathogens and nutrient deficiencies with surgical precision.",
+      "Custom recovery protocols — Receive hour-by-hour treatment plans that adapt to your local weather and home microclimate.",
+      "Vitals monitoring — Connect smart hardware or use your camera to track photosynthesis efficiency and turgor pressure."
     ],
-    background: <div className="absolute inset-0 bg-gradient-to-tr from-[#9CA764]/20 to-transparent" />,
+    background: <div className="absolute inset-0 bg-[#1B261B]/5 overflow-hidden">
+      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
+    </div>,
+  },
+  {
+    id: "wild-mode",
+    name: "Wild Mode: Discovery",
+    description: "Stop walking past rare genomes. Pin the wild, trade locations with collectors, and finally identify that 'thing' on your hike.",
+    href: "#wild-mode",
+    cta: "Explore the wild →",
+    className: "md:col-span-2",
+    Icon: Map,
+    highlights: [
+      "Discovery viewfinder — High-fidelity field guide identifies wild species in mid-trek, even with zero network coverage.",
+      "Genomic mapping — Pin your discoveries on a private grid or share rare biome locations with the Otu community.",
+      "Collector's network — Connect with local experts to trade seeds, locations, and regional soil secrets."
+    ],
+    background: <div className="absolute inset-0 bg-[#9CA764]/5">
+      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] opacity-10" />
+    </div>,
   },
   {
     id: "genesis-engine",
-    name: "The Greenhouse: Genesis Engine",
-    description: "Every scan grows something new. A tiny digital universe that blooms from your real-world collection, one genome at a time.",
-    href: "#genesis-engine-detail",
-    cta: "Grow something →",
+    name: "The Genesis Engine: Library",
+    description: "A tiny digital universe where your clones and captures live. Infinite scrolling of everything you've ever saved.",
+    href: "#genesis-engine",
+    cta: "Open vault →",
     className: "md:col-span-1",
-    Icon: Zap,
+    Icon: Dna,
     highlights: [
-      "A fingerprint unlike any other — Every scan generates a one-of-a-kind Unique Genome woven from species and health data.",
-      "Watch your greenhouse bloom — Your digital collection grows and shifts as your real plants do, reflecting reality.",
-      "Hunt for the hidden ones — Certain genome combinations unlock synthesis pathways that sprout entirely new digital hybrid species."
+      "Universal Capture Engine — One central vault for every snapshot, note, and song. Your leaf library, perfectly indexed.",
+      "Genetic Archive — Store 'digital clones' of your rarest plants, complete with their historical health records and growth curves.",
+      "Holographic Timeline — Scroll through your progress as a botanist, from first sprout to professional greenhouse management."
     ],
-    background: <div className="absolute inset-0 bg-gradient-to-bl from-[#9CA764]/20 to-transparent" />,
-  },
-  {
-    id: "botanical-sonification",
-    name: "Leaf Notes: Symphony of Flora",
-    description: "Happy plants hum. Sad ones don't. Otu turns your garden's whole mood into a living ambient track you can actually feel.",
-    href: "#botanical-sonification-detail",
-    cta: "Hear your garden →",
-    className: "md:col-span-2",
-    Icon: Volume2,
-    highlights: [
-      "Every plant, a different note — Otu translates genome and growth stages into a track that belongs to it and only it.",
-      "Mood you can actually hear — A happy plant hums lush and warm; a struggling one shifts toward something urgent.",
-      "Your garden's soundtrack, on shuffle — Export your collection's living score as a playlist or let it drift through your space."
-    ],
-    background: <div className="absolute inset-0 bg-gradient-to-r from-[#9CA764]/20 to-transparent" />,
+    background: <div className="absolute inset-0 bg-gradient-to-t from-[#9CA764]/20 to-transparent" />,
   },
   {
     id: "marketplace",
-    name: "The Farmer's Market: Marketplace",
-    description: "Rare seeds, local experts, and on-demand plant-sitters — all within reach. The green economy, hyper-local.",
-    href: "#marketplace-detail",
-    cta: "Visit the market →",
+    name: "Marketplace: Green Economy",
+    description: "Trade seeds, book plant-sitters, and connect with people who won't roll their eyes when you talk about soil pH.",
+    href: "#marketplace",
+    cta: "Enter market →",
     className: "md:col-span-2",
-    Icon: Store,
+    Icon: ShoppingBag,
     highlights: [
-      "Hyper-local, hand-picked listings — Browse verified plant experts, rare seed sellers, and suppliers within your city.",
+      "Peer-to-peer exchange — The world's most trusted trade network for cuttings, rare seeds, and regional fertilizers.",
       "Book a plant-sitter IRL — Going away? Book a certified plant-sitter to visit your home and keep your babies alive.",
       "Trade, swap, and connect — Exchange cuttings, share regional growing knowledge, and build real neighborhood relationships."
     ],
-    background: <div className="absolute inset-0 bg-gradient-to-l from-[#9CA764]/20 to-transparent" />,
+    background: <div className="absolute inset-0 bg-gradient-to-l from-[#9CA764]/20 to-transparent opacity-30" />,
   },
   {
     id: "compendium",
     name: "Sprout and About: Compendium",
     description: "4,000+ species. Infinite curiosity. One cozy deep-dive for the plant-obsessed — and the lore to make you insufferable.",
-    href: "#compendium-detail",
+    href: "#compendium",
     cta: "Start exploring →",
     className: "md:col-span-1",
     Icon: Library,
@@ -110,7 +112,9 @@ const features = [
       "Strategy for the serious collector — Digital yield stats and synthesis guides help you hunt for the rarest Greenhouse genomes.",
       "Written by people who really care — Verified botanists and plant parents contribute field notes and regional growing quirks."
     ],
-    background: <div className="absolute inset-0 bg-gradient-to-t from-[#9CA764]/20 to-transparent" />,
+    background: <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cardboard-flat.png')]" />
+    </div>,
   },
 ];
 
@@ -202,11 +206,11 @@ export default function Home() {
             
             <div className="w-[1px] h-20 bg-[#9CA764]/20" /> {/* Artisanal vertical divider */}
             
-            <div className="space-y-6">
-              <p className="text-[10px] md:text-xs font-sans font-bold tracking-[0.6em] text-[#9CA764] uppercase opacity-80">
+            <div className="space-y-4"> {/* Tightened spacing */}
+              <p className="text-[14px] md:text-lg font-sans font-black tracking-[0.5em] text-[#9CA764] uppercase">
                 otu plant intelligence
               </p>
-              <p className="text-sm md:text-xl font-sans font-black tracking-[0.4em] text-[#1B261B] uppercase">
+              <p className="text-lg md:text-4xl font-sans font-black tracking-[0.3em] text-[#1B261B] uppercase">
                 scan it. name it. let it live a little.
               </p>
             </div>
@@ -258,6 +262,26 @@ export default function Home() {
                {feature.id === "botanical-sonification" ? (
                  <div className="w-full flex justify-center">
                     <Mixtape />
+                 </div>
+               ) : feature.id === "ward-mode" ? (
+                 <div className="w-full flex justify-center">
+                    <WardScanner />
+                 </div>
+               ) : feature.id === "wild-mode" ? (
+                 <div className="w-full flex justify-center">
+                    <WildViewfinder />
+                 </div>
+               ) : feature.id === "genesis-engine" ? (
+                 <div className="w-full flex justify-center">
+                    <GenesisEngine />
+                 </div>
+               ) : feature.id === "marketplace" ? (
+                 <div className="w-full flex justify-center">
+                    <MarketplaceVisual />
+                 </div>
+               ) : feature.id === "compendium" ? (
+                 <div className="w-full flex justify-center">
+                    <CompendiumVisual />
                  </div>
                ) : (
                  <div className="relative aspect-square rounded-[60px] bg-[#EBE7DD]/30 border border-[#9CA764]/20 overflow-hidden flex items-center justify-center p-6 md:p-12 w-full">
@@ -313,8 +337,8 @@ export default function Home() {
               Back to Top
             </button>
 
-            <p className="text-white/30 text-[10px] uppercase tracking-[0.2em] font-medium text-center md:text-right">
-              <span className="italic">otu is for plants.</span> <br className="md:hidden" />
+            <p className="text-white/30 text-[10px] uppercase tracking-[0.3em] font-medium text-center md:text-right">
+              Biology 2.0 Ecosystem <br className="md:hidden" />
               <span className="opacity-50">(do not seek life advice)</span>
             </p>
           </div>
