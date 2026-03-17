@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { MeshGradient } from "@paper-design/shaders-react";
 import { BentoGrid, BentoCard } from "./components/Bento";
+import Mixtape from "./components/Mixtape";
 import { 
   ShieldAlert, 
   Map, 
@@ -253,22 +254,29 @@ export default function Home() {
               </ul>
             </div>
             
-            <div className="relative aspect-square rounded-[60px] bg-[#EBE7DD]/50 border border-[#9CA764]/20 overflow-hidden flex items-center justify-center p-12">
-               {/* Visual placeholder for the feature specific illustration/image */}
-               <div className="w-full h-full rounded-[40px] bg-[#9CA764]/5 border border-[#9CA764]/10 flex flex-col items-center justify-center group overflow-hidden relative">
-                  <div className="absolute inset-0 opacity-10 bg-gradient-to-br from-[#9CA764] to-transparent" />
-                  <feature.Icon className="h-32 w-32 text-[#9CA764]/20 group-hover:scale-110 transition-transform duration-700" />
-                  <p className="mt-8 text-sm uppercase tracking-widest text-[#9CA764]/40 font-bold relative z-10">Otu {feature.name.split(":")[0]} Engine</p>
-                  
-                  {/* Abstract floating botanical elements */}
-                  <div className="absolute -top-10 -left-10 w-40 h-40 bg-[#9CA764]/10 rounded-full blur-[80px]" />
-                  <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-[#9CA764]/10 rounded-full blur-[100px]" />
-               </div>
-               
-               {/* Floating elements */}
-               <div className="absolute top-10 right-10 w-24 h-24 bg-white/80 rounded-3xl shadow-xl flex items-center justify-center animate-bounce" style={{animationDuration: "3s"}}>
-                 <Dna className="text-[#9CA764] h-8 w-8" />
-               </div>
+            <div className="relative aspect-square rounded-[60px] bg-[#EBE7DD]/30 border border-[#9CA764]/20 overflow-hidden flex items-center justify-center p-6 md:p-12">
+               {feature.id === "botanical-sonification" ? (
+                 <div className="w-full h-full flex items-center justify-center">
+                    <Mixtape />
+                 </div>
+               ) : (
+                 <>
+                   <div className="w-full h-full rounded-[40px] bg-[#9CA764]/5 border border-[#9CA764]/10 flex flex-col items-center justify-center group overflow-hidden relative">
+                      <div className="absolute inset-0 opacity-10 bg-gradient-to-br from-[#9CA764] to-transparent" />
+                      <feature.Icon className="h-32 w-32 text-[#9CA764]/20 group-hover:scale-110 transition-transform duration-700" />
+                      <p className="mt-8 text-sm uppercase tracking-widest text-[#9CA764]/40 font-bold relative z-10">Otu {feature.name.split(":")[0]} Engine</p>
+                      
+                      {/* Abstract floating botanical elements */}
+                      <div className="absolute -top-10 -left-10 w-40 h-40 bg-[#9CA764]/10 rounded-full blur-[80px]" />
+                      <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-[#9CA764]/10 rounded-full blur-[100px]" />
+                   </div>
+                   
+                   {/* Floating elements */}
+                   <div className="absolute top-10 right-10 w-24 h-24 bg-white/80 rounded-3xl shadow-xl flex items-center justify-center animate-bounce" style={{animationDuration: "3s"}}>
+                     <Dna className="text-[#9CA764] h-8 w-8" />
+                   </div>
+                 </>
+               )}
             </div>
           </div>
         </section>
