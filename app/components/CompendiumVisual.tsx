@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { BookOpen, Search, Library, ChevronLeft, ChevronRight, Bookmark } from "lucide-react";
+import { BookOpen, ChevronLeft, ChevronRight, Bookmark, Share2, HelpCircle } from "lucide-react";
 
 const CompendiumVisual = () => {
   const [blink, setBlink] = useState(false);
@@ -37,7 +37,7 @@ const CompendiumVisual = () => {
           }}
         >
           {/* E-ink Header */}
-          <div className="flex justify-between items-center mb-3 border-b border-black/10 pb-1">
+          <div className="flex justify-between items-center mb-2 border-b border-black/10 pb-1">
              <span style={{ fontSize: 6, fontWeight: 900, color: "#1a1a1a" }}>LIBRARY / Ficus benghalensis</span>
              <div className="flex gap-2 items-center">
                 <Bookmark className="w-2.5 h-2.5 text-black/40" />
@@ -46,36 +46,55 @@ const CompendiumVisual = () => {
           </div>
 
           {/* MAIN PAGE CONTENT (Kindle style) */}
-          <div className="flex-1 flex flex-col gap-2 font-serif text-[#1a1a1a] overflow-hidden">
-             <h3 className="font-bold leading-none mb-1" style={{ fontSize: 13, letterSpacing: "-0.02em" }}>The Banyan Tree</h3>
-             
-             <p className="leading-tight opacity-80" style={{ fontSize: 7.5 }}>
-                Known as the "Vat-vriksha" in ancient texts, the Great Banyan is a marvel of biological architecture. 
-                Its defining feature—aerial prop roots—eventually become indistinguishable from the primary trunk.
-             </p>
-
-             {/* Illustration Placeholder (Minimalist) */}
-             <div className="w-full h-16 bg-black/5 rounded border border-black/5 flex items-center justify-center relative overflow-hidden group">
-                <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')]" />
-                <svg viewBox="0 0 100 60" className="w-full h-full opacity-60">
-                   <path d="M50 50 Q50 20 50 10 M50 25 L30 40 M50 25 L70 40 M50 15 L40 30 M50 15 L60 30" stroke="black" fill="none" strokeWidth="1" />
-                   {/* Prop roots */}
-                   <path d="M35 40 L35 55 M65 40 L65 55 M42 35 L42 55 M58 35 L58 55" stroke="black" strokeWidth="0.5" opacity="0.4" />
-                </svg>
+          <div className="flex-1 flex flex-col gap-1 font-serif text-[#1a1a1a] overflow-hidden scrollbar-hide">
+             <div className="flex justify-between items-start">
+               <h3 className="font-bold leading-none" style={{ fontSize: 13, letterSpacing: "-0.02em" }}>The Banyan Tree</h3>
+               <span className="text-[18px] transform -translate-y-1">🌳</span>
              </div>
+             
+             <div className="space-y-2 overflow-y-auto pr-1 pb-4" style={{ fontSize: '7.2px', lineHeight: '1.25' }}>
+                <p className="opacity-90">
+                   Known as the <span className="italic font-bold">"Vat-vriksha"</span> in ancient texts, the Great Banyan is a marvel of biological architecture. Its defining feature—aerial prop roots—eventually become indistinguishable from the primary trunk.
+                </p>
 
-             <p className="leading-tight opacity-70 italic" style={{ fontSize: 6.5 }}>
-                A single tree in Kolkata currently covers over 14,000 square meters, forming a literal forest from one genetic source.
-             </p>
+                {/* Detailed Spec Table */}
+                <div className="border-y border-black/5 py-1.5 my-1 grid grid-cols-2 gap-x-2 gap-y-1 font-sans font-bold text-[5.5px] uppercase opacity-60">
+                   <div>Classification: <span className="opacity-100 italic">Moraceae</span></div>
+                   <div>Toxicity: <span className="opacity-100 italic">Mild (Sap)</span></div>
+                   <div>Sunlight: <span className="opacity-100 italic">Full / Part</span></div>
+                   <div>Growth: <span className="opacity-100 italic">Evergreen</span></div>
+                </div>
+
+                <p className="opacity-80">
+                   A single tree in <span className="font-bold">Kolkata</span> currently covers over 14,000 square meters, forming a literal forest from one genetic source. It is estimated to be over 250 years old, surviving multiple cyclones and a fungal attack that required the removal of its original main trunk in 1925.
+                </p>
+
+                <p className="opacity-80">
+                   In the <span className="italic">otu vault</span>, we categorize this species as a <span className="font-bold">Tier 4 Keystone</span>. Its canopy provides a micro-climate capable of supporting 400+ species of birds and primates. The complex root structure creates a "biosphere within a biosphere."
+                </p>
+
+                <p className="opacity-70 leading-normal border-l-2 border-black/10 pl-2 italic">
+                   "If you stand still enough, the Vat-vriksha doesn't just grow around you; it absorbs the very air you breathe into its history." — Field Note #882
+                </p>
+                
+                <p className="opacity-80">
+                   Propagation requires precise humidity control during the initial 'drop' phase of the prop roots. Once they strike soil, the tree's expansion becomes exponential.
+                </p>
+             </div>
           </div>
 
           {/* E-ink Footer */}
-          <div className="mt-2 pt-2 border-t border-black/10 flex justify-between items-center">
-             <div className="flex gap-4">
-                <span style={{ fontSize: 6, fontWeight: 900, color: "#1a1a1a" }}>12% READ</span>
-                <span className="opacity-0 group-hover:opacity-100 transition-opacity" style={{ fontSize: 6, fontWeight: 800, color: "#1a1a1a" }}>Chapter 4: Aerial Roots</span>
+          <div className="mt-auto pt-2 border-t border-black/10 flex justify-between items-center bg-[#E8EAE6] z-10">
+             <div className="flex gap-3">
+                <span style={{ fontSize: 5, fontWeight: 900, color: "#1a1a1a", opacity: 0.4 }}>42% READ</span>
+                <span className="flex items-center gap-1" style={{ fontSize: 5, fontWeight: 800, color: "#1a1a1a" }}>
+                   <Share2 className="w-2 h-2" /> SHARE ARCHIVE
+                </span>
              </div>
-             <div className={`w-1 h-1 rounded-full bg-black transition-opacity duration-300 ${blink ? 'opacity-100' : 'opacity-20'}`} />
+             <div className="flex items-center gap-2">
+                <HelpCircle className="w-2 h-2 opacity-20" />
+                <div className={`w-1 h-1 rounded-full bg-black transition-opacity duration-300 ${blink ? 'opacity-100' : 'opacity-20'}`} />
+             </div>
           </div>
         </div>
 
@@ -111,9 +130,9 @@ const CompendiumVisual = () => {
         </div>
 
         {/* ─── LABEL ─── */}
-        <div className="mt-2 text-center opacity-20">
-          <p style={{ fontSize: 6, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.3em", color: "#D4DCE8" }}>
-            otu botanical compendium
+        <div className="mt-2 text-center opacity-10">
+          <p style={{ fontSize: 5, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.3em", color: "#D4DCE8" }}>
+            otu botanical compendium v.0.1
           </p>
         </div>
       </div>
