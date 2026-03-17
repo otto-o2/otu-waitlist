@@ -34,7 +34,6 @@ const features = [
       "Emotional baseline tracking — Identify 'distress chords' before visual symptoms occur, becoming a proactive plant parent."
     ],
     background: <div className="absolute inset-0 bg-gradient-to-br from-[#9CA764]/20 to-transparent" />,
-    tabColor: "#9CA764",
   },
   {
     id: "ward-mode",
@@ -52,7 +51,6 @@ const features = [
     background: <div className="absolute inset-0 bg-[#1B261B]/5 overflow-hidden">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
     </div>,
-    tabColor: "#1B261B",
   },
   {
     id: "wild-mode",
@@ -70,7 +68,6 @@ const features = [
     background: <div className="absolute inset-0 bg-[#9CA764]/5">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] opacity-10" />
     </div>,
-    tabColor: "#3D523D",
   },
   {
     id: "genesis-engine",
@@ -86,7 +83,6 @@ const features = [
       "Holographic Timeline — Scroll through your progress as a botanist, from first sprout to professional greenhouse management."
     ],
     background: <div className="absolute inset-0 bg-gradient-to-t from-[#9CA764]/20 to-transparent" />,
-    tabColor: "#2A2C38",
   },
   {
     id: "marketplace",
@@ -102,7 +98,6 @@ const features = [
       "Trade, swap, and connect — Exchange cuttings, share regional growing knowledge, and build real neighborhood relationships."
     ],
     background: <div className="absolute inset-0 bg-gradient-to-l from-[#9CA764]/20 to-transparent opacity-30" />,
-    tabColor: "#080C08",
   },
   {
     id: "compendium",
@@ -120,7 +115,6 @@ const features = [
     background: <div className="absolute inset-0 opacity-20">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cardboard-flat.png')]" />
     </div>,
-    tabColor: "#0A140D",
   },
 ];
 
@@ -229,35 +223,6 @@ export default function Home() {
           </BentoGrid>
         </div>
       </section>
-
-      {/* Sticky Tab Bar Navigation */}
-      <nav className="sticky top-0 z-[100] w-full bg-[#FDFBF7]/80 backdrop-blur-md border-y border-[#9CA764]/10 overflow-x-auto scrollbar-hide">
-        <div className="max-w-7xl mx-auto flex items-center justify-center p-2 gap-2 md:gap-4 overflow-x-auto min-w-max">
-          {features.map((feature) => (
-            <a
-              key={feature.id}
-              href={feature.href}
-              className="px-4 py-2 rounded-full flex items-center gap-2 transition-all hover:scale-105 active:scale-95 group"
-              style={{ background: `${feature.tabColor}15` }}
-            >
-              <feature.Icon 
-                className="w-3.5 h-3.5" 
-                style={{ color: feature.tabColor }} 
-              />
-              <span 
-                className="text-[10px] md:text-xs font-black uppercase tracking-widest whitespace-nowrap"
-                style={{ color: feature.tabColor }}
-              >
-                {feature.name.split(":")[0]}
-              </span>
-              <div 
-                className="w-1 h-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
-                style={{ background: feature.tabColor }}
-              />
-            </a>
-          ))}
-        </div>
-      </nav>
 
       {/* Detailed subsections for each feature */}
       {features.map((feature, index) => (
