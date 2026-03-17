@@ -195,17 +195,17 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           {/* Section Header with Content Map Details */}
           <div className="mb-32 space-y-12 text-center flex flex-col items-center">
-            <h2 className="text-4xl md:text-7xl font-serif text-[#1B261B] italic leading-tight max-w-4xl tracking-tight">
+            <h2 className="text-4xl md:text-7xl font-sans text-[#1B261B] font-bold leading-tight max-w-4xl tracking-tight">
               everything your plants have been trying <br className="hidden md:block" /> to tell you.
             </h2>
             
             <div className="w-[1px] h-20 bg-[#9CA764]/20" /> {/* Artisanal vertical divider */}
             
             <div className="space-y-6">
-              <p className="text-sm md:text-xl font-serif font-bold tracking-[0.4em] text-[#1B261B] uppercase">
+              <p className="text-sm md:text-xl font-sans font-black tracking-[0.4em] text-[#1B261B] uppercase">
                 scan it. name it. let it live a little.
               </p>
-              <p className="text-xs md:text-sm font-serif italic text-[#1B261B]/40 tracking-[0.3em] lowercase">
+              <p className="text-xs md:text-sm font-sans italic text-[#1B261B]/40 tracking-[0.3em] lowercase">
                 otu is for plants. (human errors may occur)
               </p>
             </div>
@@ -235,8 +235,8 @@ export default function Home() {
                 <feature.Icon className="h-16 w-16 text-[#9CA764]" />
               </div>
               <div className="space-y-6">
-                <h2 className="text-2xl md:text-3xl font-serif uppercase tracking-[0.3em] text-[#9CA764] font-bold">{feature.name.split(":")[0]}</h2>
-                <h3 className="text-4xl md:text-6xl font-serif text-[#1B261B] leading-tight font-medium">
+                <h2 className="text-2xl md:text-3xl font-sans uppercase tracking-[0.3em] text-[#9CA764] font-black">{feature.name.split(":")[0]}</h2>
+                <h3 className="text-4xl md:text-6xl font-sans text-[#1B261B] leading-tight font-bold">
                   {feature.name.split(":")[1] || feature.name}
                 </h3>
                 <p className="text-xl md:text-2xl text-[#1B261B]/70 font-light leading-relaxed max-w-xl">
@@ -279,22 +279,22 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-20 p-20 rounded-[80px] border border-white/5 bg-white/5">
             <div className="space-y-6">
-              <h4 className="font-serif text-3xl">Self-Learning Core</h4>
+              <h4 className="font-sans font-bold text-3xl">Self-Learning Core</h4>
               <p className="text-[#F1E8C7]/60 text-lg leading-relaxed font-light">Every scan feeds into a personalized growth engine that adapts to your skills.</p>
             </div>
             <div className="space-y-6">
-              <h4 className="font-serif text-3xl">Adaptive UX</h4>
+              <h4 className="font-sans font-bold text-3xl">Adaptive UX</h4>
               <p className="text-[#F1E8C7]/60 text-lg leading-relaxed font-light">Notifications that learn your habits. From "forgetful waterer" to "master botanist".</p>
             </div>
             <div className="space-y-6">
-              <h4 className="font-serif text-3xl">The Integrated Experience</h4>
+              <h4 className="font-sans font-bold text-3xl">The Integrated Experience</h4>
               <p className="text-[#F1E8C7]/60 text-lg leading-relaxed font-light">One centralized vault for every capture, from office ferns to rare mountain orchids.</p>
             </div>
           </div>
           
           <div className="mt-32 pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex flex-col items-center md:items-start gap-2">
-              <p className="font-serif text-2xl italic">haus der grünen</p>
+              <p className="font-sans text-2xl font-bold uppercase tracking-widest">haus der grünen</p>
               <p className="text-white/30 text-[10px] uppercase tracking-[0.4em] font-bold">© 2026 Biology 2.0 Ecosystem</p>
             </div>
             

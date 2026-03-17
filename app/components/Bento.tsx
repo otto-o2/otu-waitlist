@@ -58,7 +58,7 @@ const BentoCard = ({
         <Icon className="h-6 w-6 md:h-8 md:w-8 text-[#9CA764]" /> 
       </div>
       <div>
-        <h3 className="text-2xl md:text-3xl font-serif font-medium text-[#1B261B] tracking-tight mb-1">
+        <h3 className="text-2xl md:text-3xl font-sans font-bold text-[#1B261B] tracking-tight mb-1">
           {name.split(":")[0]}
         </h3>
         {name.includes(":") && (
