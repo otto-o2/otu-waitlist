@@ -166,32 +166,6 @@ export default function Home() {
           />
         </div>
 
-        {/* ─── SCIENTIFIC HUD OVERLAY ─── */}
-        <div className="absolute inset-0 pointer-events-none z-20 p-10 flex flex-col justify-between overflow-hidden opacity-50">
-          <div className="flex justify-between items-start">
-            <div className="flex flex-col gap-1">
-              <span className="text-[10px] font-black uppercase tracking-[0.6em] text-[#1B261B]/40">System_Status: Optimal</span>
-              <span className="text-[10px] font-black uppercase tracking-[0.6em] text-[#1B261B]/40">OS: OTU_B2.0_CORE</span>
-            </div>
-            <div className="flex flex-col items-end gap-1">
-              <span className="text-[10px] font-black uppercase tracking-[0.6em] text-[#1B261B]/40">GPS: 52° 31' 12'' N</span>
-              <div className="w-24 h-[1px] bg-[#1B261B]/10 relative overflow-hidden">
-                <div className="absolute top-0 left-0 h-full w-1/3 bg-[#9CA764]/40 animate-[shimmer_2s_infinite]" />
-              </div>
-            </div>
-          </div>
-          <div className="flex justify-between items-end">
-            <div className="flex flex-col gap-1">
-              <div className="flex items-center gap-3">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#9CA764] animate-pulse" />
-                <span className="text-[10px] font-black uppercase tracking-[0.6em] text-[#1B261B]/40">Scan_Cycle: Active</span>
-              </div>
-              <span className="text-[10px] font-black uppercase tracking-[0.6em] text-[#1B261B]/40">Initializing_Genome...</span>
-            </div>
-            <span className="text-[10px] font-black uppercase tracking-[0.6em] text-[#1B261B]/40">Ver: 0.8.2-Alpha</span>
-          </div>
-        </div>
-
         {/* Branding Title (The Majestic Format) */}
         <div className="relative z-10 text-center flex flex-col items-center gap-6 w-full max-w-[1400px]">
           <p className="text-xl md:text-2xl font-sans font-light tracking-[0.6em] text-[#1B261B]/40 ml-[0.6em] lowercase">
@@ -209,23 +183,8 @@ export default function Home() {
               width: "100%",
             }}
           >
-            Haus der<br />grünen
+            haus der<br />grünen
           </h1>
-
-          {/* ─── WAITLIST CTA: LABORATORY ENROLLMENT ─── */}
-          <div className="flex flex-col items-center gap-4 mt-8 w-full max-w-md">
-            <div className="relative w-full group">
-              <input 
-                type="email" 
-                placeholder="Email Lab Access..."
-                className="w-full bg-white/40 border border-[#1B261B]/10 rounded-2xl px-6 py-4 text-[#1B261B] placeholder:text-[#1B261B]/30 outline-none focus:border-[#9CA764] transition-all font-sans font-bold text-sm tracking-wider"
-              />
-              <button className="absolute right-2 top-2 bottom-2 bg-[#1B261B] text-[#F1E8C7] px-6 rounded-xl text-[10px] font-black uppercase tracking-[0.2em] hover:bg-[#9CA764] transition-colors">
-                Request Entry
-              </button>
-            </div>
-            <p className="text-[9px] font-sans font-black uppercase tracking-[0.4em] text-[#1B261B]/20"> Enrollment Phase: beta_v.01 / open </p>
-          </div>
         </div>
 
         {/* Scroll Indicator: Minimalist Vertical Line */}
