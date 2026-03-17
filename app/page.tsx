@@ -50,10 +50,10 @@ const features = [
       "Custom recovery protocols — Receive hour-by-hour treatment plans that adapt to your local weather and home microclimate.",
       "Vitals monitoring — Connect smart hardware or use your camera to track photosynthesis efficiency and turgor pressure."
     ],
-    background: <div className="absolute inset-0 bg-[#1B261B]/5 overflow-hidden">
+    background: <div className="absolute inset-0 bg-[#3B2B45]/20 overflow-hidden">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
     </div>,
-    color: "#1B261B", // Deep Botanical
+    color: "#211B2B", // Amethyst Night
   },
   {
     id: "wild-mode",
@@ -68,10 +68,10 @@ const features = [
       "Genomic mapping — Pin your discoveries on a private grid or share rare biome locations with the Otu community.",
       "Collector's network — Connect with local experts to trade seeds, locations, and regional soil secrets."
     ],
-    background: <div className="absolute inset-0 bg-[#9CA764]/5">
+    background: <div className="absolute inset-0 bg-[#45322B]/20">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] opacity-10" />
     </div>,
-    color: "#9CA764", // Matcha Green
+    color: "#2B1F1B", // Burnt Sienna
   },
   {
     id: "genesis-engine",
@@ -86,8 +86,8 @@ const features = [
       "Genetic Archive — Store 'digital clones' of your rarest plants, complete with their historical health records and growth curves.",
       "Holographic Timeline — Scroll through your progress as a botanist, from first sprout to professional greenhouse management."
     ],
-    background: <div className="absolute inset-0 bg-gradient-to-t from-[#9CA764]/20 to-transparent" />,
-    color: "#1B1C28", // Stellar Onyx
+    background: <div className="absolute inset-0 bg-gradient-to-t from-[#2B3545]/30 to-transparent" />,
+    color: "#1B212B", // Cobalt Midnight
   },
   {
     id: "marketplace",
@@ -102,8 +102,8 @@ const features = [
       "Book a plant-sitter IRL — Going away? Book a certified plant-sitter to visit your home and keep your babies alive.",
       "Trade, swap, and connect — Exchange cuttings, share regional growing knowledge, and build real neighborhood relationships."
     ],
-    background: <div className="absolute inset-0 bg-gradient-to-l from-[#9CA764]/20 to-transparent opacity-30" />,
-    color: "#080C08", // Marketplace Black
+    background: <div className="absolute inset-0 bg-gradient-to-l from-[#232323]/40 to-transparent opacity-30" />,
+    color: "#1A1A1A", // Polished Gunmetal
   },
   {
     id: "compendium",
@@ -119,9 +119,9 @@ const features = [
       "Written by people who really care — Verified botanists and plant parents contribute field notes and regional growing quirks."
     ],
     background: <div className="absolute inset-0 opacity-20">
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cardboard-flat.png')]" />
+      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')]" />
     </div>,
-    color: "#0F1A12", // Compendium Emerald
+    color: "#2B281B", // Aged Bronze
   },
 ];
 

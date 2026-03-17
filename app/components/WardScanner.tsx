@@ -21,13 +21,13 @@ const WardScanner = () => {
 
   return (
     <div className="relative w-full max-w-[300px] select-none" style={{ aspectRatio: "0.65/1" }}>
-      {/* ─── HARDWARE CHASSIS (Deep Botanical) ─── */}
+      {/* ─── HARDWARE CHASSIS (Night Amethyst) ─── */}
       <div
-        className="relative w-full h-full rounded-[42px] p-5 flex flex-col gap-4 overflow-hidden"
+        className="relative w-full h-full rounded-[42px] p-5 flex flex-col gap-4 overflow-hidden shadow-2xl"
         style={{
-          background: "linear-gradient(160deg, #1B261B 0%, #121A12 55%, #0A100A 100%)",
-          boxShadow: "0 60px 120px -20px rgba(5,15,5,0.75), 0 0 0 1px rgba(156,167,100,0.1), inset 0 1px 0 rgba(255,255,255,0.05), inset 0 -1px 0 rgba(0,0,0,0.5)",
-          border: "1px solid rgba(156,167,100,0.05)"
+          background: "linear-gradient(160deg, #1A1221 0%, #110B16 55%, #0A060D 100%)",
+          boxShadow: "0 60px 120px -20px rgba(10,5,15,0.8), 0 0 0 1px rgba(120,100,156,0.1), inset 0 1px 0 rgba(255,255,255,0.05), inset 0 -1px 0 rgba(0,0,0,0.5)",
+          border: "1px solid rgba(120,100,156,0.05)"
         }}
       >
         <div className="absolute inset-0 pointer-events-none opacity-[0.08]" 

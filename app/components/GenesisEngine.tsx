@@ -15,13 +15,13 @@ const GenesisEngine = () => {
 
   return (
     <div className="relative w-full max-w-[300px] select-none" style={{ aspectRatio: "0.65/1" }}>
-      {/* ─── HARDWARE CHASSIS (Purple Onyx) ─── */}
+      {/* ─── HARDWARE CHASSIS (Cobalt Midnight) ─── */}
       <div
-        className="relative w-full h-full rounded-[42px] p-5 flex flex-col gap-4 overflow-hidden"
+        className="relative w-full h-full rounded-[42px] p-5 flex flex-col gap-4 overflow-hidden shadow-2xl"
         style={{
-          background: "linear-gradient(160deg, #1B1C28 0%, #13141C 55%, #0A0B10 100%)",
-          boxShadow: "0 60px 120px -20px rgba(5,5,15,0.75), 0 0 0 1px rgba(156,167,100,0.05), inset 0 1px 0 rgba(255,255,255,0.05), inset 0 -1px 0 rgba(0,0,0,0.5)",
-          border: "1px solid rgba(156,167,100,0.03)"
+          background: "linear-gradient(160deg, #1B212B 0%, #11151C 55%, #0A0D11 100%)",
+          boxShadow: "0 60px 120px -20px rgba(5,10,20,0.8), 0 0 0 1px rgba(100,133,167,0.1), inset 0 1px 0 rgba(255,255,255,0.05), inset 0 -1px 0 rgba(0,0,0,0.5)",
+          border: "1px solid rgba(100,133,167,0.05)"
         }}
       >
         <div className="absolute inset-0 pointer-events-none opacity-[0.08]" 
@@ -32,7 +32,7 @@ const GenesisEngine = () => {
           className="relative w-full rounded-2xl overflow-hidden flex flex-col p-4"
           style={{
             aspectRatio: "1/1.1",
-            background: "linear-gradient(160deg, #0D1A20 0%, #091318 100%)",
+            background: "linear-gradient(160deg, #091218 0%, #060D12 100%)",
             border: "1px solid rgba(255,255,255,0.04)",
             boxShadow: "inset 0 2px 15px rgba(0,0,0,0.9)"
           }}
@@ -42,19 +42,19 @@ const GenesisEngine = () => {
           
           <div className="relative z-10 flex justify-between items-center mb-4">
             <div className="flex flex-col">
-              <span style={{ fontSize: 7, fontWeight: 900, color: "rgba(156,167,100,0.9)", textTransform: "uppercase", letterSpacing: "0.2em" }}>
+              <span style={{ fontSize: 7, fontWeight: 900, color: "rgba(100,133,167,0.9)", textTransform: "uppercase", letterSpacing: "0.2em" }}>
                 Genesis Vault
               </span>
               <span style={{ fontSize: 6, color: "rgba(180,200,210,0.4)", fontWeight: 700 }}>GENOMIC ARCHIVE v.42</span>
             </div>
-            <ShieldCheck className="w-3 h-3 text-[#9CA764]/40" />
+            <ShieldCheck className="w-3 h-3 text-[#6485A7]/40" />
           </div>
 
           {/* MAIN VISUAL: ANIMATED DNA STRAND */}
           <div className="flex-1 relative flex items-center justify-center overflow-hidden">
              {/* Rotating HUD Elements */}
              <div className="absolute w-40 h-40 border border-white/5 rounded-full animate-[spin_30s_linear_infinite]" />
-             <div className="absolute w-32 h-32 border border-[#9CA764]/10 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
+             <div className="absolute w-32 h-32 border border-[#6485A7]/10 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
              
              {/* Custom SVG DNA Strand */}
              <svg viewBox="0 0 100 160" className="w-20 h-32 opacity-80 overflow-visible">
@@ -70,7 +70,7 @@ const GenesisEngine = () => {
                       {/* Connector Rung */}
                       <line 
                         x1={x1} y1={y} x2={x2} y2={y} 
-                        stroke="#9CA764" 
+                        stroke="#6485A7" 
                         strokeWidth="0.5" 
                         opacity={0.3} 
                       />
@@ -78,15 +78,15 @@ const GenesisEngine = () => {
                       <circle 
                         cx={x1} cy={y} 
                         r={zIndex > 0 ? 2 : 1.2} 
-                        fill={zIndex > 0 ? "#9CA764" : "rgba(156,167,100,0.4)"} 
-                        className="shadow-[0_0_8px_#9CA764]"
+                        fill={zIndex > 0 ? "#6485A7" : "rgba(100,133,167,0.4)"} 
+                        className="shadow-[0_0_8px_#6485A7]"
                       />
                       {/* Helix Point 2 */}
                       <circle 
                         cx={x2} cy={y} 
                         r={zIndex < 0 ? 2 : 1.2} 
-                        fill={zIndex < 0 ? "#9CA764" : "rgba(156,167,100,0.4)"}
-                        className="shadow-[0_0_8px_#9CA764]"
+                        fill={zIndex < 0 ? "#6485A7" : "rgba(100,133,167,0.4)"}
+                        className="shadow-[0_0_8px_#6485A7]"
                       />
                     </g>
                   );
@@ -97,11 +97,11 @@ const GenesisEngine = () => {
           {/* Scrolling Activity Log (Simplified) */}
           <div className="flex flex-col gap-1 mt-4">
              <div className="w-full h-[2px] bg-white/5 rounded-full overflow-hidden">
-                <div className="h-full w-2/3 bg-gradient-to-r from-transparent via-[#9CA764] to-transparent animate-[shimmer_2s_infinite]" />
+                <div className="h-full w-2/3 bg-gradient-to-r from-transparent via-[#6485A7] to-transparent animate-[shimmer_2s_infinite]" />
              </div>
              <div className="flex justify-between items-center px-1">
-                <span style={{ fontSize: 5, color: "rgba(156,167,100,0.6)", fontWeight: 900 }}>RECONSTRUCTING_CELL_ARCH...</span>
-                <span style={{ fontSize: 5, color: "rgba(156,167,100,0.4)", fontWeight: 900 }}>76%</span>
+                <span style={{ fontSize: 5, color: "rgba(100,133,167,0.6)", fontWeight: 900 }}>RECONSTRUCTING_CELL_ARCH...</span>
+                <span style={{ fontSize: 5, color: "rgba(100,133,167,0.4)", fontWeight: 900 }}>76%</span>
              </div>
           </div>
 
@@ -112,7 +112,7 @@ const GenesisEngine = () => {
                    SECURE / 0.00ms LATENCY
                 </span>
              </div>
-             <Binary className="w-3 h-3 text-[#9CA764]/30" />
+             <Binary className="w-3 h-3 text-[#6485A7]/30" />
           </div>
         </div>
 

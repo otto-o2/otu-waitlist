@@ -15,13 +15,13 @@ const CompendiumVisual = () => {
 
   return (
     <div className="relative w-full max-w-[300px] select-none" style={{ aspectRatio: "0.65/1" }}>
-      {/* ─── HARDWARE CHASSIS (Royal Emerald) ─── */}
+      {/* ─── HARDWARE CHASSIS (Aged Bronze) ─── */}
       <div
-        className="relative w-full h-full rounded-[42px] p-5 flex flex-col gap-4 overflow-hidden"
+        className="relative w-full h-full rounded-[42px] p-5 flex flex-col gap-4 overflow-hidden shadow-2xl"
         style={{
-          background: "linear-gradient(160deg, #0A140D 0%, #060D07 55%, #040804 100%)",
-          boxShadow: "0 60px 120px -20px rgba(5,15,5,0.8), 0 0 0 1px rgba(156,167,100,0.1), inset 0 1px 0 rgba(255,255,255,0.05), inset 0 -1px 0 rgba(0,0,0,0.5)",
-          border: "1px solid rgba(156,167,100,0.05)"
+          background: "linear-gradient(160deg, #2B281B 0%, #1F1D14 55%, #14120D 100%)",
+          boxShadow: "0 60px 120px -20px rgba(15,10,5,0.8), 0 0 0 1px rgba(197,160,58,0.1), inset 0 1px 0 rgba(255,255,255,0.05), inset 0 -1px 0 rgba(0,0,0,0.5)",
+          border: "1px solid rgba(197,160,58,0.05)"
         }}
       >
         <div className="absolute inset-0 pointer-events-none opacity-[0.08]" 
@@ -32,7 +32,7 @@ const CompendiumVisual = () => {
           className="relative w-full rounded-2xl overflow-hidden flex flex-col p-4"
           style={{
             aspectRatio: "1/1.1",
-            background: "linear-gradient(160deg, #0A140D 0%, #060D07 100%)", // Deep Emerald
+            background: "linear-gradient(160deg, #1A1811 0%, #11100B 100%)", // Deep Bronze Black
             boxShadow: "inset 0 2px 15px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.04)"
           }}
         >
@@ -48,8 +48,8 @@ const CompendiumVisual = () => {
           {/* MAIN PAGE CONTENT (Kindle style) */}
            <div className="flex-1 flex flex-col gap-1 font-serif text-[#C5A03A] overflow-hidden scrollbar-hide">
              <div className="flex justify-between items-start">
-               <h3 className="font-bold leading-none text-[#F1E8C7]" style={{ fontSize: 13, letterSpacing: "-0.02em" }}>The Banyan Tree</h3>
-               <span className="text-[18px] transform -translate-y-1">🌳</span>
+                <h3 className="font-bold leading-none text-[#F1E8C7]" style={{ fontSize: 13, letterSpacing: "-0.02em" }}>The Banyan Tree</h3>
+                <span className="text-[18px] transform -translate-y-1">🌳</span>
              </div>
              
              <div className="space-y-2 overflow-y-auto pr-1 pb-4" style={{ fontSize: '7.2px', lineHeight: '1.25' }}>
@@ -58,7 +58,7 @@ const CompendiumVisual = () => {
                 </p>
 
                  {/* Detailed Spec Table */}
-                 <div className="border-y border-white/5 py-1.5 my-1 grid grid-cols-2 gap-x-2 gap-y-1 font-sans font-bold text-[5.5px] uppercase text-[#9CA764]">
+                 <div className="border-y border-white/5 py-1.5 my-1 grid grid-cols-2 gap-x-2 gap-y-1 font-sans font-bold text-[5.5px] uppercase text-[#D4AF37]">
                     <div>Classification: <span className="text-[#C5A03A] italic">Moraceae</span></div>
                     <div>Toxicity: <span className="text-[#C5A03A] italic">Mild (Sap)</span></div>
                     <div>Sunlight: <span className="text-[#C5A03A] italic">Full / Part</span></div>
@@ -66,25 +66,17 @@ const CompendiumVisual = () => {
                  </div>
 
                 <p className="opacity-80">
-                   A single tree in <span className="font-bold">Kolkata</span> currently covers over 14,000 square meters, forming a literal forest from one genetic source. It is estimated to be over 250 years old, surviving multiple cyclones and a fungal attack that required the removal of its original main trunk in 1925.
+                   A single tree in <span className="font-bold">Kolkata</span> currently covers over 14,000 square meters, forming a literal forest from one genetic source. It is estimated to be over 250 years old, surviving multiple cyclones and a fungal attack into 1925.
                 </p>
 
                 <p className="opacity-80">
-                   In the <span className="italic">otu vault</span>, we categorize this species as a <span className="font-bold">Tier 4 Keystone</span>. Its canopy provides a micro-climate capable of supporting 400+ species of birds and primates. The complex root structure creates a "biosphere within a biosphere."
-                </p>
-
-                <p className="opacity-70 leading-normal border-l-2 border-black/10 pl-2 italic">
-                   "If you stand still enough, the Vat-vriksha doesn't just grow around you; it absorbs the very air you breathe into its history." — Field Note #882
-                </p>
-                
-                <p className="opacity-80">
-                   Propagation requires precise humidity control during the initial 'drop' phase of the prop roots. Once they strike soil, the tree's expansion becomes exponential.
+                   In the <span className="italic">otu vault</span>, we categorize this species as a <span className="font-bold">Tier 4 Keystone</span>. Its canopy provides a micro-climate capable of supporting 400+ species of birds and primates.
                 </p>
              </div>
           </div>
 
           {/* E-ink Footer */}
-           <div className="mt-auto pt-2 border-t border-white/10 flex justify-between items-center bg-[#060D07] z-10">
+           <div className="mt-auto pt-2 border-t border-white/10 flex justify-between items-center bg-[#11100B] z-10">
              <div className="flex gap-3">
                 <span style={{ fontSize: 5, fontWeight: 900, color: "#C5A03A", opacity: 0.4 }}>42% READ</span>
                 <span className="flex items-center gap-1" style={{ fontSize: 5, fontWeight: 800, color: "#C5A03A" }}>
@@ -93,7 +85,7 @@ const CompendiumVisual = () => {
              </div>
              <div className="flex items-center gap-2">
                 <HelpCircle className="w-2 h-2 opacity-20 text-[#C5A03A]" />
-                <div className={`w-1 h-1 rounded-full bg-[#9CA764] transition-opacity duration-300 ${blink ? 'opacity-100' : 'opacity-20'}`} />
+                <div className={`w-1 h-1 rounded-full bg-[#C5A03A] transition-opacity duration-300 ${blink ? 'opacity-100' : 'opacity-20'}`} />
              </div>
           </div>
         </div>
