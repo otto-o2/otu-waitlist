@@ -336,7 +336,7 @@ const Mixtape = () => {
             </div>
             {/* Play/Pause */}
             <div 
-              className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-[4px] items-center h-4"
+              className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-[4px] items-center h-4 z-10"
               style={{ color: "rgba(210,220,235,0.28)" }}
             >
               {isPlaying ? (
