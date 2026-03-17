@@ -32,23 +32,23 @@ const CompendiumVisual = () => {
           className="relative w-full rounded-2xl overflow-hidden flex flex-col p-4"
           style={{
             aspectRatio: "1/1.1",
-            background: "#E8EAE6", // Paper-like E-ink background
-            boxShadow: "inset 0 0 20px rgba(0,0,0,0.1), 0 0 0 1px rgba(0,0,0,0.1)"
+            background: "linear-gradient(160deg, #0A140D 0%, #060C08 100%)", // Midnight Forest Green
+            boxShadow: "inset 0 2px 15px rgba(0,0,0,0.9), 0 0 0 1px rgba(255,255,255,0.04)"
           }}
         >
           {/* E-ink Header */}
           <div className="flex justify-between items-center mb-2 border-b border-black/10 pb-1">
-             <span style={{ fontSize: 6, fontWeight: 900, color: "#1a1a1a" }}>LIBRARY / Ficus benghalensis</span>
+             <span style={{ fontSize: 6, fontWeight: 900, color: "#C5A059", opacity: 0.8 }}>LIBRARY / Ficus benghalensis</span>
              <div className="flex gap-2 items-center">
-                <Bookmark className="w-2.5 h-2.5 text-black/40" />
-                <span style={{ fontSize: 6, fontWeight: 900, color: "#1a1a1a" }}>PG. 421</span>
+                <Bookmark className="w-2.5 h-2.5 text-[#C5A059]/40" />
+                <span style={{ fontSize: 6, fontWeight: 900, color: "#C5A059", opacity: 0.8 }}>PG. 421</span>
              </div>
           </div>
 
           {/* MAIN PAGE CONTENT (Kindle style) */}
-          <div className="flex-1 flex flex-col gap-1 font-serif text-[#1a1a1a] overflow-hidden scrollbar-hide">
+          <div className="flex-1 flex flex-col gap-1 font-serif text-[#C5A059] overflow-hidden scrollbar-hide">
              <div className="flex justify-between items-start">
-               <h3 className="font-bold leading-none" style={{ fontSize: 13, letterSpacing: "-0.02em" }}>The Banyan Tree</h3>
+               <h3 className="font-bold leading-none text-[#F1E8C7]" style={{ fontSize: 13, letterSpacing: "-0.02em" }}>The Banyan Tree</h3>
                <span className="text-[18px] transform -translate-y-1">🌳</span>
              </div>
              
@@ -58,11 +58,11 @@ const CompendiumVisual = () => {
                 </p>
 
                 {/* Detailed Spec Table */}
-                <div className="border-y border-black/5 py-1.5 my-1 grid grid-cols-2 gap-x-2 gap-y-1 font-sans font-bold text-[5.5px] uppercase opacity-60">
-                   <div>Classification: <span className="opacity-100 italic">Moraceae</span></div>
-                   <div>Toxicity: <span className="opacity-100 italic">Mild (Sap)</span></div>
-                   <div>Sunlight: <span className="opacity-100 italic">Full / Part</span></div>
-                   <div>Growth: <span className="opacity-100 italic">Evergreen</span></div>
+                <div className="border-y border-white/5 py-1.5 my-1 grid grid-cols-2 gap-x-2 gap-y-1 font-sans font-bold text-[5.5px] uppercase text-[#9CA764]">
+                   <div>Classification: <span className="text-[#C5A059] italic">Moraceae</span></div>
+                   <div>Toxicity: <span className="text-[#C5A059] italic">Mild (Sap)</span></div>
+                   <div>Sunlight: <span className="text-[#C5A059] italic">Full / Part</span></div>
+                   <div>Growth: <span className="text-[#C5A059] italic">Evergreen</span></div>
                 </div>
 
                 <p className="opacity-80">
@@ -84,16 +84,16 @@ const CompendiumVisual = () => {
           </div>
 
           {/* E-ink Footer */}
-          <div className="mt-auto pt-2 border-t border-black/10 flex justify-between items-center bg-[#E8EAE6] z-10">
+          <div className="mt-auto pt-2 border-t border-white/10 flex justify-between items-center bg-[#060C08] z-10">
              <div className="flex gap-3">
-                <span style={{ fontSize: 5, fontWeight: 900, color: "#1a1a1a", opacity: 0.4 }}>42% READ</span>
-                <span className="flex items-center gap-1" style={{ fontSize: 5, fontWeight: 800, color: "#1a1a1a" }}>
+                <span style={{ fontSize: 5, fontWeight: 900, color: "#C5A059", opacity: 0.4 }}>42% READ</span>
+                <span className="flex items-center gap-1" style={{ fontSize: 5, fontWeight: 800, color: "#C5A059" }}>
                    <Share2 className="w-2 h-2" /> SHARE ARCHIVE
                 </span>
              </div>
              <div className="flex items-center gap-2">
-                <HelpCircle className="w-2 h-2 opacity-20" />
-                <div className={`w-1 h-1 rounded-full bg-black transition-opacity duration-300 ${blink ? 'opacity-100' : 'opacity-20'}`} />
+                <HelpCircle className="w-2 h-2 opacity-20 text-[#C5A059]" />
+                <div className={`w-1 h-1 rounded-full bg-[#9CA764] transition-opacity duration-300 ${blink ? 'opacity-100' : 'opacity-20'}`} />
              </div>
           </div>
         </div>
