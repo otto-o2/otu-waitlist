@@ -119,7 +119,7 @@ export default function Home() {
   return (
     <main className="relative bg-[#FDFBF7]">
       {/* Hero Section */}
-      <section className="relative w-full h-screen overflow-hidden flex flex-col items-center justify-center p-8">
+      <section className="relative w-full h-screen overflow-hidden flex flex-col items-center justify-center p-6 md:p-12 lg:p-24">
         <MeshGradient
           className="w-full h-full absolute inset-0"
           colors={["#FDFBF7", "#F1E8C7", "#EBE7DD", "#9CA764"]}
@@ -139,19 +139,20 @@ export default function Home() {
         </div>
 
         {/* Branding Title (The Majestic Format) */}
-        <div className="relative z-10 text-center flex flex-col items-center gap-6">
-          <p className="text-sm md:text-base font-medium tracking-[0.5em] text-[#1B261B]/30 ml-[0.5em] lowercase">
+        <div className="relative z-10 text-center flex flex-col items-center gap-6 w-full max-w-[1400px]">
+          <p className="text-xs md:text-sm font-medium tracking-[0.5em] text-[#1B261B]/30 ml-[0.5em] lowercase">
             (otu)
           </p>
           <h1
             style={{
               fontFamily: "'Outfit', sans-serif",
               fontWeight: 900,
-              fontSize: "clamp(3rem, 15vw, 10rem)",
-              letterSpacing: "0.1em",
-              lineHeight: "0.85",
+              fontSize: "clamp(2.5rem, 11vw, 9rem)",
+              letterSpacing: "0.08em",
+              lineHeight: "1.0",
               textTransform: "uppercase",
               color: "#1B261B", 
+              width: "100%",
             }}
           >
             haus der<br />grünen
