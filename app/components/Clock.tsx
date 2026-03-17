@@ -83,17 +83,6 @@ const Clock = () => {
                    transition: 'transform 0.5s cubic-bezier(0.4, 2.08, 0.55, 0.44)'
                 }}
              />
-             {/* Second Hand (Needle Thin) */}
-             <line 
-                x1="50" y1="60" x2="50" y2="10" 
-                stroke="#9CA764" strokeWidth="0.5" 
-                style={{ 
-                   transform: `rotate(${time.getSeconds() * 6}deg)`,
-                   transformOrigin: '50% 50%',
-                   transition: 'transform 0.5s linear'
-                }}
-             />
-             
              {/* Center Cap */}
              <circle cx="50" cy="50" r="2.5" fill="#E5E7EB" />
              <circle cx="50" cy="50" r="1" fill="#4B5563" />
