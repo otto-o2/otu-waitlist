@@ -150,16 +150,16 @@ export default function Home() {
 
         {/* Branding Title (The Majestic Format) */}
         <div className="relative z-10 text-center flex flex-col items-center gap-6 w-full max-w-[1400px]">
-          <p className="text-xs md:text-sm font-medium tracking-[0.5em] text-[#1B261B]/30 ml-[0.5em] lowercase">
+          <p className="text-sm md:text-base font-medium tracking-[0.5em] text-[#1B261B]/30 ml-[0.5em] lowercase">
             (otu)
           </p>
           <h1
             style={{
               fontFamily: "'Outfit', sans-serif",
               fontWeight: 900,
-              fontSize: "clamp(2.5rem, 11vw, 9rem)",
+              fontSize: "clamp(2rem, 9.5vw, 7.5rem)",
               letterSpacing: "0.08em",
-              lineHeight: "1.0",
+              lineHeight: "1.2",
               textTransform: "uppercase",
               color: "#1B261B", 
               width: "100%",
