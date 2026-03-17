@@ -118,12 +118,25 @@ export default function Home() {
 
   // Ensure the page always opens at the top (Hero section)
   useEffect(() => {
-    // Force scroll to top on mount
-    window.scrollTo(0, 0);
-    // Handle potential browser scroll restoration
-    if ('scrollRestoration' in window.history) {
-      window.history.scrollRestoration = 'manual';
-    }
+    const forceScrollTop = () => {
+      window.scrollTo(0, 0);
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    };
+
+    // Immediate attempt
+    forceScrollTop();
+
+    // Multiple follow-up attempts to catch layout shifts
+    const timers = [10, 50, 100, 500].map(ms => setTimeout(forceScrollTop, ms));
+    
+    // Also use requestAnimationFrame
+    const rafId = requestAnimationFrame(forceScrollTop);
+
+    return () => {
+      timers.forEach(clearTimeout);
+      cancelAnimationFrame(rafId);
+    };
   }, []);
 
   return (
