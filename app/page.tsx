@@ -24,16 +24,16 @@ import {
 const features = [
   {
     id: "botanical-sonification",
-    name: "Leaf Notes: Sonification",
-    description: "Your monstera is singing. No, really. Transform bio-data into adaptive frequencies and finally understand what 'thirsty' sounds like.",
+    name: "The Chime: Living Data Compositions",
+    description: "Transform bio-data into adaptive frequencies and finally understand what your plants are saying.",
     href: "#botanical-sonification-detail",
     cta: "Listen to the leaves →",
     className: "md:col-span-1",
     Icon: Music,
     highlights: [
-      "Real-time biofeedback — Witness the literal song of your plants as we translate xylem movement into custom soundscapes.",
-      "Studio-grade fidelity — Adaptive frequencies shift with humidity and light, creating a living ambient soundtrack for your home.",
-      "Emotional baseline tracking — Identify 'distress chords' before visual symptoms occur, becoming a proactive plant parent."
+      "Gene Signatures — We translate the unique genome of your plant into a one-of-a-kind musical signature.",
+      "Vital Signs — We render biological data and the pulse of your home into an audible stream.",
+      "Playlist Gardens — Curate a private living library of sound."
     ],
     background: <div className="absolute inset-0 bg-gradient-to-br from-[#9CA764]/20 to-transparent" />,
     color: "#343D52", // iPod Slate
