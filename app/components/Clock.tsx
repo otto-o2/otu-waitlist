@@ -58,7 +58,7 @@ const Clock = () => {
              {/* Hour Numbers (24-Hour Format, Scientific White) */}
              {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23].map((n, i) => {
                 const angle = i * 15;
-                const radius = 33;
+                const radius = 38; // Increased from 33 to open up the design
                 return (
                     <text
                       key={`h-${n}`}
@@ -69,16 +69,16 @@ const Clock = () => {
                       fontWeight="700"
                       textAnchor="middle"
                       alignmentBaseline="central"
-                      style={{ fontFamily: "'Inter', sans-serif" }}
+                      style={{ fontFamily: "'Inter', sans-serif", opacity: 0.9 }}
                     >
                       {n === 0 ? "00" : n}
                     </text>
                 );
              })}
 
-             {/* Inner circle markings */}
-             <circle cx="50" cy="50" r="26" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="0.5" strokeDasharray="1 2" />
-
+             {/* Inner alert scale (Orangish Red) */}
+             <circle cx="50" cy="50" r="26" fill="none" stroke="#FF4D00" strokeWidth="0.5" strokeDasharray="1 3" style={{ opacity: 0.6 }} />
+             
              {/* ─── ROUNDED INDUSTRIAL HANDS ─── */}
              {/* Hour Hand (24-hour movement) */}
              <g style={{ 
@@ -89,18 +89,18 @@ const Clock = () => {
                 <line x1="50" y1="50" x2="50" y2="30" stroke="white" strokeWidth="3.5" strokeLinecap="round" />
              </g>
 
-             {/* Minute Hand */}
+             {/* Minute Hand (Orangish Red for Visibility) */}
              <g style={{ 
                 transform: `rotate(${time.getMinutes() * 6 + time.getSeconds() * 0.1}deg)`,
                 transformOrigin: '50% 50%',
                 transition: 'transform 0.6s cubic-bezier(0.19, 1, 0.22, 1)'
              }}>
-                <line x1="50" y1="50" x2="50" y2="12" stroke="white" strokeWidth="2.2" strokeLinecap="round" />
+                <line x1="50" y1="50" x2="50" y2="12" stroke="#FF4D00" strokeWidth="2.5" strokeLinecap="round" />
              </g>
              
              {/* Center Nut Detail */}
-             <circle cx="50" cy="50" r="3" fill="#050505" stroke="#D1C7A1" strokeWidth="0.5" />
-             <circle cx="50" cy="50" r="1.2" fill="#D1C7A1" />
+             <circle cx="50" cy="50" r="3" fill="#050505" stroke="#FF4D00" strokeWidth="0.5" />
+             <circle cx="50" cy="50" r="1.2" fill="#FF4D00" />
           </svg>
         </div>
       </div>
