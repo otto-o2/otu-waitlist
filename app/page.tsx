@@ -1,5 +1,5 @@
 "use client";
-// Trigger build: Thematic color restore - version 1.0.1
+// Deployment Trigger: Force refresh thematic updates - v1.0.2
 
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
