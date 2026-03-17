@@ -31,7 +31,7 @@ const BentoCard = ({
   description,
   href,
   cta,
-  color, // New prop
+  color,
   ...props
 }: {
   name: string;
@@ -43,67 +43,85 @@ const BentoCard = ({
   cta: string;
   color?: string;
   [key: string]: any;
-}) => (
-  <a
-    key={name}
-    href={href}
-    className={cn(
-      "group relative col-span-3 flex flex-col justify-between overflow-hidden rounded-[2.5rem]",
-      "bg-[#F1E8C7] border border-[#9CA764]/20", // Milky Honey background
-      "transition-all duration-300 hover:shadow-xl hover:translate-y-[-4px]",
-      className,
-    )}
-  >
-    <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
-      {background}
-    </div>
-    
-    <div className="z-10 flex flex-col gap-4 p-8 md:p-10 transition-all duration-300">
-      <div 
-        className="p-3 rounded-2xl w-fit"
-        style={{ backgroundColor: color ? `${color}15` : '#9CA76410' }} // Subtle tint
-      >
-        <Icon 
-          className="h-6 w-6 md:h-8 md:w-8" 
-          style={{ color: color || '#9CA764' }} 
-        /> 
-      </div>
-      <div>
-        <h3 className="text-2xl md:text-3xl font-sans font-bold text-[#1B261B] tracking-tight mb-1">
-          {name.split(":")[0]}
-        </h3>
-        {name.includes(":") && (
-          <p 
-            className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold mb-3"
-            style={{ color: color || '#9CA764' }}
-          >
-            {name.split(":")[1].trim()}
-          </p>
-        )}
-        <p className="max-w-md text-[#1B261B]/60 font-normal leading-relaxed text-base md:text-lg">
-          {description}
-        </p>
-      </div>
-    </div>
+}) => {
+  const isLight = color === "#9CA764"; // Matcha specifically is medium-light
+  const textColor = isLight ? "#1B261B" : "#F1E8C7";
+  const subTextColor = isLight ? "rgba(27, 38, 27, 0.6)" : "rgba(253, 251, 247, 0.6)";
 
-    <div
+  return (
+    <a
+      key={name}
+      href={href}
       className={cn(
-        "absolute bottom-0 flex w-full flex-row items-center p-8 opacity-100 transition-all duration-300",
+        "group relative col-span-3 flex flex-col justify-between overflow-hidden rounded-[2.5rem]",
+        "transition-all duration-500 hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.5)] hover:translate-y-[-8px]",
+        "border border-white/5",
+        className,
       )}
+      style={{ 
+        backgroundColor: color || '#2B2D3A',
+        boxShadow: `0 20px 40px -15px ${color}40, inset 0 1px 1px rgba(255,255,255,0.05)`
+      }}
     >
-      <a 
-        href={href}
-        className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest transition-colors"
-        style={{ color: color || '#9CA764' }}
+      {/* Background Graphic Overlay */}
+      <div className="absolute inset-0 z-0 opacity-20 pointer-events-none group-hover:opacity-30 transition-opacity">
+        {background}
+      </div>
+
+      {/* Subtle Inner Glow */}
+      <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-white/5 to-transparent z-0" />
+      
+      <div className="z-10 flex flex-col gap-5 p-10 md:p-12 transition-all duration-300">
+        <div 
+          className="p-4 rounded-2xl w-fit backdrop-blur-md border border-white/10"
+          style={{ 
+            background: isLight ? 'rgba(0,0,0,0.03)' : 'rgba(255,255,255,0.03)',
+            boxShadow: '0 8px 32px rgba(0,0,0,0.1)' 
+          }}
+        >
+          <Icon 
+            className="h-8 w-8 md:h-10 md:w-10" 
+            style={{ color: textColor }} 
+          /> 
+        </div>
+        
+        <div className="space-y-3">
+          {name.includes(":") && (
+            <p 
+              className="text-[10px] md:text-xs uppercase tracking-[0.4em] font-black opacity-60 mb-1"
+              style={{ color: textColor }}
+            >
+              {name.split(":")[1].trim()}
+            </p>
+          )}
+          <h3 className="text-3xl md:text-4xl font-sans font-bold tracking-tighter leading-tight drop-shadow-sm" style={{ color: textColor }}>
+            {name.split(":")[0]}
+          </h3>
+          <p className="max-w-md font-medium leading-relaxed text-base md:text-lg" style={{ color: subTextColor }}>
+            {description}
+          </p>
+        </div>
+      </div>
+
+      <div
+        className={cn(
+          "z-10 flex w-full flex-row items-center p-10 md:p-12 transition-all duration-300",
+        )}
       >
-        {cta}
-        <ArrowRightIcon className="h-5 w-5" />
-      </a>
-    </div>
-    
-    {/* Subtle gloss effect */}
-    <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-white/[0.05]" />
-  </a>
-);
+        <div 
+          className="flex items-center gap-3 text-sm font-black uppercase tracking-[0.3em] group-hover:translate-x-2 transition-transform"
+          style={{ color: textColor }}
+        >
+          {cta}
+          <ArrowRightIcon className="h-6 w-6" style={{ color: isLight ? "#1B261B" : "#9CA764" }} />
+        </div>
+      </div>
+      
+      {/* Premium Gloss Overlays */}
+      <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-700 group-hover:bg-white/[0.03]" />
+      <div className="pointer-events-none absolute -inset-[100%] bg-gradient-to-tr from-transparent via-white/5 to-transparent rotate-45 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
+    </a>
+  );
+};
 
 export { BentoCard, BentoGrid };

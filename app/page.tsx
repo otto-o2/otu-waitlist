@@ -34,7 +34,7 @@ const features = [
       "Emotional baseline tracking — Identify 'distress chords' before visual symptoms occur, becoming a proactive plant parent."
     ],
     background: <div className="absolute inset-0 bg-gradient-to-br from-[#9CA764]/20 to-transparent" />,
-    color: "#343D52", // Slate/Indigo for iPod
+    color: "#343D52", // iPod Slate
   },
   {
     id: "ward-mode",
