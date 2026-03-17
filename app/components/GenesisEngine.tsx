@@ -15,13 +15,13 @@ const GenesisEngine = () => {
 
   return (
     <div className="relative w-full max-w-[300px] select-none" style={{ aspectRatio: "0.65/1" }}>
-      {/* ─── HARDWARE CHASSIS (Obsidian Carbon) ─── */}
+      {/* ─── HARDWARE CHASSIS (Stellar Onyx) ─── */}
       <div
         className="relative w-full h-full rounded-[42px] p-5 flex flex-col gap-4 overflow-hidden"
         style={{
-          background: "linear-gradient(160deg, #1C1C1E 0%, #141415 55%, #0E0E0F 100%)",
-          boxShadow: "0 60px 120px -20px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.06), inset 0 1px 0 rgba(255,255,255,0.10), inset 0 -1px 0 rgba(0,0,0,0.5)",
-          border: "1px solid rgba(255,255,255,0.05)"
+          background: "linear-gradient(160deg, #0F0F12 0%, #070709 55%, #020203 100%)",
+          boxShadow: "0 60px 120px -20px rgba(0,0,0,0.9), 0 0 0 1px rgba(255,255,255,0.06), inset 0 1px 0 rgba(255,255,255,0.08), inset 0 -1px 0 rgba(0,0,0,0.6)",
+          border: "1px solid rgba(255,255,255,0.03)"
         }}
       >
         <div className="absolute inset-0 pointer-events-none opacity-[0.08]" 

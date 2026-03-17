@@ -50,13 +50,13 @@ const MarketplaceVisual = () => {
 
   return (
     <div className="relative w-full max-w-[300px] select-none" style={{ aspectRatio: "0.65/1" }}>
-      {/* ─── HARDWARE CHASSIS (Dark Hematite) ─── */}
+      {/* ─── HARDWARE CHASSIS (Deep Charcoal) ─── */}
       <div
         className="relative w-full h-full rounded-[42px] p-5 flex flex-col gap-4 overflow-hidden"
         style={{
-          background: "linear-gradient(160deg, #262A2E 0%, #181B1E 55%, #0F1113 100%)",
-          boxShadow: "0 60px 120px -20px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.06), inset 0 1px 0 rgba(255,255,255,0.10), inset 0 -1px 0 rgba(0,0,0,0.5)",
-          border: "1px solid rgba(255,255,255,0.05)"
+          background: "linear-gradient(160deg, #121215 0%, #09090B 55%, #050507 100%)",
+          boxShadow: "0 60px 120px -20px rgba(0,0,0,0.9), 0 0 0 1px rgba(255,255,255,0.06), inset 0 1px 0 rgba(255,255,255,0.08), inset 0 -1px 0 rgba(0,0,0,0.6)",
+          border: "1px solid rgba(255,255,255,0.03)"
         }}
       >
         <div className="absolute inset-0 pointer-events-none opacity-[0.08]" 
@@ -74,8 +74,8 @@ const MarketplaceVisual = () => {
         >
           {/* Supermarket HUD header */}
           <div className="flex justify-between items-center mb-2 px-1">
-             <span style={{ fontSize: 7, fontWeight: 900, color: "#FFB347", textTransform: "uppercase" }}>TERM-MKT_POS_04</span>
-             <ReceiptText className="w-3 h-3 text-[#FFB347]/40" />
+             <span style={{ fontSize: 7, fontWeight: 900, color: "#10B981", textTransform: "uppercase" }}>TERM-MKT_POS_04</span>
+             <ReceiptText className="w-3 h-3 text-[#10B981]/40" />
           </div>
 
           {/* MAIN CHECKOUT AREA */}
@@ -84,15 +84,15 @@ const MarketplaceVisual = () => {
              {/* CURRENT ITEM DETECTION (Above the list) */}
              <div className="bg-white/5 p-3 rounded-lg border border-white/5 relative overflow-hidden group">
                 {/* Horizontal Scan Beam */}
-                <div className="absolute top-0 left-0 w-full h-[1px] bg-[#FFB347] opacity-40 animate-[pos_scan_3s_linear_infinite]" />
+                <div className="absolute top-0 left-0 w-full h-[1px] bg-[#10B981] opacity-40 animate-[pos_scan_3s_linear_infinite]" />
                 
                 <div className="flex flex-col">
-                   <span style={{ fontSize: 5, color: "rgba(255,179,71,0.6)", fontWeight: 900 }}>SCAN_MODE: ACTIVE</span>
+                   <span style={{ fontSize: 5, color: "rgba(16,185,129,0.6)", fontWeight: 900 }}>SCAN_MODE: ACTIVE</span>
                    <span className="text-white font-black tracking-tighter" style={{ fontSize: 13 }}>{catalog[scanIndex].name}</span>
                 </div>
                 <div className="flex justify-between items-end mt-1">
                    <span style={{ fontSize: 6, fontWeight: 900, color: "white", opacity: 0.3 }}>{catalog[scanIndex].category}</span>
-                   <span className="text-[#FFB347] font-black" style={{ fontSize: 12 }}>${catalog[scanIndex].price}</span>
+                   <span className="text-[#10B981] font-black" style={{ fontSize: 12 }}>${catalog[scanIndex].price}</span>
                 </div>
              </div>
 
@@ -117,20 +117,20 @@ const MarketplaceVisual = () => {
              </div>
 
              {/* TOTAL SUMMARY */}
-             <div className="mt-2 bg-[#FFB347]/10 rounded-md p-2.5 flex justify-between items-center border border-[#FFB347]/20">
+             <div className="mt-2 bg-[#10B981]/10 rounded-md p-2.5 flex justify-between items-center border border-[#10B981]/20">
                 <div className="flex flex-col leading-none">
                    <span style={{ fontSize: 6, fontWeight: 900, color: "white", opacity: 0.4 }}>BALANCE_DUE</span>
                    <span className="text-white font-black" style={{ fontSize: 13 }}>
                       ${receipt.reduce((acc, curr) => acc + parseFloat(curr.price), 0).toFixed(2)}
                    </span>
                 </div>
-                <Printer className="w-4 h-4 text-[#FFB347]" opacity={0.4} />
+                <Printer className="w-4 h-4 text-[#10B981]" opacity={0.4} />
              </div>
           </div>
 
           <div className="flex justify-between items-center mt-3 px-1">
              <div className="flex gap-1.5">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#FFB347] animate-pulse" />
+                <div className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse" />
                 <span style={{ fontSize: 6, fontWeight: 900, color: "rgba(255,255,255,0.2)" }}>ENCRYPTION: AES-256</span>
              </div>
              <span style={{ fontSize: 6, fontWeight: 900, color: "rgba(255,255,255,0.2)" }}>OTU_SYNC_VERIFIED</span>
@@ -151,10 +151,10 @@ const MarketplaceVisual = () => {
               <div className="w-16 h-16 rounded-full p-1" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.1), transparent)" }}>
                  <div className="w-full h-full rounded-full flex items-center justify-center" 
                    style={{ 
-                     background: "linear-gradient(135deg, #1E2228 0%, #0F1113 100%)",
+                     background: "linear-gradient(135deg, #121215 0%, #08080A 100%)",
                      boxShadow: "0 8px 16px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.07)"
                    }}>
-                    <ArrowRightLeft className="w-6 h-6 text-[#FFB347]" />
+                    <ArrowRightLeft className="w-6 h-6 text-[#10B981]" />
                  </div>
               </div>
            </div>

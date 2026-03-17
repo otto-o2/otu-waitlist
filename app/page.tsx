@@ -145,30 +145,30 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="relative bg-[#FDFBF7]">
+    <main className="relative bg-[#050608]">
       {/* Hero Section */}
       <section className="relative w-full h-screen overflow-hidden flex flex-col items-center justify-center p-6 md:p-12 lg:p-24">
         <MeshGradient
           className="w-full h-full absolute inset-0"
-          colors={["#FDFBF7", "#F1E8C7", "#EBE7DD", "#9CA764"]}
+          colors={["#050608", "#0A0C10", "#0D1A14", "#1B221B"]}
           speed={speed}
         />
 
         {/* Lighting overlay effects */}
         <div className="absolute inset-0 pointer-events-none opacity-40">
           <div
-            className="absolute top-1/4 left-1/3 w-96 h-96 bg-white/40 rounded-full blur-[120px] animate-pulse"
+            className="absolute top-1/4 left-1/3 w-96 h-96 bg-[#9CA764]/10 rounded-full blur-[120px] animate-pulse"
             style={{ animationDuration: `${6 / speed}s` }}
           />
           <div
-            className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-[#F1E8C7]/30 rounded-full blur-[100px] animate-pulse"
+            className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-[#F1E8C7]/5 rounded-full blur-[100px] animate-pulse"
             style={{ animationDuration: `${4 / speed}s`, animationDelay: "2s" }}
           />
         </div>
 
         {/* Branding Title (The Majestic Format) */}
         <div className="relative z-10 text-center flex flex-col items-center gap-6 w-full max-w-[1400px]">
-          <p className="text-xl md:text-2xl font-sans font-light tracking-[0.6em] text-[#1B261B]/40 ml-[0.6em] lowercase">
+          <p className="text-xl md:text-2xl font-sans font-light tracking-[0.6em] text-white/20 ml-[0.6em] lowercase">
             (otu)
           </p>
           <h1
@@ -179,7 +179,7 @@ export default function Home() {
               letterSpacing: "0.08em",
               lineHeight: "1.2",
               textTransform: "uppercase",
-              color: "#1B261B", 
+              color: "white", 
               width: "100%",
             }}
           >
@@ -189,28 +189,28 @@ export default function Home() {
 
         {/* Scroll Indicator: Minimalist Vertical Line */}
         <div className="absolute bottom-12 flex flex-col items-center group">
-          <div className="w-[1px] h-20 bg-[#1B261B]/10 relative overflow-hidden rounded-full">
-            <div className="absolute top-0 left-0 w-full h-1/2 bg-[#9CA764]/40 animate-scroll-line" />
+          <div className="w-[1px] h-20 bg-white/10 relative overflow-hidden rounded-full">
+            <div className="absolute top-0 left-0 w-full h-1/2 bg-[#9CA764]/20 animate-scroll-line" />
           </div>
         </div>
       </section>
 
       {/* Bento Grid Section */}
-      <section className="relative z-20 px-6 py-32 md:px-12 lg:px-24 bg-[#FDFBF7]">
+      <section className="relative z-20 px-6 py-32 md:px-12 lg:px-24 bg-[#050608]">
         <div className="max-w-7xl mx-auto">
           {/* Section Header with Content Map Details */}
           <div className="mb-32 space-y-12 text-center flex flex-col items-center">
-            <h2 className="text-4xl md:text-7xl font-sans text-[#1B261B] font-bold leading-tight max-w-4xl tracking-tight">
+            <h2 className="text-4xl md:text-7xl font-sans text-white font-bold leading-tight max-w-4xl tracking-tight">
               everything your plants have been trying <br className="hidden md:block" /> to tell you.
             </h2>
             
-            <div className="w-[1px] h-20 bg-[#9CA764]/20" /> {/* Artisanal vertical divider */}
+            <div className="w-[1px] h-20 bg-white/10" /> {/* Artisanal vertical divider */}
             
             <div className="space-y-4"> {/* Tightened spacing */}
-              <p className="text-[14px] md:text-lg font-sans font-black tracking-[0.5em] text-[#9CA764] uppercase">
+              <p className="text-[14px] md:text-lg font-sans font-black tracking-[0.5em] text-[#9CA764] uppercase opacity-60">
                 otu plant intelligence
               </p>
-              <p className="text-lg md:text-4xl font-sans font-black tracking-[0.3em] text-[#1B261B] uppercase">
+              <p className="text-lg md:text-4xl font-sans font-black tracking-[0.3em] text-white uppercase">
                 scan it. name it. let it live a little.
               </p>
             </div>
@@ -230,29 +230,29 @@ export default function Home() {
           key={feature.id} 
           id={feature.href.replace("#", "")}
           className={cn(
-            "min-h-screen flex items-center px-6 py-24 md:px-12 lg:px-24 border-t border-[#9CA764]/10",
-            index % 2 === 0 ? "bg-[#FDFBF7]" : "bg-[#F1E8C7]/30"
+            "min-h-screen flex items-center px-6 py-24 md:px-12 lg:px-24 border-t border-white/5",
+            index % 2 === 0 ? "bg-[#050608]" : "bg-[#08090B]"
           )}
         >
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="space-y-12">
-              <div className="bg-[#9CA764]/10 p-6 rounded-3xl w-fit">
-                <feature.Icon className="h-16 w-16 text-[#9CA764]" />
+              <div className="bg-white/5 p-6 rounded-3xl w-fit border border-white/5">
+                <feature.Icon className="h-16 w-16 text-[#9CA764] opacity-80" />
               </div>
               <div className="space-y-6">
-                <h2 className="text-2xl md:text-3xl font-sans uppercase tracking-[0.3em] text-[#9CA764] font-black">{feature.name.split(":")[0]}</h2>
-                <h3 className="text-4xl md:text-6xl font-sans text-[#1B261B] leading-tight font-bold">
+                <h2 className="text-2xl md:text-3xl font-sans uppercase tracking-[0.3em] text-[#9CA764] font-black opacity-40">{feature.name.split(":")[0]}</h2>
+                <h3 className="text-4xl md:text-6xl font-sans text-white leading-tight font-bold">
                   {feature.name.split(":")[1] || feature.name}
                 </h3>
-                <p className="text-xl md:text-2xl text-[#1B261B]/70 font-normal leading-relaxed max-w-xl">
+                <p className="text-xl md:text-2xl text-white/50 font-normal leading-relaxed max-w-xl">
                   {feature.description}
                 </p>
               </div>
               <ul className="space-y-6">
                 {feature.highlights.map((highlight, i) => (
                   <li key={i} className="flex gap-4 items-start">
-                    <div className="h-2 w-2 rounded-full bg-[#9CA764] mt-3 shrink-0" />
-                    <p className="text-lg text-[#1B261B]/60 font-normal leading-relaxed">{highlight}</p>
+                    <div className="h-2 w-2 rounded-full bg-[#9CA764] mt-3 shrink-0 opacity-40" />
+                    <p className="text-lg text-white/30 font-normal leading-relaxed group-hover:text-white/50 transition-colors">{highlight}</p>
                   </li>
                 ))}
               </ul>
@@ -284,20 +284,20 @@ export default function Home() {
                     <CompendiumVisual />
                  </div>
                ) : (
-                 <div className="relative aspect-square rounded-[60px] bg-[#EBE7DD]/30 border border-[#9CA764]/20 overflow-hidden flex items-center justify-center p-6 md:p-12 w-full">
-                   <div className="w-full h-full rounded-[40px] bg-[#9CA764]/5 border border-[#9CA764]/10 flex flex-col items-center justify-center group overflow-hidden relative">
+                 <div className="relative aspect-square rounded-[60px] bg-white/[0.02] border border-white/5 overflow-hidden flex items-center justify-center p-6 md:p-12 w-full">
+                   <div className="w-full h-full rounded-[40px] bg-white/[0.01] border border-white/5 flex flex-col items-center justify-center group overflow-hidden relative">
                       <div className="absolute inset-0 opacity-10 bg-gradient-to-br from-[#9CA764] to-transparent" />
-                      <feature.Icon className="h-32 w-32 text-[#9CA764]/20 group-hover:scale-110 transition-transform duration-700" />
-                      <p className="mt-8 text-sm uppercase tracking-widest text-[#9CA764]/40 font-bold relative z-10">Otu {feature.name.split(":")[0]} Engine</p>
+                      <feature.Icon className="h-32 w-32 text-[#9CA764]/10 group-hover:scale-110 transition-transform duration-700" />
+                      <p className="mt-8 text-sm uppercase tracking-widest text-white/10 font-bold relative z-10">Otu {feature.name.split(":")[0]} Engine</p>
                       
                       {/* Abstract floating botanical elements */}
-                      <div className="absolute -top-10 -left-10 w-40 h-40 bg-[#9CA764]/10 rounded-full blur-[80px]" />
-                      <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-[#9CA764]/10 rounded-full blur-[100px]" />
+                      <div className="absolute -top-10 -left-10 w-40 h-40 bg-[#9CA764]/5 rounded-full blur-[80px]" />
+                      <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-[#9CA764]/5 rounded-full blur-[100px]" />
                    </div>
                    
                    {/* Floating elements */}
-                   <div className="absolute top-10 right-10 w-24 h-24 bg-white/80 rounded-3xl shadow-xl flex items-center justify-center animate-bounce" style={{animationDuration: "3s"}}>
-                     <Dna className="text-[#9CA764] h-8 w-8" />
+                   <div className="absolute top-10 right-10 w-24 h-24 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 shadow-2xl flex items-center justify-center animate-bounce" style={{animationDuration: "3s"}}>
+                     <Dna className="text-[#9CA764] h-8 w-8 opacity-40" />
                    </div>
                  </div>
                )}
@@ -307,37 +307,37 @@ export default function Home() {
       ))}
 
       {/* Footer / Core Stats */}
-      <section className="px-6 py-32 md:px-12 lg:px-24 bg-[#1B261B] text-[#F1E8C7]">
+      <section className="px-6 py-32 md:px-12 lg:px-24 bg-[#050608] text-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-20 p-20 rounded-[80px] border border-white/5 bg-white/5">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-20 p-20 rounded-[80px] border border-white/5 bg-white/[0.02]">
             <div className="space-y-6">
               <h4 className="font-sans font-bold text-3xl">Self-Learning Core</h4>
-              <p className="text-[#F1E8C7]/60 text-lg leading-relaxed font-normal">Every scan feeds into a personalized growth engine that adapts to your skills.</p>
+              <p className="text-white/30 text-lg leading-relaxed font-normal">Every scan feeds into a personalized growth engine that adapts to your skills.</p>
             </div>
             <div className="space-y-6">
               <h4 className="font-sans font-bold text-3xl">Adaptive UX</h4>
-              <p className="text-[#F1E8C7]/60 text-lg leading-relaxed font-normal">Notifications that learn your habits. From "forgetful waterer" to "master botanist".</p>
+              <p className="text-white/30 text-lg leading-relaxed font-normal">Notifications that learn your habits. From "forgetful waterer" to "master botanist".</p>
             </div>
             <div className="space-y-6">
               <h4 className="font-sans font-bold text-3xl">The Integrated Experience</h4>
-              <p className="text-[#F1E8C7]/60 text-lg leading-relaxed font-normal">One centralized vault for every capture, from office ferns to rare mountain orchids.</p>
+              <p className="text-white/30 text-lg leading-relaxed font-normal">One centralized vault for every capture, from office ferns to rare mountain orchids.</p>
             </div>
           </div>
           
           <div className="mt-32 pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex flex-col items-center md:items-start gap-2">
-              <p className="font-sans text-2xl font-bold uppercase tracking-widest">haus der grünen</p>
-              <p className="text-white/30 text-[10px] uppercase tracking-[0.4em] font-bold">© 2026 Biology 2.0 Ecosystem</p>
+              <p className="font-sans text-2xl font-bold uppercase tracking-widest opacity-80">haus der grünen</p>
+              <p className="text-white/10 text-[10px] uppercase tracking-[0.4em] font-bold">© 2026 Biology 2.0 Ecosystem</p>
             </div>
             
             <button 
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="px-8 py-3 rounded-full border border-white/10 hover:bg-white/5 transition-colors text-xs uppercase tracking-widest font-bold"
+              className="px-8 py-3 rounded-full border border-white/10 hover:bg-white/5 transition-colors text-xs uppercase tracking-widest font-bold text-white/40"
             >
               Back to Top
             </button>
 
-            <p className="text-white/30 text-[10px] uppercase tracking-[0.3em] font-medium text-center md:text-right">
+            <p className="text-white/10 text-[10px] uppercase tracking-[0.3em] font-medium text-center md:text-right">
               Biology 2.0 Ecosystem <br className="md:hidden" />
               <span className="opacity-50">(do not seek life advice)</span>
             </p>
