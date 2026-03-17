@@ -138,45 +138,47 @@ export default function Home() {
           />
         </div>
 
-        {/* Content */}
-        <div className="relative z-10 text-center flex flex-col items-center gap-8 max-w-4xl">
-          <div className="space-y-4">
-            <p className="text-[10px] md:text-xs font-bold tracking-[0.6em] text-[#9CA764] uppercase bg-[#9CA764]/5 px-6 py-2 rounded-full border border-[#9CA764]/10">
-              plant intelligence
-            </p>
-            <h1
-              className="font-serif italic text-2xl md:text-3xl text-[#1B261B]/60"
-            >
-              (otu)
-            </h1>
+        {/* Content Container */}
+        <div className="relative z-10 text-center flex flex-col items-center gap-16 max-w-5xl">
+          {/* Top Description Lines */}
+          <div className="space-y-12 flex flex-col items-center">
+            <h2 className="text-4xl md:text-6xl font-serif text-[#1B261B] italic leading-tight tracking-tight max-w-4xl">
+              everything your plants have been trying <br className="hidden md:block" /> to tell you.
+            </h2>
+            
+            <div className="w-[1px] h-16 bg-[#9CA764]/30" /> {/* Elegant vertical line */}
+            
+            <div className="space-y-4">
+              <p className="text-sm md:text-lg font-bold tracking-[0.4em] text-[#1B261B] uppercase">
+                scan it. name it. let it live a little.
+              </p>
+              <p className="text-xs md:text-sm font-serif italic text-[#1B261B]/40 tracking-[0.3em] lowercase">
+                otu is for plants. (human errors may occur)
+              </p>
+            </div>
           </div>
 
-          <div className="space-y-6">
-            <h2
+          <div className="w-24 h-[1px] bg-[#9CA764]/20" />
+
+          {/* Branding (How it was before) */}
+          <div className="flex flex-col items-center gap-4">
+            <p className="text-xs md:text-sm font-medium tracking-[0.4em] text-[#1B261B]/40 ml-[0.4em] lowercase">
+              (otu)
+            </p>
+            <h1
               style={{
                 fontFamily: "'Outfit', sans-serif",
                 fontWeight: 800,
-                fontSize: "clamp(2.5rem, 12vw, 8rem)",
-                letterSpacing: "0.1em",
-                lineHeight: "0.9",
+                fontSize: "clamp(2rem, 8vw, 5rem)",
+                letterSpacing: "0.2em",
+                lineHeight: "1.1",
                 textTransform: "uppercase",
                 color: "#1B261B", 
+                marginLeft: "0.2em", 
               }}
             >
               haus der<br />grünen
-            </h2>
-            <h3 className="text-xl md:text-4xl font-serif text-[#1B261B] italic max-w-2xl mx-auto leading-tight">
-              everything your plants have been trying to tell you.
-            </h3>
-          </div>
-
-          <div className="space-y-2 mt-8">
-            <p className="text-sm md:text-base font-medium tracking-[0.2em] text-[#1B261B] uppercase">
-              scan it. name it. let it live a little.
-            </p>
-            <p className="text-[10px] md:text-xs font-serif italic text-[#1B261B]/40 tracking-widest">
-              otu is for plants. (human errors may occur)
-            </p>
+            </h1>
           </div>
         </div>
 
