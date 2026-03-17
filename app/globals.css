@@ -4,9 +4,9 @@
 
 :root {
   --matcha: #9CA764;
-  --obsidian: #050608;
-  --ivory: #FDFBF7;
-  --charcoal: #0D0F12;
+  --milky-honey: #F1E8C7;
+  --deep-botanical: #1B261B;
+  --warm-white: #FDFBF7;
 }
 
 *, *::before, *::after {
@@ -22,8 +22,8 @@ html {
 body {
   width: 100%;
   min-height: 100vh;
-  background: var(--obsidian);
-  color: var(--ivory);
+  background: var(--warm-white);
+  color: var(--deep-botanical);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -47,7 +47,7 @@ p, span, a, li, button, input, textarea, select, label, blockquote, figcaption, 
 
 ::selection {
   background: var(--matcha);
-  color: var(--obsidian);
+  color: var(--warm-white);
 }
 
 /* Custom scrollbar */
@@ -56,17 +56,16 @@ p, span, a, li, button, input, textarea, select, label, blockquote, figcaption, 
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--obsidian);
+  background: var(--warm-white);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: white;
-  opacity: 0.1;
+  background: var(--matcha);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--matcha);
+  background: var(--deep-botanical);
 }
 
 @keyframes scroll-line {

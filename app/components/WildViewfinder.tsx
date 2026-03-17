@@ -45,7 +45,7 @@ const WildViewfinder = () => {
     const currentAngle = (time / 40) % 360;
     setAngle(currentAngle);
 
-    setTargets((prev: RadarTarget[]) => prev.map((t: RadarTarget) => {
+    setTargets(prev => prev.map(t => {
       // 1. Update Position (Simulate slight movement/drift)
       let newX = t.x + t.driftX;
       let newY = t.y + t.driftY;
@@ -109,7 +109,7 @@ const WildViewfinder = () => {
         newStr += chars.charAt(Math.floor(Math.random() * chars.length));
       }
       setDnaFeed(newStr);
-      setCoordinates((prev: { lat: number; lng: number }) => ({
+      setCoordinates(prev => ({
         lat: prev.lat + (Math.random() - 0.5) * 0.00002,
         lng: prev.lng + (Math.random() - 0.5) * 0.00002
       }));
@@ -119,63 +119,52 @@ const WildViewfinder = () => {
 
   return (
     <div className="relative w-full max-w-[300px] select-none" style={{ aspectRatio: "0.65/1" }}>
-      {/* ─── HARDWARE CHASSIS (Moss Onyx) ─── */}
+      {/* ─── HARDWARE CHASSIS (Midnight Navy) ─── */}
       <div
         className="relative w-full h-full rounded-[42px] p-5 flex flex-col gap-4 overflow-hidden"
         style={{
-          background: "linear-gradient(160deg, #121512 0%, #080A08 55%, #040504 100%)",
-          boxShadow: "0 60px 120px -20px rgba(0,0,0,0.9), 0 0 0 1px rgba(255,255,255,0.06), inset 0 1px 0 rgba(255,255,255,0.08), inset 0 -1px 0 rgba(0,0,0,0.6)",
-          border: "1px solid rgba(255,255,255,0.03)"
+          background: "linear-gradient(160deg, #1B223A 0%, #111624 55%, #0A0D15 100%)",
+          boxShadow: "0 60px 120px -20px rgba(5,5,25,0.75), 0 0 0 1px rgba(255,255,255,0.06), inset 0 1px 0 rgba(255,255,255,0.10), inset 0 -1px 0 rgba(0,0,0,0.5)",
+          border: "1px solid rgba(255,255,255,0.05)"
         }}
       >
         <div className="absolute inset-0 pointer-events-none opacity-[0.08]" 
           style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/brushed-alum-dark.png')" }} />
 
-        {/* ─── RADAR SCREEN (Green Abyss) ─── */}
+        {/* ─── RADAR SCREEN (Sub-Abyss) ─── */}
         <div
-          className="relative w-full rounded-2xl overflow-hidden flex flex-col p-3 shadow-[0_0_20px_rgba(0,100,50,0.3)]"
+          className="relative w-full rounded-2xl overflow-hidden flex flex-col p-3"
           style={{
             aspectRatio: "1/1.1",
-            background: "linear-gradient(160deg, #051A05 0%, #010801 100%)",
-            border: "1px solid rgba(0,255,100,0.15)",
-            boxShadow: "inset 0 2px 20px rgba(0,0,0,0.9)"
+            background: "linear-gradient(160deg, #0A0E1A 0%, #060912 100%)",
+            border: "1px solid rgba(255,255,255,0.04)",
+            boxShadow: "inset 0 2px 15px rgba(0,0,0,0.9)"
           }}
         >
-          {/* CRT Scanline Overlay */}
-          <div className="absolute inset-0 pointer-events-none z-50 opacity-[0.15]"
-            style={{
-              background: "linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06))",
-              backgroundSize: "100% 2px, 3px 100%"
-            }}
-          />
-          
-          {/* Phosphor Glow Layer */}
-          <div className="absolute inset-0 pointer-events-none z-40 bg-[radial-gradient(circle_at_center,rgba(0,255,65,0.05)_0%,transparent_70%)]" />
-
           {/* Static Grid Circles */}
-          <div className="absolute inset-0 flex items-center justify-center opacity-[0.15] pointer-events-none">
+          <div className="absolute inset-0 flex items-center justify-center opacity-[0.05] pointer-events-none">
             {[20, 40, 60, 80].map(s => (
-              <div key={s} className="absolute border border-[#00FF41] rounded-full" style={{ width: `${s}%`, height: `${s}%`, boxShadow: "0 0 5px rgba(0,255,65,0.2)" }} />
+              <div key={s} className="absolute border border-white rounded-full" style={{ width: `${s}%`, height: `${s}%` }} />
             ))}
-            <div className="absolute w-[1px] h-full bg-[#00FF41]/20 shadow-[0_0_3px_rgba(0,255,65,0.1)]" />
-            <div className="absolute h-[1px] w-full bg-[#00FF41]/20 shadow-[0_0_3px_rgba(0,255,65,0.1)]" />
+            <div className="absolute w-[1px] h-full bg-white" />
+            <div className="absolute h-[1px] w-full bg-white" />
           </div>
 
           {/* HUD Status Text */}
           <div className="relative flex justify-between items-start mb-2 z-20">
             <div className="flex flex-col gap-0.5">
                <div className="flex items-center gap-1.5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#00FF41] animate-pulse shadow-[0_0_8px_#00FF41]" />
-                  <span style={{ fontSize: 7, fontWeight: 900, color: "rgba(0,255,65,1)", textTransform: "uppercase", letterSpacing: "0.2em", textShadow: "0 0 5px rgba(0,255,65,0.5)" }}>
+                  <div className="w-1 h-1 rounded-full bg-[#4EE2EC] animate-pulse" />
+                  <span style={{ fontSize: 7, fontWeight: 900, color: "rgba(215,230,240,0.8)", textTransform: "uppercase", letterSpacing: "0.2em" }}>
                     radar active
                   </span>
                </div>
-               <span style={{ fontSize: 6, color: "rgba(0,255,65,0.6)", fontWeight: 700, fontFamily: "monospace", letterSpacing: "0.05em" }}>
+               <span style={{ fontSize: 6, color: "rgba(180,200,210,0.3)", fontWeight: 700, fontFamily: "monospace" }}>
                  LIDAR_SEQ: {dnaFeed}
                </span>
             </div>
-            <div className="flex flex-col items-end opacity-80">
-               <span style={{ fontSize: 6, fontWeight: 900, color: "rgba(0,255,65,1)", textShadow: "0 0 5px rgba(0,255,65,0.5)" }}>SWEEP_72HZ</span>
+            <div className="flex flex-col items-end opacity-40">
+               <span style={{ fontSize: 6, fontWeight: 900, color: "rgba(180,200,210,1)" }}>SWEEP_72HZ</span>
             </div>
           </div>
 
@@ -183,22 +172,21 @@ const WildViewfinder = () => {
           <div className="flex-1 relative">
             {/* Sweep Line with Radial Gradient Head */}
             <div 
-              className="absolute top-1/2 left-1/2 w-[48%] h-[2px] -translate-y-1/2 origin-left z-10"
+              className="absolute top-1/2 left-1/2 w-[50%] h-[2px] -translate-y-1/2 origin-left z-10"
               style={{
-                background: "linear-gradient(90deg, transparent 0%, rgba(0,255,65,1) 100%)",
+                background: "linear-gradient(90deg, transparent 0%, rgba(78,226,236,0.7) 100%)",
                 transform: `rotate(${angle - 90}deg)`,
-                boxShadow: "0 0 10px rgba(0,255,65,0.4)"
               }}
             >
                {/* Leading point glow */}
-               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-6 h-6 bg-[#00FF41]/60 blur-md rounded-full shadow-[0_0_20px_#00FF41]" />
+               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-[#9CA764]/20 blur-sm rounded-full" />
             </div>
 
             {/* Sweep Trail (Conic Gradient) */}
             <div 
               className="absolute top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 pointer-events-none"
               style={{
-                background: `conic-gradient(from ${angle - 60}deg, rgba(0,255,65,0.2) 0%, transparent 60deg)`,
+                background: `conic-gradient(from ${angle - 30}deg, rgba(78,226,236,0.15) 0%, transparent 30deg)`,
                 borderRadius: "50%"
               }}
             />
@@ -216,37 +204,33 @@ const WildViewfinder = () => {
                   transition: "opacity 0.03s linear"
                 }}
               >
-                {/* Target marker */}
-                <div className="relative">
-                  <div className="w-2 h-2 bg-[#00FF41] rounded-[1px] shadow-[0_0_15px_rgba(0,255,65,1)]" 
-                       style={{ transform: `rotate(${(t.driftX > 0 ? 45 : -45)}deg)` }} />
-                  {/* Subtle target box */}
-                  <div className="absolute -inset-1 border border-[#00FF41]/40" />
-                </div>
+                {/* Schiff/Ship dot */}
+                <div className="w-1.5 h-1.5 bg-[#9CA764] rounded-[1px] shadow-[0_0_10px_rgba(78,226,236,1)]" 
+                     style={{ transform: `rotate(${(t.driftX > 0 ? 45 : -45)}deg)` }} />
                 
                 {/* Ripple on Ping */}
                 {t.opacity > 0.95 && (
-                  <div className="absolute inset-[-4px] border border-[#00FF41]/80 rounded-full animate-[ping_1s_ease-out_infinite] shadow-[0_0_10px_rgba(0,255,65,0.5)]" />
+                  <div className="absolute inset-[-4px] border border-[#9CA764] rounded-full animate-[ping_0.8s_ease-out_infinite]" />
                 )}
               </div>
             ))}
           </div>
 
           {/* HUD Footer Information */}
-          <div className="relative flex justify-between items-end mt-2 pt-2 border-t border-green-900/40 z-20">
+          <div className="relative flex justify-between items-end mt-2 pt-2 border-t border-white/5 z-20">
              <div className="flex flex-col gap-0.5">
-                <span style={{ fontSize: 6, fontWeight: 900, color: "rgba(0,255,65,0.6)", textTransform: "uppercase" }}>TARGET_COORD</span>
-                <span style={{ fontSize: 8, fontWeight: 700, color: "#00FF41", opacity: 0.9, fontFamily: "monospace", textShadow: "0 0 5px rgba(0,255,65,0.5)" }}>
+                <span style={{ fontSize: 6, fontWeight: 900, color: "rgba(180,200,210,0.4)", textTransform: "uppercase" }}>TARGET_COORD</span>
+                <span style={{ fontSize: 8, fontWeight: 700, color: "white", opacity: 0.7, fontFamily: "monospace" }}>
                    {coordinates.lat.toFixed(5)}N {coordinates.lng.toFixed(5)}E
                 </span>
              </div>
              <div className="flex flex-col items-end gap-1">
                 <div className="flex gap-[1px]">
                    {[...Array(5)].map((_, i) => (
-                      <div key={i} className="w-[10px] h-[3px] shadow-[0_0_2px_rgba(0,255,100,0.5)]" style={{ background: i < 4 ? '#00FF41' : 'rgba(0,255,65,0.1)' }} />
+                      <div key={i} className="w-[10px] h-[2.5px]" style={{ background: i < 4 ? '#D4DCE8' : 'rgba(255,255,255,0.1)' }} />
                    ))}
                 </div>
-                <span style={{ fontSize: 6, fontWeight: 900, color: "rgba(0,255,65,1)", textTransform: "uppercase", textShadow: "0 0 5px rgba(0,255,65,0.5)" }}>SIG: LOCKED</span>
+                <span style={{ fontSize: 6, fontWeight: 900, color: "rgba(156,167,100,0.7)", textTransform: "uppercase" }}>SIG: LOCKED</span>
              </div>
           </div>
         </div>

@@ -103,9 +103,9 @@ const Mixtape = () => {
       <div
         className="relative w-full h-full rounded-[38px] flex flex-col p-5 overflow-hidden"
         style={{
-          background: "linear-gradient(160deg, #121217 0%, #09090C 55%, #040406 100%)",
+          background: "linear-gradient(160deg, #2B2D3A 0%, #1C1E28 55%, #13141C 100%)",
           boxShadow:
-            "0 60px 120px -20px rgba(0,0,0,0.9), 0 0 0 1px rgba(255,255,255,0.06), inset 0 1px 0 rgba(255,255,255,0.08), inset 0 -1px 0 rgba(0,0,0,0.6)",
+            "0 60px 120px -20px rgba(5,5,15,0.75), 0 0 0 1px rgba(255,255,255,0.06), inset 0 1px 0 rgba(255,255,255,0.10), inset 0 -1px 0 rgba(0,0,0,0.5)",
         }}
       >
         {/* Brushed grain overlay */}
@@ -273,9 +273,9 @@ const Mixtape = () => {
               className="absolute inset-0 rounded-full"
               style={{
                 background:
-                  "linear-gradient(135deg, #1A1A20 0%, #0F0F14 50%, #121218 100%)",
+                  "linear-gradient(135deg, #353848 0%, #22242E 50%, #2C2E3C 100%)",
                 boxShadow:
-                  "0 8px 24px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.05), inset 0 -1px 0 rgba(0,0,0,0.5)",
+                  "0 8px 24px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.07), inset 0 -1px 0 rgba(0,0,0,0.4)",
                 transform: `rotate(${wheelRotation}deg)`,
                 transition: isWheelHovered ? "none" : "transform 0.9s ease-out",
               }}
@@ -363,9 +363,9 @@ const Mixtape = () => {
               style={{
                 width: 60,
                 height: 60,
-                background: "linear-gradient(145deg, #14141A 0%, #0A0A0E 100%)",
+                background: "linear-gradient(145deg, #2A2C38 0%, #181A22 100%)",
                 boxShadow:
-                  "0 4px 14px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.05), 0 0 0 1px rgba(255,255,255,0.03)",
+                  "0 4px 14px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.06), 0 0 0 1px rgba(255,255,255,0.04)",
               }}
             >
               <div
