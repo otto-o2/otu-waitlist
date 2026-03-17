@@ -15,13 +15,13 @@ const CompendiumVisual = () => {
 
   return (
     <div className="relative w-full max-w-[300px] select-none" style={{ aspectRatio: "0.65/1" }}>
-      {/* ─── HARDWARE CHASSIS ─── */}
+      {/* ─── HARDWARE CHASSIS (Royal Emerald) ─── */}
       <div
         className="relative w-full h-full rounded-[42px] p-5 flex flex-col gap-4 overflow-hidden"
         style={{
-          background: "linear-gradient(160deg, #2B2D3A 0%, #1C1E28 55%, #13141C 100%)",
-          boxShadow: "0 60px 120px -20px rgba(5,5,15,0.75), 0 0 0 1px rgba(255,255,255,0.06), inset 0 1px 0 rgba(255,255,255,0.10), inset 0 -1px 0 rgba(0,0,0,0.5)",
-          border: "1px solid rgba(255,255,255,0.05)"
+          background: "linear-gradient(160deg, #0A140D 0%, #060D07 55%, #040804 100%)",
+          boxShadow: "0 60px 120px -20px rgba(5,15,5,0.8), 0 0 0 1px rgba(156,167,100,0.1), inset 0 1px 0 rgba(255,255,255,0.05), inset 0 -1px 0 rgba(0,0,0,0.5)",
+          border: "1px solid rgba(156,167,100,0.05)"
         }}
       >
         <div className="absolute inset-0 pointer-events-none opacity-[0.08]" 
