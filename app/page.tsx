@@ -168,7 +168,7 @@ export default function Home() {
 
         {/* Branding Title (The Majestic Format) */}
         <div className="relative z-10 text-center flex flex-col items-center gap-6 w-full max-w-[1400px]">
-          <p className="text-xl md:text-2xl font-sans font-black tracking-[0.6em] text-[#1B261B]/40 ml-[0.6em] lowercase">
+          <p className="text-xl md:text-2xl font-sans font-light tracking-[0.6em] text-[#1B261B]/40 ml-[0.6em] lowercase">
             (otu)
           </p>
           <h1
