@@ -174,25 +174,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Sticky Navigation Bar */}
-      <nav className="sticky top-0 z-[100] bg-[#FDFBF7]/80 backdrop-blur-xl border-b border-[#9CA764]/10 px-6 py-4 overflow-x-auto no-scrollbar">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-8 min-w-max">
-          <a href="#" className="font-serif italic text-xl text-[#1B261B] hover:text-[#9CA764] transition-colors shrink-0">otu</a>
-          <div className="flex items-center gap-6 md:gap-8">
-            {features.map((feature) => (
-              <a 
-                key={feature.id} 
-                href={feature.href}
-                className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-[#1B261B]/40 hover:text-[#9CA764] transition-colors"
-              >
-                {feature.id.replace("-", " ")}
-              </a>
-            ))}
-          </div>
-          <div className="w-24 shrink-0 hidden md:block" /> {/* Spacer */}
-        </div>
-      </nav>
-
       {/* Bento Grid Section */}
       <section className="relative z-20 px-6 py-32 md:px-12 lg:px-24 bg-[#FDFBF7]">
         <div className="max-w-7xl mx-auto">
