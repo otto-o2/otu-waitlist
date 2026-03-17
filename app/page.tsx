@@ -33,7 +33,7 @@ const features = [
     highlights: [
       "Gene Signatures — We translate the unique genome of your plant into a one-of-a-kind musical signature.",
       "Vital Signs — We render biological data and the pulse of your home into an audible stream.",
-      "Playlist Gardens — Curate a private living library of sound."
+      "Playlist Gardens — You can now curate a private living library of sound."
     ],
     background: <div className="absolute inset-0 bg-gradient-to-br from-[#9CA764]/20 to-transparent" />,
     color: "#343D52", // iPod Slate
