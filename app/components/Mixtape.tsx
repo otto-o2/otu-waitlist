@@ -335,11 +335,14 @@ const Mixtape = () => {
               <SkipBack style={{ width: 12, height: 12, color: "rgba(210,220,235,0.28)" }} />
             </div>
             {/* Play/Pause */}
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-[3px] items-center">
+            <div 
+              className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-[4px] items-center h-4"
+              style={{ color: "rgba(210,220,235,0.28)" }}
+            >
               {isPlaying ? (
                 <>
-                  <div style={{ width: 4, height: 10, background: "rgba(210,220,235,0.28)", borderRadius: 1 }} />
-                  <div style={{ width: 4, height: 10, background: "rgba(210,220,235,0.28)", borderRadius: 1 }} />
+                  <div style={{ width: 3, height: 10, background: "rgba(210,220,235,0.28)", borderRadius: "0.5px" }} />
+                  <div style={{ width: 3, height: 10, background: "rgba(210,220,235,0.28)", borderRadius: "0.5px" }} />
                 </>
               ) : (
                 <div
@@ -348,6 +351,7 @@ const Mixtape = () => {
                     borderTop: "6px solid transparent",
                     borderBottom: "6px solid transparent",
                     borderLeft: "10px solid rgba(210,220,235,0.28)",
+                    marginLeft: "2px" // Optical adjustment for triangle
                   }}
                 />
               )}
@@ -378,29 +382,6 @@ const Mixtape = () => {
           </div>
         </div>
 
-        {/* Spinning reels */}
-        <div className="absolute bottom-[88px] left-5 opacity-20">
-          <div
-            className="w-5 h-5 rounded-full flex items-center justify-center"
-            style={{
-              border: "1px solid rgba(210,220,235,0.3)",
-              animation: "spinReel 6s linear infinite",
-            }}
-          >
-            <div className="w-[2px] h-[7px] rounded-full" style={{ background: "rgba(210,220,235,0.5)" }} />
-          </div>
-        </div>
-        <div className="absolute bottom-[88px] right-5 opacity-20">
-          <div
-            className="w-5 h-5 rounded-full flex items-center justify-center"
-            style={{
-              border: "1px solid rgba(210,220,235,0.3)",
-              animation: "spinReel 6s linear infinite reverse",
-            }}
-          >
-            <div className="w-[2px] h-[7px] rounded-full" style={{ background: "rgba(210,220,235,0.5)" }} />
-          </div>
-        </div>
 
         {/* Bottom engraving */}
         <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 opacity-20">
