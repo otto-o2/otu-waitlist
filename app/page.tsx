@@ -1,4 +1,5 @@
 "use client";
+// Trigger build: Thematic color restore - version 1.0.1
 
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
