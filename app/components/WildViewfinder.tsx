@@ -22,12 +22,10 @@ const WildViewfinder = () => {
   const requestRef = useRef<number>(null);
   const lastAngleRef = useRef(0);
 
-  // Initialize fewer "biological" targets with drift vectors
+  // Initialize a single high-stakes biological target with drift vector
   useEffect(() => {
     const initialTargets: RadarTarget[] = [
       { id: 1, x: 0, y: 0, angle: 45, dist: 35, opacity: 0, driftX: 0.02, driftY: -0.01 },
-      { id: 2, x: 0, y: 0, angle: 190, dist: 42, opacity: 0, driftX: -0.015, driftY: 0.01 },
-      { id: 3, x: 0, y: 0, angle: 280, dist: 22, opacity: 0, driftX: 0.01, driftY: 0.02 },
     ];
     
     // Process initial positions
