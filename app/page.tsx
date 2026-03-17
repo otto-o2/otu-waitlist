@@ -254,13 +254,13 @@ export default function Home() {
               </ul>
             </div>
             
-            <div className="relative aspect-square rounded-[60px] bg-[#EBE7DD]/30 border border-[#9CA764]/20 overflow-hidden flex items-center justify-center p-6 md:p-12">
+            <div className="relative flex items-center justify-center min-h-[500px]">
                {feature.id === "botanical-sonification" ? (
-                 <div className="w-full h-full flex items-center justify-center">
+                 <div className="w-full flex justify-center">
                     <Mixtape />
                  </div>
                ) : (
-                 <>
+                 <div className="relative aspect-square rounded-[60px] bg-[#EBE7DD]/30 border border-[#9CA764]/20 overflow-hidden flex items-center justify-center p-6 md:p-12 w-full">
                    <div className="w-full h-full rounded-[40px] bg-[#9CA764]/5 border border-[#9CA764]/10 flex flex-col items-center justify-center group overflow-hidden relative">
                       <div className="absolute inset-0 opacity-10 bg-gradient-to-br from-[#9CA764] to-transparent" />
                       <feature.Icon className="h-32 w-32 text-[#9CA764]/20 group-hover:scale-110 transition-transform duration-700" />
@@ -275,7 +275,7 @@ export default function Home() {
                    <div className="absolute top-10 right-10 w-24 h-24 bg-white/80 rounded-3xl shadow-xl flex items-center justify-center animate-bounce" style={{animationDuration: "3s"}}>
                      <Dna className="text-[#9CA764] h-8 w-8" />
                    </div>
-                 </>
+                 </div>
                )}
             </div>
           </div>

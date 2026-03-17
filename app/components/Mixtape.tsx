@@ -4,85 +4,72 @@ import React from 'react';
 
 const Mixtape = () => {
   return (
-    <div className="relative w-full max-w-lg aspect-[1.5/1] flex items-center justify-center p-8">
-      {/* Outer Case / Glass Frame */}
-      <div className="absolute inset-0 bg-[#EBE7DD]/40 rounded-[40px] border border-white/40 shadow-xl backdrop-blur-sm" />
+    <div className="relative w-full max-w-[340px] aspect-[0.7/1] flex items-center justify-center p-4">
+      {/* Remove outer glass frame to let it float */}
       
-      {/* Cassette Body */}
-      <div className="relative w-full h-full bg-[#1B261B] rounded-[24px] border-4 border-[#1B261B] shadow-2xl flex flex-col overflow-hidden">
-        {/* Top Section with Label Slot */}
-        <div className="h-1/2 w-full p-4 flex flex-col gap-2">
-          <div className="w-full h-full bg-[#F1E8C7] rounded-lg border-b-4 border-black/10 p-4 flex flex-col justify-between">
-             <div className="flex justify-between items-start">
-                <div className="space-y-1">
-                  <p className="text-[10px] font-sans font-black uppercase tracking-widest text-[#1B261B]/40">otu plant intelligence</p>
-                  <h4 className="text-sm font-sans font-black uppercase tracking-tighter text-[#1B261B]">leaf notes engine</h4>
-                </div>
-                <div className="text-[10px] font-sans font-black bg-[#1B261B] text-[#F1E8C7] px-2 py-0.5 rounded">SIDE A</div>
+      {/* Cassette Body (Vertical) */}
+      <div className="relative w-full h-full bg-[#1B261B] rounded-[32px] border-2 border-[#1B261B] shadow-[0_40px_100px_-20px_rgba(27,38,27,0.4)] flex flex-col overflow-hidden">
+        {/* Top Branding Section */}
+        <div className="h-2/5 w-full p-4 flex flex-col pt-8">
+          <div className="w-full h-full bg-[#F1E8C7] rounded-xl border-b-8 border-black/20 p-6 flex flex-col justify-between relative overflow-hidden">
+             {/* Diagonal stripe texture */}
+             <div className="absolute inset-0 opacity-5 pointer-events-none bg-[repeating-linear-gradient(45deg,transparent,transparent_10px,#1B261B_10px,#1B261B_20px)]" />
+             
+             <div className="relative z-10 flex flex-col gap-1">
+                <p className="text-[10px] font-sans font-black uppercase tracking-[0.5em] text-[#9CA764]">otu intelligence</p>
+                <h4 className="text-xl font-sans font-black uppercase tracking-tighter text-[#1B261B] leading-none">leaf notes</h4>
+                <div className="w-8 h-1 bg-[#9CA764] mt-2" />
              </div>
              
-             <div className="flex justify-between items-end border-t border-[#1B261B]/10 pt-2">
-                <div className="flex flex-col">
-                   <span className="text-[8px] font-sans font-bold uppercase text-[#1B261B]/30 tracking-widest">Symphony of Flora</span>
-                   <span className="text-[10px] font-sans font-black uppercase text-[#1B261B]">ambient botanical score</span>
-                </div>
-                <div className="flex gap-1">
-                   <div className="w-2 h-2 rounded-full bg-[#9CA764]" />
-                   <div className="w-2 h-2 rounded-full bg-[#9CA764]/40" />
-                   <div className="w-2 h-2 rounded-full bg-[#9CA764]/10" />
-                </div>
+             <div className="relative z-10 flex flex-col mt-auto">
+                <span className="text-[8px] font-sans font-bold uppercase text-[#1B261B]/30 tracking-[0.4em]">Symphony of Flora</span>
+                <span className="text-[12px] font-sans font-black uppercase text-[#1B261B]">side a</span>
              </div>
           </div>
         </div>
 
-        {/* Middle Section (The Window & Reels) */}
-        <div className="flex-1 w-full bg-[#0D140D] flex items-center justify-center relative p-4">
-           {/* Center Window */}
-           <div className="w-4/5 h-20 bg-[#1B261B]/80 rounded-xl border-2 border-white/5 flex items-center justify-around overflow-hidden inner-shadow">
-              {/* Left Reel */}
-              <div className="relative w-16 h-16 flex items-center justify-center">
-                 {/* Reel Background (Tape) */}
-                 <div className="absolute inset-0 bg-[#251A0F] rounded-full animate-[spin_8s_linear_infinite]" />
-                 {/* Hub */}
-                 <div className="z-10 w-8 h-8 bg-[#F1E8C7] rounded-full flex items-center justify-center border-4 border-[#1B261B] animate-[spin_8s_linear_infinite]">
-                    <div className="w-1 h-3 bg-[#1B261B] rounded-full -mt-2" />
-                    <div className="w-1 h-3 bg-[#1B261B] rounded-full mt-2" />
-                 </div>
+        {/* Middle Reel Section (Vertical Stack) */}
+        <div className="flex-1 w-full bg-[#0D140D]/40 flex flex-col items-center justify-center gap-12 p-8 border-y border-white/5">
+           {/* Top Reel */}
+           <div className="relative w-20 h-20 flex items-center justify-center group">
+              <div className="absolute inset-0 bg-[#251A0F] rounded-full animate-[spin_10s_linear_infinite] group-hover:animate-[spin_2s_linear_infinite] transition-all" />
+              <div className="z-10 w-10 h-10 bg-[#F1E8C7] rounded-full flex items-center justify-center border-4 border-[#1B261B] animate-[spin_10s_linear_infinite] group-hover:animate-[spin_2s_linear_infinite]">
+                 <div className="w-1.5 h-3 bg-[#1B261B] rounded-full -mt-2" />
+                 <div className="w-1.5 h-3 bg-[#1B261B] rounded-full mt-2" />
               </div>
+              {/* Center screw */}
+              <div className="absolute z-20 w-2 h-2 bg-black/40 rounded-full" />
+           </div>
 
-              {/* Tape Gap */}
-              <div className="h-[2px] w-20 bg-[#251A0F] opacity-50 relative">
-                 <div className="absolute top-0 left-0 w-full h-full animate-[pulse_2s_ease-in-out_infinite] bg-[#9CA764]/20" />
-              </div>
+           {/* Animated Waveform Bridge */}
+           <div className="w-[2px] h-12 bg-gradient-to-b from-[#9CA764] to-transparent relative opacity-40">
+              <div className="absolute inset-0 animate-pulse bg-[#9CA764]" />
+           </div>
 
-              {/* Right Reel */}
-              <div className="relative w-16 h-16 flex items-center justify-center">
-                 {/* Reel Background (Tape) */}
-                 <div className="absolute inset-0 bg-[#251A0F] rounded-full animate-[spin_8s_linear_infinite]" />
-                 {/* Hub */}
-                 <div className="z-10 w-8 h-8 bg-[#F1E8C7] rounded-full flex items-center justify-center border-4 border-[#1B261B] animate-[spin_8s_linear_infinite]">
-                    <div className="w-1 h-3 bg-[#1B261B] rounded-full -mt-2" />
-                    <div className="w-1 h-3 bg-[#1B261B] rounded-full mt-2" />
-                 </div>
+           {/* Bottom Reel */}
+           <div className="relative w-20 h-20 flex items-center justify-center group">
+              <div className="absolute inset-0 bg-[#251A0F] rounded-full animate-[spin_10s_linear_infinite] group-hover:animate-[spin_2s_linear_infinite] transition-all" />
+              <div className="z-10 w-10 h-10 bg-[#F1E8C7] rounded-full flex items-center justify-center border-4 border-[#1B261B] animate-[spin_10s_linear_infinite] group-hover:animate-[spin_2s_linear_infinite]">
+                 <div className="w-1.5 h-3 bg-[#1B261B] rounded-full -mt-2" />
+                 <div className="w-1.5 h-3 bg-[#1B261B] rounded-full mt-2" />
               </div>
+              <div className="absolute z-20 w-2 h-2 bg-black/40 rounded-full" />
            </div>
         </div>
 
-        {/* Bottom Section (Buttons/Screws) */}
-        <div className="h-10 w-full bg-[#1B261B] border-t border-white/5 flex items-center justify-between px-6">
-           <div className="flex gap-8">
-              <span className="text-[7px] text-white/20 font-sans tracking-[0.4em] uppercase font-bold">Auto Reverse</span>
-              <span className="text-[7px] text-white/20 font-sans tracking-[0.4em] uppercase font-bold">NR System</span>
+        {/* Bottom Detailed Plate */}
+        <div className="h-16 w-full bg-[#1B261B] border-t border-white/5 flex flex-col justify-center items-center px-6 gap-1 pb-2">
+           <div className="flex gap-4 opacity-30">
+              <div className="w-1 h-1 bg-white rounded-full" />
+              <div className="w-1 h-1 bg-white rounded-full" />
+              <div className="w-1 h-1 bg-white rounded-full" />
            </div>
-           <div className="flex gap-4">
-              <div className="w-2 h-2 bg-[#9CA764]/10 rounded-full border border-white/5" />
-              <div className="w-2 h-2 bg-[#9CA764]/10 rounded-full border border-white/5" />
-           </div>
+           <span className="text-[7px] text-white/20 font-sans tracking-[0.5em] uppercase font-bold">botanical sonification engine v2.0</span>
         </div>
       </div>
       
-      {/* Decorative Shimmer Overlay */}
-      <div className="absolute inset-0 pointer-events-none rounded-[40px] bg-gradient-to-tr from-white/5 to-transparent mix-blend-overlay" />
+      {/* Light highlights */}
+      <div className="absolute top-10 left-10 w-full h-[1px] bg-white/10 rotate-[45deg] pointer-events-none" />
     </div>
   );
 };
