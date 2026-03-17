@@ -42,8 +42,9 @@ const BentoCard = ({
   cta: string;
   [key: string]: any;
 }) => (
-  <div
+  <a
     key={name}
+    href={href}
     className={cn(
       "group relative col-span-3 flex flex-col justify-between overflow-hidden rounded-[2.5rem]",
       "bg-[#F1E8C7] border border-[#9CA764]/20", // Milky Honey background, Matcha border
@@ -90,7 +91,7 @@ const BentoCard = ({
     
     {/* Subtle gloss effect */}
     <div className="pointer-events-none absolute inset-0 transform-gpu transition-all duration-300 group-hover:bg-white/[0.05]" />
-  </div>
+  </a>
 );
 
 export { BentoCard, BentoGrid };
