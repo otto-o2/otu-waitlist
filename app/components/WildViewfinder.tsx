@@ -179,7 +179,7 @@ const WildViewfinder = () => {
               }}
             >
                {/* Leading point glow */}
-               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-[#4EE2EC]/20 blur-sm rounded-full" />
+               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-[#9CA764]/20 blur-sm rounded-full" />
             </div>
 
             {/* Sweep Trail (Conic Gradient) */}
@@ -205,12 +205,12 @@ const WildViewfinder = () => {
                 }}
               >
                 {/* Schiff/Ship dot */}
-                <div className="w-1.5 h-1.5 bg-[#4EE2EC] rounded-[1px] shadow-[0_0_10px_rgba(78,226,236,1)]" 
+                <div className="w-1.5 h-1.5 bg-[#9CA764] rounded-[1px] shadow-[0_0_10px_rgba(78,226,236,1)]" 
                      style={{ transform: `rotate(${(t.driftX > 0 ? 45 : -45)}deg)` }} />
                 
                 {/* Ripple on Ping */}
                 {t.opacity > 0.95 && (
-                  <div className="absolute inset-[-4px] border border-[#4EE2EC] rounded-full animate-[ping_0.8s_ease-out_infinite]" />
+                  <div className="absolute inset-[-4px] border border-[#9CA764] rounded-full animate-[ping_0.8s_ease-out_infinite]" />
                 )}
               </div>
             ))}
@@ -246,14 +246,14 @@ const WildViewfinder = () => {
            </div>
 
            <div className="relative group cursor-pointer">
-              <div className="absolute -inset-2 bg-[#4EE2EC]/10 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute -inset-2 bg-[#9CA764]/10 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="w-16 h-16 rounded-full p-1" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.1), transparent)" }}>
                  <div className="w-full h-full rounded-full flex items-center justify-center" 
                    style={{ 
                      background: "linear-gradient(135deg, #22242E 0%, #13141C 100%)",
                      boxShadow: "0 8px 16px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.07)"
                    }}>
-                    <Camera className="w-6 h-6 text-[#4EE2EC] transition-all group-hover:scale-110" />
+                    <Camera className="w-6 h-6 text-[#9CA764] transition-all group-hover:scale-110" />
                  </div>
               </div>
            </div>

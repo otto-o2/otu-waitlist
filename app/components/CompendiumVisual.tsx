@@ -15,12 +15,12 @@ const CompendiumVisual = () => {
 
   return (
     <div className="relative w-full max-w-[300px] select-none" style={{ aspectRatio: "0.65/1" }}>
-      {/* ─── HARDWARE CHASSIS (Imperial Plum) ─── */}
+      {/* ─── HARDWARE CHASSIS (Midnight Forest) ─── */}
       <div
         className="relative w-full h-full rounded-[42px] p-5 flex flex-col gap-4 overflow-hidden"
         style={{
-          background: "linear-gradient(160deg, #241728 0%, #160E18 55%, #0D080E 100%)",
-          boxShadow: "0 60px 120px -20px rgba(15,5,15,0.75), 0 0 0 1px rgba(255,255,255,0.06), inset 0 1px 0 rgba(255,255,255,0.10), inset 0 -1px 0 rgba(0,0,0,0.5)",
+          background: "linear-gradient(160deg, #0E1A14 0%, #08110D 55%, #040806 100%)",
+          boxShadow: "0 60px 120px -20px rgba(5,15,10,0.8), 0 0 0 1px rgba(255,255,255,0.06), inset 0 1px 0 rgba(255,255,255,0.10), inset 0 -1px 0 rgba(0,0,0,0.5)",
           border: "1px solid rgba(255,255,255,0.05)"
         }}
       >
@@ -112,10 +112,10 @@ const CompendiumVisual = () => {
               <div className="w-16 h-16 rounded-full p-1" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.1), transparent)" }}>
                  <div className="w-full h-full rounded-full flex items-center justify-center" 
                    style={{ 
-                     background: "linear-gradient(135deg, #1E1220 0%, #0D080E 100%)",
+                     background: "linear-gradient(135deg, #1A1F1C 0%, #080D0B 100%)",
                      boxShadow: "0 8px 16px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.07)"
                    }}>
-                    <BookOpen className="w-6 h-6 text-[#B08D57]" />
+                    <BookOpen className="w-6 h-6 text-[#C5A059]" />
                  </div>
               </div>
            </div>
