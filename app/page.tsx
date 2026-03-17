@@ -58,16 +58,16 @@ const features = [
   },
   {
     id: "wild-mode",
-    name: "Wild Mode: Discovery",
-    description: "Stop walking past rare genomes. Pin the wild, trade locations with collectors, and finally identify that 'thing' on your hike.",
+    name: "Wild Mode: Adventure is out there!",
+    description: "Spot the rare. Name the unknown. All off the grid.",
     href: "#wild-mode",
     cta: "Explore the wild →",
     className: "md:col-span-2",
     Icon: Map,
     highlights: [
-      "Discovery viewfinder — High-fidelity field guide identifies wild species in mid-trek, even with zero network coverage.",
-      "Genomic mapping — Pin your discoveries on a private grid or share rare biome locations with the Otu community.",
-      "Collector's network — Connect with local experts to trade seeds, locations, and regional soil secrets."
+      "Identify that “thing” on your hike — Our neural engine draws from a massive local database of over four thousand species, providing high-fidelity data even when you are off the grid.",
+      "Go beyond the name — Access a deep library of botanical facts, rarity rankings, and the unique history of every plant you encounter.",
+      "The Log — Record your finds and map your journey in real-time to build a living timeline of every signature encountered in the field."
     ],
     background: <div className="absolute inset-0 bg-[#45322B]/20">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] opacity-10" />
