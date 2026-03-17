@@ -1,23 +1,15 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Dna, Database, Binary, ShieldCheck, Cpu } from "lucide-react";
+import { Database, Binary, ShieldCheck, Cpu } from "lucide-react";
 
 const GenesisEngine = () => {
-  const [dataOffset, setDataOffset] = useState(0);
-  const [activeNodes, setActiveNodes] = useState<number[]>([]);
+  const [dnaTime, setDnaTime] = useState(0);
 
-  // Animate the background data scroll
   useEffect(() => {
     const interval = setInterval(() => {
-      setDataOffset(prev => (prev + 1) % 100);
-      if (Math.random() > 0.85) {
-        setActiveNodes(prev => {
-          const next = [...prev, Math.floor(Math.random() * 5)];
-          return next.slice(-3); // Keep only last few active
-        });
-      }
-    }, 120);
+      setDnaTime(prev => prev + 0.05);
+    }, 30);
     return () => clearInterval(interval);
   }, []);
 
@@ -45,62 +37,79 @@ const GenesisEngine = () => {
             boxShadow: "inset 0 2px 15px rgba(0,0,0,0.9)"
           }}
         >
-          {/* Vertical Data Stream Background */}
-          {Array.from({ length: 4 }).map((_, col) => (
-            <div key={col} className="absolute inset-y-0 opacity-[0.03]" style={{ left: `${col * 25 + 10}%`, width: "2px", background: "white" }} />
-          ))}
+          {/* Vertical Data Stream Background Mask */}
+          <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[linear-gradient(90deg,transparent_0%,white_1px,transparent_1px)]" style={{ backgroundSize: "25% 100%" }} />
           
           <div className="relative z-10 flex justify-between items-center mb-4">
             <div className="flex flex-col">
               <span style={{ fontSize: 7, fontWeight: 900, color: "rgba(156,167,100,0.9)", textTransform: "uppercase", letterSpacing: "0.2em" }}>
                 Genesis Vault
               </span>
-              <span style={{ fontSize: 6, color: "rgba(180,200,210,0.4)", fontWeight: 700 }}>VERIFIED ARCHIVE v.38</span>
+              <span style={{ fontSize: 6, color: "rgba(180,200,210,0.4)", fontWeight: 700 }}>GENOMIC ARCHIVE v.42</span>
             </div>
             <ShieldCheck className="w-3 h-3 text-[#9CA764]/40" />
           </div>
 
-          {/* MAIN VISUAL: BIO-CORE */}
-          <div className="flex-1 relative flex items-center justify-center">
-             {/* Central Rotating Rings */}
-             <div className="absolute w-36 h-36 border border-white/5 rounded-full animate-[spin_20s_linear_infinite]" />
-             <div className="absolute w-28 h-28 border border-[#9CA764]/10 rounded-full animate-[spin_10s_linear_infinite_reverse]" />
+          {/* MAIN VISUAL: ANIMATED DNA STRAND */}
+          <div className="flex-1 relative flex items-center justify-center overflow-hidden">
+             {/* Rotating HUD Elements */}
+             <div className="absolute w-40 h-40 border border-white/5 rounded-full animate-[spin_30s_linear_infinite]" />
+             <div className="absolute w-32 h-32 border border-[#9CA764]/10 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
              
-             {/* The "Sprout" Hologram */}
-             <div className="relative z-10 flex items-center justify-center">
-                <Dna className="w-12 h-12 text-[#9CA764] animate-pulse" />
-                {/* Floating genomic particles */}
-                {Array.from({ length: 5 }).map((_, i) => (
-                   <div 
-                    key={i}
-                    className={`absolute w-1 h-1 rounded-full transition-all duration-1000 ${activeNodes.includes(i) ? 'bg-[#9CA764] scale-150 shadow-[0_0_8px_#9CA764]' : 'bg-white/10'}`}
-                    style={{ 
-                      transform: `rotate(${i * 72}deg) translateY(-45px)`,
-                    }}
-                   />
-                ))}
-             </div>
+             {/* Custom SVG DNA Strand */}
+             <svg viewBox="0 0 100 160" className="w-20 h-32 opacity-80 overflow-visible">
+                {Array.from({ length: 12 }).map((_, i) => {
+                  const y = i * 14 + 5;
+                  const phase = dnaTime + (i * 0.5);
+                  const x1 = 50 + Math.sin(phase) * 35;
+                  const x2 = 50 - Math.sin(phase) * 35;
+                  const zIndex = Math.cos(phase); // for visual depth
+                  
+                  return (
+                    <g key={i}>
+                      {/* Connector Rung */}
+                      <line 
+                        x1={x1} y1={y} x2={x2} y2={y} 
+                        stroke="#9CA764" 
+                        strokeWidth="0.5" 
+                        opacity={0.3} 
+                      />
+                      {/* Helix Point 1 */}
+                      <circle 
+                        cx={x1} cy={y} 
+                        r={zIndex > 0 ? 2 : 1.2} 
+                        fill={zIndex > 0 ? "#9CA764" : "rgba(156,167,100,0.4)"} 
+                        className="shadow-[0_0_8px_#9CA764]"
+                      />
+                      {/* Helix Point 2 */}
+                      <circle 
+                        cx={x2} cy={y} 
+                        r={zIndex < 0 ? 2 : 1.2} 
+                        fill={zIndex < 0 ? "#9CA764" : "rgba(156,167,100,0.4)"}
+                        className="shadow-[0_0_8px_#9CA764]"
+                      />
+                    </g>
+                  );
+                })}
+             </svg>
           </div>
 
-          {/* Scrolling Memory Slots */}
-          <div className="flex gap-1.5 justify-center mt-4 h-8 overflow-hidden">
-             {Array.from({ length: 8 }).map((_, i) => (
-               <div 
-                key={i} 
-                className="w-4 h-full bg-white/5 rounded-sm flex flex-col items-center justify-center gap-1 border border-white/5"
-               >
-                 <div className={`w-[2px] flex-1 bg-[#9CA764]/20 rounded-full overflow-hidden`}>
-                    <div className="w-full bg-[#9CA764] animate-bounce" style={{ height: '40%', animationDuration: `${1 + i * 0.2}s` }} />
-                 </div>
-               </div>
-             ))}
+          {/* Scrolling Activity Log (Simplified) */}
+          <div className="flex flex-col gap-1 mt-4">
+             <div className="w-full h-[2px] bg-white/5 rounded-full overflow-hidden">
+                <div className="h-full w-2/3 bg-gradient-to-r from-transparent via-[#9CA764] to-transparent animate-[shimmer_2s_infinite]" />
+             </div>
+             <div className="flex justify-between items-center px-1">
+                <span style={{ fontSize: 5, color: "rgba(156,167,100,0.6)", fontWeight: 900 }}>RECONSTRUCTING_CELL_ARCH...</span>
+                <span style={{ fontSize: 5, color: "rgba(156,167,100,0.4)", fontWeight: 900 }}>76%</span>
+             </div>
           </div>
 
           <div className="flex justify-between items-end mt-4 pt-2 border-t border-white/5">
              <div className="flex flex-col gap-0.5">
-                <span style={{ fontSize: 6, fontWeight: 900, color: "rgba(180,200,210,0.4)", textTransform: "uppercase" }}>Index Capacity</span>
+                <span style={{ fontSize: 6, fontWeight: 900, color: "rgba(180,200,210,0.4)", textTransform: "uppercase" }}>Vault Integrity</span>
                 <span style={{ fontSize: 8, fontWeight: 700, color: "white", opacity: 0.7, fontFamily: "monospace" }}>
-                   98.441 TB / 100 PB
+                   SECURE / 0.00ms LATENCY
                 </span>
              </div>
              <Binary className="w-3 h-3 text-[#9CA764]/30" />
@@ -139,12 +148,19 @@ const GenesisEngine = () => {
         </div>
 
         {/* ─── LABEL ─── */}
-        <div className="mt-2 flex items-center justify-center gap-2 opacity-20 text-center">
+        <div className="mt-2 text-center opacity-20">
           <p style={{ fontSize: 6, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.3em", color: "#D4DCE8" }}>
             otu genesis engine
           </p>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes shimmer {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
+        }
+      `}</style>
     </div>
   );
 };
