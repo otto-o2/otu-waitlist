@@ -17,86 +17,103 @@ const Clock = () => {
   const seconds = time.getSeconds().toString().padStart(2, "0");
 
   return (
-    <div className="relative flex items-center justify-center select-none" style={{ width: "clamp(120px, 22vw, 260px)", aspectRatio: "1/1" }}>
-      {/* ─── HARDWARE BEZEL (Scientific instrument look) ─── */}
+    <div className="relative flex items-center justify-center select-none" style={{ width: "clamp(120px, 24vw, 300px)", aspectRatio: "1/1" }}>
+      {/* ─── VINTAGE MARITIME BEZEL ─── */}
       <div 
         className="absolute inset-0 rounded-full"
         style={{
-          background: "linear-gradient(135deg, #F3F4F6 0%, #D1D5DB 40%, #9CA3AF 70%, #4B5563 100%)",
-          boxShadow: "0 25px 50px -12px rgba(0,0,0,0.5), inset 0 2px 4px rgba(255,255,255,0.8), inset 0 -3px 6px rgba(0,0,0,0.2)",
-          padding: "7%"
+          background: "radial-gradient(circle at 30% 30%, #333 0%, #111 60%, #050505 100%)",
+          boxShadow: `
+            0 30px 60px -12px rgba(0,0,0,0.8), 
+            inset 0 4px 12px rgba(255,255,255,0.08), 
+            inset 0 -8px 20px rgba(0,0,0,0.6)
+          `,
+          padding: "10%"
         }}
       >
-        {/* Inner shadow layer for depth */}
-        <div className="w-full h-full rounded-full bg-[#080808] shadow-[inset_0_4px_20px_rgba(0,0,0,1)] relative overflow-hidden">
-          {/* Dial Markings */}
+        {/* Bezel Screw/Knob Detail */}
+        <div 
+          className="absolute right-[2%] top-1/2 -translate-y-1/2 w-[6%] h-[8%] rounded-sm"
+          style={{
+            background: "linear-gradient(135deg, #E5E7EB 0%, #9CA3AF 50%, #4B5563 100%)",
+            boxShadow: "0 2px 4px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.8)",
+            borderRadius: "40% 10% 10% 40%"
+          }}
+        />
+
+        {/* Dial Face */}
+        <div className="w-full h-full rounded-full bg-[#050505] shadow-[inset_0_2px_15px_rgba(0,0,0,1)] relative overflow-hidden">
           <svg viewBox="0 0 100 100" className="w-full h-full absolute inset-0">
-             {/* 60 Minute Ticks (Outer) */}
+             {/* Outer Minute Track (Beige/Cream) */}
              {[...Array(60)].map((_, i) => (
                 <line
                   key={`m-${i}`}
-                  x1="50" y1="5" x2="50" y2="7"
+                  x1="50" y1="4" x2="50" y2={i % 5 === 0 ? "7" : "5.5"}
                   transform={`rotate(${i * 6} 50 50)`}
-                  stroke="rgba(255,255,255,0.4)"
-                  strokeWidth="0.5"
+                  stroke={i % 5 === 0 ? "#D1C7A1" : "rgba(209,199,161,0.3)"}
+                  strokeWidth="0.6"
                 />
              ))}
 
-             {/* 24 Hour Ticks & Numbers (Matches HP Design) */}
-             {[24, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22].map((n, i) => {
-                const angle = i * 30;
+             {/* Hour Numbers (24-Hour Format, Beige/Cream) */}
+             {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23].map((n, i) => {
+                const angle = i * 15;
+                const radius = 33;
                 return (
-                  <g key={`h-${n}`}>
-                    <line
-                      x1="50" y1="5" x2="50" y2="10"
-                      transform={`rotate(${angle} 50 50)`}
-                      stroke="white"
-                      strokeWidth="1.2"
-                    />
                     <text
-                      x={50 + 35 * Math.sin((angle * Math.PI) / 180)}
-                      y={50 - 35 * Math.cos((angle * Math.PI) / 180)}
-                      fill="white"
-                      fontSize="6.5"
-                      fontWeight="900"
+                      key={`h-${n}`}
+                      x={50 + radius * Math.sin((angle * Math.PI) / 180)}
+                      y={50 - radius * Math.cos((angle * Math.PI) / 180)}
+                      fill="#D1C7A1"
+                      fontSize={n === 0 || n === 12 ? "8.5" : "7"}
+                      fontWeight="700"
                       textAnchor="middle"
                       alignmentBaseline="central"
-                      style={{ fontFamily: "'Inter', sans-serif", opacity: 0.9 }}
+                      style={{ fontFamily: "'Crimson Pro', serif" }}
                     >
-                      {n}
+                      {n === 0 ? "00" : n}
                     </text>
-                  </g>
                 );
              })}
 
-             {/* Micro-scale inner circle */}
-             <circle cx="50" cy="50" r="26" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="0.3" strokeDasharray="0.5 1.5" />
-             
-             {/* ─── SCIENTIFIC HANDS ─── */}
-             {/* Hour Hand (24-hour movement: 1 tick = 15 degrees) */}
+             {/* Inner Dotted Circle */}
+             {[...Array(60)].map((_, i) => (
+                <circle
+                  key={`dot-${i}`}
+                  cx="50"
+                  cy="24"
+                  r="0.4"
+                  fill="rgba(209,199,161,0.2)"
+                  transform={`rotate(${i * 6} 50 50)`}
+                />
+             ))}
+
+             {/* ─── SPADE HANDS ─── */}
+             {/* Hour Hand (24-hour movement) */}
              <g style={{ 
                 transform: `rotate(${(time.getHours() % 24) * 15 + time.getMinutes() * 0.25}deg)`,
                 transformOrigin: '50% 50%',
-                transition: 'transform 0.5s cubic-bezier(0.19, 1, 0.22, 1)'
+                transition: 'transform 0.6s cubic-bezier(0.4, 2.08, 0.55, 0.44)'
              }}>
-                <line x1="50" y1="50" x2="50" y2="30" stroke="white" strokeWidth="1.8" strokeLinecap="round" />
-                <path d="M 50 30 L 49.2 32 L 50.8 32 Z" fill="white" /> {/* Pointy tip */}
+                {/* Spade Shape */}
+                <path d="M 50 50 L 50 28 M 50 28 C 47 28 47 34 50 36 M 50 28 C 53 28 53 34 50 36" fill="none" stroke="#F5F5DC" strokeWidth="1.5" />
+                <path d="M 50 24 L 46.5 30 L 50 33 L 53.5 30 Z" fill="#F5F5DC" /> {/* Spade Tip */}
              </g>
 
              {/* Minute Hand */}
              <g style={{ 
                 transform: `rotate(${time.getMinutes() * 6 + time.getSeconds() * 0.1}deg)`,
                 transformOrigin: '50% 50%',
-                transition: 'transform 0.5s cubic-bezier(0.19, 1, 0.22, 1)'
+                transition: 'transform 0.6s cubic-bezier(0.4, 2.08, 0.55, 0.44)'
              }}>
-                <line x1="50" y1="50" x2="50" y2="12" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
-                <path d="M 50 12 L 49.4 15 L 50.6 15 Z" fill="white" /> {/* Pointy tip */}
+                {/* Tapered Long Hand */}
+                <path d="M 50 50 L 50 12" stroke="#F5F5DC" strokeWidth="1.2" strokeLinecap="round" />
+                <path d="M 50 10 L 47 16 L 50 18 L 53 16 Z" fill="#F5F5DC" /> {/* Tapered Tip */}
              </g>
              
-             {/* Center Cap (Silver) */}
-             <circle cx="50" cy="50" r="3" fill="#D1D5DB" />
-             <circle cx="50" cy="50" r="1.5" fill="#9CA3AF" />
-             <circle cx="50" cy="50" r="0.8" fill="#4B5563" />
+             {/* Center Nut Detail */}
+             <circle cx="50" cy="50" r="3" fill="#050505" stroke="#D1C7A1" strokeWidth="0.5" />
+             <circle cx="50" cy="50" r="1.2" fill="#D1C7A1" />
           </svg>
         </div>
       </div>

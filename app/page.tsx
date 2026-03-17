@@ -212,7 +212,7 @@ export default function Home() {
               <Clock />
               <div className="hidden md:block w-[1px] h-32 bg-[#9CA764]/20" /> {/* Vertical separator for md+ */}
               <h2 className="text-4xl md:text-6xl lg:text-7xl font-sans text-[#1B261B] font-bold leading-[1.1] max-w-2xl tracking-tight text-center md:text-left">
-                everything your plants <br /> have been trying <br /> to tell you.
+                they have only <br /> been waiting for this <br /> moment to arrive.
               </h2>
             </div>
             
