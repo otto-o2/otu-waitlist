@@ -119,24 +119,24 @@ const WildViewfinder = () => {
 
   return (
     <div className="relative w-full max-w-[300px] select-none" style={{ aspectRatio: "0.65/1" }}>
-      {/* ─── HARDWARE CHASSIS (Slate Indigo) ─── */}
+      {/* ─── HARDWARE CHASSIS (Midnight Navy) ─── */}
       <div
         className="relative w-full h-full rounded-[42px] p-5 flex flex-col gap-4 overflow-hidden"
         style={{
-          background: "linear-gradient(160deg, #2B2D3A 0%, #1C1E28 55%, #13141C 100%)",
-          boxShadow: "0 60px 120px -20px rgba(5,5,15,0.75), 0 0 0 1px rgba(255,255,255,0.06), inset 0 1px 0 rgba(255,255,255,0.10), inset 0 -1px 0 rgba(0,0,0,0.5)",
+          background: "linear-gradient(160deg, #1B223A 0%, #111624 55%, #0A0D15 100%)",
+          boxShadow: "0 60px 120px -20px rgba(5,5,25,0.75), 0 0 0 1px rgba(255,255,255,0.06), inset 0 1px 0 rgba(255,255,255,0.10), inset 0 -1px 0 rgba(0,0,0,0.5)",
           border: "1px solid rgba(255,255,255,0.05)"
         }}
       >
         <div className="absolute inset-0 pointer-events-none opacity-[0.08]" 
           style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/brushed-alum-dark.png')" }} />
 
-        {/* ─── RADAR SCREEN (Phosphene Indigo) ─── */}
+        {/* ─── RADAR SCREEN (Sub-Abyss) ─── */}
         <div
           className="relative w-full rounded-2xl overflow-hidden flex flex-col p-3"
           style={{
             aspectRatio: "1/1.1",
-            background: "linear-gradient(160deg, #0D1A20 0%, #091318 100%)",
+            background: "linear-gradient(160deg, #0A0E1A 0%, #060912 100%)",
             border: "1px solid rgba(255,255,255,0.04)",
             boxShadow: "inset 0 2px 15px rgba(0,0,0,0.9)"
           }}
@@ -154,7 +154,7 @@ const WildViewfinder = () => {
           <div className="relative flex justify-between items-start mb-2 z-20">
             <div className="flex flex-col gap-0.5">
                <div className="flex items-center gap-1.5">
-                  <div className="w-1 h-1 rounded-full bg-[#9CA764] animate-pulse" />
+                  <div className="w-1 h-1 rounded-full bg-[#4EE2EC] animate-pulse" />
                   <span style={{ fontSize: 7, fontWeight: 900, color: "rgba(215,230,240,0.8)", textTransform: "uppercase", letterSpacing: "0.2em" }}>
                     radar active
                   </span>
@@ -174,19 +174,19 @@ const WildViewfinder = () => {
             <div 
               className="absolute top-1/2 left-1/2 w-[50%] h-[2px] -translate-y-1/2 origin-left z-10"
               style={{
-                background: "linear-gradient(90deg, transparent 0%, rgba(156,167,100,0.7) 100%)",
+                background: "linear-gradient(90deg, transparent 0%, rgba(78,226,236,0.7) 100%)",
                 transform: `rotate(${angle - 90}deg)`,
               }}
             >
                {/* Leading point glow */}
-               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-[#9CA764]/20 blur-sm rounded-full" />
+               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-[#4EE2EC]/20 blur-sm rounded-full" />
             </div>
 
             {/* Sweep Trail (Conic Gradient) */}
             <div 
               className="absolute top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 pointer-events-none"
               style={{
-                background: `conic-gradient(from ${angle - 30}deg, rgba(156,167,100,0.15) 0%, transparent 30deg)`,
+                background: `conic-gradient(from ${angle - 30}deg, rgba(78,226,236,0.15) 0%, transparent 30deg)`,
                 borderRadius: "50%"
               }}
             />
@@ -205,12 +205,12 @@ const WildViewfinder = () => {
                 }}
               >
                 {/* Schiff/Ship dot */}
-                <div className="w-1.5 h-1.5 bg-[#9CA764] rounded-[1px] shadow-[0_0_10px_rgba(156,167,100,1)]" 
+                <div className="w-1.5 h-1.5 bg-[#4EE2EC] rounded-[1px] shadow-[0_0_10px_rgba(78,226,236,1)]" 
                      style={{ transform: `rotate(${(t.driftX > 0 ? 45 : -45)}deg)` }} />
                 
                 {/* Ripple on Ping */}
                 {t.opacity > 0.95 && (
-                  <div className="absolute inset-[-4px] border border-[#9CA764] rounded-full animate-[ping_0.8s_ease-out_infinite]" />
+                  <div className="absolute inset-[-4px] border border-[#4EE2EC] rounded-full animate-[ping_0.8s_ease-out_infinite]" />
                 )}
               </div>
             ))}
@@ -246,14 +246,14 @@ const WildViewfinder = () => {
            </div>
 
            <div className="relative group cursor-pointer">
-              <div className="absolute -inset-2 bg-[#9CA764]/10 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute -inset-2 bg-[#4EE2EC]/10 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="w-16 h-16 rounded-full p-1" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.1), transparent)" }}>
                  <div className="w-full h-full rounded-full flex items-center justify-center" 
                    style={{ 
                      background: "linear-gradient(135deg, #22242E 0%, #13141C 100%)",
                      boxShadow: "0 8px 16px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.07)"
                    }}>
-                    <Camera className="w-6 h-6 text-[#9CA764] transition-all group-hover:scale-110" />
+                    <Camera className="w-6 h-6 text-[#4EE2EC] transition-all group-hover:scale-110" />
                  </div>
               </div>
            </div>
