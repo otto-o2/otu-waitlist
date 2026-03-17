@@ -3,18 +3,22 @@
 import React, { useState, useEffect } from "react";
 
 const Clock = () => {
-  const [time, setTime] = useState(new Date());
+  const [time, setTime] = useState<Date | null>(null);
 
   useEffect(() => {
+    // Capture time immediately on the client to avoid server-side mismatch
+    setTime(new Date());
+    
     const timer = setInterval(() => {
       setTime(new Date());
     }, 1000);
+    
     return () => clearInterval(timer);
   }, []);
 
-  const hours = time.getHours().toString().padStart(2, "0");
-  const minutes = time.getMinutes().toString().padStart(2, "0");
-  const seconds = time.getSeconds().toString().padStart(2, "0");
+  // Show a blank dial or placeholder during the split-second hydration phase
+  // to ensure hands don't "sweep" from 0 or show wrong server time.
+  const isHydrated = time !== null;
 
   return (
     <div className="relative flex items-center justify-center select-none" style={{ width: "clamp(120px, 24vw, 300px)", aspectRatio: "1/1" }}>
@@ -44,13 +48,13 @@ const Clock = () => {
         {/* Dial Face */}
         <div className="w-full h-full rounded-full bg-[#050505] shadow-[inset_0_2px_15px_rgba(0,0,0,1)] relative overflow-hidden">
           <svg viewBox="0 0 100 100" className="w-full h-full absolute inset-0">
-             {/* Outer Minute Track (Beige/Cream) */}
+             {/* Outer Minute Track */}
              {[...Array(60)].map((_, i) => (
                 <line
                   key={`m-${i}`}
-                  x1="50" y1="4" x2="50" y2={i % 5 === 0 ? "7" : "5.5"}
+                  x1="50" y1="4" x2="50" y2="5.5"
                   transform={`rotate(${i * 6} 50 50)`}
-                  stroke={i % 5 === 0 ? "#D1C7A1" : "rgba(209,199,161,0.3)"}
+                  stroke={i % 5 === 0 ? "rgba(255,255,255,0.4)" : "rgba(255,255,255,0.15)"}
                   strokeWidth="0.6"
                 />
              ))}
@@ -58,7 +62,7 @@ const Clock = () => {
              {/* Hour Numbers (24-Hour Format, Scientific White) */}
              {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23].map((n, i) => {
                 const angle = i * 15;
-                const radius = 38; // Increased from 33 to open up the design
+                const radius = 38;
                 return (
                     <text
                       key={`h-${n}`}
@@ -76,28 +80,32 @@ const Clock = () => {
                 );
              })}
 
-             {/* ─── ROUNDED INDUSTRIAL HANDS ─── */}
-             {/* Hour Hand (24-hour movement) */}
-             <g style={{ 
-                transform: `rotate(${(time.getHours() % 24) * 15 + time.getMinutes() * 0.25}deg)`,
-                transformOrigin: '50% 50%',
-                transition: 'transform 0.6s cubic-bezier(0.19, 1, 0.22, 1)'
-             }}>
-                <line x1="50" y1="50" x2="50" y2="30" stroke="white" strokeWidth="3.5" strokeLinecap="round" />
-             </g>
+             {isHydrated && (
+               <>
+                 {/* ─── ROUNDED INDUSTRIAL HANDS ─── */}
+                 {/* Hour Hand (24-hour movement) */}
+                 <g style={{ 
+                    transform: `rotate(${(time!.getHours() % 24) * 15 + time!.getMinutes() * 0.25}deg)`,
+                    transformOrigin: '50% 50%',
+                    transition: 'transform 0.5s cubic-bezier(0.19, 1, 0.22, 1)'
+                 }}>
+                    <line x1="50" y1="50" x2="50" y2="30" stroke="white" strokeWidth="3.5" strokeLinecap="round" />
+                 </g>
 
-             {/* Minute Hand (Orangish Red for Visibility) */}
-             <g style={{ 
-                transform: `rotate(${time.getMinutes() * 6 + time.getSeconds() * 0.1}deg)`,
-                transformOrigin: '50% 50%',
-                transition: 'transform 0.6s cubic-bezier(0.19, 1, 0.22, 1)'
-             }}>
-                <line x1="50" y1="50" x2="50" y2="12" stroke="#FF4D00" strokeWidth="2.5" strokeLinecap="round" />
-             </g>
+                 {/* Minute Hand (Orangish Red for Visibility) */}
+                 <g style={{ 
+                    transform: `rotate(${time!.getMinutes() * 6 + time!.getSeconds() * 0.1}deg)`,
+                    transformOrigin: '50% 50%',
+                    transition: 'transform 0.5s cubic-bezier(0.19, 1, 0.22, 1)'
+                 }}>
+                    <line x1="50" y1="50" x2="50" y2="12" stroke="#FF4D00" strokeWidth="2.5" strokeLinecap="round" />
+                 </g>
+               </>
+             )}
              
              {/* Center Nut Detail */}
              <circle cx="50" cy="50" r="3" fill="#050505" stroke="#FF4D00" strokeWidth="0.5" />
-             <circle cx="50" cy="50" r="1.2" fill="#FF4D00" />
+             <circle cx="50" cy="50" r="1.2" fill={isHydrated ? "#FF4D00" : "transparent"} />
           </svg>
         </div>
       </div>
