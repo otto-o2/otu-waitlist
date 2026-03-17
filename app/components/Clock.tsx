@@ -76,9 +76,6 @@ const Clock = () => {
                 );
              })}
 
-             {/* Inner alert scale (Orangish Red) */}
-             <circle cx="50" cy="50" r="26" fill="none" stroke="#FF4D00" strokeWidth="0.5" strokeDasharray="1 3" style={{ opacity: 0.6 }} />
-             
              {/* ─── ROUNDED INDUSTRIAL HANDS ─── */}
              {/* Hour Hand (24-hour movement) */}
              <g style={{ 
