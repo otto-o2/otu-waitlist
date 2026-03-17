@@ -34,6 +34,7 @@ const features = [
       "Emotional baseline tracking — Identify 'distress chords' before visual symptoms occur, becoming a proactive plant parent."
     ],
     background: <div className="absolute inset-0 bg-gradient-to-br from-[#9CA764]/20 to-transparent" />,
+    color: "#343D52", // Slate/Indigo for iPod
   },
   {
     id: "ward-mode",
@@ -51,6 +52,7 @@ const features = [
     background: <div className="absolute inset-0 bg-[#1B261B]/5 overflow-hidden">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
     </div>,
+    color: "#1B261B", // Deep Botanical
   },
   {
     id: "wild-mode",
@@ -68,6 +70,7 @@ const features = [
     background: <div className="absolute inset-0 bg-[#9CA764]/5">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] opacity-10" />
     </div>,
+    color: "#9CA764", // Matcha Green
   },
   {
     id: "genesis-engine",
@@ -83,6 +86,7 @@ const features = [
       "Holographic Timeline — Scroll through your progress as a botanist, from first sprout to professional greenhouse management."
     ],
     background: <div className="absolute inset-0 bg-gradient-to-t from-[#9CA764]/20 to-transparent" />,
+    color: "#1B1C28", // Stellar Onyx
   },
   {
     id: "marketplace",
@@ -98,6 +102,7 @@ const features = [
       "Trade, swap, and connect — Exchange cuttings, share regional growing knowledge, and build real neighborhood relationships."
     ],
     background: <div className="absolute inset-0 bg-gradient-to-l from-[#9CA764]/20 to-transparent opacity-30" />,
+    color: "#080C08", // Marketplace Black
   },
   {
     id: "compendium",
@@ -115,6 +120,7 @@ const features = [
     background: <div className="absolute inset-0 opacity-20">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cardboard-flat.png')]" />
     </div>,
+    color: "#0F1A12", // Compendium Emerald
   },
 ];
 

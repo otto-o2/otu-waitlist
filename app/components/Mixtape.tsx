@@ -81,14 +81,57 @@ const Mixtape = () => {
     return () => clearInterval(interval);
   }, [isPlaying]);
 
-  // Rotate wheel on hover
+  // Click wheel logic
+  const wheelRef = useRef<HTMLDivElement>(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const lastAngle = useRef<number | null>(null);
+
+  const calculateAngle = (e: React.MouseEvent) => {
+    if (!wheelRef.current) return 0;
+    const rect = wheelRef.current.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    return Math.atan2(e.clientY - centerY, e.clientX - centerX) * (180 / Math.PI);
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    lastAngle.current = calculateAngle(e);
+  };
+
   useEffect(() => {
-    if (!isWheelHovered) return;
-    const interval = setInterval(() => {
-      setWheelRotation((r) => r + 1.2);
-    }, 16);
-    return () => clearInterval(interval);
-  }, [isWheelHovered]);
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!isDragging || lastAngle.current === null) return;
+      
+      const currentAngle = calculateAngle(e as any);
+      let delta = currentAngle - lastAngle.current;
+      
+      // Handle the wrap-around (e.g. from 179 to -179)
+      if (delta > 180) delta -= 360;
+      if (delta < -180) delta += 360;
+      
+      setWheelRotation((prev) => prev + delta);
+      
+      // Optional: adjust progress based on rotation
+      setProgress(p => Math.max(0, Math.min(100, p + delta * 0.1)));
+      
+      lastAngle.current = currentAngle;
+    };
+
+    const handleMouseUp = () => {
+      setIsDragging(false);
+      lastAngle.current = null;
+    };
+
+    if (isDragging) {
+      window.addEventListener("mousemove", handleMouseMove);
+      window.addEventListener("mouseup", handleMouseUp);
+    }
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseup", handleMouseUp);
+    };
+  }, [isDragging]);
 
   const elapsed = Math.floor((progress / 100) * 268);
   const elapsedMin = Math.floor(elapsed / 60);
@@ -262,8 +305,10 @@ const Mixtape = () => {
         {/* ─── CLICK WHEEL ─── */}
         <div className="flex-1 flex items-center justify-center mt-4">
           <div
+            ref={wheelRef}
             className="relative cursor-pointer"
             style={{ width: 148, height: 148 }}
+            onMouseDown={handleMouseDown}
             onMouseEnter={() => setIsWheelHovered(true)}
             onMouseLeave={() => setIsWheelHovered(false)}
             onClick={() => setIsPlaying((p) => !p)}
