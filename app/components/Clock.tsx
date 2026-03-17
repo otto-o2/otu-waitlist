@@ -55,7 +55,7 @@ const Clock = () => {
                 />
              ))}
 
-             {/* Hour Numbers (24-Hour Format, Beige/Cream) */}
+             {/* Hour Numbers (24-Hour Format, Scientific White) */}
              {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23].map((n, i) => {
                 const angle = i * 15;
                 const radius = 33;
@@ -64,51 +64,40 @@ const Clock = () => {
                       key={`h-${n}`}
                       x={50 + radius * Math.sin((angle * Math.PI) / 180)}
                       y={50 - radius * Math.cos((angle * Math.PI) / 180)}
-                      fill="#D1C7A1"
+                      fill="white"
                       fontSize={n === 0 || n === 12 ? "8.5" : "7"}
                       fontWeight="700"
                       textAnchor="middle"
                       alignmentBaseline="central"
-                      style={{ fontFamily: "'Crimson Pro', serif" }}
+                      style={{ fontFamily: "'Inter', sans-serif" }}
                     >
                       {n === 0 ? "00" : n}
                     </text>
                 );
              })}
 
-             {/* Inner Dotted Circle */}
-             {[...Array(60)].map((_, i) => (
-                <circle
-                  key={`dot-${i}`}
-                  cx="50"
-                  cy="24"
-                  r="0.4"
-                  fill="rgba(209,199,161,0.2)"
-                  transform={`rotate(${i * 6} 50 50)`}
-                />
-             ))}
+             {/* Inner circle markings */}
+             <circle cx="50" cy="50" r="26" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="0.5" strokeDasharray="1 2" />
 
-             {/* ─── SPADE HANDS ─── */}
+             {/* ─── SCIENTIFIC NEEDLE HANDS ─── */}
              {/* Hour Hand (24-hour movement) */}
              <g style={{ 
                 transform: `rotate(${(time.getHours() % 24) * 15 + time.getMinutes() * 0.25}deg)`,
                 transformOrigin: '50% 50%',
-                transition: 'transform 0.6s cubic-bezier(0.4, 2.08, 0.55, 0.44)'
+                transition: 'transform 0.6s cubic-bezier(0.19, 1, 0.22, 1)'
              }}>
-                {/* Spade Shape */}
-                <path d="M 50 50 L 50 28 M 50 28 C 47 28 47 34 50 36 M 50 28 C 53 28 53 34 50 36" fill="none" stroke="#F5F5DC" strokeWidth="1.5" />
-                <path d="M 50 24 L 46.5 30 L 50 33 L 53.5 30 Z" fill="#F5F5DC" /> {/* Spade Tip */}
+                <line x1="50" y1="50" x2="50" y2="30" stroke="white" strokeWidth="2" strokeLinecap="round" />
+                <path d="M 50 30 L 49 32 L 51 32 Z" fill="white" /> {/* Precision Tip */}
              </g>
 
              {/* Minute Hand */}
              <g style={{ 
                 transform: `rotate(${time.getMinutes() * 6 + time.getSeconds() * 0.1}deg)`,
                 transformOrigin: '50% 50%',
-                transition: 'transform 0.6s cubic-bezier(0.4, 2.08, 0.55, 0.44)'
+                transition: 'transform 0.6s cubic-bezier(0.19, 1, 0.22, 1)'
              }}>
-                {/* Tapered Long Hand */}
-                <path d="M 50 50 L 50 12" stroke="#F5F5DC" strokeWidth="1.2" strokeLinecap="round" />
-                <path d="M 50 10 L 47 16 L 50 18 L 53 16 Z" fill="#F5F5DC" /> {/* Tapered Tip */}
+                <line x1="50" y1="50" x2="50" y2="12" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
+                <path d="M 50 12 L 49.3 15 L 50.7 15 Z" fill="white" /> {/* Precision Tip */}
              </g>
              
              {/* Center Nut Detail */}
