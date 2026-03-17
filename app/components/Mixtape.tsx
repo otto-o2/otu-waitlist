@@ -2,102 +2,101 @@
 
 const Mixtape = () => {
   return (
-    <div className="relative w-full max-w-[320px] aspect-[0.65/1] flex items-center justify-center p-4 select-none">
-      {/* Cassette Shell (The Body) */}
-      <div className="relative w-full h-full bg-[#1B261B] rounded-[24px] border-[6px] border-[#1B261B] shadow-[0_40px_80px_-15px_rgba(0,0,0,0.5)] flex flex-col overflow-hidden">
-        {/* Subtle texture/grain on shell */}
-        <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
+    <div className="relative w-full max-w-[300px] aspect-[0.7/1] flex items-center justify-center p-4 select-none">
+      {/* Cassette Shell - Deep Forest Green */}
+      <div className="relative w-full h-full bg-[#1B261B] rounded-[20px] border-[5px] border-[#2A362A] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.6)] flex flex-col overflow-hidden">
         
-        {/* Main Label Sticker */}
-        <div className="relative z-10 w-full h-full p-3 flex flex-col gap-1">
-          <div className="w-full h-full bg-[#FDFBF7] rounded-xl border-b-[10px] border-black/10 flex flex-col relative overflow-hidden p-6">
-            {/* Design Stripes */}
-            <div className="absolute top-0 right-0 w-12 h-full bg-[#9CA764]/20 -skew-x-12 translate-x-4" />
-            <div className="absolute top-0 right-8 w-4 h-full bg-[#9CA764]/10 -skew-x-12 translate-x-4" />
-            
-            {/* Header / Brand */}
-            <div className="flex justify-between items-start mb-6">
-              <div className="flex flex-col">
-                <span className="text-[14px] font-sans font-black text-[#9CA764] leading-none mb-1">A</span>
-                <span className="text-[7px] font-sans font-bold uppercase tracking-[0.3em] text-[#1B261B]/40">Index</span>
-              </div>
-              <div className="text-right">
-                <p className="text-[8px] font-sans font-black uppercase tracking-widest text-[#1B261B]">otu intelligence</p>
-                <div className="h-[2px] w-full bg-[#1B261B] mt-1" />
-              </div>
+        {/* The Classic Sticker Label */}
+        <div className="absolute inset-[15px] bg-[#FDFBF7] rounded-lg shadow-inner flex flex-col overflow-hidden">
+          {/* Sticker Background Pattern */}
+          <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[repeating-linear-gradient(45deg,transparent,transparent_10px,#1B261B_10px,#1B261B_11px)]" />
+          
+          {/* Header Section */}
+          <div className="h-1/4 w-full p-4 flex justify-between items-start border-b border-[#1B261B]/10">
+            <div className="flex flex-col">
+              <span className="text-2xl font-sans font-black text-[#A14B3B] leading-none">A</span>
+              <span className="text-[8px] font-sans font-black uppercase tracking-[0.2em] text-[#1B261B]/40">Index</span>
             </div>
-
-            {/* Title Section */}
-            <div className="flex-1 flex flex-col justify-center">
-               <h4 className="text-2xl font-sans font-black uppercase tracking-tighter text-[#1B261B] mb-1">leaf notes</h4>
-               <p className="text-[10px] font-sans font-medium italic text-[#1B261B]/60 tracking-wide">Symphony of Flora v2.1</p>
-               
-               <div className="mt-6 flex flex-col gap-1 opacity-20">
-                  <div className="w-full h-[1px] bg-[#1B261B]" />
-                  <div className="w-full h-[1px] bg-[#1B261B]" />
-                  <div className="w-4/5 h-[1px] bg-[#1B261B]" />
-               </div>
+            <div className="text-right">
+              <p className="text-[10px] font-sans font-black uppercase tracking-widest text-[#1B261B]">otu</p>
+              <div className="h-[2px] w-full bg-[#9CA764] mt-1" />
             </div>
+          </div>
 
-            {/* Cassette Center (Window & Reels) */}
-            <div className="my-6 w-full h-40 bg-[#1B261B] rounded-2xl border-2 border-black/20 flex flex-col items-center justify-around p-4 relative shadow-inner overflow-hidden">
-               {/* Magnetic Tape Visual in Window */}
-               <div className="absolute inset-0 bg-gradient-to-b from-[#251A0F] via-[#3d2c1a] to-[#251A0F] opacity-40" />
-               
-               {/* Top Reel */}
-               <div className="relative z-10 w-16 h-16 bg-white/5 rounded-full flex items-center justify-center">
-                  <div className="w-full h-full bg-[#251A0F] rounded-full animate-[spin_10s_linear_infinite] flex items-center justify-center p-1">
-                     <div className="w-full h-full rounded-full border-[3px] border-dashed border-white/20" />
-                  </div>
-                  <div className="absolute z-20 w-8 h-8 bg-[#F1E8C7] rounded-full border-4 border-[#1B261B] animate-[spin_10s_linear_infinite] flex items-center justify-center">
-                     <div className="w-1 h-3 bg-[#1B261B] rounded-full" />
-                  </div>
-               </div>
+          {/* Central Title */}
+          <div className="flex-1 flex flex-col items-center justify-center -mt-4">
+             <h4 className="text-3xl font-sans font-black uppercase tracking-tight text-[#1B261B] leading-none">leaf notes</h4>
+             <div className="flex items-center gap-4 mt-2">
+                <div className="h-[1px] w-8 bg-[#1B261B]/20" />
+                <span className="text-[9px] font-sans font-black uppercase tracking-[0.3em] text-[#9CA764]">Stereo Cassette</span>
+                <div className="h-[1px] w-8 bg-[#1B261B]/20" />
+             </div>
+          </div>
 
-               {/* Center Tape Level Indicator */}
-               <div className="w-20 h-2 bg-black/40 rounded-full relative overflow-hidden border border-white/5">
-                  <div className="absolute top-0 left-0 h-full w-1/2 bg-[#9CA764]/60 animate-pulse" />
-               </div>
+          {/* Transparent Window / Reel Slot */}
+          <div className="h-[45%] w-full bg-[#0D140D] flex flex-col items-center justify-around py-4 relative">
+             {/* Magnetic Tape Spool Simulation */}
+             <div className="absolute inset-0 opacity-40 bg-[linear-gradient(to_bottom,#251A0F_0%,#3d2c1a_50%,#251A0F_100%)]" />
+             
+             {/* Top Reel */}
+             <div className="relative z-10 w-20 h-20 flex items-center justify-center">
+                <div className="absolute inset-0 bg-[#251A0F] rounded-full border border-white/5 animate-[spin_10s_linear_infinite]" />
+                <div className="z-10 w-10 h-10 bg-[#F1E8C7] rounded-full flex items-center justify-center border-4 border-[#1B261B] animate-[spin_10s_linear_infinite]">
+                   {/* Reel Spokes */}
+                   <div className="absolute w-full h-[2px] bg-[#1B261B]/20 rotate-0" />
+                   <div className="absolute w-full h-[2px] bg-[#1B261B]/20 rotate-60" />
+                   <div className="absolute w-full h-[2px] bg-[#1B261B]/20 rotate-120" />
+                   <div className="w-2 h-4 bg-[#1B261B] rounded-full" />
+                </div>
+             </div>
 
-               {/* Bottom Reel */}
-               <div className="relative z-10 w-16 h-16 bg-white/5 rounded-full flex items-center justify-center">
-                  <div className="w-full h-full bg-[#251A0F] rounded-full animate-[spin_10s_linear_infinite] flex items-center justify-center p-1">
-                     <div className="w-full h-full rounded-full border-[3px] border-dashed border-white/20" />
-                  </div>
-                  <div className="absolute z-20 w-8 h-8 bg-[#F1E8C7] rounded-full border-4 border-[#1B261B] animate-[spin_10s_linear_infinite] flex items-center justify-center">
-                     <div className="w-1 h-3 bg-[#1B261B] rounded-full" />
-                  </div>
-               </div>
+             {/* Moving Tape Line */}
+             <div className="w-1 h-8 bg-[#9CA764]/20 overflow-hidden relative">
+                <div className="absolute top-0 left-0 w-full h-full animate-[slide_1s_linear_infinite] bg-gradient-to-b from-transparent via-[#9CA764] to-transparent" />
+             </div>
+
+             {/* Bottom Reel */}
+             <div className="relative z-10 w-20 h-20 flex items-center justify-center">
+                <div className="absolute inset-0 bg-[#251A0F] rounded-full border border-white/5 animate-[spin_10s_linear_infinite]" />
+                <div className="z-10 w-10 h-10 bg-[#F1E8C7] rounded-full flex items-center justify-center border-4 border-[#1B261B] animate-[spin_10s_linear_infinite]">
+                   <div className="absolute w-full h-[2px] bg-[#1B261B]/20 rotate-0" />
+                   <div className="absolute w-full h-[2px] bg-[#1B261B]/20 rotate-60" />
+                   <div className="absolute w-full h-[2px] bg-[#1B261B]/20 rotate-120" />
+                   <div className="w-2 h-4 bg-[#1B261B] rounded-full" />
+                </div>
+             </div>
+          </div>
+
+          {/* Footer Labeling */}
+          <div className="h-16 w-full p-4 flex justify-between items-end">
+            <div className="flex flex-col">
+              <span className="text-[8px] font-sans font-black uppercase text-[#1B261B]/40">Studio</span>
+              <span className="text-[12px] font-sans font-black uppercase text-[#1B261B]">Quality</span>
             </div>
-
-            {/* Footer Specs */}
-            <div className="flex justify-between items-end mt-auto">
-               <div className="flex flex-col">
-                  <span className="text-[7px] font-sans font-black uppercase text-[#1B261B]/60 tracking-widest">Studio</span>
-                  <span className="text-[10px] font-sans font-black uppercase text-[#1B261B]">Quality</span>
-               </div>
-               <div className="flex items-center gap-2">
-                  <div className="flex flex-col items-end">
-                     <span className="text-[7px] font-sans font-bold uppercase text-[#1B261B]/40">Type</span>
-                     <span className="text-[9px] font-sans font-black text-[#1B261B]">GENOME I</span>
-                  </div>
-               </div>
+            <div className="flex flex-col items-end">
+               <span className="text-[8px] font-sans font-black uppercase text-[#1B261B]/40">Type</span>
+               <span className="text-[14px] font-sans font-black text-[#1B261B]">I</span>
             </div>
           </div>
         </div>
 
-        {/* Realism: Mechanical details */}
-        <div className="absolute top-3 left-3 w-2 h-2 rounded-full bg-black/40 border border-white/5" />
-        <div className="absolute top-3 right-3 w-2 h-2 rounded-full bg-black/40 border border-white/5" />
-        <div className="absolute bottom-3 left-3 w-2 h-2 rounded-full bg-black/40 border border-white/5" />
-        <div className="absolute bottom-3 right-3 w-2 h-2 rounded-full bg-black/40 border border-white/5" />
-        
-        {/* Top Case Openings */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-1 bg-black/20 rounded-b-full" />
-        
-        {/* Shine/Reflections Overlay */}
-        <div className="absolute inset-0 pointer-events-none bg-gradient-to-tr from-transparent via-white/5 to-white/10 rounded-[24px]" />
+        {/* Mechanical Shell Details (The realistic holes/screws) */}
+        <div className="absolute bottom-[2%] left-1/2 -translate-x-1/2 w-3/4 h-[5px] flex justify-between px-8">
+           <div className="w-3 h-3 rounded-full bg-black/40 border border-white/5" />
+           <div className="w-3 h-3 rounded-full bg-black/40 border border-white/5" />
+           <div className="w-3 h-3 rounded-full bg-black/40 border border-white/5" />
+        </div>
+
+        {/* Glass Reflection */}
+        <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-white/10 via-transparent to-black/20 mix-blend-overlay" />
       </div>
+
+      <style jsx>{`
+        @keyframes slide {
+          from { transform: translateY(-100%); }
+          to { transform: translateY(100%); }
+        }
+      `}</style>
     </div>
   );
 };
