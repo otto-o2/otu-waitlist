@@ -15,12 +15,12 @@ const GenesisEngine = () => {
 
   return (
     <div className="relative w-full max-w-[300px] select-none" style={{ aspectRatio: "0.65/1" }}>
-      {/* ─── HARDWARE CHASSIS (Obsidian Carbon) ─── */}
+      {/* ─── HARDWARE CHASSIS ─── */}
       <div
         className="relative w-full h-full rounded-[42px] p-5 flex flex-col gap-4 overflow-hidden"
         style={{
-          background: "linear-gradient(160deg, #1C1C1E 0%, #141415 55%, #0E0E0F 100%)",
-          boxShadow: "0 60px 120px -20px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.06), inset 0 1px 0 rgba(255,255,255,0.10), inset 0 -1px 0 rgba(0,0,0,0.5)",
+          background: "linear-gradient(160deg, #2B2D3A 0%, #1C1E28 55%, #13141C 100%)",
+          boxShadow: "0 60px 120px -20px rgba(5,5,15,0.75), 0 0 0 1px rgba(255,255,255,0.06), inset 0 1px 0 rgba(255,255,255,0.10), inset 0 -1px 0 rgba(0,0,0,0.5)",
           border: "1px solid rgba(255,255,255,0.05)"
         }}
       >
@@ -32,7 +32,7 @@ const GenesisEngine = () => {
           className="relative w-full rounded-2xl overflow-hidden flex flex-col p-4"
           style={{
             aspectRatio: "1/1.1",
-            background: "linear-gradient(160deg, #0D0D0D 0%, #050505 100%)",
+            background: "linear-gradient(160deg, #0D1A20 0%, #091318 100%)",
             border: "1px solid rgba(255,255,255,0.04)",
             boxShadow: "inset 0 2px 15px rgba(0,0,0,0.9)"
           }}
@@ -42,19 +42,19 @@ const GenesisEngine = () => {
           
           <div className="relative z-10 flex justify-between items-center mb-4">
             <div className="flex flex-col">
-              <span style={{ fontSize: 7, fontWeight: 900, color: "rgba(167,255,77,0.9)", textTransform: "uppercase", letterSpacing: "0.2em" }}>
+              <span style={{ fontSize: 7, fontWeight: 900, color: "rgba(156,167,100,0.9)", textTransform: "uppercase", letterSpacing: "0.2em" }}>
                 Genesis Vault
               </span>
               <span style={{ fontSize: 6, color: "rgba(180,200,210,0.4)", fontWeight: 700 }}>GENOMIC ARCHIVE v.42</span>
             </div>
-            <ShieldCheck className="w-3 h-3 text-[#A7FF4D]/40" />
+            <ShieldCheck className="w-3 h-3 text-[#9CA764]/40" />
           </div>
 
           {/* MAIN VISUAL: ANIMATED DNA STRAND */}
           <div className="flex-1 relative flex items-center justify-center overflow-hidden">
              {/* Rotating HUD Elements */}
              <div className="absolute w-40 h-40 border border-white/5 rounded-full animate-[spin_30s_linear_infinite]" />
-             <div className="absolute w-32 h-32 border border-[#A7FF4D]/10 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
+             <div className="absolute w-32 h-32 border border-[#9CA764]/10 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
              
              {/* Custom SVG DNA Strand */}
              <svg viewBox="0 0 100 160" className="w-20 h-32 opacity-80 overflow-visible">
@@ -70,7 +70,7 @@ const GenesisEngine = () => {
                       {/* Connector Rung */}
                       <line 
                         x1={x1} y1={y} x2={x2} y2={y} 
-                        stroke="#A7FF4D" 
+                        stroke="#9CA764" 
                         strokeWidth="0.5" 
                         opacity={0.3} 
                       />
@@ -78,15 +78,15 @@ const GenesisEngine = () => {
                       <circle 
                         cx={x1} cy={y} 
                         r={zIndex > 0 ? 2 : 1.2} 
-                        fill={zIndex > 0 ? "#A7FF4D" : "rgba(167,255,77,0.4)"} 
-                        className="shadow-[0_0_8px_#A7FF4D]"
+                        fill={zIndex > 0 ? "#9CA764" : "rgba(156,167,100,0.4)"} 
+                        className="shadow-[0_0_8px_#9CA764]"
                       />
                       {/* Helix Point 2 */}
                       <circle 
                         cx={x2} cy={y} 
                         r={zIndex < 0 ? 2 : 1.2} 
-                        fill={zIndex < 0 ? "#A7FF4D" : "rgba(167,255,77,0.4)"}
-                        className="shadow-[0_0_8px_#A7FF4D]"
+                        fill={zIndex < 0 ? "#9CA764" : "rgba(156,167,100,0.4)"}
+                        className="shadow-[0_0_8px_#9CA764]"
                       />
                     </g>
                   );
@@ -97,11 +97,11 @@ const GenesisEngine = () => {
           {/* Scrolling Activity Log (Simplified) */}
           <div className="flex flex-col gap-1 mt-4">
              <div className="w-full h-[2px] bg-white/5 rounded-full overflow-hidden">
-                <div className="h-full w-2/3 bg-gradient-to-r from-transparent via-[#A7FF4D] to-transparent animate-[shimmer_2s_infinite]" />
+                <div className="h-full w-2/3 bg-gradient-to-r from-transparent via-[#9CA764] to-transparent animate-[shimmer_2s_infinite]" />
              </div>
              <div className="flex justify-between items-center px-1">
-                <span style={{ fontSize: 5, color: "rgba(167,255,77,0.6)", fontWeight: 900 }}>RECONSTRUCTING_CELL_ARCH...</span>
-                <span style={{ fontSize: 5, color: "rgba(167,255,77,0.4)", fontWeight: 900 }}>76%</span>
+                <span style={{ fontSize: 5, color: "rgba(156,167,100,0.6)", fontWeight: 900 }}>RECONSTRUCTING_CELL_ARCH...</span>
+                <span style={{ fontSize: 5, color: "rgba(156,167,100,0.4)", fontWeight: 900 }}>76%</span>
              </div>
           </div>
 
@@ -112,7 +112,7 @@ const GenesisEngine = () => {
                    SECURE / 0.00ms LATENCY
                 </span>
              </div>
-             <Binary className="w-3 h-3 text-[#A7FF4D]/30" />
+             <Binary className="w-3 h-3 text-[#9CA764]/30" />
           </div>
         </div>
 
@@ -133,7 +133,7 @@ const GenesisEngine = () => {
                      background: "linear-gradient(135deg, #22242E 0%, #13141C 100%)",
                      boxShadow: "0 8px 16px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.07)"
                    }}>
-                    <Binary className="w-6 h-6 text-[#A7FF4D]" />
+                    <Binary className="w-6 h-6 text-[#9CA764]" />
                  </div>
               </div>
            </div>
