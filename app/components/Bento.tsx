@@ -53,15 +53,20 @@ const BentoCard = ({
       {background}
     </div>
     
-    <div className="z-10 flex flex-col gap-3 p-10 transition-all duration-300">
+    <div className="z-10 flex flex-col gap-4 p-8 md:p-10 transition-all duration-300">
       <div className="bg-[#9CA764]/10 p-3 rounded-2xl w-fit">
-        <Icon className="h-8 w-8 text-[#9CA764]" /> 
+        <Icon className="h-6 w-6 md:h-8 md:w-8 text-[#9CA764]" /> 
       </div>
       <div>
-        <h3 className="text-3xl font-serif font-medium text-[#1B261B] tracking-tight mb-2">
-          {name}
+        <h3 className="text-2xl md:text-3xl font-serif font-medium text-[#1B261B] tracking-tight mb-1">
+          {name.split(":")[0]}
         </h3>
-        <p className="max-w-md text-[#1B261B]/60 font-light leading-relaxed text-lg">
+        {name.includes(":") && (
+          <p className="text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold text-[#9CA764] mb-3">
+            {name.split(":")[1].trim()}
+          </p>
+        )}
+        <p className="max-w-md text-[#1B261B]/60 font-light leading-relaxed text-base md:text-lg">
           {description}
         </p>
       </div>

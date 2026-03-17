@@ -24,96 +24,90 @@ const features = [
   {
     id: "ward-mode",
     name: "The Clinical Hub: Ward Mode",
-    description: "Instant scanning for pests, deficiencies, and bespoke care schedules tailored to your micro-climate.",
+    description: "A full-spectrum plant clinic that lives in your pocket. Diagnose, treat, and watch your green babies actually flourish for once.",
     href: "#ward-mode-detail",
-    cta: "View details",
+    cta: "Enter the ward →",
     className: "md:col-span-2",
     Icon: Stethoscope,
     highlights: [
-      "Precision Diagnosis: Instant scanning for pests, deficiencies, and fungal issues.",
-      "In-Depth Care Packages: Bespoke schedules tailored to your specific micro-climate.",
-      "The Doctor’s Ledger: Time-stamped medical reports creating a historical health record.",
-      "Intelligent Notifications: 'Stat-Check' alerts based on real-time environmental data."
+      "Diagnose in seconds, not days — Point, scan, and otu identifies 50+ pests, diseases, and nutrient deficiencies in under 3 seconds.",
+      "Micro-climate memory — Ward Mode maps your home's unique conditions (light, humidity) and builds care schedules that actually work.",
+      "A nurse on call, 24/7 — Real-time health alerts ping you before things go sideways. No paperwork. Just thriving plants."
     ],
     background: <div className="absolute inset-0 bg-gradient-to-br from-[#9CA764]/20 to-transparent" />,
   },
   {
     id: "wild-mode",
-    name: "The Expedition: Wild Mode",
-    description: "Identify plants in the wild with a Pokémon-style capture mechanic and GPS journal.",
+    name: "The Field Trip: Wild Mode",
+    description: "Your field guide to every green thing. Catch, log, and fall in love with plants you didn't know existed.",
     href: "#wild-mode-detail",
-    cta: "Join expedition",
+    cta: "Head outside →",
     className: "md:col-span-1",
     Icon: Compass,
     highlights: [
-      "'Sprout & About' Exploration: Identify plants in the wild using a capture mechanic.",
-      "GPS Botanical Journal: Geo-tag every encounter into a personal exploration map.",
-      "Rare Variant Hunting: Track down ultra-rare mutations and regional phenotypes.",
-      "Survivalist Mode: Instant toxicity and edibility insights for urban forage."
+      "Tap to catch, no net required — Snap any leaf in the wild and otu identifies it instantly with a satisfying capture animation.",
+      "A map that grows with every walk — Every find is geo-tagged to your personal adventure map, building a living catalog.",
+      "Go further, get rewarded — Seasonal challenges and biome badges nudge you to wander a little further than usual."
     ],
     background: <div className="absolute inset-0 bg-gradient-to-tr from-[#9CA764]/20 to-transparent" />,
   },
   {
     id: "genesis-engine",
-    name: "The Genesis Engine",
-    description: "Every plant scanned is assigned a Unique Genome to spawn a living digital species.",
+    name: "The Greenhouse: Genesis Engine",
+    description: "Every scan grows something new. A tiny digital universe that blooms from your real-world collection, one genome at a time.",
     href: "#genesis-engine-detail",
-    cta: "Synthesize species",
+    cta: "Grow something →",
     className: "md:col-span-1",
     Icon: Zap,
     highlights: [
-      "Digital Growth Vault: Your physical scans spawn immortal digital species.",
-      "Genome Synthesis: Tweak genetic markers to influence digital growth rates.",
-      "Cross-Breeding: Merge the genomes of different plants to create hybrid species.",
-      "State-of-the-Art AR: Visualize your digital garden in your physical space."
+      "A fingerprint unlike any other — Every scan generates a one-of-a-kind Unique Genome woven from species and health data.",
+      "Watch your greenhouse bloom — Your digital collection grows and shifts as your real plants do, reflecting reality.",
+      "Hunt for the hidden ones — Certain genome combinations unlock synthesis pathways that sprout entirely new digital hybrid species."
     ],
     background: <div className="absolute inset-0 bg-gradient-to-bl from-[#9CA764]/20 to-transparent" />,
   },
   {
     id: "botanical-sonification",
-    name: "The Symphony of Flora",
-    description: "Our algorithm translates DNA and health metrics into a unique ambient track.",
+    name: "Leaf Notes: Symphony of Flora",
+    description: "Happy plants hum. Sad ones don't. Otu turns your garden's whole mood into a living ambient track you can actually feel.",
     href: "#botanical-sonification-detail",
-    cta: "Listen to flora",
+    cta: "Hear your garden →",
     className: "md:col-span-2",
     Icon: Volume2,
     highlights: [
-      "Plant-to-MIDI: Real-time translation of health metrics into generative audio.",
-      "Garden Soundscapes: Your entire collection creates a spatial ambient atmosphere.",
-      "DNA Melodies: Each species has a unique base 'frequency' and melodic loop.",
-      "Wellness Integration: Use your garden's song for meditation and focus."
+      "Every plant, a different note — Otu translates genome and growth stages into a track that belongs to it and only it.",
+      "Mood you can actually hear — A happy plant hums lush and warm; a struggling one shifts toward something urgent.",
+      "Your garden's soundtrack, on shuffle — Export your collection's living score as a playlist or let it drift through your space."
     ],
     background: <div className="absolute inset-0 bg-gradient-to-r from-[#9CA764]/20 to-transparent" />,
   },
   {
     id: "marketplace",
-    name: "The Marketplace",
-    description: "Connect with local experts, buy rare seeds, or call a plant-sitter to your home.",
+    name: "The Farmer's Market: Marketplace",
+    description: "Rare seeds, local experts, and on-demand plant-sitters — all within reach. The green economy, hyper-local.",
     href: "#marketplace-detail",
-    cta: "Visit market",
+    cta: "Visit the market →",
     className: "md:col-span-2",
     Icon: Store,
     highlights: [
-      "The Farmer’s Market: Peer-to-peer trading of rare clippings and seeds.",
-      "On-Call Botanists: Hire local physical plant-sitters or recovery specialists.",
-      "Seed Auctions: Access limited-run genetics found during Wild Mode expeditions.",
-      "Curated Supply: Expert-veted fertilizers, pots, and lighting hardware."
+      "Hyper-local, hand-picked listings — Browse verified plant experts, rare seed sellers, and suppliers within your city.",
+      "Book a plant-sitter IRL — Going away? Book a certified plant-sitter to visit your home and keep your babies alive.",
+      "Trade, swap, and connect — Exchange cuttings, share regional growing knowledge, and build real neighborhood relationships."
     ],
     background: <div className="absolute inset-0 bg-gradient-to-l from-[#9CA764]/20 to-transparent" />,
   },
   {
     id: "compendium",
-    name: "The Compendium",
-    description: "A deep-dive database of 4,000+ species with digital yield stats.",
+    name: "Sprout and About: Compendium",
+    description: "4,000+ species. Infinite curiosity. One cozy deep-dive for the plant-obsessed — and the lore to make you insufferable.",
     href: "#compendium-detail",
-    cta: "Browse library",
+    cta: "Start exploring →",
     className: "md:col-span-1",
     Icon: Library,
     highlights: [
-      "Living Encyclopedia: 4,000+ species with detailed botanical datasets.",
-      "The Completionist Quest: Rewards for scanning entire plant families.",
-      "Digital Yield Stats: Project the growth potential of any plant you scanning.",
-      "Community Wiki: Contribute care data to the global Otu health graph."
+      "4,000+ species, zero pretension — Rich profiles, toxicity guides, and just enough mythology to win any dinner party.",
+      "Strategy for the serious collector — Digital yield stats and synthesis guides help you hunt for the rarest Greenhouse genomes.",
+      "Written by people who really care — Verified botanists and plant parents contribute field notes and regional growing quirks."
     ],
     background: <div className="absolute inset-0 bg-gradient-to-t from-[#9CA764]/20 to-transparent" />,
   },
@@ -144,26 +138,46 @@ export default function Home() {
           />
         </div>
 
-        {/* Title */}
-        <div className="relative z-10 text-center flex flex-col items-center gap-4">
-          <p className="text-xs md:text-sm font-medium tracking-[0.4em] text-[#1B261B]/40 ml-[0.4em] lowercase">
-            (otu)
-          </p>
-          <h1
-            style={{
-              fontFamily: "'Outfit', sans-serif",
-              fontWeight: 800,
-              fontSize: "clamp(2rem, 10vw, 6.5rem)",
-              letterSpacing: "0.2em",
-              lineHeight: "1.1",
-              textTransform: "uppercase",
-              color: "#1B261B", 
-              maxWidth: "1400px",
-              marginLeft: "0.2em", 
-            }}
-          >
-            haus der<br />grünen
-          </h1>
+        {/* Content */}
+        <div className="relative z-10 text-center flex flex-col items-center gap-8 max-w-4xl">
+          <div className="space-y-4">
+            <p className="text-[10px] md:text-xs font-bold tracking-[0.6em] text-[#9CA764] uppercase bg-[#9CA764]/5 px-6 py-2 rounded-full border border-[#9CA764]/10">
+              plant intelligence
+            </p>
+            <h1
+              className="font-serif italic text-2xl md:text-3xl text-[#1B261B]/60"
+            >
+              (otu)
+            </h1>
+          </div>
+
+          <div className="space-y-6">
+            <h2
+              style={{
+                fontFamily: "'Outfit', sans-serif",
+                fontWeight: 800,
+                fontSize: "clamp(2.5rem, 12vw, 8rem)",
+                letterSpacing: "0.1em",
+                lineHeight: "0.9",
+                textTransform: "uppercase",
+                color: "#1B261B", 
+              }}
+            >
+              haus der<br />grünen
+            </h2>
+            <h3 className="text-xl md:text-4xl font-serif text-[#1B261B] italic max-w-2xl mx-auto leading-tight">
+              everything your plants have been trying to tell you.
+            </h3>
+          </div>
+
+          <div className="space-y-2 mt-8">
+            <p className="text-sm md:text-base font-medium tracking-[0.2em] text-[#1B261B] uppercase">
+              scan it. name it. let it live a little.
+            </p>
+            <p className="text-[10px] md:text-xs font-serif italic text-[#1B261B]/40 tracking-widest">
+              otu is for plants. (human errors may occur)
+            </p>
+          </div>
         </div>
 
         {/* Scroll Indicator: Minimalist Vertical Line */}
@@ -268,7 +282,7 @@ export default function Home() {
           <div className="mt-32 pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex flex-col items-center md:items-start gap-2">
               <p className="font-serif text-2xl italic">haus der grünen</p>
-              <p className="text-white/30 text-[10px] uppercase tracking-[0.4em] font-bold">Biology 2.0 Ecosystem</p>
+              <p className="text-white/30 text-[10px] uppercase tracking-[0.4em] font-bold">© 2026 Biology 2.0 Ecosystem</p>
             </div>
             
             <button 
@@ -278,7 +292,10 @@ export default function Home() {
               Back to Top
             </button>
 
-            <p className="text-white/30 text-[10px] uppercase tracking-[0.5em] font-bold">© 2026 Otu Collective</p>
+            <p className="text-white/30 text-[10px] uppercase tracking-[0.2em] font-medium text-center md:text-right">
+              <span className="italic">otu is for plants.</span> <br className="md:hidden" />
+              <span className="opacity-50">(do not seek life advice)</span>
+            </p>
           </div>
         </div>
       </section>
