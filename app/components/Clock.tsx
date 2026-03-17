@@ -79,15 +79,14 @@ const Clock = () => {
              {/* Inner circle markings */}
              <circle cx="50" cy="50" r="26" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="0.5" strokeDasharray="1 2" />
 
-             {/* ─── SCIENTIFIC NEEDLE HANDS ─── */}
+             {/* ─── ROUNDED INDUSTRIAL HANDS ─── */}
              {/* Hour Hand (24-hour movement) */}
              <g style={{ 
                 transform: `rotate(${(time.getHours() % 24) * 15 + time.getMinutes() * 0.25}deg)`,
                 transformOrigin: '50% 50%',
                 transition: 'transform 0.6s cubic-bezier(0.19, 1, 0.22, 1)'
              }}>
-                <line x1="50" y1="50" x2="50" y2="30" stroke="white" strokeWidth="2" strokeLinecap="round" />
-                <path d="M 50 30 L 49 32 L 51 32 Z" fill="white" /> {/* Precision Tip */}
+                <line x1="50" y1="50" x2="50" y2="30" stroke="white" strokeWidth="3.5" strokeLinecap="round" />
              </g>
 
              {/* Minute Hand */}
@@ -96,8 +95,7 @@ const Clock = () => {
                 transformOrigin: '50% 50%',
                 transition: 'transform 0.6s cubic-bezier(0.19, 1, 0.22, 1)'
              }}>
-                <line x1="50" y1="50" x2="50" y2="12" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
-                <path d="M 50 12 L 49.3 15 L 50.7 15 Z" fill="white" /> {/* Precision Tip */}
+                <line x1="50" y1="50" x2="50" y2="12" stroke="white" strokeWidth="2.2" strokeLinecap="round" />
              </g>
              
              {/* Center Nut Detail */}
