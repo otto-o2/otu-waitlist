@@ -138,51 +138,29 @@ export default function Home() {
           />
         </div>
 
-        {/* Content Container */}
-        <div className="relative z-10 text-center flex flex-col items-center gap-12 max-w-5xl">
-          {/* Branding (The Agreed Format) */}
-          <div className="flex flex-col items-center gap-4">
-            <p className="text-xs md:text-sm font-medium tracking-[0.4em] text-[#1B261B]/40 ml-[0.4em] lowercase">
-              (otu)
-            </p>
-            <h1
-              style={{
-                fontFamily: "'Outfit', sans-serif",
-                fontWeight: 800,
-                fontSize: "clamp(2.5rem, 12vw, 8.5rem)",
-                letterSpacing: "0.15em",
-                lineHeight: "0.9",
-                textTransform: "uppercase",
-                color: "#1B261B", 
-                marginLeft: "0.15em", 
-              }}
-            >
-              haus der<br />grünen
-            </h1>
-          </div>
-
-          <div className="w-16 h-[1px] bg-[#9CA764]/20" />
-
-          {/* Top Description Lines */}
-          <div className="space-y-8 flex flex-col items-center">
-            <h2 className="text-2xl md:text-4xl font-serif text-[#1B261B]/80 italic leading-tight tracking-tight max-w-3xl">
-              everything your plants have been trying to tell you.
-            </h2>
-            
-            <div className="space-y-3">
-              <p className="text-xs md:text-sm font-bold tracking-[0.4em] text-[#1B261B] uppercase">
-                scan it. name it. let it live a little.
-              </p>
-              <p className="text-[10px] md:text-xs font-serif italic text-[#1B261B]/30 tracking-[0.2em] lowercase">
-                otu is for plants. (human errors may occur)
-              </p>
-            </div>
-          </div>
+        {/* Branding Title (The Majestic Format) */}
+        <div className="relative z-10 text-center flex flex-col items-center gap-6">
+          <p className="text-sm md:text-base font-medium tracking-[0.5em] text-[#1B261B]/30 ml-[0.5em] lowercase">
+            (otu)
+          </p>
+          <h1
+            style={{
+              fontFamily: "'Outfit', sans-serif",
+              fontWeight: 900,
+              fontSize: "clamp(3rem, 15vw, 10rem)",
+              letterSpacing: "0.1em",
+              lineHeight: "0.85",
+              textTransform: "uppercase",
+              color: "#1B261B", 
+            }}
+          >
+            haus der<br />grünen
+          </h1>
         </div>
 
         {/* Scroll Indicator: Minimalist Vertical Line */}
         <div className="absolute bottom-12 flex flex-col items-center group">
-          <div className="w-[1px] h-16 bg-[#1B261B]/10 relative overflow-hidden rounded-full">
+          <div className="w-[1px] h-20 bg-[#1B261B]/10 relative overflow-hidden rounded-full">
             <div className="absolute top-0 left-0 w-full h-1/2 bg-[#9CA764]/40 animate-scroll-line" />
           </div>
         </div>
@@ -191,11 +169,22 @@ export default function Home() {
       {/* Bento Grid Section */}
       <section className="relative z-20 px-6 py-32 md:px-12 lg:px-24 bg-[#FDFBF7]">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-24 space-y-6">
-            <h2 className="text-sm uppercase tracking-[0.5em] text-[#9CA764] font-bold">The Otu Ecosystem</h2>
-            <p className="text-5xl md:text-7xl font-serif text-[#1B261B] leading-tight">
-              Where Botany Meets <br /><span className="italic text-[#9CA764]">Biology 2.0</span>
-            </p>
+          {/* Section Header with Content Map Details */}
+          <div className="mb-32 space-y-12 text-center flex flex-col items-center">
+            <h2 className="text-4xl md:text-7xl font-serif text-[#1B261B] italic leading-tight max-w-4xl tracking-tight">
+              everything your plants have been trying <br className="hidden md:block" /> to tell you.
+            </h2>
+            
+            <div className="w-[1px] h-20 bg-[#9CA764]/20" /> {/* Artisanal vertical divider */}
+            
+            <div className="space-y-6">
+              <p className="text-sm md:text-lg font-bold tracking-[0.4em] text-[#1B261B] uppercase">
+                scan it. name it. let it live a little.
+              </p>
+              <p className="text-xs md:text-sm font-serif italic text-[#1B261B]/40 tracking-[0.3em] lowercase">
+                otu is for plants. (human errors may occur)
+              </p>
+            </div>
           </div>
 
           <BentoGrid>
