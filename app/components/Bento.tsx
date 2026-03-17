@@ -68,7 +68,7 @@ const BentoCard = ({
             {name.split(":")[1].trim()}
           </p>
         )}
-        <p className="max-w-md text-[#1B261B]/60 font-light leading-relaxed text-base md:text-lg">
+        <p className="max-w-md text-[#1B261B]/60 font-normal leading-relaxed text-base md:text-lg">
           {description}
         </p>
       </div>

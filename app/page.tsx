@@ -244,7 +244,7 @@ export default function Home() {
                 <h3 className="text-4xl md:text-6xl font-sans text-[#1B261B] leading-tight font-bold">
                   {feature.name.split(":")[1] || feature.name}
                 </h3>
-                <p className="text-xl md:text-2xl text-[#1B261B]/70 font-light leading-relaxed max-w-xl">
+                <p className="text-xl md:text-2xl text-[#1B261B]/70 font-normal leading-relaxed max-w-xl">
                   {feature.description}
                 </p>
               </div>
@@ -252,7 +252,7 @@ export default function Home() {
                 {feature.highlights.map((highlight, i) => (
                   <li key={i} className="flex gap-4 items-start">
                     <div className="h-2 w-2 rounded-full bg-[#9CA764] mt-3 shrink-0" />
-                    <p className="text-lg text-[#1B261B]/60 font-light leading-relaxed">{highlight}</p>
+                    <p className="text-lg text-[#1B261B]/60 font-normal leading-relaxed">{highlight}</p>
                   </li>
                 ))}
               </ul>
@@ -312,15 +312,15 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-20 p-20 rounded-[80px] border border-white/5 bg-white/5">
             <div className="space-y-6">
               <h4 className="font-sans font-bold text-3xl">Self-Learning Core</h4>
-              <p className="text-[#F1E8C7]/60 text-lg leading-relaxed font-light">Every scan feeds into a personalized growth engine that adapts to your skills.</p>
+              <p className="text-[#F1E8C7]/60 text-lg leading-relaxed font-normal">Every scan feeds into a personalized growth engine that adapts to your skills.</p>
             </div>
             <div className="space-y-6">
               <h4 className="font-sans font-bold text-3xl">Adaptive UX</h4>
-              <p className="text-[#F1E8C7]/60 text-lg leading-relaxed font-light">Notifications that learn your habits. From "forgetful waterer" to "master botanist".</p>
+              <p className="text-[#F1E8C7]/60 text-lg leading-relaxed font-normal">Notifications that learn your habits. From "forgetful waterer" to "master botanist".</p>
             </div>
             <div className="space-y-6">
               <h4 className="font-sans font-bold text-3xl">The Integrated Experience</h4>
-              <p className="text-[#F1E8C7]/60 text-lg leading-relaxed font-light">One centralized vault for every capture, from office ferns to rare mountain orchids.</p>
+              <p className="text-[#F1E8C7]/60 text-lg leading-relaxed font-normal">One centralized vault for every capture, from office ferns to rare mountain orchids.</p>
             </div>
           </div>
           
