@@ -202,7 +202,7 @@ export default function Home() {
             <div className="w-[1px] h-20 bg-[#9CA764]/20" /> {/* Artisanal vertical divider */}
             
             <div className="space-y-6">
-              <p className="text-sm md:text-lg font-bold tracking-[0.4em] text-[#1B261B] uppercase">
+              <p className="text-sm md:text-xl font-serif font-bold tracking-[0.4em] text-[#1B261B] uppercase">
                 scan it. name it. let it live a little.
               </p>
               <p className="text-xs md:text-sm font-serif italic text-[#1B261B]/40 tracking-[0.3em] lowercase">
@@ -235,7 +235,7 @@ export default function Home() {
                 <feature.Icon className="h-16 w-16 text-[#9CA764]" />
               </div>
               <div className="space-y-6">
-                <h2 className="text-2xl uppercase tracking-[0.3em] text-[#9CA764] font-bold">{feature.name.split(":")[0]}</h2>
+                <h2 className="text-2xl md:text-3xl font-serif uppercase tracking-[0.3em] text-[#9CA764] font-bold">{feature.name.split(":")[0]}</h2>
                 <h3 className="text-4xl md:text-6xl font-serif text-[#1B261B] leading-tight font-medium">
                   {feature.name.split(":")[1] || feature.name}
                 </h3>
@@ -247,7 +247,7 @@ export default function Home() {
                 {feature.highlights.map((highlight, i) => (
                   <li key={i} className="flex gap-4 items-start">
                     <div className="h-2 w-2 rounded-full bg-[#9CA764] mt-3 shrink-0" />
-                    <p className="text-lg text-[#1B261B]/80 font-medium">{highlight}</p>
+                    <p className="text-lg text-[#1B261B]/60 font-light leading-relaxed">{highlight}</p>
                   </li>
                 ))}
               </ul>
