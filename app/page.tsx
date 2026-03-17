@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { MeshGradient } from "@paper-design/shaders-react";
 import { BentoGrid, BentoCard } from "./components/Bento";
@@ -115,6 +115,16 @@ const features = [
 
 export default function Home() {
   const [speed] = useState(0.4);
+
+  // Ensure the page always opens at the top (Hero section)
+  useEffect(() => {
+    // Force scroll to top on mount
+    window.scrollTo(0, 0);
+    // Handle potential browser scroll restoration
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+  }, []);
 
   return (
     <main className="relative bg-[#FDFBF7]">
