@@ -11,6 +11,7 @@ import WildViewfinder from "./components/WildViewfinder";
 import GenesisEngine from "./components/GenesisEngine";
 import MarketplaceVisual from "./components/MarketplaceVisual";
 import CompendiumVisual from "./components/CompendiumVisual";
+import Clock from "./components/Clock";
 import { 
   ShieldAlert, 
   Map, 
@@ -207,9 +208,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           {/* Section Header with Content Map Details */}
           <div className="mb-32 space-y-12 text-center flex flex-col items-center">
-            <h2 className="text-4xl md:text-7xl font-sans text-[#1B261B] font-bold leading-tight max-w-4xl tracking-tight">
-              everything your plants have been trying <br className="hidden md:block" /> to tell you.
-            </h2>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+              <Clock />
+              <div className="hidden md:block w-[1px] h-32 bg-[#9CA764]/20" /> {/* Vertical separator for md+ */}
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-sans text-[#1B261B] font-bold leading-[1.1] max-w-2xl tracking-tight text-center md:text-left">
+                everything your plants <br /> have been trying <br /> to tell you.
+              </h2>
+            </div>
             
             <div className="w-[1px] h-20 bg-[#9CA764]/20" /> {/* Artisanal vertical divider */}
             
