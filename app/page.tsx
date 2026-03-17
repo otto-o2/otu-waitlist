@@ -41,15 +41,15 @@ const features = [
   {
     id: "ward-mode",
     name: "Ward Mode: Health Hub",
-    description: "A full-spectrum plant clinic that lives in your pocket. Diagnose, treat, and watch your green babies actually flourish for once.",
+    description: "Stop the guessing game. The Ward is full-spectrum plant clinic that lives in your pocket, translating silent distress into actionable data, providing a clinical-grade roadmap from diagnosis to full recovery.",
     href: "#ward-mode",
     cta: "System scan →",
     className: "md:col-span-2",
     Icon: ShieldAlert,
     highlights: [
-      "Clinical diagnostic core — Our neural engine identifies 400+ pathogens and nutrient deficiencies with surgical precision.",
-      "Custom recovery protocols — Receive hour-by-hour treatment plans that adapt to your local weather and home microclimate.",
-      "Vitals monitoring — Connect smart hardware or use your camera to track photosynthesis efficiency and turgor pressure."
+      "The Diagnostics — Our neural engine identifies pathogens, nutrient gaps, and atmospheric red flags to bridge prevention and cure.",
+      "Call to Action — Receive comprehensive doctor reports and care cards for daily guidance. When your plant loses its balance, The Ward opens you up to the Farmer’s Market, a unique marketplace of tailor-made care packages and organic elixirs specifically prescribed by the Ward.",
+      "The Air and the Hour — Receive hour-by-hour care updates that adapt in real-time. By syncing your recovery plan with the local weather and the light in your home, the Ward ensures your collection stays in its flow state, always."
     ],
     background: <div className="absolute inset-0 bg-[#3B2B45]/20 overflow-hidden">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
