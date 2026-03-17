@@ -202,11 +202,11 @@ export default function Home() {
             <div className="w-[1px] h-20 bg-[#9CA764]/20" /> {/* Artisanal vertical divider */}
             
             <div className="space-y-6">
+              <p className="text-[10px] md:text-xs font-sans font-bold tracking-[0.6em] text-[#9CA764] uppercase opacity-80">
+                otu plant intelligence
+              </p>
               <p className="text-sm md:text-xl font-sans font-black tracking-[0.4em] text-[#1B261B] uppercase">
                 scan it. name it. let it live a little.
-              </p>
-              <p className="text-xs md:text-sm font-sans italic text-[#1B261B]/40 tracking-[0.3em] lowercase">
-                otu is for plants. (human errors may occur)
               </p>
             </div>
           </div>
