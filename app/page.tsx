@@ -76,13 +76,14 @@ const features = [
   },
   {
     id: "genesis-engine",
-    name: "The Greenhouse: The alive archive of Your Botanical Journey",
-    description: "Beyond the Scan: Our engine analyzes the biological makeup of your plant to create unique digital life forms.",
+    name: "The Greenhouse: The Alive Archive",
+    description: "Your Little Digital Universe",
     href: "#genesis-engine",
     cta: "Open vault →",
     className: "md:col-span-1",
     Icon: Dna,
     highlights: [
+      "Beyond the Scan — Our engine analyzes the biological makeup of your plant to create unique digital life forms.",
       "The Genetic Vault — Store \"Digital Twins\" of your plants in your pocket universe, carrying historical health records and growth curves. The more you care for the physical plant, the more its digital counterpart evolves within the Greenhouse.",
       "To the future — Use the Greenhouse to simulate years of growth in seconds. By going forward in time you can simulate how a heatwave in July or a low-light winter will impact your plant’s health signature, giving you the data to intervene before the clock even starts."
     ],
@@ -98,16 +99,16 @@ const features = [
     className: "md:col-span-2",
     Icon: ShoppingBag,
     highlights: [
-      "a curated inventory of plants ranked by their ability to thrive in your current microclimate.",
+      "A curated inventory of plants ranked by their ability to thrive in your current microclimate.",
       "Data to the Dirt – Utilizing the doctor’s reports from the Ward mode and your Wild Mode logs, the Farmer’s market suggests care packages and tool kits that match your patch.",
-      "the Humans behind the Data — Connect with master gardeners for 1-on-1 consultations"
+      "The Humans behind the Data — Connect with master gardeners for 1-on-1 consultations"
     ],
     background: <div className="absolute inset-0 bg-gradient-to-l from-[#232323]/40 to-transparent opacity-30" />,
     color: "#1A1A1A", // Polished Gunmetal
   },
   {
     id: "compendium",
-    name: "Sprout and About: the plant encyclopedia",
+    name: "Sprout and About: The Plant Encyclopedia",
     description: "Thousands of species and Infinite Curiosities",
     href: "#compendium",
     cta: "Start exploring →",
