@@ -92,7 +92,7 @@ const features = [
   {
     id: "marketplace",
     name: "The Farmer’s Market: Plants and Plant Stuff",
-    description: "Connect with the community and local experts. Trade, grow, and build your perfect botanical collection.",
+    description: "Bridging the gap between digital diagnosis and physical recovery.",
     href: "#marketplace",
     cta: "Enter market →",
     className: "md:col-span-2",
