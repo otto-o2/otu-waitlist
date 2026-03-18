@@ -19,6 +19,7 @@ const WildViewfinder = () => {
   const [coordinates, setCoordinates] = useState({ lat: 52.5201, lng: 13.4049 });
   const [angle, setAngle] = useState(0);
   const [targets, setTargets] = useState<RadarTarget[]>([]);
+  const [clutter, setClutter] = useState<{ id: number; x: number; y: number; opacity: number }[]>([]);
   const requestRef = useRef<number>(null);
   const lastAngleRef = useRef(0);
 
@@ -50,44 +51,54 @@ const WildViewfinder = () => {
       let newX = t.x + t.driftX;
       let newY = t.y + t.driftY;
       
-      // Keep within radar bounds (dist < 50)
       const distFromCenter = Math.sqrt(Math.pow(newX - 50, 2) + Math.pow(newY - 50, 2));
       if (distFromCenter > 48) {
-        newX = t.x - t.driftX * 2; // Simple bounce/reverse
+        newX = t.x - t.driftX * 2;
         newY = t.y - t.driftY * 2;
       }
 
-      // 2. Update Angle/Dist for detection check
-      const newAngle = (Math.atan2(newY - 50, newX - 50) * 180 / Math.PI + 450) % 360;
-      
-      // 3. Robust Detection Check: Did the sweep cross the target's angle?
+      // 2. Technical Detection: Sweep crossing logic
+      const targetAngle = (Math.atan2(newY - 50, newX - 50) * 180 / Math.PI + 450) % 360;
       const lastA = lastAngleRef.current;
       const currA = currentAngle;
       
       let wasJustHit = false;
-      // Handle the 360->0 wrap-around crossing
       if (currA < lastA) {
-        wasJustHit = (newAngle > lastA) || (newAngle < currA);
+        wasJustHit = (targetAngle > lastA) || (targetAngle < currA);
       } else {
-        wasJustHit = (newAngle > lastA && newAngle < currA);
+        wasJustHit = (targetAngle > lastA && targetAngle < currA);
       }
 
       let newOpacity = t.opacity;
       if (wasJustHit) {
-        newOpacity = 1.0; // Instant bright flash on hit
+        newOpacity = 1.0; 
       } else {
-        // Lingering fade effect - pings should be short but visible
-        newOpacity = Math.max(0, t.opacity - 0.008); 
+        // Real radars use slow phosphor decay (~3 seconds total)
+        newOpacity = Math.max(0, t.opacity - 0.004); 
       }
       
       return { 
         ...t, 
         x: newX, 
         y: newY, 
-        angle: newAngle, 
+        angle: targetAngle, 
         opacity: newOpacity 
       };
     }));
+
+    // 4. Random Electronic Clutter (Radar Noise)
+    if (Math.random() > 0.985 && clutter.length < 4) {
+      const angle = Math.random() * 360;
+      const dist = 10 + Math.random() * 35;
+      const rad = (angle - 90) * (Math.PI / 180);
+      setClutter(prev => [...prev, {
+        id: Math.random(),
+        x: 50 + dist * Math.cos(rad),
+        y: 50 + dist * Math.sin(rad),
+        opacity: 0.4
+      }]);
+    }
+    setClutter(prev => prev.map(c => ({ ...c, opacity: c.opacity - 0.01 })).filter(c => c.opacity > 0));
 
     lastAngleRef.current = currentAngle;
     requestRef.current = requestAnimationFrame(animate);
@@ -198,28 +209,39 @@ const WildViewfinder = () => {
 
           {/* ACTUAL RADAR PLANE */}
           <div className="flex-1 relative">
+            {/* Realistic Technical Sweep (Wedge + Decay) */}
             <div 
-              className="absolute top-1/2 left-1/2 w-[50%] h-[1.5px] -translate-y-1/2 origin-left z-10"
+              className="absolute top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none"
               style={{
-                background: "linear-gradient(90deg, transparent 0%, rgba(74,222,128,0.8) 100%)",
+                background: `conic-gradient(
+                  from ${angle - 360}deg,
+                  rgba(74,222,128,1) 0deg,
+                  rgba(74,222,128,0.8) 1deg,
+                  rgba(74,222,128,0.2) 20deg,
+                  rgba(74,222,128,0.05) 120deg,
+                  transparent 240deg
+                )`,
+                borderRadius: "50%",
+                maskImage: "radial-gradient(circle at center, black 0%, black 50%, transparent 51%)",
+                filter: "blur(0.5px)"
+              }}
+            />
+            
+            {/* Leading Edge Highlight */}
+            <div 
+              className="absolute top-1/2 left-1/2 w-[50%] h-[1.5px] -translate-y-1/2 origin-left z-20"
+              style={{
+                background: "linear-gradient(90deg, transparent 0%, rgba(200,255,200,0.9) 100%)",
                 transform: `rotate(${angle - 90}deg)`,
               }}
             >
-               {/* Leading point glow */}
-               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-[#4ADE80]/40 blur-md rounded-full" />
+               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-white/40 blur-sm rounded-full" />
             </div>
 
-            {/* Sweep Trail (Conic Gradient) */}
-            <div 
-              className="absolute top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 pointer-events-none"
-              style={{
-                background: `conic-gradient(from ${angle - 60}deg, rgba(74,222,128,0.2) 0%, transparent 60deg)`,
-                borderRadius: "50%",
-                filter: "blur(2px)"
-              }}
-            />
+            {/* Central Hub Glow */}
+            <div className="absolute top-1/2 left-1/2 w-4 h-4 -translate-x-1/2 -translate-y-1/2 bg-[#4ADE80]/30 blur-md rounded-full z-20" />
 
-            {/* RADAR PINGS (Dots) */}
+            {/* ACTUAL TARGETS */}
             {targets.map(t => (
               <div 
                 key={t.id}
@@ -229,18 +251,30 @@ const WildViewfinder = () => {
                   top: `${t.y}%`,
                   opacity: t.opacity,
                   transform: "translate(-50%, -50%)",
-                  transition: "opacity 0.03s linear"
+                  filter: "blur(0.5px)"
                 }}
               >
-                {/* Target Ping */}
                 <div className="w-1.5 h-1.5 bg-[#4ADE80] rounded-[0.5px] shadow-[0_0_12px_#4ADE80]" 
                      style={{ transform: `rotate(${(t.driftX > 0 ? 45 : -45)}deg)` }} />
                 
-                {/* Ripple on Ping */}
                 {t.opacity > 0.95 && (
-                  <div className="absolute inset-[-6px] border border-[#4ADE80] rounded-full animate-[ping_1.2s_ease-out_infinite] opacity-50" />
+                  <div className="absolute inset-[-6px] border border-[#4ADE80] rounded-full animate-[ping_1.5s_ease-out_infinite] opacity-30" />
                 )}
               </div>
+            ))}
+
+            {/* ELECTRONIC CLUTTER / NOISE */}
+            {clutter.map(c => (
+              <div 
+                key={c.id}
+                className="absolute w-[2px] h-[2px] bg-[#4ADE80]/60 rounded-full"
+                style={{
+                  left: `${c.x}%`,
+                  top: `${c.y}%`,
+                  opacity: c.opacity,
+                  filter: "blur(1px)"
+                }}
+              />
             ))}
           </div>
 
