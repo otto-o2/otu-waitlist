@@ -23,22 +23,6 @@ import {
 
 const features = [
   {
-    id: "botanical-sonification",
-    name: "The Chime: Living Data Compositions",
-    description: "Transform bio-data into adaptive frequencies and finally understand what your plants are saying.",
-    href: "#botanical-sonification-detail",
-    cta: "Listen to the leaves",
-    className: "md:col-span-1",
-    Icon: Music,
-    highlights: [
-      "Gene Signatures — We translate the unique genome of your plant into a one-of-a-kind musical signature.",
-      "Vital Signs — We render biological data and the pulse of your home into an audible stream.",
-      "Playlist Gardens — You can now curate a private living library of sound."
-    ],
-    background: <div className="absolute inset-0 bg-[#13141C]/40" />,
-    color: "#13141C", // Obsidian Indigo
-  },
-  {
     id: "ward-mode",
     name: "Ward Mode: Health Hub",
     description: "Stop the guessing game. The Ward is full-spectrum plant clinic that lives in your pocket, translating silent distress into actionable data, providing a clinical-grade roadmap from diagnosis to full recovery.",
@@ -63,7 +47,7 @@ const features = [
     description: "Spot the rare. Name the unknown. All off the grid.",
     href: "#wild-mode",
     cta: "Explore the wild",
-    className: "md:col-span-2",
+    className: "md:col-span-1",
     Icon: Map,
     highlights: [
       "Identify that “thing” on your hike — Our neural engine draws from a massive local database of over four thousand species, providing high-fidelity data even when you are off the grid.",
@@ -77,22 +61,20 @@ const features = [
     color: "#0F160F", // Tactical Dark Forest
   },
   {
-    id: "genesis-engine",
-    name: "The Greenhouse: The Alive Archive",
-    description: "Your Little Digital Universe",
-    href: "#genesis-engine",
-    cta: "Open vault",
+    id: "botanical-sonification",
+    name: "The Chime: Living Data Compositions",
+    description: "Transform bio-data into adaptive frequencies and finally understand what your plants are saying.",
+    href: "#botanical-sonification-detail",
+    cta: "Listen to the leaves",
     className: "md:col-span-1",
-    Icon: Dna,
+    Icon: Music,
     highlights: [
-      "Beyond the Scan — Our engine analyzes the biological makeup of your plant to create unique digital life forms.",
-      "The Genetic Vault — Store \"Digital Twins\" of your plants in your pocket universe, carrying historical health records and growth curves. The more you care for the physical plant, the more its digital counterpart evolves within the Greenhouse.",
-      "To the future — Use the Greenhouse to simulate years of growth in seconds. By going forward in time you can simulate how a heatwave in July or a low-light winter will impact your plant’s health signature, giving you the data to intervene before the clock even starts."
+      "Gene Signatures — We translate the unique genome of your plant into a one-of-a-kind musical signature.",
+      "Vital Signs — We render biological data and the pulse of your home into an audible stream.",
+      "Playlist Gardens — You can now curate a private living library of sound."
     ],
-    background: <div className="absolute inset-0 bg-[#1A0A1A]/40 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-t from-[#E040FB]/10 to-transparent" />
-    </div>,
-    color: "#1A0A1A", // Deep Amethyst
+    background: <div className="absolute inset-0 bg-[#13141C]/40" />,
+    color: "#13141C", // Obsidian Indigo
   },
   {
     id: "marketplace",
@@ -111,6 +93,24 @@ const features = [
       <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent" />
     </div>,
     color: "#1A1A1A", // Deep Graphite
+  },
+  {
+    id: "genesis-engine",
+    name: "The Greenhouse: The Alive Archive",
+    description: "Your Little Digital Universe",
+    href: "#genesis-engine",
+    cta: "Open vault",
+    className: "md:col-span-2",
+    Icon: Dna,
+    highlights: [
+      "Beyond the Scan — Our engine analyzes the biological makeup of your plant to create unique digital life forms.",
+      "The Genetic Vault — Store \"Digital Twins\" of your plants in your pocket universe, carrying historical health records and growth curves. The more you care for the physical plant, the more its digital counterpart evolves within the Greenhouse.",
+      "To the future — Use the Greenhouse to simulate years of growth in seconds. By going forward in time you can simulate how a heatwave in July or a low-light winter will impact your plant’s health signature, giving you the data to intervene before the clock even starts."
+    ],
+    background: <div className="absolute inset-0 bg-[#1A0A1A]/40 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-t from-[#E040FB]/10 to-transparent" />
+    </div>,
+    color: "#1A0A1A", // Deep Amethyst
   },
   {
     id: "compendium",
@@ -247,7 +247,7 @@ export default function Home() {
              <span className="text-[12px] md:text-sm uppercase tracking-[1em] font-black text-[#1B261B] ml-[1em]">everything we do</span>
           </div>
 
-          <BentoGrid className="auto-rows-[45rem]">
+          <BentoGrid className="auto-rows-[48rem]">
             {features.map((feature) => (
               <BentoCard key={feature.id} {...feature} />
             ))}
