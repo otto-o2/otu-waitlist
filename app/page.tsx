@@ -221,7 +221,7 @@ export default function Home() {
       </section>
 
       {/* PAGE 2: THE INTELLIGENCE */}
-      <section className="relative z-20 w-full h-screen flex flex-col items-center justify-center px-6 md:px-12 lg:px-24 bg-[#050805] overflow-hidden">
+      <section className="relative z-20 w-full h-screen flex flex-col items-center justify-center px-6 md:px-12 lg:px-24 bg-[#0A0F0A] overflow-hidden">
         <div className="max-w-7xl mx-auto flex flex-col items-center gap-12 text-center relative z-10">
           <div className="space-y-6">
             <p className="text-[14px] md:text-xl font-sans font-black tracking-[0.8em] text-[#9CA764] uppercase ml-[0.8em]">
