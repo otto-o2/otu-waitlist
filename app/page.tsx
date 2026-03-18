@@ -178,6 +178,21 @@ export default function Home() {
         </div>
       </section>
 
+      {/* PAGE 1.5: THE SANCTUARY */}
+      <section className="relative z-20 w-full h-screen bg-[#0A0F0A] overflow-hidden">
+        <div className="absolute inset-0 w-full h-full">
+          <img 
+            src="/images/sanctuary.jpg" 
+            alt="Botanical Sanctuary"
+            className="w-full h-full object-cover opacity-70" 
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F0A] via-transparent to-[#0A0F0A] opacity-80" />
+        </div>
+        <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-1 h-24 bg-gradient-to-b from-transparent via-[#9CA764]/20 to-transparent" />
+        </div>
+      </section>
+
       {/* PAGE 2: THE INTELLIGENCE */}
       <section className="relative z-20 w-full h-screen flex flex-col items-center justify-center px-6 md:px-12 lg:px-24 bg-[#0A0F0A] overflow-hidden">
         <div className="max-w-7xl mx-auto flex flex-col items-center gap-12 text-center relative z-10">
