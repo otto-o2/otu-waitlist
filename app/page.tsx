@@ -51,10 +51,11 @@ const features = [
       "Call to Action — Receive comprehensive doctor reports and care cards for daily guidance. When your plant loses its balance, The Ward opens you up to the Farmer’s Market, a unique marketplace of tailor-made care packages and organic elixirs specifically prescribed by the Ward.",
       "The Air and the Hour — Receive hour-by-hour care updates that adapt in real-time. By syncing your recovery plan with the local weather and the light in your home, the Ward ensures your collection stays in its flow state, always."
     ],
-    background: <div className="absolute inset-0 bg-[#3B2B45]/20 overflow-hidden">
+    background: <div className="absolute inset-0 bg-[#0D1C21]/30 overflow-hidden">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#4CC9F0]/5 to-transparent" />
     </div>,
-    color: "#211B2B", // Amethyst Night
+    color: "#4CC9F0", // Clinical Cyan
   },
   {
     id: "wild-mode",
@@ -69,10 +70,11 @@ const features = [
       "Go beyond the name — Access a deep library of botanical facts, rarity rankings, and the unique history of every plant you encounter.",
       "The Log — Record your finds and map your journey in real-time to build a living timeline of every signature encountered in the field."
     ],
-    background: <div className="absolute inset-0 bg-[#45322B]/20">
+    background: <div className="absolute inset-0 bg-[#2B1F1B]/30">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] opacity-10" />
+      <div className="absolute inset-0 bg-gradient-to-tr from-[#FF9F1C]/10 to-transparent" />
     </div>,
-    color: "#2B1F1B", // Burnt Sienna
+    color: "#FF9F1C", // High-Altitude Amber
   },
   {
     id: "genesis-engine",
@@ -87,8 +89,11 @@ const features = [
       "The Genetic Vault — Store \"Digital Twins\" of your plants in your pocket universe, carrying historical health records and growth curves. The more you care for the physical plant, the more its digital counterpart evolves within the Greenhouse.",
       "To the future — Use the Greenhouse to simulate years of growth in seconds. By going forward in time you can simulate how a heatwave in July or a low-light winter will impact your plant’s health signature, giving you the data to intervene before the clock even starts."
     ],
-    background: <div className="absolute inset-0 bg-gradient-to-t from-[#2B3545]/30 to-transparent" />,
-    color: "#1B212B", // Cobalt Midnight
+    background: <div className="absolute inset-0 bg-[#1F1B2B]/30 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-t from-[#B5179E]/10 to-transparent" />
+      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/diagmonds-light.png')] opacity-[0.03]" />
+    </div>,
+    color: "#B5179E", // Digital Amethyst
   },
   {
     id: "marketplace",

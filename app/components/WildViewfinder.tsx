@@ -119,24 +119,24 @@ const WildViewfinder = () => {
 
   return (
     <div className="relative w-full max-w-[300px] select-none" style={{ aspectRatio: "0.65/1" }}>
-      {/* ─── HARDWARE CHASSIS (Burnt Sienna) ─── */}
+      {/* ─── HARDWARE CHASSIS (High-Altitude Amber) ─── */}
       <div
         className="relative w-full h-full rounded-[42px] p-5 flex flex-col gap-4 overflow-hidden shadow-2xl"
         style={{
-          background: "linear-gradient(160deg, #2B1812 0%, #1F110D 55%, #140B09 100%)",
-          boxShadow: "0 60px 120px -20px rgba(15,8,5,0.7), 0 0 0 1px rgba(200,100,50,0.1), inset 0 1px 0 rgba(255,255,255,0.05), inset 0 -1px 0 rgba(0,0,0,0.5)",
-          border: "1px solid rgba(200,100,50,0.05)"
+          background: "linear-gradient(160deg, #2B1F1B 0%, #1F1411 55%, #140D0B 100%)",
+          boxShadow: "0 60px 120px -20px rgba(20,10,5,0.7), 0 0 0 1px rgba(255,159,28,0.15), inset 0 1px 0 rgba(255,255,255,0.05), inset 0 -1px 0 rgba(0,0,0,0.5)",
+          border: "1px solid rgba(255,159,28,0.1)"
         }}
       >
         <div className="absolute inset-0 pointer-events-none opacity-[0.08]" 
           style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/brushed-alum-dark.png')" }} />
 
-        {/* ─── RADAR SCREEN (Phosphene Indigo) ─── */}
+        {/* ─── RADAR SCREEN (Thermal Depth) ─── */}
         <div
           className="relative w-full rounded-2xl overflow-hidden flex flex-col p-3"
           style={{
             aspectRatio: "1/1.1",
-            background: "linear-gradient(160deg, #0D1A20 0%, #091318 100%)",
+            background: "linear-gradient(160deg, #1A1510 0%, #0F0D0A 100%)",
             border: "1px solid rgba(255,255,255,0.04)",
             boxShadow: "inset 0 2px 15px rgba(0,0,0,0.9)"
           }}
@@ -154,17 +154,17 @@ const WildViewfinder = () => {
           <div className="relative flex justify-between items-start mb-2 z-20">
             <div className="flex flex-col gap-0.5">
                <div className="flex items-center gap-1.5">
-                  <div className="w-1 h-1 rounded-full bg-[#9CA764] animate-pulse" />
-                  <span style={{ fontSize: 7, fontWeight: 900, color: "rgba(215,230,240,0.8)", textTransform: "uppercase", letterSpacing: "0.2em" }}>
+                  <div className="w-1 h-1 rounded-full bg-[#FF9F1C] animate-pulse" />
+                  <span style={{ fontSize: 7, fontWeight: 900, color: "rgba(255,230,210,0.8)", textTransform: "uppercase", letterSpacing: "0.2em" }}>
                     radar active
                   </span>
                </div>
-               <span style={{ fontSize: 6, color: "rgba(180,200,210,0.3)", fontWeight: 700, fontFamily: "monospace" }}>
+               <span style={{ fontSize: 6, color: "rgba(210,200,180,0.3)", fontWeight: 700, fontFamily: "monospace" }}>
                  LIDAR_SEQ: {dnaFeed}
                </span>
             </div>
             <div className="flex flex-col items-end opacity-40">
-               <span style={{ fontSize: 6, fontWeight: 900, color: "rgba(180,200,210,1)" }}>SWEEP_72HZ</span>
+               <span style={{ fontSize: 6, fontWeight: 900, color: "rgba(210,200,180,1)" }}>SWEEP_72HZ</span>
             </div>
           </div>
 
@@ -174,19 +174,19 @@ const WildViewfinder = () => {
             <div 
               className="absolute top-1/2 left-1/2 w-[50%] h-[2px] -translate-y-1/2 origin-left z-10"
               style={{
-                background: "linear-gradient(90deg, transparent 0%, rgba(156,167,100,0.7) 100%)",
+                background: "linear-gradient(90deg, transparent 0%, rgba(255,159,28,0.7) 100%)",
                 transform: `rotate(${angle - 90}deg)`,
               }}
             >
                {/* Leading point glow */}
-               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-[#9CA764]/20 blur-sm rounded-full" />
+               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-[#FF9F1C]/20 blur-sm rounded-full" />
             </div>
 
             {/* Sweep Trail (Conic Gradient) */}
             <div 
               className="absolute top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 pointer-events-none"
               style={{
-                background: `conic-gradient(from ${angle - 30}deg, rgba(156,167,100,0.15) 0%, transparent 30deg)`,
+                background: `conic-gradient(from ${angle - 30}deg, rgba(255,159,28,0.15) 0%, transparent 30deg)`,
                 borderRadius: "50%"
               }}
             />
@@ -205,12 +205,12 @@ const WildViewfinder = () => {
                 }}
               >
                 {/* Schiff/Ship dot */}
-                <div className="w-1.5 h-1.5 bg-[#9CA764] rounded-[1px] shadow-[0_0_10px_rgba(156,167,100,1)]" 
+                <div className="w-1.5 h-1.5 bg-[#FF9F1C] rounded-[1px] shadow-[0_0_10px_#F77F00]" 
                      style={{ transform: `rotate(${(t.driftX > 0 ? 45 : -45)}deg)` }} />
                 
                 {/* Ripple on Ping */}
                 {t.opacity > 0.95 && (
-                  <div className="absolute inset-[-4px] border border-[#9CA764] rounded-full animate-[ping_0.8s_ease-out_infinite]" />
+                  <div className="absolute inset-[-4px] border border-[#FF9F1C] rounded-full animate-[ping_0.8s_ease-out_infinite]" />
                 )}
               </div>
             ))}
@@ -219,7 +219,7 @@ const WildViewfinder = () => {
           {/* HUD Footer Information */}
           <div className="relative flex justify-between items-end mt-2 pt-2 border-t border-white/5 z-20">
              <div className="flex flex-col gap-0.5">
-                <span style={{ fontSize: 6, fontWeight: 900, color: "rgba(180,200,210,0.4)", textTransform: "uppercase" }}>TARGET_COORD</span>
+                <span style={{ fontSize: 6, fontWeight: 900, color: "rgba(210,200,180,0.4)", textTransform: "uppercase" }}>TARGET_COORD</span>
                 <span style={{ fontSize: 8, fontWeight: 700, color: "white", opacity: 0.7, fontFamily: "monospace" }}>
                    {coordinates.lat.toFixed(5)}N {coordinates.lng.toFixed(5)}E
                 </span>
@@ -227,10 +227,10 @@ const WildViewfinder = () => {
              <div className="flex flex-col items-end gap-1">
                 <div className="flex gap-[1px]">
                    {[...Array(5)].map((_, i) => (
-                      <div key={i} className="w-[10px] h-[2.5px]" style={{ background: i < 4 ? '#D4DCE8' : 'rgba(255,255,255,0.1)' }} />
+                      <div key={i} className="w-[10px] h-[2.5px]" style={{ background: i < 4 ? '#FF9F1C' : 'rgba(255,255,255,0.1)' }} />
                    ))}
                 </div>
-                <span style={{ fontSize: 6, fontWeight: 900, color: "rgba(156,167,100,0.7)", textTransform: "uppercase" }}>SIG: LOCKED</span>
+                <span style={{ fontSize: 6, fontWeight: 900, color: "rgba(255,159,28,0.7)", textTransform: "uppercase" }}>SIG: LOCKED</span>
              </div>
           </div>
         </div>
@@ -238,42 +238,42 @@ const WildViewfinder = () => {
         {/* ─── PHYSICAL CONTROLS ─── */}
         <div className="flex items-center justify-between px-2 pb-2">
            <div className="group flex flex-col items-center gap-1.5 cursor-pointer">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all group-hover:bg-white/11 active:scale-95"
-                style={{ background: "linear-gradient(145deg, #2A2C38 0%, #181A22 100%)", border: "1px solid rgba(255,255,255,0.06)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}>
-                 <Binary className="w-4 h-4 text-[#D4DCE8] opacity-60" />
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all group-hover:bg-amber-950/20 active:scale-95"
+                style={{ background: "linear-gradient(145deg, #3D2B24 0%, #1F1511 100%)", border: "1px solid rgba(255,159,28,0.2)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}>
+                 <Binary className="w-4 h-4 text-[#FF9F1C] opacity-60" />
               </div>
-              <span style={{ fontSize: 5, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(215,230,240,0.2)" }}>DECODE</span>
+              <span style={{ fontSize: 5, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(255,159,28,0.2)" }}>DECODE</span>
            </div>
 
            <div className="relative group cursor-pointer">
-              <div className="absolute -inset-2 bg-[#9CA764]/10 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
+              <div className="absolute -inset-2 bg-[#FF9F1C]/10 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="w-16 h-16 rounded-full p-1" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.1), transparent)" }}>
                  <div className="w-full h-full rounded-full flex items-center justify-center" 
                    style={{ 
-                     background: "linear-gradient(135deg, #22242E 0%, #13141C 100%)",
+                     background: "linear-gradient(135deg, #2D1B16 0%, #170E0B 100%)",
                      boxShadow: "0 8px 16px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.07)"
                    }}>
-                    <Camera className="w-6 h-6 text-[#9CA764] transition-all group-hover:scale-110" />
+                    <Camera className="w-6 h-6 text-[#FF9F1C] transition-all group-hover:scale-110" />
                  </div>
               </div>
            </div>
 
            <div className="group flex flex-col items-center gap-1.5 cursor-pointer">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all group-hover:bg-white/11 active:scale-95"
-                style={{ background: "linear-gradient(145deg, #2A2C38 0%, #181A22 100%)", border: "1px solid rgba(255,255,255,0.06)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}>
-                 <Compass className="w-4 h-4 text-[#D4DCE8] opacity-60" />
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all group-hover:bg-amber-950/20 active:scale-95"
+                style={{ background: "linear-gradient(145deg, #3D2B24 0%, #1F1511 100%)", border: "1px solid rgba(255,159,28,0.2)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}>
+                 <Compass className="w-4 h-4 text-[#FF9F1C] opacity-60" />
               </div>
-              <span style={{ fontSize: 5, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(215,230,240,0.2)" }}>NAV</span>
+              <span style={{ fontSize: 5, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(255,159,28,0.2)" }}>NAV</span>
            </div>
         </div>
 
         {/* ─── BOTTOM ENGRAVING ─── */}
         <div className="mt-2 flex items-center justify-center gap-2 opacity-20">
-          <div className="w-1 h-1 rounded-full bg-[#D4DCE8]" />
-          <p style={{ fontSize: 6, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.3em", color: "#D4DCE8" }}>
+          <div className="w-1 h-1 rounded-full bg-[#FF9F1C]" />
+          <p style={{ fontSize: 6, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.3em", color: "#FF9F1C" }}>
             otu wild radar core
           </p>
-          <div className="w-1 h-1 rounded-full bg-[#D4DCE8]" />
+          <div className="w-1 h-1 rounded-full bg-[#FF9F1C]" />
         </div>
       </div>
     </div>
