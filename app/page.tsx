@@ -23,113 +23,112 @@ import {
 
 const features = [
   {
-    id: "botanical-sonification",
-    name: "The Chime: Living Data Compositions",
-    description: "Transform bio-data into adaptive frequencies and finally understand what your plants are saying.",
-    href: "#botanical-sonification-detail",
-    cta: "Listen to the leaves →",
-    className: "md:col-span-1",
-    Icon: Music,
-    highlights: [
-      "Gene Signatures — We translate the unique genome of your plant into a one-of-a-kind musical signature.",
-      "Vital Signs — We render biological data and the pulse of your home into an audible stream.",
-      "Playlist Gardens — You can now curate a private living library of sound."
-    ],
-    background: <div className="absolute inset-0 bg-[#13141C]/40" />,
-    color: "#2B2D3A", // iPod Slate
-  },
-  {
     id: "ward-mode",
     name: "Ward Mode: Health Hub",
-    description: "Stop the guessing game. The Ward is full-spectrum plant clinic that lives in your pocket, translating silent distress into actionable data, providing a clinical-grade roadmap from diagnosis to full recovery.",
+    description: "Full-spectrum plant clinic providing clinical-grade diagnostics and roadmaps to recovery.",
     href: "#ward-mode",
     cta: "System scan →",
     className: "md:col-span-2",
     Icon: ShieldAlert,
     highlights: [
-      "The Diagnostics — Our neural engine identifies pathogens, nutrient gaps, and atmospheric red flags to bridge prevention and cure.",
-      "Call to Action — Receive comprehensive doctor reports and care cards for daily guidance. When your plant loses its balance, The Ward opens you up to the Farmer’s Market, a unique marketplace of tailor-made care packages and organic elixirs specifically prescribed by the Ward.",
-      "The Air and the Hour — Receive hour-by-hour care updates that adapt in real-time. By syncing your recovery plan with the local weather and the light in your home, the Ward ensures your collection stays in its flow state, always."
+      "The Diagnostics — Neural engine identifies pathogens, nutrient gaps, and atmospheric red flags.",
+      "Call to Action — Complete recovery plans synced with local weather and home light conditions.",
+      "Farmer's Market Integration — Direct prescription orders for organic elixirs and care packages."
     ],
-    background: <div className="absolute inset-0 bg-[#0F172A]/40 overflow-hidden">
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-5" />
-      <div className="absolute inset-0 bg-gradient-to-br from-[#10B981]/20 to-transparent" />
+    background: <div className="absolute inset-0 bg-[#0A1A14]/40 overflow-hidden">
+      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#10B981]/10 to-transparent" />
     </div>,
-    color: "#10B981", // Clinical Hospital Green
+    color: "#0A1A14", // Deep Hospital Emerald
   },
   {
     id: "wild-mode",
-    name: "Wild Mode: Adventure is out there!",
-    description: "Spot the rare. Name the unknown. All off the grid.",
+    name: "Wild Mode: Field Recon",
+    description: "Identify the unknown off-the-grid with high-fidelity local biological data.",
     href: "#wild-mode",
     cta: "Explore the wild →",
-    className: "md:col-span-2",
+    className: "md:col-span-1",
     Icon: Map,
     highlights: [
-      "Identify that “thing” on your hike — Our neural engine draws from a massive local database of over four thousand species, providing high-fidelity data even when you are off the grid.",
-      "Go beyond the name — Access a deep library of botanical facts, rarity rankings, and the unique history of every plant you encounter.",
-      "The Log — Record your finds and map your journey in real-time to build a living timeline of every signature encountered in the field."
+      "Offline Recognition — Database of 4,000+ species available without satellite connection.",
+      "Rarity Rankings — Real-time botanical history and status encounters in the field.",
+      "The Log — Living timeline of every unique biological signature identified."
     ],
-    background: <div className="absolute inset-0 bg-[#0A0F0A]/40">
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] opacity-5" />
-      <div className="absolute inset-0 bg-gradient-to-tr from-[#1B2B1B]/20 to-transparent" />
+    background: <div className="absolute inset-0 bg-[#0F160F]/40">
+      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] opacity-10" />
+      <div className="absolute inset-0 bg-gradient-to-tr from-[#4ADE80]/10 to-transparent" />
     </div>,
-    color: "#4ADE80", // Tactical Emerald
+    color: "#0F160F", // Tactical Dark Forest
   },
   {
-    id: "genesis-engine",
-    name: "The Greenhouse: The Alive Archive",
-    description: "Your Little Digital Universe",
-    href: "#genesis-engine",
-    cta: "Open vault →",
+    id: "botanical-sonification",
+    name: "The Chime: Living Data",
+    description: "Transform plant bio-data into adaptive frequencies. Finally understand the silence.",
+    href: "#botanical-sonification-detail",
+    cta: "Listen to the leaves →",
     className: "md:col-span-1",
-    Icon: Dna,
+    Icon: Music,
     highlights: [
-      "Beyond the Scan — Our engine analyzes the biological makeup of your plant to create unique digital life forms.",
-      "The Genetic Vault — Store \"Digital Twins\" of your plants in your pocket universe, carrying historical health records and growth curves. The more you care for the physical plant, the more its digital counterpart evolves within the Greenhouse.",
-      "To the future — Use the Greenhouse to simulate years of growth in seconds. By going forward in time you can simulate how a heatwave in July or a low-light winter will impact your plant’s health signature, giving you the data to intervene before the clock even starts."
+      "Gene Signatures — Unique genomic snapshots translated into musical arrangements.",
+      "Biological Pulse — Real-time rendering of your home's vital signs into audible streams.",
+      "Playlist Gardens — Private curated libraries of living houseplant soundscapes."
     ],
-    background: <div className="absolute inset-0 bg-[#120A1A]/40 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-t from-[#E040FB]/20 to-transparent" />
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/diagmonds-light.png')] opacity-[0.02]" />
-    </div>,
-    color: "#E040FB", // Neon Violet (Visible Amethyst)
+    background: <div className="absolute inset-0 bg-[#13141C]/40" />,
+    color: "#13141C", // Obsidian Indigo (The Chime Perfect)
   },
   {
     id: "marketplace",
-    name: "The Farmer’s Market: Plants and Plant Stuff",
-    description: "Bridging the gap between digital diagnosis and physical recovery.",
+    name: "Farmer’s Market",
+    description: "Bridging the gap between digital diagnosis and physical botanical recovery.",
     href: "#marketplace",
     cta: "Enter market →",
     className: "md:col-span-2",
     Icon: ShoppingBag,
     highlights: [
-      "A curated inventory of plants ranked by their ability to thrive in your current microclimate.",
-      "Data to the Dirt – Utilizing the doctor’s reports from the Ward mode and your Wild Mode logs, the Farmer’s market suggests care packages and tool kits that match your patch.",
-      "The Humans behind the Data — Connect with master gardeners for 1-on-1 consultations"
+      "Climate Ranking — Inventory sorted by microclimate thrive-probability in your home.",
+      "Prescription Ready — Suggeseted kits based on Ward Mode doctor reports.",
+      "Master Gardeners — Direct access to real Humans for 1-on-1 consultations."
     ],
-    background: <div className="absolute inset-0 bg-[#0A0A0A]/60 to-transparent opacity-40">
-      <div className="absolute inset-0 bg-gradient-to-r from-[#262626]/20 to-transparent" />
+    background: <div className="absolute inset-0 bg-[#1A1A1A]/60 opacity-40">
+      <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent" />
     </div>,
-    color: "#262626", // Industrial Gunmetal
+    color: "#1A1A1A", // Deep Graphite
+  },
+  {
+    id: "genesis-engine",
+    name: "The Greenhouse: Archive",
+    description: "Carry historical health records, growth curves and digital twins in your pocket.",
+    href: "#genesis-engine",
+    cta: "Open vault →",
+    className: "md:col-span-2",
+    Icon: Dna,
+    highlights: [
+      "Digital Twins — Your plant's biological counterpart evolved through physical care.",
+      "Genetic Vault — Centuries of biological history stored in a sub-atomic universe.",
+      "Growth Simulation — Forward-predictive models for July heat or winter low-light."
+    ],
+    background: <div className="absolute inset-0 bg-[#1A0A1A]/40 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-t from-[#E040FB]/10 to-transparent" />
+    </div>,
+    color: "#1A0A1A", // Deep Amethyst
   },
   {
     id: "compendium",
-    name: "Sprout and About: The Plant Encyclopedia",
-    description: "Thousands of species and Infinite Curiosities",
+    name: "Sprout and About",
+    description: "The neural foundation of the ecosystem covering 4,000+ biological blueprints.",
     href: "#compendium",
     cta: "Start exploring →",
     className: "md:col-span-1",
     Icon: Library,
     highlights: [
-      "A detailed repository for the nerds covering four thousand species",
-      "The neural foundation of the otu ecosystem as an on-device intelligence framework designed to deliver scans, diagnostics, and recovery strategies.",
-      "An encyclopedia to learn and understand biological blueprints, toxicity guides, histories, and clinical data"
+      "On-Device Intelligence — Infinite curiosities delivered through local frameworks.",
+      "Biological Detail — Toxicity guides, historical footprints, and clinical data.",
+      "Global Knowledge — A detailed repository for the world's most serious nerds."
     ],
-    background: <div className="absolute inset-0 bg-[#13120A]/40 opacity-40">
-      <div className="absolute inset-0 bg-gradient-to-tr from-[#2D2A1B]/20 to-transparent" />
+    background: <div className="absolute inset-0 bg-[#1A1810]/40 opacity-40">
+      <div className="absolute inset-0 bg-gradient-to-tr from-[#9CA764]/10 to-transparent" />
     </div>,
-    color: "#2D2A1B", // Antique Brass
+    color: "#1A1810", // Dark Brass
   },
 ];
 
@@ -210,32 +209,41 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Bento Grid Section */}
-      <section className="relative z-20 px-6 py-32 md:px-12 lg:px-24 bg-[#FDFBF7]">
-        <div className="max-w-7xl mx-auto">
+      {/* Bento Grid Section (Otu Plant Intelligence Sub-Page) */}
+      <section className="relative z-20 px-6 py-32 md:px-12 lg:px-24 bg-[#0A0F0A] overflow-hidden">
+        {/* Ambient Environmental Lights */}
+        <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-[#1B261B]/40 to-transparent pointer-events-none" />
+        <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#9CA764]/5 rounded-full blur-[100px] pointer-events-none" />
+        
+        <div className="max-w-7xl mx-auto relative z-10">
           {/* Section Header with Content Map Details */}
-          <div className="mb-32 space-y-12 text-center flex flex-col items-center">
+          <div className="mb-24 space-y-12 text-center flex flex-col items-center">
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
               <Clock />
-              <div className="hidden md:block w-[1px] h-32 bg-[#9CA764]/20" /> {/* Vertical separator for md+ */}
-              <h2 className="text-4xl md:text-6xl lg:text-7xl font-sans text-[#1B261B] font-bold leading-[1.1] max-w-2xl tracking-tight text-center md:text-left">
+              <div className="hidden md:block w-[1px] h-32 bg-[#F1E8C7]/10" />
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-sans text-[#F1E8C7] font-bold leading-[1.1] max-w-2xl tracking-tight text-center md:text-left drop-shadow-2xl">
                 they have only <br /> been waiting for this <br /> moment to arrive.
               </h2>
             </div>
             
-            <div className="w-[1px] h-20 bg-[#9CA764]/20" /> {/* Artisanal vertical divider */}
+            <div className="w-[1px] h-20 bg-[#F1E8C7]/10" />
             
-            <div className="space-y-4"> {/* Tightened spacing */}
+            <div className="space-y-4">
               <p className="text-[14px] md:text-lg font-sans font-black tracking-[0.5em] text-[#9CA764] uppercase">
                 otu plant intelligence
               </p>
-              <p className="text-lg md:text-4xl font-sans font-black tracking-[0.3em] text-[#1B261B] uppercase">
+              <p className="text-lg md:text-4xl font-sans font-black tracking-[0.3em] text-[#F1E8C7] uppercase">
                 scan it. name it. let it live a little.
               </p>
             </div>
           </div>
 
-          <BentoGrid>
+          <div className="mb-12 flex flex-col items-center gap-4 group">
+             <div className="w-px h-12 bg-gradient-to-b from-transparent via-[#9CA764]/50 to-transparent" />
+             <span className="text-[10px] uppercase tracking-[0.8em] font-black text-[#9CA764]/60 ml-[0.8em]">everything we do</span>
+          </div>
+
+          <BentoGrid className="auto-rows-[30rem]">
             {features.map((feature) => (
               <BentoCard key={feature.id} {...feature} />
             ))}
