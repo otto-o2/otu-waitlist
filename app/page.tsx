@@ -53,9 +53,9 @@ const features = [
     ],
     background: <div className="absolute inset-0 bg-[#0F172A]/40 overflow-hidden">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-5" />
-      <div className="absolute inset-0 bg-gradient-to-br from-[#1E293B]/20 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#10B981]/20 to-transparent" />
     </div>,
-    color: "#1E293B", // Clinical Navy
+    color: "#10B981", // Clinical Hospital Green
   },
   {
     id: "wild-mode",
@@ -72,9 +72,9 @@ const features = [
     ],
     background: <div className="absolute inset-0 bg-[#1B100E]/40">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] opacity-5" />
-      <div className="absolute inset-0 bg-gradient-to-tr from-[#3E2723]/20 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-tr from-[#39FF14]/20 to-transparent" />
     </div>,
-    color: "#3E2723", // Rugged Earth
+    color: "#39FF14", // Tactical Radar Green
   },
   {
     id: "genesis-engine",

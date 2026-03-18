@@ -63,36 +63,36 @@ const WardScanner = () => {
             className="absolute inset-0 pointer-events-none z-10"
             style={{
               background:
-                "radial-gradient(ellipse at 50% 50%, rgba(76,201,240,0.06) 0%, transparent 70%)",
+                "radial-gradient(ellipse at 50% 50%, rgba(16,185,129,0.06) 0%, transparent 70%)",
             }}
           />
 
           {/* Scanning Beam Overlay */}
           <div className="absolute inset-0 pointer-events-none overflow-hidden z-20">
-            <div className="w-full h-[1px] bg-[#4CC9F0]/40 animate-[sweep_3s_ease-in-out_infinite]" />
-            <div className="w-full h-20 bg-gradient-to-b from-[#4CC9F0]/10 to-transparent animate-[sweep_3s_ease-in-out_infinite] opacity-50" />
+            <div className="w-full h-[1px] bg-[#10B981]/40 animate-[sweep_3s_ease-in-out_infinite]" />
+            <div className="w-full h-20 bg-gradient-to-b from-[#10B981]/10 to-transparent animate-[sweep_3s_ease-in-out_infinite] opacity-50" />
           </div>
 
           {/* HUD Header */}
           <div className="relative flex justify-between items-start mb-4 z-30">
             <div className="flex flex-col gap-0.5">
                <div className="flex items-center gap-1.5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#4CC9F0] animate-pulse" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse" />
                   <span style={{ fontSize: 7, fontWeight: 900, color: "rgba(180,200,210,0.5)", textTransform: "uppercase", letterSpacing: "0.2em", fontFamily: "'Outfit', sans-serif" }}>
                     Ward Mode Core
                   </span>
                </div>
-               <span style={{ fontSize: 6, color: "rgba(76,201,240,0.3)", fontWeight: 700, fontFamily: "monospace" }}>
+               <span style={{ fontSize: 6, color: "rgba(16,185,129,0.3)", fontWeight: 700, fontFamily: "monospace" }}>
                  SYS_STATE: SCAN_ACTIVE
                </span>
             </div>
-            <ShieldAlert className="w-3 h-3 text-[#4CC9F0]/40" />
+            <ShieldAlert className="w-3 h-3 text-[#10B981]/40" />
           </div>
 
           {/* VITAL WAVEFORM */}
           <div className="w-full h-1/4 bg-black/40 rounded-xl border border-white/5 relative overflow-hidden flex items-center mb-4">
             <div className="absolute inset-0 opacity-[0.05] bg-[repeating-linear-gradient(0deg,transparent,transparent_14px,white_15px),repeating-linear-gradient(90deg,transparent,transparent_14px,white_15px)]" />
-            <svg viewBox="0 0 200 60" className="w-full h-full text-[#4CC9F0] stroke-current fill-none">
+            <svg viewBox="0 0 200 60" className="w-full h-full text-[#10B981] stroke-current fill-none">
               <path 
                 d="M 0 30 Q 10 30 15 30 L 20 10 L 25 50 L 30 30 L 70 30 L 75 10 L 80 50 L 85 30 L 120 30 L 125 10 L 130 50 L 135 30 L 200 30" 
                 strokeWidth="2"
@@ -104,22 +104,22 @@ const WardScanner = () => {
           {/* VITALS GRID */}
           <div className="grid grid-cols-2 gap-2 flex-1 relative z-20">
              <div className="bg-white/5 rounded-lg p-2 border border-white/5 flex flex-col gap-0.5">
-                <Sun className="w-2.5 h-2.5 text-[#4CC9F0]/60" />
+                <Sun className="w-2.5 h-2.5 text-[#10B981]/60" />
                 <span style={{ fontSize: 6, fontWeight: 900, color: "rgba(215,230,240,0.3)", textTransform: "uppercase" }}>Photosyn</span>
                 <span style={{ fontSize: 10, fontWeight: 900, color: "white" }}>{vitals.photosyn.toFixed(0)}%</span>
              </div>
              <div className="bg-white/5 rounded-lg p-2 border border-white/5 flex flex-col gap-0.5">
-                <Droplets className="w-2.5 h-2.5 text-[#4CC9F0]/60" />
+                <Droplets className="w-2.5 h-2.5 text-[#10B981]/60" />
                 <span style={{ fontSize: 6, fontWeight: 900, color: "rgba(215,230,240,0.3)", textTransform: "uppercase" }}>Turgor</span>
                 <span style={{ fontSize: 10, fontWeight: 900, color: "white" }}>{vitals.turgor}mPa</span>
              </div>
              <div className="bg-white/5 rounded-lg p-2 border border-white/5 flex flex-col gap-0.5">
-                <Thermometer className="w-2.5 h-2.5 text-[#4CC9F0]/60" />
+                <Thermometer className="w-2.5 h-2.5 text-[#10B981]/60" />
                 <span style={{ fontSize: 6, fontWeight: 900, color: "rgba(215,230,240,0.3)", textTransform: "uppercase" }}>Thermal</span>
                 <span style={{ fontSize: 10, fontWeight: 900, color: "white" }}>{vitals.thermal}°C</span>
              </div>
              <div className="bg-white/5 rounded-lg p-2 border border-white/5 flex flex-col gap-0.5">
-                <Activity className="w-2.5 h-2.5 text-[#4CC9F0]/60" />
+                <Activity className="w-2.5 h-2.5 text-[#10B981]/60" />
                 <span style={{ fontSize: 6, fontWeight: 900, color: "rgba(215,230,240,0.3)", textTransform: "uppercase" }}>Growth</span>
                 <span style={{ fontSize: 10, fontWeight: 900, color: "white" }}>+{vitals.growth}mm</span>
              </div>
@@ -143,7 +143,7 @@ const WardScanner = () => {
                       background: "linear-gradient(135deg, #1E2D44 0%, #0D1524 100%)",
                       boxShadow: "0 8px 16px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.07)"
                     }}>
-                     <Activity className="w-6 h-6 text-[#4CC9F0]" />
+                     <Activity className="w-6 h-6 text-[#10B981]" />
                   </div>
                </div>
             </div>

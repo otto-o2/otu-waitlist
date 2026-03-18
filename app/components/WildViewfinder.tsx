@@ -136,7 +136,7 @@ const WildViewfinder = () => {
           className="relative w-full rounded-2xl overflow-hidden flex flex-col p-3"
           style={{
             aspectRatio: "1/1.1",
-            background: "linear-gradient(160deg, #1A0D08 0%, #0D0604 100%)",
+            background: "linear-gradient(160deg, #051A05 0%, #020802 100%)",
             boxShadow: "inset 0 2px 14px rgba(0,0,0,0.9), 0 0 0 1px rgba(255,255,255,0.04)",
           }}
         >
@@ -161,23 +161,23 @@ const WildViewfinder = () => {
             className="absolute inset-0 pointer-events-none z-10"
             style={{
               background:
-                "radial-gradient(ellipse at 50% 50%, rgba(255,159,28,0.08) 0%, transparent 80%)",
+                "radial-gradient(ellipse at 50% 50%, rgba(57,255,20,0.06) 0%, transparent 80%)",
             }}
           />
           {/* Static Grid Circles */}
           <div className="absolute inset-0 flex items-center justify-center opacity-[0.05] pointer-events-none">
             {[20, 40, 60, 80].map(s => (
-              <div key={s} className="absolute border border-white rounded-full" style={{ width: `${s}%`, height: `${s}%` }} />
+              <div key={s} className="absolute border border-[#39FF14]/10 rounded-full" style={{ width: `${s}%`, height: `${s}%` }} />
             ))}
-            <div className="absolute w-[1px] h-full bg-white" />
-            <div className="absolute h-[1px] w-full bg-white" />
+            <div className="absolute w-[1px] h-full bg-[#39FF14]/5" />
+            <div className="absolute h-[1px] w-full bg-[#39FF14]/5" />
           </div>
 
           {/* HUD Status Text */}
           <div className="relative flex justify-between items-start mb-2 z-20">
             <div className="flex flex-col gap-0.5">
                <div className="flex items-center gap-1.5">
-                  <div className="w-1 h-1 rounded-full bg-[#FF9F1C] animate-pulse" />
+                  <div className="w-1 h-1 rounded-full bg-[#39FF14] animate-pulse" />
                   <span style={{ fontSize: 7, fontWeight: 900, color: "rgba(180,200,210,0.5)", textTransform: "uppercase", letterSpacing: "0.2em", fontFamily: "'Outfit', sans-serif" }}>
                     radar active
                   </span>
@@ -197,19 +197,19 @@ const WildViewfinder = () => {
             <div 
               className="absolute top-1/2 left-1/2 w-[50%] h-[2px] -translate-y-1/2 origin-left z-10"
               style={{
-                background: "linear-gradient(90deg, transparent 0%, rgba(255,159,28,0.7) 100%)",
+                background: "linear-gradient(90deg, transparent 0%, rgba(57,255,20,0.7) 100%)",
                 transform: `rotate(${angle - 90}deg)`,
               }}
             >
                {/* Leading point glow */}
-               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-[#FF9F1C]/20 blur-sm rounded-full" />
+               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-[#39FF14]/20 blur-sm rounded-full" />
             </div>
 
             {/* Sweep Trail (Conic Gradient) */}
             <div 
               className="absolute top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 pointer-events-none"
               style={{
-                background: `conic-gradient(from ${angle - 30}deg, rgba(255,159,28,0.15) 0%, transparent 30deg)`,
+                background: `conic-gradient(from ${angle - 30}deg, rgba(57,255,20,0.15) 0%, transparent 30deg)`,
                 borderRadius: "50%"
               }}
             />
@@ -228,12 +228,12 @@ const WildViewfinder = () => {
                 }}
               >
                 {/* Schiff/Ship dot */}
-                <div className="w-1.5 h-1.5 bg-[#FF9F1C] rounded-[1px] shadow-[0_0_10px_#F77F00]" 
+                <div className="w-1.5 h-1.5 bg-[#39FF14] rounded-[1px] shadow-[0_0_10px_#39FF14]" 
                      style={{ transform: `rotate(${(t.driftX > 0 ? 45 : -45)}deg)` }} />
                 
                 {/* Ripple on Ping */}
                 {t.opacity > 0.95 && (
-                  <div className="absolute inset-[-4px] border border-[#FF9F1C] rounded-full animate-[ping_0.8s_ease-out_infinite]" />
+                  <div className="absolute inset-[-4px] border border-[#39FF14] rounded-full animate-[ping_0.8s_ease-out_infinite]" />
                 )}
               </div>
             ))}
@@ -249,11 +249,11 @@ const WildViewfinder = () => {
              </div>
              <div className="flex flex-col items-end gap-1">
                 <div className="flex gap-[1px]">
-                   {[...Array(5)].map((_, i) => (
-                      <div key={i} className="w-[10px] h-[2.5px]" style={{ background: i < 4 ? '#FF9F1C' : 'rgba(255,255,255,0.1)' }} />
+                    {[...Array(5)].map((_, i) => (
+                      <div key={i} className="w-[10px] h-[2.5px]" style={{ background: i < 4 ? '#39FF14' : 'rgba(255,255,255,0.1)' }} />
                    ))}
                 </div>
-                <span style={{ fontSize: 6, fontWeight: 900, color: "rgba(255,159,28,0.7)", textTransform: "uppercase" }}>SIG: LOCKED</span>
+                 <span style={{ fontSize: 6, fontWeight: 900, color: "rgba(57,255,20,0.7)", textTransform: "uppercase" }}>SIG: LOCKED</span>
              </div>
           </div>
         </div>
@@ -275,7 +275,7 @@ const WildViewfinder = () => {
                       background: "linear-gradient(135deg, #3E2723 0%, #1B100E 100%)",
                       boxShadow: "0 8px 16px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.07)"
                     }}>
-                     <Camera className="w-6 h-6 text-[#FF9F1C] transition-all group-hover:scale-110" />
+                     <Camera className="w-6 h-6 text-[#39FF14] transition-all group-hover:scale-110" />
                   </div>
                </div>
             </div>
@@ -291,11 +291,11 @@ const WildViewfinder = () => {
 
         {/* ─── BOTTOM ENGRAVING ─── */}
         <div className="mt-2 flex items-center justify-center gap-2 opacity-20">
-          <div className="w-1 h-1 rounded-full bg-[#FF9F1C]" />
+          <div className="w-1 h-1 rounded-full bg-[#39FF14]" />
           <p style={{ fontSize: 6, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.3em", color: "#8B5CF6", opacity: 0.4 }}>
             otu wild radar core
           </p>
-          <div className="w-1 h-1 rounded-full bg-[#FF9F1C]" />
+          <div className="w-1 h-1 rounded-full bg-[#39FF14]" />
         </div>
       </div>
     </div>
