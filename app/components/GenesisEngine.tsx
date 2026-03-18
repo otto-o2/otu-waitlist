@@ -57,7 +57,7 @@ const GenesisEngine = () => {
             className="absolute inset-0 pointer-events-none z-10"
             style={{
               background:
-                "radial-gradient(ellipse at 50% 50%, rgba(181,23,158,0.08) 0%, transparent 75%)",
+                "radial-gradient(ellipse at 50% 50%, rgba(181,23,158,0.18) 0%, transparent 80%)",
             }}
           />
           {/* Vertical Data Stream Background Mask */}
@@ -68,9 +68,9 @@ const GenesisEngine = () => {
               <span style={{ fontSize: 7, fontWeight: 900, color: "rgba(180,200,210,0.5)", textTransform: "uppercase", letterSpacing: "0.2em", fontFamily: "'Outfit', sans-serif" }}>
                 Genesis Vault
               </span>
-              <span style={{ fontSize: 6, color: "rgba(181,23,158,0.3)", fontWeight: 700 }}>GENOMIC ARCHIVE v.42</span>
+               <span style={{ fontSize: 6, color: "rgba(224,64,251,0.6)", fontWeight: 700 }}>GENOMIC ARCHIVE v.42</span>
             </div>
-            <ShieldCheck className="w-3 h-3 text-[#B5179E]/40" />
+            <ShieldCheck className="w-3 h-3 text-[#E040FB]/60" />
           </div>
 
           {/* MAIN VISUAL: ANIMATED DNA STRAND */}
@@ -101,15 +101,15 @@ const GenesisEngine = () => {
                       <circle 
                         cx={x1} cy={y} 
                         r={zIndex > 0 ? 2 : 1.2} 
-                        fill={zIndex > 0 ? "#B5179E" : "rgba(114,9,183,0.4)"} 
-                        className="shadow-[0_0_8px_#B5179E]"
+                        fill={zIndex > 0 ? "#E040FB" : "rgba(114,9,183,0.7)"} 
+                        className="shadow-[0_0_12px_rgba(224,64,251,0.8)]"
                       />
                       {/* Helix Point 2 */}
                       <circle 
                         cx={x2} cy={y} 
                         r={zIndex < 0 ? 2 : 1.2} 
-                        fill={zIndex < 0 ? "#B5179E" : "rgba(114,9,183,0.4)"}
-                        className="shadow-[0_0_8px_#B5179E]"
+                        fill={zIndex < 0 ? "#E040FB" : "rgba(114,9,183,0.7)"}
+                        className="shadow-[0_0_12px_rgba(224,64,251,0.8)]"
                       />
                     </g>
                   );
@@ -120,11 +120,11 @@ const GenesisEngine = () => {
           {/* Scrolling Activity Log (Simplified) */}
           <div className="flex flex-col gap-1 mt-4">
              <div className="w-full h-[2px] bg-white/5 rounded-full overflow-hidden">
-                <div className="h-full w-2/3 bg-gradient-to-r from-transparent via-[#7209B7] to-transparent animate-[shimmer_2s_infinite]" />
+                 <div className="h-full w-2/3 bg-gradient-to-r from-transparent via-[#E040FB] to-transparent animate-[shimmer_2s_infinite]" />
              </div>
              <div className="flex justify-between items-center px-1">
-                <span style={{ fontSize: 5, color: "rgba(181,23,158,0.6)", fontWeight: 900 }}>RECONSTRUCTING_CELL_ARCH...</span>
-                <span style={{ fontSize: 5, color: "rgba(181,23,158,0.4)", fontWeight: 900 }}>76%</span>
+                 <span style={{ fontSize: 5, color: "rgba(224,64,251,0.8)", fontWeight: 900 }}>RECONSTRUCTING_CELL_ARCH...</span>
+                 <span style={{ fontSize: 5, color: "rgba(224,64,251,0.6)", fontWeight: 900 }}>76%</span>
              </div>
           </div>
 
@@ -135,7 +135,7 @@ const GenesisEngine = () => {
                    SECURE / 0.00ms LATENCY
                 </span>
              </div>
-             <Binary className="w-3 h-3 text-[#B5179E]/30" />
+             <Binary className="w-3 h-3 text-[#E040FB]/50" />
           </div>
         </div>
 

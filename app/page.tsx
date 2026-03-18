@@ -90,10 +90,10 @@ const features = [
       "To the future — Use the Greenhouse to simulate years of growth in seconds. By going forward in time you can simulate how a heatwave in July or a low-light winter will impact your plant’s health signature, giving you the data to intervene before the clock even starts."
     ],
     background: <div className="absolute inset-0 bg-[#120A1A]/40 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-t from-[#2D1B3E]/20 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#E040FB]/20 to-transparent" />
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/diagmonds-light.png')] opacity-[0.02]" />
     </div>,
-    color: "#2D1B3E", // Cosmic Amethyst
+    color: "#E040FB", // Neon Violet (Visible Amethyst)
   },
   {
     id: "marketplace",
