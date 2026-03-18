@@ -8,11 +8,11 @@ const Clock = () => {
   useEffect(() => {
     // Capture time immediately on the client to avoid server-side mismatch
     setTime(new Date());
-    
+
     const timer = setInterval(() => {
       setTime(new Date());
     }, 1000);
-    
+
     return () => clearInterval(timer);
   }, []);
 
@@ -23,20 +23,22 @@ const Clock = () => {
   return (
     <div className="relative flex items-center justify-center select-none" style={{ width: "clamp(120px, 24vw, 300px)", aspectRatio: "1/1" }}>
       {/* ─── VINTAGE MARITIME BEZEL ─── */}
-      <div 
+
+      <div
         className="absolute inset-0 rounded-full"
         style={{
-          background: "radial-gradient(circle at 30% 30%, #333 0%, #111 60%, #050505 100%)",
+          background: "linear-gradient(160deg, #2B2D3A 0%, #1C1E28 55%, #13141C 100%)",
           boxShadow: `
-            0 30px 60px -12px rgba(0,0,0,0.8), 
-            inset 0 4px 12px rgba(255,255,255,0.08), 
-            inset 0 -8px 20px rgba(0,0,0,0.6)
+            0 30px 60px -12px rgba(5,5,15,0.7), 
+            0 0 0 1px rgba(255,255,255,0.06),
+            inset 0 1px 0 rgba(255,255,255,0.10), 
+            inset 0 -1px 0 rgba(0,0,0,0.5)
           `,
           padding: "10%"
         }}
       >
         {/* Bezel Screw/Knob Detail */}
-        <div 
+        <div
           className="absolute right-[2%] top-1/2 -translate-y-1/2 w-[6%] h-[8%] rounded-sm"
           style={{
             background: "linear-gradient(135deg, #E5E7EB 0%, #9CA3AF 50%, #4B5563 100%)",
@@ -45,67 +47,83 @@ const Clock = () => {
           }}
         />
 
-        {/* Dial Face */}
-        <div className="w-full h-full rounded-full bg-[#050505] shadow-[inset_0_2px_15px_rgba(0,0,0,1)] relative overflow-hidden">
+        {/* Dial Face (Obsidian Glass) */}
+        <div className="w-full h-full rounded-full bg-gradient-to-br from-[#0D1A20] to-[#091318] shadow-[inset_0_2px_15px_rgba(0,0,0,1)] relative overflow-hidden">
+          {/* Scanlines */}
+          <div
+            className="absolute inset-0 pointer-events-none opacity-[0.03] z-10"
+            style={{
+              backgroundImage:
+                "repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(255,255,255,0.6) 1px, rgba(255,255,255,0.6) 2px)",
+            }}
+          />
+          {/* Cyan Phosphor Glow */}
+          <div
+            className="absolute inset-0 pointer-events-none z-10"
+            style={{
+              background:
+                "radial-gradient(circle at 50% 50%, rgba(34,211,238,0.05) 0%, transparent 70%)",
+            }}
+          />
           <svg viewBox="0 0 100 100" className="w-full h-full absolute inset-0">
-             {/* Outer Minute Track */}
-             {[...Array(60)].map((_, i) => (
-                <line
-                  key={`m-${i}`}
-                  x1="50" y1="4" x2="50" y2="5.5"
-                  transform={`rotate(${i * 6} 50 50)`}
-                  stroke={i % 5 === 0 ? "rgba(255,255,255,0.4)" : "rgba(255,255,255,0.15)"}
-                  strokeWidth="0.6"
-                />
-             ))}
+            {/* Outer Minute Track */}
+            {[...Array(60)].map((_, i) => (
+              <line
+                key={`m-${i}`}
+                x1="50" y1="4" x2="50" y2="5.5"
+                transform={`rotate(${i * 6} 50 50)`}
+                stroke={i % 5 === 0 ? "rgba(255,255,255,0.3)" : "rgba(255,255,255,0.1)"}
+                strokeWidth="0.5"
+              />
+            ))}
 
-             {/* Hour Numbers (24-Hour Format, Scientific White) */}
-             {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23].map((n, i) => {
-                const angle = i * 15;
-                const radius = 38;
-                return (
-                    <text
-                      key={`h-${n}`}
-                      x={50 + radius * Math.sin((angle * Math.PI) / 180)}
-                      y={50 - radius * Math.cos((angle * Math.PI) / 180)}
-                      fill="white"
-                      fontSize={n === 0 || n === 12 ? "8.5" : "7"}
-                      fontWeight="700"
-                      textAnchor="middle"
-                      alignmentBaseline="central"
-                      style={{ fontFamily: "'Inter', sans-serif", opacity: 0.9 }}
-                    >
-                      {n === 0 ? "00" : n}
-                    </text>
-                );
-             })}
+            {/* Hour Numbers (24-Hour Format, Scientific White) */}
+            {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23].map((n, i) => {
+              const angle = i * 15;
+              const radius = 38;
+              return (
+                <text
+                  key={`h-${n}`}
+                  x={50 + radius * Math.sin((angle * Math.PI) / 180)}
+                  y={50 - radius * Math.cos((angle * Math.PI) / 180)}
+                  fill="rgba(255,255,255,0.8)"
+                  fontSize={n === 0 || n === 12 ? "8.5" : "7"}
+                  fontWeight="700"
+                  textAnchor="middle"
+                  alignmentBaseline="central"
+                  style={{ fontFamily: "'Inter', sans-serif" }}
+                >
+                  {n === 0 ? "00" : n}
+                </text>
+              );
+            })}
 
-             {isHydrated && (
-               <>
-                 {/* ─── ROUNDED INDUSTRIAL HANDS ─── */}
-                 {/* Hour Hand (24-hour movement) */}
-                 <g style={{ 
-                    transform: `rotate(${(time!.getHours() % 24) * 15 + time!.getMinutes() * 0.25}deg)`,
-                    transformOrigin: '50% 50%',
-                    transition: 'transform 0.5s cubic-bezier(0.19, 1, 0.22, 1)'
-                 }}>
-                    <line x1="50" y1="50" x2="50" y2="30" stroke="white" strokeWidth="3.5" strokeLinecap="round" />
-                 </g>
+            {isHydrated && (
+              <>
+                {/* ─── ROUNDED INDUSTRIAL HANDS ─── */}
+                {/* Hour Hand (24-hour movement) */}
+                <g style={{
+                  transform: `rotate(${(time!.getHours() % 24) * 15 + time!.getMinutes() * 0.25}deg)`,
+                  transformOrigin: '50% 50%',
+                  transition: 'transform 0.5s cubic-bezier(0.19, 1, 0.22, 1)'
+                }}>
+                  <line x1="50" y1="50" x2="50" y2="30" stroke="white" strokeWidth="3.5" strokeLinecap="round" />
+                </g>
 
-                 {/* Minute Hand (Orangish Red for Visibility) */}
-                 <g style={{ 
-                    transform: `rotate(${time!.getMinutes() * 6 + time!.getSeconds() * 0.1}deg)`,
-                    transformOrigin: '50% 50%',
-                    transition: 'transform 0.5s cubic-bezier(0.19, 1, 0.22, 1)'
-                 }}>
-                    <line x1="50" y1="50" x2="50" y2="12" stroke="#FF4D00" strokeWidth="2.5" strokeLinecap="round" />
-                 </g>
-               </>
-             )}
-             
-             {/* Center Nut Detail */}
-             <circle cx="50" cy="50" r="3" fill="#050505" stroke="#FF4D00" strokeWidth="0.5" />
-             <circle cx="50" cy="50" r="1.2" fill={isHydrated ? "#FF4D00" : "transparent"} />
+                {/* Minute Hand (Orangish Red for Visibility) */}
+                <g style={{
+                  transform: `rotate(${time!.getMinutes() * 6 + time!.getSeconds() * 0.1}deg)`,
+                  transformOrigin: '50% 50%',
+                  transition: 'transform 0.5s cubic-bezier(0.19, 1, 0.22, 1)'
+                }}>
+                  <line x1="50" y1="50" x2="50" y2="12" stroke="#FF4D00" strokeWidth="2.5" strokeLinecap="round" />
+                </g>
+              </>
+            )}
+
+            {/* Center Nut Detail */}
+            <circle cx="50" cy="50" r="3" fill="#050505" stroke="#FF4D00" strokeWidth="0.5" />
+            <circle cx="50" cy="50" r="1.2" fill={isHydrated ? "#FF4D00" : "transparent"} />
           </svg>
         </div>
       </div>

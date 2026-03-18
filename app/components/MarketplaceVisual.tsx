@@ -54,9 +54,9 @@ const MarketplaceVisual = () => {
       <div
         className="relative w-full h-full rounded-[42px] p-5 flex flex-col gap-4 overflow-hidden shadow-2xl"
         style={{
-          background: "linear-gradient(160deg, #232323 0%, #1A1A1A 55%, #121212 100%)",
-          boxShadow: "0 60px 120px -20px rgba(0,0,0,0.8), 0 0 0 1px rgba(136,153,170,0.1), inset 0 1px 0 rgba(255,255,255,0.05), inset 0 -1px 0 rgba(0,0,0,0.5)",
-          border: "1px solid rgba(136,153,170,0.05)"
+          background: "linear-gradient(160deg, #2B2D3A 0%, #1C1E28 55%, #13141C 100%)",
+          boxShadow:
+            "0 60px 120px -20px rgba(5,5,15,0.75), 0 0 0 1px rgba(255,255,255,0.06), inset 0 1px 0 rgba(255,255,255,0.10), inset 0 -1px 0 rgba(0,0,0,0.5)",
         }}
       >
         <div className="absolute inset-0 pointer-events-none opacity-[0.08]" 
@@ -67,14 +67,29 @@ const MarketplaceVisual = () => {
           className="relative w-full rounded-2xl overflow-hidden flex flex-col p-3"
           style={{
             aspectRatio: "1/1.1",
-            background: "#0A0C0E", // Deep industrial dark
-            border: "1px solid rgba(255,255,255,0.04)",
-            boxShadow: "inset 0 2px 15px rgba(0,0,0,0.9)"
+            background: "linear-gradient(160deg, #0D1A20 0%, #091318 100%)",
+            boxShadow: "inset 0 2px 14px rgba(0,0,0,0.9), 0 0 0 1px rgba(255,255,255,0.04)",
           }}
         >
+          {/* Scanlines */}
+          <div
+            className="absolute inset-0 pointer-events-none opacity-[0.035] z-10"
+            style={{
+              backgroundImage:
+                "repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(255,255,255,0.6) 1px, rgba(255,255,255,0.6) 2px)",
+            }}
+          />
+          {/* Olive Phosphor Glow */}
+          <div
+            className="absolute inset-0 pointer-events-none z-10"
+            style={{
+              background:
+                "radial-gradient(ellipse at 50% 50%, rgba(156,167,100,0.05) 0%, transparent 70%)",
+            }}
+          />
           {/* Supermarket HUD header */}
-          <div className="flex justify-between items-center mb-2 px-1">
-             <span style={{ fontSize: 7, fontWeight: 900, color: "#8899AA", textTransform: "uppercase" }}>TERM-MKT_POS_04</span>
+          <div className="flex justify-between items-center mb-2 px-1 relative z-20">
+             <span style={{ fontSize: 7, fontWeight: 900, color: "rgba(180,200,210,0.5)", textTransform: "uppercase", letterSpacing: "0.1em", fontFamily: "'Outfit', sans-serif" }}>TERM-MKT_POS_04</span>
              <ReceiptText className="w-3 h-3 text-[#8899AA]/40" />
           </div>
 

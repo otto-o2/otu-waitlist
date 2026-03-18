@@ -19,9 +19,9 @@ const CompendiumVisual = () => {
       <div
         className="relative w-full h-full rounded-[42px] p-5 flex flex-col gap-4 overflow-hidden shadow-2xl"
         style={{
-          background: "linear-gradient(160deg, #1A2B23 0%, #0F120F 55%, #050805 100%)",
-          boxShadow: "0 60px 120px -20px rgba(5,15,5,0.8), 0 0 0 1px rgba(61,82,59,0.2), inset 0 1px 0 rgba(255,255,255,0.05), inset 0 -1px 0 rgba(0,0,0,0.5)",
-          border: "1px solid rgba(61,82,59,0.15)"
+          background: "linear-gradient(160deg, #2B2D3A 0%, #1C1E28 55%, #13141C 100%)",
+          boxShadow:
+            "0 60px 120px -20px rgba(5,5,15,0.75), 0 0 0 1px rgba(255,255,255,0.06), inset 0 1px 0 rgba(255,255,255,0.10), inset 0 -1px 0 rgba(0,0,0,0.5)",
         }}
       >
         <div className="absolute inset-0 pointer-events-none opacity-[0.08]" 
@@ -32,13 +32,29 @@ const CompendiumVisual = () => {
           className="relative w-full rounded-2xl overflow-hidden flex flex-col p-4"
           style={{
             aspectRatio: "1/1.1",
-            background: "linear-gradient(160deg, #051A10 0%, #020805 100%)", // Deep Forest Black
-            boxShadow: "inset 0 2px 15px rgba(0,0,0,0.9), 0 0 0 1px rgba(149,213,178,0.1)"
+            background: "linear-gradient(160deg, #0D1A20 0%, #091318 100%)",
+            boxShadow: "inset 0 2px 14px rgba(0,0,0,0.9), 0 0 0 1px rgba(255,255,255,0.04)",
           }}
         >
+          {/* Scanlines */}
+          <div
+            className="absolute inset-0 pointer-events-none opacity-[0.035] z-10"
+            style={{
+              backgroundImage:
+                "repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(255,255,255,0.6) 1px, rgba(255,255,255,0.6) 2px)",
+            }}
+          />
+          {/* Emerald Phosphor Glow */}
+          <div
+            className="absolute inset-0 pointer-events-none z-10"
+            style={{
+              background:
+                "radial-gradient(ellipse at 50% 50%, rgba(82,183,136,0.05) 0%, transparent 70%)",
+            }}
+          />
           {/* Header */}
-          <div className="flex justify-between items-center mb-2 border-b border-white/5 pb-1">
-             <span style={{ fontSize: 6, fontWeight: 900, color: "#95D5B1", opacity: 0.8 }}>ARCHIVE / Ficus benghalensis</span>
+          <div className="flex justify-between items-center mb-2 border-b border-white/5 pb-1 relative z-20">
+             <span style={{ fontSize: 6, fontWeight: 900, color: "rgba(180,200,210,0.5)", textTransform: "uppercase", letterSpacing: "0.1em", fontFamily: "'Outfit', sans-serif" }}>ARCHIVE / Ficus benghalensis</span>
              <div className="flex gap-2 items-center">
                 <Bookmark className="w-2.5 h-2.5 text-[#95D5B1]/40" />
                 <span style={{ fontSize: 6, fontWeight: 900, color: "#95D5B1", opacity: 0.8 }}>PG. 421</span>
@@ -91,35 +107,35 @@ const CompendiumVisual = () => {
         </div>
 
         {/* ─── INTERFACE ─── */}
-        <div className="flex items-center justify-between px-2 pb-2">
-           <div className="group flex flex-col items-center gap-1.5 cursor-pointer">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all group-hover:bg-emerald-950/20 active:scale-95"
-                style={{ background: "linear-gradient(145deg, #102018 0%, #050805 100%)", border: "1px solid rgba(61,82,59,0.2)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}>
-                 <ChevronLeft className="w-4 h-4 text-[#95D5B1] opacity-60" />
-              </div>
-              <span style={{ fontSize: 5, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(149,213,178,0.2)" }}>Prev</span>
-           </div>
+         <div className="flex items-center justify-between px-2 pb-2">
+            <div className="group flex flex-col items-center gap-1.5 cursor-pointer">
+               <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all group-hover:bg-white/11 active:scale-95"
+                 style={{ background: "linear-gradient(145deg, #2A2C38 0%, #181A22 100%)", border: "1px solid rgba(255,255,255,0.06)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}>
+                  <ChevronLeft className="w-4 h-4 text-[#D4DCE8] opacity-60" />
+               </div>
+               <span style={{ fontSize: 5, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(215,230,240,0.2)" }}>Prev</span>
+            </div>
 
-           <div className="relative group cursor-pointer">
-              <div className="w-16 h-16 rounded-full p-1" style={{ background: "linear-gradient(135deg, rgba(82,183,136,0.1), transparent)" }}>
-                 <div className="w-full h-full rounded-full flex items-center justify-center" 
-                   style={{ 
-                     background: "linear-gradient(135deg, #0A1F14 0%, #020502 100%)",
-                     boxShadow: "0 8px 16px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.07)"
-                   }}>
-                    <BookOpen className="w-6 h-6 text-[#52B788]" />
-                 </div>
-              </div>
-           </div>
+            <div className="relative group cursor-pointer">
+               <div className="w-16 h-16 rounded-full p-1" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.1), transparent)" }}>
+                  <div className="w-full h-full rounded-full flex items-center justify-center" 
+                    style={{ 
+                      background: "linear-gradient(135deg, #22242E 0%, #13141C 100%)",
+                      boxShadow: "0 8px 16px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.07)"
+                    }}>
+                     <BookOpen className="w-6 h-6 text-[#52B788]" />
+                  </div>
+               </div>
+            </div>
 
-           <div className="group flex flex-col items-center gap-1.5 cursor-pointer">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all group-hover:bg-emerald-950/20 active:scale-95"
-                style={{ background: "linear-gradient(145deg, #102018 0%, #050805 100%)", border: "1px solid rgba(61,82,59,0.2)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}>
-                 <ChevronRight className="w-4 h-4 text-[#95D5B1] opacity-60" />
-              </div>
-              <span style={{ fontSize: 5, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(149,213,178,0.2)" }}>Next</span>
-           </div>
-        </div>
+            <div className="group flex flex-col items-center gap-1.5 cursor-pointer">
+               <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all group-hover:bg-white/11 active:scale-95"
+                 style={{ background: "linear-gradient(145deg, #2A2C38 0%, #181A22 100%)", border: "1px solid rgba(255,255,255,0.06)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}>
+                  <ChevronRight className="w-4 h-4 text-[#D4DCE8] opacity-60" />
+               </div>
+               <span style={{ fontSize: 5, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(215,230,240,0.2)" }}>Next</span>
+            </div>
+         </div>
 
         {/* ─── LABEL ─── */}
         <div className="mt-2 text-center opacity-10">

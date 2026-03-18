@@ -25,9 +25,9 @@ const WardScanner = () => {
       <div
         className="relative w-full h-full rounded-[42px] p-5 flex flex-col gap-4 overflow-hidden shadow-2xl"
         style={{
-          background: "linear-gradient(160deg, #0D1C21 0%, #081216 55%, #05080A 100%)",
-          boxShadow: "0 60px 120px -20px rgba(5,15,20,0.8), 0 0 0 1px rgba(76,201,240,0.15), inset 0 1px 0 rgba(255,255,255,0.05), inset 0 -1px 0 rgba(0,0,0,0.5)",
-          border: "1px solid rgba(76,201,240,0.1)"
+          background: "linear-gradient(160deg, #2B2D3A 0%, #1C1E28 55%, #13141C 100%)",
+          boxShadow:
+            "0 60px 120px -20px rgba(5,5,15,0.75), 0 0 0 1px rgba(255,255,255,0.06), inset 0 1px 0 rgba(255,255,255,0.10), inset 0 -1px 0 rgba(0,0,0,0.5)",
         }}
       >
         <div className="absolute inset-0 pointer-events-none opacity-[0.08]" 
@@ -38,27 +38,43 @@ const WardScanner = () => {
           className="relative w-full rounded-2xl overflow-hidden flex flex-col p-3"
           style={{
             aspectRatio: "1/1.1",
-            background: "linear-gradient(160deg, #08151A 0%, #04090C 100%)",
-            border: "1px solid rgba(255,255,255,0.04)",
-            boxShadow: "inset 0 2px 15px rgba(0,0,0,0.9)"
+            background: "linear-gradient(160deg, #0D1A20 0%, #091318 100%)",
+            boxShadow: "inset 0 2px 14px rgba(0,0,0,0.9), 0 0 0 1px rgba(255,255,255,0.04)",
           }}
         >
+          {/* Scanlines */}
+          <div
+            className="absolute inset-0 pointer-events-none opacity-[0.035] z-10"
+            style={{
+              backgroundImage:
+                "repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(255,255,255,0.6) 1px, rgba(255,255,255,0.6) 2px)",
+            }}
+          />
+          {/* Cyan Phosphor Glow */}
+          <div
+            className="absolute inset-0 pointer-events-none z-10"
+            style={{
+              background:
+                "radial-gradient(ellipse at 50% 50%, rgba(76,201,240,0.06) 0%, transparent 70%)",
+            }}
+          />
+
           {/* Scanning Beam Overlay */}
-          <div className="absolute inset-0 pointer-events-none overflow-hidden z-10">
+          <div className="absolute inset-0 pointer-events-none overflow-hidden z-20">
             <div className="w-full h-[1px] bg-[#4CC9F0]/40 animate-[sweep_3s_ease-in-out_infinite]" />
             <div className="w-full h-20 bg-gradient-to-b from-[#4CC9F0]/10 to-transparent animate-[sweep_3s_ease-in-out_infinite] opacity-50" />
           </div>
 
           {/* HUD Header */}
-          <div className="relative flex justify-between items-start mb-4 z-20">
+          <div className="relative flex justify-between items-start mb-4 z-30">
             <div className="flex flex-col gap-0.5">
                <div className="flex items-center gap-1.5">
                   <div className="w-1.5 h-1.5 rounded-full bg-[#4CC9F0] animate-pulse" />
-                  <span style={{ fontSize: 7, fontWeight: 900, color: "rgba(215,230,240,0.8)", textTransform: "uppercase", letterSpacing: "0.2em" }}>
+                  <span style={{ fontSize: 7, fontWeight: 900, color: "rgba(180,200,210,0.5)", textTransform: "uppercase", letterSpacing: "0.2em", fontFamily: "'Outfit', sans-serif" }}>
                     Ward Mode Core
                   </span>
                </div>
-               <span style={{ fontSize: 6, color: "rgba(180,200,210,0.3)", fontWeight: 700, fontFamily: "monospace" }}>
+               <span style={{ fontSize: 6, color: "rgba(76,201,240,0.3)", fontWeight: 700, fontFamily: "monospace" }}>
                  SYS_STATE: SCAN_ACTIVE
                </span>
             </div>
@@ -103,35 +119,35 @@ const WardScanner = () => {
         </div>
 
         {/* ─── PHYSICAL SCANNER BUTTONS ─── */}
-        <div className="flex items-center justify-between px-2 pb-2">
-           <div className="group flex flex-col items-center gap-1.5 cursor-pointer">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all group-hover:bg-cyan-950/20 active:scale-95"
-                style={{ background: "linear-gradient(145deg, #0D2A31 0%, #050E11 100%)", border: "1px solid rgba(76,201,240,0.2)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}>
-                 <Cpu className="w-4 h-4 text-[#4CC9F0] opacity-60" />
-              </div>
-              <span style={{ fontSize: 5, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(76,201,240,0.2)" }}>Diagnostic</span>
-           </div>
+         <div className="flex items-center justify-between px-2 pb-2">
+            <div className="group flex flex-col items-center gap-1.5 cursor-pointer">
+               <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all group-hover:bg-white/11 active:scale-95"
+                 style={{ background: "linear-gradient(145deg, #2A2C38 0%, #181A22 100%)", border: "1px solid rgba(255,255,255,0.06)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}>
+                  <Cpu className="w-4 h-4 text-[#D4DCE8] opacity-60" />
+               </div>
+               <span style={{ fontSize: 5, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(215,230,240,0.2)" }}>Diagnostic</span>
+            </div>
 
-           <div className="relative group cursor-pointer">
-              <div className="w-16 h-16 rounded-full p-1" style={{ background: "linear-gradient(135deg, rgba(76,201,240,0.2), transparent)" }}>
-                 <div className="w-full h-full rounded-full flex items-center justify-center" 
-                   style={{ 
-                     background: "linear-gradient(135deg, #0A242E 0%, #040D12 100%)",
-                     boxShadow: "0 8px 16px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.07)"
-                   }}>
-                    <Activity className="w-6 h-6 text-[#4CC9F0]" />
-                 </div>
-              </div>
-           </div>
+            <div className="relative group cursor-pointer">
+               <div className="w-16 h-16 rounded-full p-1" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.1), transparent)" }}>
+                  <div className="w-full h-full rounded-full flex items-center justify-center" 
+                    style={{ 
+                      background: "linear-gradient(135deg, #22242E 0%, #13141C 100%)",
+                      boxShadow: "0 8px 16px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.07)"
+                    }}>
+                     <Activity className="w-6 h-6 text-[#4CC9F0]" />
+                  </div>
+               </div>
+            </div>
 
-           <div className="group flex flex-col items-center gap-1.5 cursor-pointer">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all group-hover:bg-cyan-950/20 active:scale-95"
-                style={{ background: "linear-gradient(145deg, #0D2A31 0%, #050E11 100%)", border: "1px solid rgba(76,201,240,0.2)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}>
-                 <Sun className="w-4 h-4 text-[#4CC9F0] opacity-60" />
-              </div>
-              <span style={{ fontSize: 5, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(76,201,240,0.2)" }}>History</span>
-           </div>
-        </div>
+            <div className="group flex flex-col items-center gap-1.5 cursor-pointer">
+               <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all group-hover:bg-white/11 active:scale-95"
+                 style={{ background: "linear-gradient(145deg, #2A2C38 0%, #181A22 100%)", border: "1px solid rgba(255,255,255,0.06)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}>
+                  <Sun className="w-4 h-4 text-[#D4DCE8] opacity-60" />
+               </div>
+               <span style={{ fontSize: 5, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(215,230,240,0.2)" }}>History</span>
+            </div>
+         </div>
 
         {/* ─── LABEL ─── */}
         <div className="mt-2 flex items-center justify-center gap-2 opacity-20 text-center">

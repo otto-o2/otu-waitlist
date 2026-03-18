@@ -19,9 +19,9 @@ const GenesisEngine = () => {
       <div
         className="relative w-full h-full rounded-[42px] p-5 flex flex-col gap-4 overflow-hidden shadow-2xl"
         style={{
-          background: "linear-gradient(160deg, #1F1B2B 0%, #15111F 55%, #0D0A14 100%)",
-          boxShadow: "0 60px 120px -20px rgba(15,5,25,0.8), 0 0 0 1px rgba(114,9,183,0.15), inset 0 1px 0 rgba(255,255,255,0.05), inset 0 -1px 0 rgba(0,0,0,0.5)",
-          border: "1px solid rgba(114,9,183,0.1)"
+          background: "linear-gradient(160deg, #2B2D3A 0%, #1C1E28 55%, #13141C 100%)",
+          boxShadow:
+            "0 60px 120px -20px rgba(5,5,15,0.75), 0 0 0 1px rgba(255,255,255,0.06), inset 0 1px 0 rgba(255,255,255,0.10), inset 0 -1px 0 rgba(0,0,0,0.5)",
         }}
       >
         <div className="absolute inset-0 pointer-events-none opacity-[0.08]" 
@@ -32,20 +32,35 @@ const GenesisEngine = () => {
           className="relative w-full rounded-2xl overflow-hidden flex flex-col p-4"
           style={{
             aspectRatio: "1/1.1",
-            background: "linear-gradient(160deg, #0F0918 0%, #0A0612 100%)",
-            border: "1px solid rgba(255,255,255,0.04)",
-            boxShadow: "inset 0 2px 15px rgba(0,0,0,0.9)"
+            background: "linear-gradient(160deg, #0D1A20 0%, #091318 100%)",
+            boxShadow: "inset 0 2px 14px rgba(0,0,0,0.9), 0 0 0 1px rgba(255,255,255,0.04)",
           }}
         >
+          {/* Scanlines */}
+          <div
+            className="absolute inset-0 pointer-events-none opacity-[0.035] z-10"
+            style={{
+              backgroundImage:
+                "repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(255,255,255,0.6) 1px, rgba(255,255,255,0.6) 2px)",
+            }}
+          />
+          {/* Violet Phosphor Glow */}
+          <div
+            className="absolute inset-0 pointer-events-none z-10"
+            style={{
+              background:
+                "radial-gradient(ellipse at 50% 50%, rgba(181,23,158,0.06) 0%, transparent 70%)",
+            }}
+          />
           {/* Vertical Data Stream Background Mask */}
           <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[linear-gradient(90deg,transparent_0%,white_1px,transparent_1px)]" style={{ backgroundSize: "25% 100%" }} />
           
-          <div className="relative z-10 flex justify-between items-center mb-4">
+          <div className="relative z-30 flex justify-between items-center mb-4">
             <div className="flex flex-col">
-              <span style={{ fontSize: 7, fontWeight: 900, color: "rgba(181,23,158,0.9)", textTransform: "uppercase", letterSpacing: "0.2em" }}>
+              <span style={{ fontSize: 7, fontWeight: 900, color: "rgba(180,200,210,0.5)", textTransform: "uppercase", letterSpacing: "0.2em", fontFamily: "'Outfit', sans-serif" }}>
                 Genesis Vault
               </span>
-              <span style={{ fontSize: 6, color: "rgba(180,200,210,0.4)", fontWeight: 700 }}>GENOMIC ARCHIVE v.42</span>
+              <span style={{ fontSize: 6, color: "rgba(181,23,158,0.3)", fontWeight: 700 }}>GENOMIC ARCHIVE v.42</span>
             </div>
             <ShieldCheck className="w-3 h-3 text-[#B5179E]/40" />
           </div>
@@ -117,35 +132,35 @@ const GenesisEngine = () => {
         </div>
 
         {/* ─── INTERFACE ─── */}
-        <div className="flex items-center justify-between px-2 pb-2">
-           <div className="group flex flex-col items-center gap-1.5 cursor-pointer">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all group-hover:bg-purple-950/20 active:scale-95"
-                style={{ background: "linear-gradient(145deg, #2A1F3D 0%, #15101F 100%)", border: "1px solid rgba(114,9,183,0.2)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}>
-                 <Database className="w-4 h-4 text-[#B5179E] opacity-60" />
-              </div>
-              <span style={{ fontSize: 5, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(114,9,183,0.2)" }}>Index</span>
-           </div>
+         <div className="flex items-center justify-between px-2 pb-2">
+            <div className="group flex flex-col items-center gap-1.5 cursor-pointer">
+               <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all group-hover:bg-white/11 active:scale-95"
+                 style={{ background: "linear-gradient(145deg, #2A2C38 0%, #181A22 100%)", border: "1px solid rgba(255,255,255,0.06)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}>
+                  <Database className="w-4 h-4 text-[#D4DCE8] opacity-60" />
+               </div>
+               <span style={{ fontSize: 5, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(215,230,240,0.2)" }}>Index</span>
+            </div>
 
-           <div className="relative group cursor-pointer">
-              <div className="w-16 h-16 rounded-full p-1" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.1), transparent)" }}>
-                 <div className="w-full h-full rounded-full flex items-center justify-center" 
-                   style={{ 
-                     background: "linear-gradient(135deg, #1A1224 0%, #0D0914 100%)",
-                     boxShadow: "0 8px 16px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.07)"
-                   }}>
-                    <Binary className="w-6 h-6 text-[#B5179E]" />
-                 </div>
-              </div>
-           </div>
+            <div className="relative group cursor-pointer">
+               <div className="w-16 h-16 rounded-full p-1" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.1), transparent)" }}>
+                  <div className="w-full h-full rounded-full flex items-center justify-center" 
+                    style={{ 
+                      background: "linear-gradient(135deg, #22242E 0%, #13141C 100%)",
+                      boxShadow: "0 8px 16px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.07)"
+                    }}>
+                     <Binary className="w-6 h-6 text-[#B5179E]" />
+                  </div>
+               </div>
+            </div>
 
-           <div className="group flex flex-col items-center gap-1.5 cursor-pointer">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all group-hover:bg-purple-950/20 active:scale-95"
-                style={{ background: "linear-gradient(145deg, #2A1F3D 0%, #15101F 100%)", border: "1px solid rgba(114,9,183,0.2)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}>
-                 <Cpu className="w-4 h-4 text-[#B5179E] opacity-60" />
-              </div>
-              <span style={{ fontSize: 5, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(114,9,183,0.2)" }}>Analyze</span>
-           </div>
-        </div>
+            <div className="group flex flex-col items-center gap-1.5 cursor-pointer">
+               <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all group-hover:bg-white/11 active:scale-95"
+                 style={{ background: "linear-gradient(145deg, #2A2C38 0%, #181A22 100%)", border: "1px solid rgba(255,255,255,0.06)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}>
+                  <Cpu className="w-4 h-4 text-[#D4DCE8] opacity-60" />
+               </div>
+               <span style={{ fontSize: 5, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(215,230,240,0.2)" }}>Analyze</span>
+            </div>
+         </div>
 
         {/* ─── LABEL ─── */}
         <div className="mt-2 text-center opacity-20">
