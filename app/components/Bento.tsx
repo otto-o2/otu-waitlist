@@ -97,6 +97,11 @@ const BentoCard = ({
           <h3 className="text-4xl md:text-5xl font-sans font-bold tracking-tighter leading-tight drop-shadow-sm" style={{ color: textColor }}>
             {name.split(":")[0]}
           </h3>
+          {description && (
+            <p className="text-lg md:text-xl font-medium opacity-70 max-w-[80%]" style={{ color: textColor }}>
+              {description}
+            </p>
+          )}
         </div>
       </div>
 
