@@ -93,11 +93,11 @@ export default function FeaturePageLayout({
             </div>
           </div>
 
-          <div className="relative flex items-center justify-center min-h-[500px] lg:min-h-[700px]">
+          <div className="relative flex items-center justify-center py-12 lg:py-0">
              <div className="w-full relative">
-                {/* Visual Placeholder for high-end feel if component fails */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-[80px] blur-3xl opacity-20" />
-                <div className="relative z-10 flex justify-center scale-110 lg:scale-[1.25] transition-transform duration-1000 transform-gpu">
+                {/* Visual Backdrop Glow */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#9CA764]/20 to-transparent rounded-[80px] blur-[100px] opacity-40 animate-pulse" />
+                <div className="relative z-10 flex justify-center transition-all duration-700 hover:translate-y-[-10px]">
                   {visual}
                 </div>
              </div>
