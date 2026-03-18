@@ -17,7 +17,7 @@ const GenesisEngine = () => {
   return (
     <DeviceChassis
       chassisGradient="linear-gradient(160deg, #2D1B3E 0%, #1D1128 55%, #120A1A 100%)"
-      chassisShadowColor="rgba(18,10,26,0.8)"
+      chassisShadowColor="rgba(2,6,23,0.8)"
       screenBackground="linear-gradient(160deg, #120A1A 0%, #09050D 100%)"
       screenOverlay={
         <div
@@ -34,8 +34,8 @@ const GenesisEngine = () => {
         centerGradient: "linear-gradient(135deg, #2D1B3E 0%, #120A1A 100%)",
         labelColor: "rgba(200,180,230,0.25)",
       }}
-      engravingText="otu genesis engine"
-      engravingColor="#7209B7"
+      engravingText="otu genesis core"
+      engravingColor="#64748B"
     >
       {/* Vertical Data Stream Background */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[linear-gradient(90deg,transparent_0%,white_1px,transparent_1px)]" style={{ backgroundSize: "25% 100%" }} />
