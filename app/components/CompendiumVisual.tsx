@@ -62,27 +62,27 @@ const CompendiumVisual = () => {
           />
           {/* Header */}
           <div className="flex justify-between items-center mb-2 border-b border-white/5 pb-1 relative z-20">
-             <span style={{ fontSize: 6, fontWeight: 900, color: "rgba(180,200,210,0.5)", textTransform: "uppercase", letterSpacing: "0.1em", fontFamily: "'Outfit', sans-serif" }}>ARCHIVE / Ficus benghalensis</span>
+             <span style={{ fontSize: 8, fontWeight: 900, color: "rgba(180,200,210,0.5)", textTransform: "uppercase", letterSpacing: "0.1em", fontFamily: "'Outfit', sans-serif" }}>ARCHIVE / Ficus benghalensis</span>
              <div className="flex gap-2 items-center">
-                <Bookmark className="w-2.5 h-2.5 text-[#95D5B1]/40" />
-                <span style={{ fontSize: 6, fontWeight: 900, color: "#95D5B1", opacity: 0.8 }}>PG. 421</span>
+                <Bookmark className="w-3 h-3 text-[#95D5B1]/40" />
+                <span style={{ fontSize: 8, fontWeight: 900, color: "#95D5B1", opacity: 0.8 }}>PG. 421</span>
              </div>
           </div>
 
           {/* MAIN PAGE CONTENT */}
            <div className="flex-1 flex flex-col gap-1 font-serif text-[#D8F3DC] overflow-hidden scrollbar-hide">
              <div className="flex justify-between items-start">
-                <h3 className="font-bold leading-none text-[#95D5B1]" style={{ fontSize: 13, letterSpacing: "-0.02em" }}>The Banyan Tree</h3>
+                <h3 className="font-bold leading-none text-[#95D5B1]" style={{ fontSize: 15, letterSpacing: "-0.02em" }}>The Banyan Tree</h3>
                 <span className="text-[18px] transform -translate-y-1">🌳</span>
              </div>
              
-             <div className="space-y-2 overflow-y-auto pr-1 pb-4" style={{ fontSize: '7.2px', lineHeight: '1.25' }}>
+             <div className="space-y-2 overflow-y-auto pr-1 pb-4" style={{ fontSize: '9px', lineHeight: '1.35' }}>
                 <p className="opacity-90">
                    Known as the <span className="italic font-bold text-[#52B788]">"Vat-vriksha"</span> in ancient texts, the Great Banyan is a marvel of biological architecture. Its defining feature—aerial prop roots—eventually become indistinguishable from the primary trunk.
                 </p>
 
                  {/* Detailed Spec Table */}
-                 <div className="border-y border-white/5 py-1.5 my-1 grid grid-cols-2 gap-x-2 gap-y-1 font-sans font-bold text-[5.5px] uppercase text-[#40916C]">
+                 <div className="border-y border-white/5 py-1.5 my-1 grid grid-cols-2 gap-x-2 gap-y-1 font-sans font-bold text-[7.5px] uppercase text-[#40916C]">
                     <div>Classification: <span className="text-[#95D5B1] italic">Moraceae</span></div>
                     <div>Toxicity: <span className="text-[#95D5B1] italic">Mild (Sap)</span></div>
                     <div>Sunlight: <span className="text-[#95D5B1] italic">Full / Part</span></div>
@@ -102,13 +102,13 @@ const CompendiumVisual = () => {
           {/* Footer */}
            <div className="mt-auto pt-2 border-t border-white/5 flex justify-between items-center z-10">
              <div className="flex gap-3">
-                <span style={{ fontSize: 5, fontWeight: 900, color: "#95D5B1", opacity: 0.4 }}>42% READ</span>
-                <span className="flex items-center gap-1" style={{ fontSize: 5, fontWeight: 800, color: "#95D5B1" }}>
-                   <Share2 className="w-2 h-2" /> SHARE DATA
+                <span style={{ fontSize: 7, fontWeight: 900, color: "#95D5B1", opacity: 0.4 }}>42% READ</span>
+                <span className="flex items-center gap-1" style={{ fontSize: 7, fontWeight: 800, color: "#95D5B1" }}>
+                   <Share2 className="w-2.5 h-2.5" /> SHARE DATA
                 </span>
              </div>
              <div className="flex items-center gap-2">
-                <HelpCircle className="w-2 h-2 opacity-20 text-[#95D5B1]" />
+                <HelpCircle className="w-2.5 h-2.5 opacity-20 text-[#95D5B1]" />
                 <div className={`w-1 h-1 rounded-full bg-[#52B788] transition-opacity duration-300 ${blink ? 'opacity-100' : 'opacity-20'}`} />
              </div>
           </div>
@@ -121,7 +121,7 @@ const CompendiumVisual = () => {
                  style={{ background: "linear-gradient(145deg, #423E28 0%, #2D2A1B 100%)", border: "1px solid rgba(255,255,255,0.06)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}>
                   <ChevronLeft className="w-4 h-4 text-[#D4DCE8] opacity-60" />
                </div>
-               <span style={{ fontSize: 5, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(200,190,160,0.25)" }}>Prev</span>
+               <span style={{ fontSize: 7, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(200,190,160,0.25)" }}>Prev</span>
             </div>
 
             <div className="relative group cursor-pointer">
@@ -141,13 +141,13 @@ const CompendiumVisual = () => {
                  style={{ background: "linear-gradient(145deg, #423E28 0%, #2D2A1B 100%)", border: "1px solid rgba(255,255,255,0.06)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}>
                   <ChevronRight className="w-4 h-4 text-[#D4DCE8] opacity-60" />
                </div>
-               <span style={{ fontSize: 5, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(200,190,160,0.25)" }}>Next</span>
+               <span style={{ fontSize: 7, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(200,190,160,0.25)" }}>Next</span>
             </div>
          </div>
 
         {/* ─── LABEL ─── */}
         <div className="mt-2 text-center opacity-10">
-          <p style={{ fontSize: 5, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.3em", color: "#40916C", opacity: 0.5 }}>
+          <p style={{ fontSize: 8, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.3em", color: "#40916C", opacity: 0.5 }}>
             otu plant encyclopedia v1.0
           </p>
         </div>
