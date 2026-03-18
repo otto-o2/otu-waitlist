@@ -108,17 +108,15 @@ export default function FeaturePageLayout({
             </div>
           </div>
 
-          <div className="relative flex items-center justify-center w-full">
-             <div className="w-full relative flex justify-center">
-                {/* Visual Backdrop Glow - Larger and deeper */}
-                <div 
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] rounded-full blur-[120px] opacity-30 animate-pulse pointer-events-none" 
-                  style={{ background: `radial-gradient(circle, ${color}60 0%, transparent 70%)` }}
+          <div className="relative flex items-center justify-center w-full h-full">
+             <div className="w-full flex justify-center">
+                {/* Visual Backdrop Glow */}
+                <div
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-[150px] opacity-40 animate-pulse pointer-events-none"
+                  style={{ background: `radial-gradient(circle, ${color}80 0%, transparent 65%)` }}
                 />
-                <div className="relative z-10 flex justify-center transition-all duration-1000 transform hover:scale-[1.02] hover:translate-y-[-5px]">
-                  <div className="w-full max-w-[500px] lg:max-w-[650px]">
-                    {visual}
-                  </div>
+                <div className="relative z-10 flex justify-center transition-all duration-1000 transform hover:scale-[1.03] hover:translate-y-[-8px]">
+                  {visual}
                 </div>
              </div>
           </div>

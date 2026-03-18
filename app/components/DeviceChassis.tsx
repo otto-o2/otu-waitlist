@@ -68,7 +68,7 @@ export default function DeviceChassis({
 }: DeviceChassisProps) {
   return (
     <div
-      className="relative w-full max-w-[280px] select-none"
+      className="relative w-full max-w-[360px] select-none"
       style={{ aspectRatio }}
     >
       <div
