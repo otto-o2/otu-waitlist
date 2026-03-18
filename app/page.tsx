@@ -107,16 +107,16 @@ const features = [
   },
   {
     id: "compendium",
-    name: "Sprout and About: Compendium",
-    description: "4,000+ species. Infinite curiosity. One cozy deep-dive for the plant-obsessed — and the lore to make you insufferable.",
+    name: "Sprout and About: the plant encyclopedia",
+    description: "Thousands of species and Infinite Curiosities",
     href: "#compendium",
     cta: "Start exploring →",
     className: "md:col-span-1",
     Icon: Library,
     highlights: [
-      "4,000+ species, zero pretension — Rich profiles, toxicity guides, and just enough mythology to win any dinner party.",
-      "Strategy for the serious collector — Digital yield stats and synthesis guides help you hunt for the rarest Greenhouse genomes.",
-      "Written by people who really care — Verified botanists and plant parents contribute field notes and regional growing quirks."
+      "A detailed repository for the nerds covering four thousand species",
+      "The neural foundation of the otu ecosystem as an on-device intelligence framework designed to deliver scans, diagnostics, and recovery strategies.",
+      "An encyclopedia to learn and understand biological blueprints, toxicity guides, histories, and clinical data"
     ],
     background: <div className="absolute inset-0 opacity-20">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')]" />
