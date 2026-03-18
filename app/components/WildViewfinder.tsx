@@ -165,17 +165,17 @@ const WildViewfinder = () => {
           <div className="relative flex justify-between items-start mb-2 z-20">
             <div className="flex flex-col gap-0.5">
                <div className="flex items-center gap-1.5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#4ADE80] animate-pulse" />
-                  <span style={{ fontSize: 9, fontWeight: 900, color: "rgba(180,200,210,0.5)", textTransform: "uppercase", letterSpacing: "0.2em", fontFamily: "'Outfit', sans-serif" }}>
+                  <div className="w-1 h-1 rounded-full bg-[#4ADE80] animate-pulse" />
+                  <span style={{ fontSize: 7, fontWeight: 900, color: "rgba(180,200,210,0.5)", textTransform: "uppercase", letterSpacing: "0.2em", fontFamily: "'Outfit', sans-serif" }}>
                     radar active
                   </span>
                </div>
-               <span style={{ fontSize: 8, color: "rgba(210,200,180,0.3)", fontWeight: 700, fontFamily: "monospace" }}>
+               <span style={{ fontSize: 6, color: "rgba(210,200,180,0.3)", fontWeight: 700, fontFamily: "monospace" }}>
                  LIDAR_SEQ: {dnaFeed}
                </span>
             </div>
             <div className="flex flex-col items-end opacity-40">
-               <span style={{ fontSize: 8, fontWeight: 900, color: "rgba(210,200,180,1)" }}>SWEEP_72HZ</span>
+               <span style={{ fontSize: 6, fontWeight: 900, color: "rgba(210,200,180,1)" }}>SWEEP_72HZ</span>
             </div>
           </div>
 
@@ -227,8 +227,8 @@ const WildViewfinder = () => {
           {/* HUD Footer Information */}
           <div className="relative flex justify-between items-end mt-2 pt-2 border-t border-white/5 z-20">
              <div className="flex flex-col gap-0.5">
-                <span style={{ fontSize: 8, fontWeight: 900, color: "rgba(210,200,180,0.4)", textTransform: "uppercase" }}>TARGET_COORD</span>
-                <span style={{ fontSize: 10, fontWeight: 700, color: "white", opacity: 0.7, fontFamily: "monospace" }}>
+                <span style={{ fontSize: 6, fontWeight: 900, color: "rgba(210,200,180,0.4)", textTransform: "uppercase" }}>TARGET_COORD</span>
+                <span style={{ fontSize: 8, fontWeight: 700, color: "white", opacity: 0.7, fontFamily: "monospace" }}>
                    {coordinates.lat.toFixed(5)}N {coordinates.lng.toFixed(5)}E
                 </span>
              </div>
@@ -238,7 +238,7 @@ const WildViewfinder = () => {
                       <div key={i} className="w-[10px] h-[2.5px]" style={{ background: i < 4 ? '#4ADE80' : 'rgba(255,255,255,0.1)' }} />
                    ))}
                 </div>
-                 <span style={{ fontSize: 8, fontWeight: 900, color: "rgba(74,222,128,0.7)", textTransform: "uppercase" }}>SIG: LOCKED</span>
+                 <span style={{ fontSize: 6, fontWeight: 900, color: "rgba(74,222,128,0.7)", textTransform: "uppercase" }}>SIG: LOCKED</span>
              </div>
           </div>
         </div>
@@ -250,7 +250,7 @@ const WildViewfinder = () => {
                  style={{ background: "linear-gradient(145deg, #2D3E2D 0%, #172417 100%)", border: "1px solid rgba(255,255,255,0.06)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}>
                   <Binary className="w-4 h-4 text-[#D4DCE8] opacity-60" />
                </div>
-               <span style={{ fontSize: 7, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(160,190,160,0.3)" }}>DECODE</span>
+               <span style={{ fontSize: 5, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(160,190,160,0.3)" }}>DECODE</span>
             </div>
 
             <div className="relative group cursor-pointer">
@@ -270,14 +270,14 @@ const WildViewfinder = () => {
                  style={{ background: "linear-gradient(145deg, #2D3E2D 0%, #172417 100%)", border: "1px solid rgba(255,255,255,0.06)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}>
                   <Compass className="w-4 h-4 text-[#D4DCE8] opacity-60" />
                </div>
-               <span style={{ fontSize: 7, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(160,190,160,0.3)" }}>NAV</span>
+               <span style={{ fontSize: 5, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(160,190,160,0.3)" }}>NAV</span>
             </div>
          </div>
 
         {/* ─── BOTTOM ENGRAVING ─── */}
         <div className="mt-2 flex items-center justify-center gap-2 opacity-20">
           <div className="w-1 h-1 rounded-full bg-[#4ADE80]" />
-          <p style={{ fontSize: 8, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.3em", color: "#4ADE80", opacity: 0.4 }}>
+          <p style={{ fontSize: 6, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.3em", color: "#4ADE80", opacity: 0.4 }}>
             otu wild radar core
           </p>
           <div className="w-1 h-1 rounded-full bg-[#4ADE80]" />

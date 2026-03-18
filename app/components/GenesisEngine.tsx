@@ -65,10 +65,10 @@ const GenesisEngine = () => {
           
           <div className="relative z-30 flex justify-between items-center mb-4">
             <div className="flex flex-col">
-              <span style={{ fontSize: 9, fontWeight: 900, color: "rgba(180,200,210,0.5)", textTransform: "uppercase", letterSpacing: "0.2em", fontFamily: "'Outfit', sans-serif" }}>
+              <span style={{ fontSize: 7, fontWeight: 900, color: "rgba(180,200,210,0.5)", textTransform: "uppercase", letterSpacing: "0.2em", fontFamily: "'Outfit', sans-serif" }}>
                 Genesis Vault
               </span>
-               <span style={{ fontSize: 8, color: "rgba(224,64,251,0.6)", fontWeight: 700 }}>GENOMIC ARCHIVE v.42</span>
+               <span style={{ fontSize: 6, color: "rgba(224,64,251,0.6)", fontWeight: 700 }}>GENOMIC ARCHIVE v.42</span>
             </div>
             <ShieldCheck className="w-3 h-3 text-[#E040FB]/60" />
           </div>
@@ -80,7 +80,7 @@ const GenesisEngine = () => {
              <div className="absolute w-32 h-32 border border-[#7209B7]/10 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
              
              {/* Custom SVG DNA Strand */}
-             <svg viewBox="0 0 100 160" className="w-24 h-36 opacity-80 overflow-visible">
+             <svg viewBox="0 0 100 160" className="w-20 h-32 opacity-80 overflow-visible">
                 {Array.from({ length: 12 }).map((_, i) => {
                   const y = i * 14 + 5;
                   const phase = dnaTime + (i * 0.5);
@@ -123,15 +123,15 @@ const GenesisEngine = () => {
                  <div className="h-full w-2/3 bg-gradient-to-r from-transparent via-[#E040FB] to-transparent animate-[shimmer_2s_infinite]" />
              </div>
              <div className="flex justify-between items-center px-1">
-                 <span style={{ fontSize: 8, color: "rgba(224,64,251,0.8)", fontWeight: 900 }}>RECONSTRUCTING_CELL_ARCH...</span>
-                 <span style={{ fontSize: 8, color: "rgba(224,64,251,0.6)", fontWeight: 900 }}>76%</span>
+                 <span style={{ fontSize: 5, color: "rgba(224,64,251,0.8)", fontWeight: 900 }}>RECONSTRUCTING_CELL_ARCH...</span>
+                 <span style={{ fontSize: 5, color: "rgba(224,64,251,0.6)", fontWeight: 900 }}>76%</span>
              </div>
           </div>
 
           <div className="flex justify-between items-end mt-4 pt-2 border-t border-white/5">
              <div className="flex flex-col gap-0.5">
-                <span style={{ fontSize: 8, fontWeight: 900, color: "rgba(180,200,210,0.4)", textTransform: "uppercase" }}>Vault Integrity</span>
-                <span style={{ fontSize: 10, fontWeight: 700, color: "white", opacity: 0.7, fontFamily: "monospace" }}>
+                <span style={{ fontSize: 6, fontWeight: 900, color: "rgba(180,200,210,0.4)", textTransform: "uppercase" }}>Vault Integrity</span>
+                <span style={{ fontSize: 8, fontWeight: 700, color: "white", opacity: 0.7, fontFamily: "monospace" }}>
                    SECURE / 0.00ms LATENCY
                 </span>
              </div>
@@ -146,7 +146,7 @@ const GenesisEngine = () => {
                  style={{ background: "linear-gradient(145deg, #3D2B52 0%, #1D1128 100%)", border: "1px solid rgba(255,255,255,0.06)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}>
                   <Database className="w-4 h-4 text-[#D4DCE8] opacity-60" />
                </div>
-               <span style={{ fontSize: 7, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(200,180,230,0.25)" }}>Index</span>
+               <span style={{ fontSize: 5, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(200,180,230,0.25)" }}>Index</span>
             </div>
 
             <div className="relative group cursor-pointer">
@@ -166,13 +166,13 @@ const GenesisEngine = () => {
                  style={{ background: "linear-gradient(145deg, #3D2B52 0%, #1D1128 100%)", border: "1px solid rgba(255,255,255,0.06)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}>
                   <Cpu className="w-4 h-4 text-[#D4DCE8] opacity-60" />
                </div>
-               <span style={{ fontSize: 7, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(200,180,230,0.25)" }}>Analyze</span>
+               <span style={{ fontSize: 5, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(200,180,230,0.25)" }}>Analyze</span>
             </div>
          </div>
 
         {/* ─── LABEL ─── */}
         <div className="mt-2 text-center opacity-20">
-          <p style={{ fontSize: 8, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.3em", color: "#7209B7", opacity: 0.4 }}>
+          <p style={{ fontSize: 6, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.3em", color: "#7209B7", opacity: 0.4 }}>
             otu genesis engine
           </p>
         </div>

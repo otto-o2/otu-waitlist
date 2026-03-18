@@ -141,14 +141,14 @@ const Mixtape = () => {
   const remSec = String(remaining % 60).padStart(2, "0");
 
   return (
-    <div className="relative w-full max-w-[300px] select-none" style={{ aspectRatio: "0.65/1" }}>
+    <div className="relative w-full max-w-[270px] select-none" style={{ aspectRatio: "0.58/1" }}>
       {/* iPod Shell — deep muted slate-indigo */}
       <div
-        className="relative w-full h-full rounded-[42px] flex flex-col p-5 overflow-hidden"
+        className="relative w-full h-full rounded-[38px] flex flex-col p-5 overflow-hidden"
         style={{
           background: "linear-gradient(160deg, #2B2D3A 0%, #1C1E28 55%, #13141C 100%)",
           boxShadow:
-            "0 60px 120px -20px rgba(5,5,15,0.75), 0 0 0 1px rgba(255,255,255,0.06), inset 0 1px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(0,0,0,0.5)",
+            "0 60px 120px -20px rgba(5,5,15,0.75), 0 0 0 1px rgba(255,255,255,0.06), inset 0 1px 0 rgba(255,255,255,0.10), inset 0 -1px 0 rgba(0,0,0,0.5)",
         }}
       >
         {/* Brushed grain overlay */}
@@ -167,7 +167,7 @@ const Mixtape = () => {
         <div
           className="relative w-full rounded-xl overflow-hidden flex flex-col"
           style={{
-            aspectRatio: "1/1.1",
+            aspectRatio: "1.22/1",
             background: "linear-gradient(160deg, #0D1A20 0%, #091318 100%)",
             boxShadow: "inset 0 2px 14px rgba(0,0,0,0.9), 0 0 0 1px rgba(255,255,255,0.04)",
           }}
@@ -194,7 +194,7 @@ const Mixtape = () => {
             <div className="flex justify-between items-center">
               <span
                 style={{
-                  fontSize: 9,
+                  fontSize: 7,
                   fontWeight: 900,
                   textTransform: "uppercase",
                   letterSpacing: "0.18em",
@@ -206,7 +206,7 @@ const Mixtape = () => {
               </span>
               {/* Battery */}
               <div className="flex items-center gap-1">
-                <span style={{ color: "rgba(180,200,210,0.4)", fontSize: 8, fontFamily: "'Outfit', sans-serif", fontWeight: 700 }}>
+                <span style={{ color: "rgba(180,200,210,0.4)", fontSize: 6, fontFamily: "'Outfit', sans-serif", fontWeight: 700 }}>
                   ▶
                 </span>
                 <div
@@ -229,7 +229,7 @@ const Mixtape = () => {
             <div className="flex flex-col items-center mt-1">
               <span
                 style={{
-                  fontSize: 14,
+                  fontSize: 11,
                   fontWeight: 900,
                   textTransform: "uppercase",
                   letterSpacing: "-0.01em",
@@ -242,7 +242,7 @@ const Mixtape = () => {
               </span>
               <span
                 style={{
-                  fontSize: 9,
+                  fontSize: 7,
                   fontWeight: 700,
                   textTransform: "uppercase",
                   letterSpacing: "0.18em",
@@ -292,10 +292,10 @@ const Mixtape = () => {
               />
             </div>
             <div className="flex justify-between">
-              <span style={{ fontSize: 8, color: "rgba(180,200,210,0.35)", fontFamily: "'Outfit', sans-serif", fontWeight: 700 }}>
+              <span style={{ fontSize: 6, color: "rgba(180,200,210,0.35)", fontFamily: "'Outfit', sans-serif", fontWeight: 700 }}>
                 {elapsedMin}:{elapsedSec}
               </span>
-              <span style={{ fontSize: 8, color: "rgba(180,200,210,0.35)", fontFamily: "'Outfit', sans-serif", fontWeight: 700 }}>
+              <span style={{ fontSize: 6, color: "rgba(180,200,210,0.35)", fontFamily: "'Outfit', sans-serif", fontWeight: 700 }}>
                 -{remMin}:{remSec}
               </span>
             </div>
@@ -364,7 +364,7 @@ const Mixtape = () => {
                 top: 10,
                 left: "50%",
                 transform: "translateX(-50%)",
-                fontSize: 9,
+                fontSize: 7,
                 letterSpacing: "0.18em",
                 color: "rgba(210,220,235,0.3)",
                 fontFamily: "'Outfit', sans-serif",
@@ -431,14 +431,14 @@ const Mixtape = () => {
         {/* Bottom engraving */}
         <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-2 opacity-20">
           <div className="w-1 h-1 rounded-full" style={{ background: "#D4DCE8" }} />
-          <p style={{ fontSize: 8, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.5em", color: "#D4DCE8", fontFamily: "'Outfit', sans-serif" }}>
+          <p style={{ fontSize: 6, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.5em", color: "#D4DCE8", fontFamily: "'Outfit', sans-serif" }}>
             otu flora
           </p>
           <div className="w-1 h-1 rounded-full" style={{ background: "#D4DCE8" }} />
         </div>
 
         {/* Edge highlight */}
-        <div className="absolute inset-0 pointer-events-none rounded-[42px] border border-white/[0.05]" />
+        <div className="absolute inset-0 pointer-events-none rounded-[38px] border border-white/[0.05]" />
       </div>
 
       <style>{`
