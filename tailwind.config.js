@@ -8,6 +8,7 @@ module.exports = {
       fontFamily: {
         sans: ['"Outfit"', 'sans-serif'],
         serif: ['"Cormorant Garamond"', 'serif'],
+        mono: ['"JetBrains Mono"', 'monospace'],
       }
     },
   },

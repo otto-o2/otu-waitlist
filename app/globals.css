@@ -93,7 +93,7 @@ p, span, a, li, button, input, textarea, select, label, blockquote, figcaption, 
 }
 
 .tech-label {
-  font-family: 'JetBrains Mono', monospace !important;
+  font-family: 'JetBrains Mono', 'ui-monospace', monospace !important;
   font-size: 10px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -107,7 +107,12 @@ p, span, a, li, button, input, textarea, select, label, blockquote, figcaption, 
 }
 
 .mono-tag {
-  font-family: 'JetBrains Mono', monospace !important;
+  font-family: 'JetBrains Mono', 'ui-monospace', monospace !important;
   font-size: 12px;
   color: var(--matcha);
+}
+
+/* Ensure font-mono utility uses JetBrains Mono */
+.font-mono {
+  font-family: 'JetBrains Mono', 'ui-monospace', monospace !important;
 }
