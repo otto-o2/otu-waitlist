@@ -49,7 +49,7 @@ const MarketplaceVisual = () => {
   }, [receipt]);
 
   return (
-    <div className="relative w-full max-w-full select-none" style={{ aspectRatio: "0.65/1" }}>
+    <div className="relative w-full max-w-[300px] select-none" style={{ aspectRatio: "0.65/1" }}>
       {/* ─── HARDWARE CHASSIS (Polished Gunmetal) ─── */}
       <div
         className="relative w-full h-full rounded-[42px] p-5 flex flex-col gap-4 overflow-hidden shadow-2xl"
