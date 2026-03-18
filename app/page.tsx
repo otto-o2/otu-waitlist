@@ -212,11 +212,10 @@ export default function Home() {
       {/* PAGE 1: THE ANTICIPATION */}
       <section className="relative z-20 w-full h-screen flex flex-col items-center justify-center px-6 md:px-12 lg:px-24 bg-[#0A0F0A] overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gradient-to-b from-[#9CA764]/5 to-transparent pointer-events-none" />
-        <div className="max-w-7xl mx-auto flex flex-col items-center gap-16 relative z-10">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-12 md:gap-32 relative z-10 w-full">
           <Clock />
-          <div className="w-[1px] h-20 bg-[#F1E8C7]/10" />
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-sans text-[#F1E8C7] font-bold leading-[1.1] max-w-2xl tracking-tight text-center drop-shadow-2xl">
-            they have only <br /> been waiting for this <br /> moment to arrive.
+          <h2 className="text-4xl md:text-5xl lg:text-7xl font-sans text-[#F1E8C7] font-bold leading-[1.1] max-w-2xl tracking-tight text-center md:text-left drop-shadow-2xl">
+            they have only <br className="hidden md:block" /> been waiting for this <br className="hidden md:block" /> moment to arrive.
           </h2>
         </div>
       </section>
