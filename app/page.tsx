@@ -76,16 +76,15 @@ const features = [
   },
   {
     id: "genesis-engine",
-    name: "The Genesis Engine: Library",
-    description: "A tiny digital universe where your clones and captures live. Infinite scrolling of everything you've ever saved.",
+    name: "The Greenhouse: The alive archive of Your Botanical Journey",
+    description: "Beyond the Scan: Our engine analyzes the biological makeup of your plant to create unique digital life forms.",
     href: "#genesis-engine",
     cta: "Open vault →",
     className: "md:col-span-1",
     Icon: Dna,
     highlights: [
-      "Universal Capture Engine — One central vault for every snapshot, note, and song. Your leaf library, perfectly indexed.",
-      "Genetic Archive — Store 'digital clones' of your rarest plants, complete with their historical health records and growth curves.",
-      "Holographic Timeline — Scroll through your progress as a botanist, from first sprout to professional greenhouse management."
+      "The Genetic Vault — Store \"Digital Twins\" of your plants in your pocket universe, carrying historical health records and growth curves. The more you care for the physical plant, the more its digital counterpart evolves within the Greenhouse.",
+      "To the future — Use the Greenhouse to simulate years of growth in seconds. By going forward in time you can simulate how a heatwave in July or a low-light winter will impact your plant’s health signature, giving you the data to intervene before the clock even starts."
     ],
     background: <div className="absolute inset-0 bg-gradient-to-t from-[#2B3545]/30 to-transparent" />,
     color: "#1B212B", // Cobalt Midnight
