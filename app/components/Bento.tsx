@@ -68,6 +68,18 @@ const BentoCard = ({
         {background}
       </div>
 
+      <div className="absolute inset-0 grid-bg opacity-[0.05] pointer-events-none" />
+      
+      {/* HUD: Status Labels */}
+      <div className="absolute top-8 right-10 tech-label opacity-40 z-10 hidden md:block">
+        {props.id === 'ward-mode' && "STATUS: DIAGNOSTIC_ACTIVE"}
+        {props.id === 'wild-mode' && "SCAN: SECTOR_B"}
+        {props.id === 'botanical-sonification' && "FREQ: 432_HZ"}
+        {props.id === 'marketplace' && "POOL: LIQUID"}
+        {props.id === 'genesis-engine' && "VAULT: SECURE"}
+        {props.id === 'compendium' && "INDEX: V_9.0"}
+      </div>
+
       {/* Subtle Inner Glow */}
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-white/5 to-transparent z-0" />
       
