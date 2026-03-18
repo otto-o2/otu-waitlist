@@ -4,8 +4,8 @@ import { ReactNode } from "react";
 
 // ─── STANDARDIZED DEVICE DIMENSIONS ───
 // All device mockups share these structural constants:
-//   Outer:    max-w-[280px], aspect-ratio 0.65/1 (or override)
-//   Chassis:  rounded-[42px], p-5, gap-3
+//   Outer:    max-w-[440px], aspect-ratio 0.65/1 (or override)
+//   Chassis:  rounded-[42px], p-5, gap-4
 //   Screen:   rounded-2xl, p-4, aspect-ratio 1/1.1 (or override)
 //   Buttons:  side w-10 h-10 rounded-xl, center w-16 h-16 rounded-full
 //   Labels:   5px uppercase 900-weight
@@ -68,11 +68,11 @@ export default function DeviceChassis({
 }: DeviceChassisProps) {
   return (
     <div
-      className="relative w-full max-w-[360px] select-none"
+      className="relative w-full max-w-[440px] select-none"
       style={{ aspectRatio }}
     >
       <div
-        className="relative w-full h-full rounded-[42px] p-5 flex flex-col gap-3 overflow-hidden shadow-2xl"
+        className="relative w-full h-full rounded-[42px] p-5 flex flex-col gap-4 overflow-hidden shadow-2xl"
         style={{
           background: chassisGradient,
           boxShadow: `0 60px 120px -20px ${chassisShadowColor}, 0 0 0 1px rgba(255,255,255,0.05), inset 0 1px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(0,0,0,0.5)`,
@@ -114,7 +114,7 @@ export default function DeviceChassis({
           <div
             className="absolute inset-0 pointer-events-none z-10"
             style={{
-              background: `radial-gradient(ellipse at 50% 50%, ${phosphorGlow} 0%, transparent 75%)`,
+              background: `radial-gradient(ellipse at 50% 50%, ${phosphorGlow} 0%, transparent 80%)`,
             }}
           />
 
@@ -124,7 +124,7 @@ export default function DeviceChassis({
         {/* ─── CONTROLS ─── */}
         {controls}
         {buttons && !controls && (
-          <div className="flex items-center justify-between px-2">
+          <div className="flex items-center justify-between px-2 pb-2">
             {/* Left Button */}
             <div className="group flex flex-col items-center gap-1.5 cursor-pointer">
               <div
@@ -200,7 +200,7 @@ export default function DeviceChassis({
         )}
 
         {/* ─── BOTTOM ENGRAVING ─── */}
-        <div className="flex items-center justify-center gap-2 opacity-20">
+        <div className="mt-2 flex items-center justify-center gap-2 opacity-30">
           <div
             className="w-1 h-1 rounded-full"
             style={{ background: engravingColor }}
