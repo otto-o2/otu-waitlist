@@ -27,7 +27,7 @@ const features = [
     name: "Ward Mode: Health Hub",
     description: "Full-spectrum plant clinic providing clinical-grade diagnostics and roadmaps to recovery.",
     href: "#ward-mode",
-    cta: "System scan →",
+    cta: "System scan",
     className: "md:col-span-2",
     Icon: ShieldAlert,
     highlights: [
@@ -46,7 +46,7 @@ const features = [
     name: "Wild Mode: Field Recon",
     description: "Identify the unknown off-the-grid with high-fidelity local biological data.",
     href: "#wild-mode",
-    cta: "Explore the wild →",
+    cta: "Explore the wild",
     className: "md:col-span-1",
     Icon: Map,
     highlights: [
@@ -65,7 +65,7 @@ const features = [
     name: "The Chime: Living Data",
     description: "Transform plant bio-data into adaptive frequencies. Finally understand the silence.",
     href: "#botanical-sonification-detail",
-    cta: "Listen to the leaves →",
+    cta: "Listen to the leaves",
     className: "md:col-span-1",
     Icon: Music,
     highlights: [
@@ -81,7 +81,7 @@ const features = [
     name: "Farmer’s Market",
     description: "Bridging the gap between digital diagnosis and physical botanical recovery.",
     href: "#marketplace",
-    cta: "Enter market →",
+    cta: "Enter market",
     className: "md:col-span-2",
     Icon: ShoppingBag,
     highlights: [
@@ -99,7 +99,7 @@ const features = [
     name: "The Greenhouse: Archive",
     description: "Carry historical health records, growth curves and digital twins in your pocket.",
     href: "#genesis-engine",
-    cta: "Open vault →",
+    cta: "Open vault",
     className: "md:col-span-2",
     Icon: Dna,
     highlights: [
@@ -117,7 +117,7 @@ const features = [
     name: "Sprout and About",
     description: "The neural foundation of the ecosystem covering 4,000+ biological blueprints.",
     href: "#compendium",
-    cta: "Start exploring →",
+    cta: "Start exploring",
     className: "md:col-span-1",
     Icon: Library,
     highlights: [
