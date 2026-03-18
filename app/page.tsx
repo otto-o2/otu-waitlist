@@ -209,41 +209,50 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Bento Grid Section (Otu Plant Intelligence Sub-Page) */}
-      <section className="relative z-20 px-6 py-32 md:px-12 lg:px-24 bg-[#0A0F0A] overflow-hidden">
-        {/* Ambient Environmental Lights */}
-        <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-[#1B261B]/40 to-transparent pointer-events-none" />
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#9CA764]/5 rounded-full blur-[100px] pointer-events-none" />
+      {/* PAGE 1: THE ANTICIPATION */}
+      <section className="relative z-20 w-full h-screen flex flex-col items-center justify-center px-6 md:px-12 lg:px-24 bg-[#0A0F0A] overflow-hidden">
+        {/* Ambient Top Light */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gradient-to-b from-[#9CA764]/5 to-transparent pointer-events-none" />
         
-        <div className="max-w-7xl mx-auto relative z-10">
-          {/* Section Header with Content Map Details */}
-          <div className="mb-24 space-y-12 text-center flex flex-col items-center">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
-              <Clock />
-              <div className="hidden md:block w-[1px] h-32 bg-[#F1E8C7]/10" />
-              <h2 className="text-4xl md:text-6xl lg:text-7xl font-sans text-[#F1E8C7] font-bold leading-[1.1] max-w-2xl tracking-tight text-center md:text-left drop-shadow-2xl">
-                they have only <br /> been waiting for this <br /> moment to arrive.
-              </h2>
-            </div>
-            
-            <div className="w-[1px] h-20 bg-[#F1E8C7]/10" />
-            
-            <div className="space-y-4">
-              <p className="text-[14px] md:text-lg font-sans font-black tracking-[0.5em] text-[#9CA764] uppercase">
-                otu plant intelligence
-              </p>
-              <p className="text-lg md:text-4xl font-sans font-black tracking-[0.3em] text-[#F1E8C7] uppercase">
-                scan it. name it. let it live a little.
-              </p>
-            </div>
+        <div className="max-w-7xl mx-auto flex flex-col items-center gap-16 relative z-10 transition-all duration-1000">
+          <Clock />
+          <div className="w-[1px] h-20 bg-[#F1E8C7]/10" />
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-sans text-[#F1E8C7] font-bold leading-[1.1] max-w-2xl tracking-tight text-center drop-shadow-2xl">
+            they have only <br /> been waiting for this <br /> moment to arrive.
+          </h2>
+        </div>
+      </section>
+
+      {/* PAGE 2: THE INTELLIGENCE */}
+      <section className="relative z-20 w-full h-screen flex flex-col items-center justify-center px-6 md:px-12 lg:px-24 bg-[#050805] overflow-hidden">
+        <div className="max-w-7xl mx-auto flex flex-col items-center gap-12 text-center relative z-10">
+          <div className="space-y-6">
+            <p className="text-[14px] md:text-xl font-sans font-black tracking-[0.8em] text-[#9CA764] uppercase ml-[0.8em]">
+              otu plant intelligence
+            </p>
+            <div className="w-16 h-px bg-[#9CA764]/30 mx-auto" />
+            <p className="text-2xl md:text-5xl font-sans font-black tracking-[0.3em] text-[#F1E8C7] uppercase leading-tight">
+              scan it. name it. <br /> let it live a little.
+            </p>
+          </div>
+        </div>
+        
+        {/* Technical Grid Backdrop */}
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+          style={{ backgroundImage: "linear-gradient(#9CA764 1px, transparent 1px), linear-gradient(90deg, #9CA764 1px, transparent 1px)", backgroundSize: "100px 100px" }} />
+      </section>
+
+      {/* PAGE 3: THE WORK (EVERYTHING WE DO) */}
+      <section className="relative z-20 px-6 py-40 md:px-12 lg:px-24 bg-[#FDFBF7]">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-24 flex flex-col items-center gap-6 group">
+             <div className="w-px h-16 bg-[#1B261B]/10 overflow-hidden relative">
+                <div className="absolute top-0 left-0 w-full h-full bg-[#9CA764]/40 animate-scroll-line" />
+             </div>
+             <span className="text-[12px] md:text-sm uppercase tracking-[1em] font-black text-[#1B261B] ml-[1em]">everything we do</span>
           </div>
 
-          <div className="mb-12 flex flex-col items-center gap-4 group">
-             <div className="w-px h-12 bg-gradient-to-b from-transparent via-[#9CA764]/50 to-transparent" />
-             <span className="text-[10px] uppercase tracking-[0.8em] font-black text-[#9CA764]/60 ml-[0.8em]">everything we do</span>
-          </div>
-
-          <BentoGrid className="auto-rows-[30rem]">
+          <BentoGrid className="auto-rows-[31rem]">
             {features.map((feature) => (
               <BentoCard key={feature.id} {...feature} />
             ))}
