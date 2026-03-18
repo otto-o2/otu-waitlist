@@ -19,7 +19,6 @@ const WildViewfinder = () => {
   const [coordinates, setCoordinates] = useState({ lat: 52.5201, lng: 13.4049 });
   const [angle, setAngle] = useState(0);
   const [targets, setTargets] = useState<RadarTarget[]>([]);
-  const [clutter, setClutter] = useState<{ id: number; x: number; y: number; opacity: number }[]>([]);
   const requestRef = useRef<number>(null);
   const lastAngleRef = useRef(0);
 
@@ -57,7 +56,7 @@ const WildViewfinder = () => {
         newY = t.y - t.driftY * 2;
       }
 
-      // 2. Technical Detection: Sweep crossing logic
+      // 2. Detection logic
       const targetAngle = (Math.atan2(newY - 50, newX - 50) * 180 / Math.PI + 450) % 360;
       const lastA = lastAngleRef.current;
       const currA = currentAngle;
@@ -73,32 +72,11 @@ const WildViewfinder = () => {
       if (wasJustHit) {
         newOpacity = 1.0; 
       } else {
-        // Real radars use slow phosphor decay (~3 seconds total)
-        newOpacity = Math.max(0, t.opacity - 0.004); 
+        newOpacity = Math.max(0, t.opacity - 0.008); 
       }
       
-      return { 
-        ...t, 
-        x: newX, 
-        y: newY, 
-        angle: targetAngle, 
-        opacity: newOpacity 
-      };
+      return { ...t, x: newX, y: newY, angle: targetAngle, opacity: newOpacity };
     }));
-
-    // 4. Random Electronic Clutter (Radar Noise)
-    if (Math.random() > 0.985 && clutter.length < 4) {
-      const angle = Math.random() * 360;
-      const dist = 10 + Math.random() * 35;
-      const rad = (angle - 90) * (Math.PI / 180);
-      setClutter(prev => [...prev, {
-        id: Math.random(),
-        x: 50 + dist * Math.cos(rad),
-        y: 50 + dist * Math.sin(rad),
-        opacity: 0.4
-      }]);
-    }
-    setClutter(prev => prev.map(c => ({ ...c, opacity: c.opacity - 0.01 })).filter(c => c.opacity > 0));
 
     lastAngleRef.current = currentAngle;
     requestRef.current = requestAnimationFrame(animate);
@@ -175,18 +153,12 @@ const WildViewfinder = () => {
                 "radial-gradient(circle at 50% 50%, rgba(74,222,128,0.04) 0%, transparent 85%)",
             }}
           />
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.2]">
-            {[25, 50, 75, 95].map(s => (
-              <div key={s} className="absolute border border-[#4ADE80]/20 rounded-full" style={{ width: `${s}%`, height: `${s}%` }} />
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.05]">
+            {[20, 40, 60, 80].map(s => (
+              <div key={s} className="absolute border border-white rounded-full" style={{ width: `${s}%`, height: `${s}%` }} />
             ))}
-            <div className="absolute w-[1px] h-full bg-[#4ADE80]/30" />
-            <div className="absolute h-[1px] w-full bg-[#4ADE80]/30" />
-            
-            {/* Bearings */}
-            <span className="absolute top-1 text-[5px] font-black text-[#4ADE80]">N</span>
-            <span className="absolute bottom-1 text-[5px] font-black text-[#4ADE80]">S</span>
-            <span className="absolute left-1 text-[5px] font-black text-[#4ADE80]">W</span>
-            <span className="absolute right-1 text-[5px] font-black text-[#4ADE80]">E</span>
+            <div className="absolute w-[1px] h-full bg-white" />
+            <div className="absolute h-[1px] w-full bg-white" />
           </div>
 
           {/* HUD Status Text */}
@@ -209,39 +181,27 @@ const WildViewfinder = () => {
 
           {/* ACTUAL RADAR PLANE */}
           <div className="flex-1 relative">
-            {/* Realistic Technical Sweep (Wedge + Decay) */}
+            {/* Simple Sweep Line */}
             <div 
-              className="absolute top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none"
+              className="absolute top-1/2 left-1/2 w-[50%] h-[2px] -translate-y-1/2 origin-left z-10"
               style={{
-                background: `conic-gradient(
-                  from ${angle - 360}deg,
-                  rgba(74,222,128,1) 0deg,
-                  rgba(74,222,128,0.8) 1deg,
-                  rgba(74,222,128,0.2) 20deg,
-                  rgba(74,222,128,0.05) 120deg,
-                  transparent 240deg
-                )`,
-                borderRadius: "50%",
-                maskImage: "radial-gradient(circle at center, black 0%, black 50%, transparent 51%)",
-                filter: "blur(0.5px)"
-              }}
-            />
-            
-            {/* Leading Edge Highlight */}
-            <div 
-              className="absolute top-1/2 left-1/2 w-[50%] h-[1.5px] -translate-y-1/2 origin-left z-20"
-              style={{
-                background: "linear-gradient(90deg, transparent 0%, rgba(200,255,200,0.9) 100%)",
+                background: "linear-gradient(90deg, transparent 0%, rgba(74,222,128,0.7) 100%)",
                 transform: `rotate(${angle - 90}deg)`,
               }}
             >
-               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 bg-white/40 blur-sm rounded-full" />
+               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-[#4ADE80]/20 blur-sm rounded-full" />
             </div>
 
-            {/* Central Hub Glow */}
-            <div className="absolute top-1/2 left-1/2 w-4 h-4 -translate-x-1/2 -translate-y-1/2 bg-[#4ADE80]/30 blur-md rounded-full z-20" />
+            {/* Simple Sweep Trail */}
+            <div 
+              className="absolute top-1/2 left-1/2 w-full h-full -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+              style={{
+                background: `conic-gradient(from ${angle - 30}deg, rgba(74,222,128,0.15) 0%, transparent 30deg)`,
+                borderRadius: "50%"
+              }}
+            />
 
-            {/* ACTUAL TARGETS */}
+            {/* Glowing Target Dots */}
             {targets.map(t => (
               <div 
                 key={t.id}
@@ -251,30 +211,16 @@ const WildViewfinder = () => {
                   top: `${t.y}%`,
                   opacity: t.opacity,
                   transform: "translate(-50%, -50%)",
-                  filter: "blur(0.5px)"
+                  transition: "opacity 0.03s linear"
                 }}
               >
-                <div className="w-1.5 h-1.5 bg-[#4ADE80] rounded-[0.5px] shadow-[0_0_12px_#4ADE80]" 
+                <div className="w-1.5 h-1.5 bg-[#4ADE80] rounded-[1px] shadow-[0_0_10px_#4ADE80]" 
                      style={{ transform: `rotate(${(t.driftX > 0 ? 45 : -45)}deg)` }} />
                 
                 {t.opacity > 0.95 && (
-                  <div className="absolute inset-[-6px] border border-[#4ADE80] rounded-full animate-[ping_1.5s_ease-out_infinite] opacity-30" />
+                  <div className="absolute inset-[-4px] border border-[#4ADE80] rounded-full animate-[ping_0.8s_ease-out_infinite]" />
                 )}
               </div>
-            ))}
-
-            {/* ELECTRONIC CLUTTER / NOISE */}
-            {clutter.map(c => (
-              <div 
-                key={c.id}
-                className="absolute w-[2px] h-[2px] bg-[#4ADE80]/60 rounded-full"
-                style={{
-                  left: `${c.x}%`,
-                  top: `${c.y}%`,
-                  opacity: c.opacity,
-                  filter: "blur(1px)"
-                }}
-              />
             ))}
           </div>
 
