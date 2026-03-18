@@ -55,36 +55,36 @@ export default function FeaturePageLayout({
 
       {/* Main Content */}
       <section className="relative z-10 px-6 py-24 md:px-12 lg:px-24">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-center">
+        <div className="max-w-[1600px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-40 items-center">
           <div className="flex flex-col">
-            <div className="space-y-16">
-              <div className="space-y-8">
-                <div className="p-7 rounded-[2.5rem] w-fit border border-white/10" style={{ backgroundColor: `${color}40` }}>
-                  <Icon className="h-20 w-20" style={{ color: '#9CA764' }} />
+            <div className="space-y-20">
+              <div className="space-y-10">
+                <div className="p-10 rounded-[3rem] w-fit border border-white/10" style={{ backgroundColor: `${color}40` }}>
+                  <Icon className="h-24 w-24" style={{ color: '#9CA764' }} />
                 </div>
-                <div className="space-y-6">
-                  <p className="text-sm md:text-2xl font-sans font-black tracking-[0.6em] text-[#9CA764] uppercase">
+                <div className="space-y-8">
+                  <p className="text-xl md:text-3xl font-sans font-black tracking-[0.8em] text-[#9CA764] uppercase opacity-80">
                     {subtitle}
                   </p>
-                  <h1 className="text-6xl md:text-9xl font-sans font-bold tracking-tighter leading-[0.9] drop-shadow-2xl">
+                  <h1 className="text-7xl md:text-[11rem] font-sans font-bold tracking-tighter leading-[0.8] drop-shadow-2xl">
                     {title}
                   </h1>
-                  <p className="text-2xl md:text-3xl text-[#F1E8C7]/70 font-medium leading-relaxed max-w-xl">
+                  <p className="text-3xl md:text-4xl text-[#F1E8C7]/70 font-medium leading-[1.4] max-w-2xl">
                     {description}
                   </p>
                 </div>
               </div>
 
-              <div className="space-y-10">
-                <div className="w-20 h-px bg-[#9CA764]/30" />
-                <ul className="space-y-10">
+              <div className="space-y-16">
+                <div className="w-32 h-px bg-[#9CA764]/30" />
+                <ul className="space-y-12">
                   {highlights.map((highlight, i) => {
                     const [label, content] = highlight.includes("—") ? highlight.split("—") : highlight.includes("–") ? highlight.split("–") : ["", highlight];
                     return (
-                      <li key={i} className="group flex gap-8 items-start">
-                        <div className="h-4 w-4 rounded-full bg-[#9CA764]/40 mt-3 shrink-0 group-hover:scale-125 transition-transform" />
-                        <p className="text-xl md:text-2xl leading-relaxed text-[#F1E8C7]/60 group-hover:text-[#F1E8C7] transition-colors">
-                          {label && <strong className="text-[#9CA764] uppercase tracking-wider block mb-2 text-sm">{label.trim()}</strong>}
+                      <li key={i} className="group flex gap-10 items-start">
+                        <div className="h-5 w-5 rounded-full bg-[#9CA764]/40 mt-3 shrink-0 group-hover:scale-125 transition-transform" />
+                        <p className="text-2xl md:text-3xl leading-relaxed text-[#F1E8C7]/60 group-hover:text-[#F1E8C7] transition-colors">
+                          {label && <strong className="text-[#9CA764] uppercase tracking-wider block mb-3 text-sm">{label.trim()}</strong>}
                           {content.trim()}
                         </p>
                       </li>
@@ -97,10 +97,10 @@ export default function FeaturePageLayout({
 
           <div className="relative flex items-center justify-center w-full">
              <div className="w-full relative flex justify-center">
-                {/* Visual Backdrop Glow */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-gradient-to-br from-[#9CA764]/10 to-transparent rounded-full blur-[120px] opacity-30 animate-pulse pointer-events-none" />
-                <div className="relative z-10 flex justify-center transition-all duration-1000 transform hover:scale-[1.02] hover:translate-y-[-5px]">
-                  <div className="w-full max-w-[500px] lg:max-w-[650px]">
+                {/* Visual Backdrop Glow - Larger and deeper */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[160%] h-[160%] bg-gradient-to-br from-[#9CA764]/10 to-transparent rounded-full blur-[180px] opacity-25 animate-pulse pointer-events-none" />
+                <div className="relative z-10 flex justify-center transition-all duration-1000 transform hover:scale-[1.03] hover:translate-y-[-10px]">
+                  <div className="w-full max-w-[600px] lg:max-w-[850px]">
                     {visual}
                   </div>
                 </div>
