@@ -247,7 +247,7 @@ export default function Home() {
              <span className="text-[12px] md:text-sm uppercase tracking-[1em] font-black text-[#1B261B] ml-[1em]">everything we do</span>
           </div>
 
-          <BentoGrid className="auto-rows-[48rem]">
+          <BentoGrid className="auto-rows-auto grid-rows-[min-content] md:grid-cols-3">
             {features.map((feature) => (
               <BentoCard key={feature.id} {...feature} />
             ))}
