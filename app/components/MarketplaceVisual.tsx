@@ -57,9 +57,9 @@ const MarketplaceVisual = () => {
       }
       phosphorGlow="rgba(136,153,170,0.08)"
       buttons={{
-        left: { icon: <Tag className="w-4 h-4 text-[#D4DCE8] opacity-60" />, label: "List" },
-        center: { icon: <ArrowRightLeft className="w-6 h-6 text-[#8899AA]" /> },
-        right: { icon: <ShoppingBag className="w-4 h-4 text-[#D4DCE8] opacity-60" />, label: "Log Out" },
+        left: { icon: <Tag className="w-5 h-5 text-[#D4DCE8] opacity-60" />, label: "List" },
+        center: { icon: <ArrowRightLeft className="w-8 h-8 text-[#8899AA]" /> },
+        right: { icon: <ShoppingBag className="w-5 h-5 text-[#D4DCE8] opacity-60" />, label: "Log Out" },
         sideGradient: "linear-gradient(145deg, #333333 0%, #171717 100%)",
         centerGradient: "linear-gradient(135deg, #262626 0%, #0A0A0A 100%)",
         labelColor: "rgba(200,200,200,0.3)",
@@ -69,8 +69,8 @@ const MarketplaceVisual = () => {
     >
       {/* HUD Header */}
       <div className="flex justify-between items-center mb-2 px-1 relative z-20">
-        <span style={{ fontSize: 7, fontWeight: 900, color: "rgba(180,200,210,0.5)", textTransform: "uppercase", letterSpacing: "0.1em", fontFamily: "'Outfit', sans-serif" }}>TERM-MKT_POS_04</span>
-        <ReceiptText className="w-3 h-3 text-[#8899AA]/40" />
+        <span style={{ fontSize: 10, fontWeight: 900, color: "rgba(180,200,210,0.5)", textTransform: "uppercase", letterSpacing: "0.1em", fontFamily: "'Outfit', sans-serif" }}>TERM-MKT_POS_04</span>
+        <ReceiptText className="w-4 h-4 text-[#8899AA]/40" />
       </div>
 
       {/* CHECKOUT AREA */}
@@ -79,12 +79,12 @@ const MarketplaceVisual = () => {
         <div className="bg-white/5 p-3 rounded-lg border border-white/5 relative overflow-hidden group">
           <div className="absolute top-0 left-0 w-full h-[1px] bg-[#8899AA] opacity-40 animate-[pos_scan_3s_linear_infinite]" />
           <div className="flex flex-col">
-            <span style={{ fontSize: 5, color: "rgba(136,153,170,0.6)", fontWeight: 900 }}>SCAN_MODE: ACTIVE</span>
-            <span className="text-white font-black tracking-tighter" style={{ fontSize: 13 }}>{catalog[scanIndex].name}</span>
+            <span style={{ fontSize: 7, color: "rgba(136,153,170,0.6)", fontWeight: 900 }}>SCAN_MODE: ACTIVE</span>
+            <span className="text-white font-black tracking-tighter" style={{ fontSize: 18 }}>{catalog[scanIndex].name}</span>
           </div>
           <div className="flex justify-between items-end mt-1">
-            <span style={{ fontSize: 6, fontWeight: 900, color: "white", opacity: 0.3 }}>{catalog[scanIndex].category}</span>
-            <span className="text-[#8899AA] font-black" style={{ fontSize: 12 }}>${catalog[scanIndex].price}</span>
+            <span style={{ fontSize: 8, fontWeight: 900, color: "white", opacity: 0.3 }}>{catalog[scanIndex].category}</span>
+            <span className="text-[#8899AA] font-black" style={{ fontSize: 17 }}>${catalog[scanIndex].price}</span>
           </div>
         </div>
 
@@ -97,13 +97,13 @@ const MarketplaceVisual = () => {
             <div
               key={i}
               className="flex justify-between items-center opacity-80 animate-[enter_0.4s_ease-out_forwards]"
-              style={{ borderBottom: '1px dashed rgba(255,255,255,0.05)', paddingBottom: '2px' }}
+              style={{ borderBottom: '1px dashed rgba(255,255,255,0.05)', paddingBottom: '3px' }}
             >
               <div className="flex flex-col leading-none">
-                <span style={{ fontSize: 7, fontWeight: 900, color: "white" }}>{item.name}</span>
-                <span style={{ fontSize: 5, color: "rgba(255,255,255,0.2)", fontWeight: 900 }}>{item.weight}</span>
+                <span style={{ fontSize: 10, fontWeight: 900, color: "white" }}>{item.name}</span>
+                <span style={{ fontSize: 7, color: "rgba(255,255,255,0.2)", fontWeight: 900 }}>{item.weight}</span>
               </div>
-              <span className="text-white font-bold" style={{ fontSize: 7 }}>${item.price}</span>
+              <span className="text-white font-bold" style={{ fontSize: 10 }}>${item.price}</span>
             </div>
           ))}
         </div>
@@ -111,22 +111,22 @@ const MarketplaceVisual = () => {
         {/* Total */}
         <div className="mt-2 bg-[#8899AA]/10 rounded-md p-2.5 flex justify-between items-center border border-[#8899AA]/20">
           <div className="flex flex-col leading-none">
-            <span style={{ fontSize: 6, fontWeight: 900, color: "white", opacity: 0.4 }}>BALANCE_DUE</span>
-            <span className="text-white font-black" style={{ fontSize: 13 }}>
+            <span style={{ fontSize: 8, fontWeight: 900, color: "white", opacity: 0.4 }}>BALANCE_DUE</span>
+            <span className="text-white font-black" style={{ fontSize: 18 }}>
               ${receipt.reduce((acc, curr) => acc + parseFloat(curr.price), 0).toFixed(2)}
             </span>
           </div>
-          <Printer className="w-4 h-4 text-[#8899AA]" opacity={0.4} />
+          <Printer className="w-5 h-5 text-[#8899AA]" opacity={0.4} />
         </div>
       </div>
 
       {/* Footer */}
       <div className="flex justify-between items-center mt-3 px-1">
-        <div className="flex gap-1.5">
+        <div className="flex gap-1.5 items-center">
           <div className="w-1.5 h-1.5 rounded-full bg-[#8899AA] animate-pulse" />
-          <span style={{ fontSize: 6, fontWeight: 900, color: "rgba(255,255,255,0.2)" }}>ENCRYPTION: AES-256</span>
+          <span style={{ fontSize: 8, fontWeight: 900, color: "rgba(255,255,255,0.2)" }}>ENCRYPTION: AES-256</span>
         </div>
-        <span style={{ fontSize: 6, fontWeight: 900, color: "rgba(255,255,255,0.2)" }}>OTU_SYNC_VERIFIED</span>
+        <span style={{ fontSize: 8, fontWeight: 900, color: "rgba(255,255,255,0.2)" }}>OTU_SYNC_VERIFIED</span>
       </div>
 
       <style jsx>{`

@@ -27,9 +27,9 @@ const GenesisEngine = () => {
       }
       phosphorGlow="rgba(181,23,158,0.18)"
       buttons={{
-        left: { icon: <Database className="w-4 h-4 text-[#D4DCE8] opacity-60" />, label: "Index" },
-        center: { icon: <Binary className="w-6 h-6 text-[#B5179E]" /> },
-        right: { icon: <Cpu className="w-4 h-4 text-[#D4DCE8] opacity-60" />, label: "Analyze" },
+        left: { icon: <Database className="w-5 h-5 text-[#D4DCE8] opacity-60" />, label: "Index" },
+        center: { icon: <Binary className="w-8 h-8 text-[#B5179E]" /> },
+        right: { icon: <Cpu className="w-5 h-5 text-[#D4DCE8] opacity-60" />, label: "Analyze" },
         sideGradient: "linear-gradient(145deg, #3D2B52 0%, #1D1128 100%)",
         centerGradient: "linear-gradient(135deg, #2D1B3E 0%, #120A1A 100%)",
         labelColor: "rgba(200,180,230,0.25)",
@@ -43,20 +43,20 @@ const GenesisEngine = () => {
       {/* Header */}
       <div className="relative z-30 flex justify-between items-center mb-4">
         <div className="flex flex-col">
-          <span style={{ fontSize: 7, fontWeight: 900, color: "rgba(180,200,210,0.5)", textTransform: "uppercase", letterSpacing: "0.2em", fontFamily: "'Outfit', sans-serif" }}>
+          <span style={{ fontSize: 10, fontWeight: 900, color: "rgba(180,200,210,0.5)", textTransform: "uppercase", letterSpacing: "0.2em", fontFamily: "'Outfit', sans-serif" }}>
             Genesis Vault
           </span>
-          <span style={{ fontSize: 6, color: "rgba(224,64,251,0.6)", fontWeight: 700 }}>GENOMIC ARCHIVE v.42</span>
+          <span style={{ fontSize: 8, color: "rgba(224,64,251,0.6)", fontWeight: 700 }}>GENOMIC ARCHIVE v.42</span>
         </div>
-        <ShieldCheck className="w-3 h-3 text-[#E040FB]/60" />
+        <ShieldCheck className="w-4 h-4 text-[#E040FB]/60" />
       </div>
 
       {/* ANIMATED DNA STRAND */}
       <div className="flex-1 relative flex items-center justify-center overflow-hidden">
-        <div className="absolute w-40 h-40 border border-white/5 rounded-full animate-[spin_30s_linear_infinite]" />
-        <div className="absolute w-32 h-32 border border-[#7209B7]/10 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
+        <div className="absolute w-56 h-56 border border-white/5 rounded-full animate-[spin_30s_linear_infinite]" />
+        <div className="absolute w-44 h-44 border border-[#7209B7]/10 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
 
-        <svg viewBox="0 0 100 160" className="w-20 h-32 opacity-80 overflow-visible">
+        <svg viewBox="0 0 100 160" className="w-28 h-44 opacity-80 overflow-visible">
           {Array.from({ length: 12 }).map((_, i) => {
             const y = i * 14 + 5;
             const phase = dnaTime + (i * 0.5);
@@ -81,20 +81,20 @@ const GenesisEngine = () => {
           <div className="h-full w-2/3 bg-gradient-to-r from-transparent via-[#E040FB] to-transparent animate-[shimmer_2s_infinite]" />
         </div>
         <div className="flex justify-between items-center px-1">
-          <span style={{ fontSize: 5, color: "rgba(224,64,251,0.8)", fontWeight: 900 }}>RECONSTRUCTING_CELL_ARCH...</span>
-          <span style={{ fontSize: 5, color: "rgba(224,64,251,0.6)", fontWeight: 900 }}>76%</span>
+          <span style={{ fontSize: 7, color: "rgba(224,64,251,0.8)", fontWeight: 900 }}>RECONSTRUCTING_CELL_ARCH...</span>
+          <span style={{ fontSize: 7, color: "rgba(224,64,251,0.6)", fontWeight: 900 }}>76%</span>
         </div>
       </div>
 
       {/* Footer */}
       <div className="flex justify-between items-end mt-4 pt-2 border-t border-white/5">
         <div className="flex flex-col gap-0.5">
-          <span style={{ fontSize: 6, fontWeight: 900, color: "rgba(180,200,210,0.4)", textTransform: "uppercase" }}>Vault Integrity</span>
-          <span className="font-mono" style={{ fontSize: 8, fontWeight: 700, color: "white", opacity: 0.7 }}>
+          <span style={{ fontSize: 8, fontWeight: 900, color: "rgba(180,200,210,0.4)", textTransform: "uppercase" }}>Vault Integrity</span>
+          <span className="font-mono" style={{ fontSize: 11, fontWeight: 700, color: "white", opacity: 0.7 }}>
             SECURE / 0.00ms LATENCY
           </span>
         </div>
-        <Binary className="w-3 h-3 text-[#E040FB]/50" />
+        <Binary className="w-4 h-4 text-[#E040FB]/50" />
       </div>
 
       <style jsx>{`

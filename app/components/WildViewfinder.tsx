@@ -104,9 +104,9 @@ const WildViewfinder = () => {
       }
       phosphorGlow="rgba(74,222,128,0.04)"
       buttons={{
-        left: { icon: <Binary className="w-4 h-4 text-[#D4DCE8] opacity-60" />, label: "DECODE" },
-        center: { icon: <Camera className="w-6 h-6 text-[#4ADE80] transition-all group-hover:scale-110" /> },
-        right: { icon: <Compass className="w-4 h-4 text-[#D4DCE8] opacity-60" />, label: "NAV" },
+        left: { icon: <Binary className="w-5 h-5 text-[#D4DCE8] opacity-60" />, label: "DECODE" },
+        center: { icon: <Camera className="w-8 h-8 text-[#4ADE80] transition-all group-hover:scale-110" /> },
+        right: { icon: <Compass className="w-5 h-5 text-[#D4DCE8] opacity-60" />, label: "NAV" },
         sideGradient: "linear-gradient(145deg, #2D3E2D 0%, #172417 100%)",
         centerGradient: "linear-gradient(135deg, #1B2B1B 0%, #0A0F0A 100%)",
         labelColor: "rgba(160,190,160,0.3)",
@@ -127,17 +127,17 @@ const WildViewfinder = () => {
       <div className="relative flex justify-between items-start mb-2 z-20">
         <div className="flex flex-col gap-0.5">
           <div className="flex items-center gap-1.5">
-            <div className="w-1 h-1 rounded-full bg-[#4ADE80] animate-pulse" />
-            <span style={{ fontSize: 7, fontWeight: 900, color: "rgba(180,200,210,0.5)", textTransform: "uppercase", letterSpacing: "0.2em", fontFamily: "'Outfit', sans-serif" }}>
+            <div className="w-1.5 h-1.5 rounded-full bg-[#4ADE80] animate-pulse" />
+            <span style={{ fontSize: 10, fontWeight: 900, color: "rgba(180,200,210,0.5)", textTransform: "uppercase", letterSpacing: "0.2em", fontFamily: "'Outfit', sans-serif" }}>
               radar active
             </span>
           </div>
-          <span className="font-mono" style={{ fontSize: 6, color: "rgba(210,200,180,0.3)", fontWeight: 700 }}>
+          <span className="font-mono" style={{ fontSize: 8, color: "rgba(210,200,180,0.3)", fontWeight: 700 }}>
             LIDAR_SEQ: {dnaFeed}
           </span>
         </div>
         <div className="flex flex-col items-end opacity-40">
-          <span style={{ fontSize: 6, fontWeight: 900, color: "rgba(210,200,180,1)" }}>SWEEP_72HZ</span>
+          <span style={{ fontSize: 8, fontWeight: 900, color: "rgba(210,200,180,1)" }}>SWEEP_72HZ</span>
         </div>
       </div>
 
@@ -188,18 +188,18 @@ const WildViewfinder = () => {
       {/* HUD Footer */}
       <div className="relative flex justify-between items-end mt-2 pt-2 border-t border-white/5 z-20">
         <div className="flex flex-col gap-0.5">
-          <span style={{ fontSize: 6, fontWeight: 900, color: "rgba(210,200,180,0.4)", textTransform: "uppercase" }}>TARGET_COORD</span>
-          <span className="font-mono" style={{ fontSize: 8, fontWeight: 700, color: "white", opacity: 0.7 }}>
+          <span style={{ fontSize: 8, fontWeight: 900, color: "rgba(210,200,180,0.4)", textTransform: "uppercase" }}>TARGET_COORD</span>
+          <span className="font-mono" style={{ fontSize: 11, fontWeight: 700, color: "white", opacity: 0.7 }}>
             {coordinates.lat.toFixed(5)}N {coordinates.lng.toFixed(5)}E
           </span>
         </div>
         <div className="flex flex-col items-end gap-1">
-          <div className="flex gap-[1px]">
+          <div className="flex gap-[2px]">
             {[...Array(5)].map((_, i) => (
-              <div key={i} className="w-[10px] h-[2.5px]" style={{ background: i < 4 ? '#4ADE80' : 'rgba(255,255,255,0.1)' }} />
+              <div key={i} className="w-[14px] h-[3px]" style={{ background: i < 4 ? '#4ADE80' : 'rgba(255,255,255,0.1)' }} />
             ))}
           </div>
-          <span style={{ fontSize: 6, fontWeight: 900, color: "rgba(74,222,128,0.7)", textTransform: "uppercase" }}>SIG: LOCKED</span>
+          <span style={{ fontSize: 8, fontWeight: 900, color: "rgba(74,222,128,0.7)", textTransform: "uppercase" }}>SIG: LOCKED</span>
         </div>
       </div>
     </DeviceChassis>

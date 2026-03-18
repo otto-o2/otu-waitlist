@@ -5,10 +5,10 @@ import { ReactNode } from "react";
 // ─── STANDARDIZED DEVICE DIMENSIONS ───
 // All device mockups share these structural constants:
 //   Outer:    max-w-[440px], aspect-ratio 0.65/1 (or override)
-//   Chassis:  rounded-[42px], p-5, gap-4
-//   Screen:   rounded-2xl, p-4, aspect-ratio 1/1.1 (or override)
-//   Buttons:  side w-10 h-10 rounded-xl, center w-16 h-16 rounded-full
-//   Labels:   5px uppercase 900-weight
+//   Chassis:  rounded-[42px], p-6, gap-4
+//   Screen:   rounded-3xl, p-5, aspect-ratio 1/1.1 (or override)
+//   Buttons:  side w-14 h-14 rounded-2xl, center w-20 h-20 rounded-full
+//   Labels:   7px uppercase 900-weight
 
 interface DeviceButton {
   icon: ReactNode;
@@ -72,7 +72,7 @@ export default function DeviceChassis({
       style={{ aspectRatio }}
     >
       <div
-        className="relative w-full h-full rounded-[42px] p-5 flex flex-col gap-4 overflow-hidden shadow-2xl"
+        className="relative w-full h-full rounded-[42px] p-6 flex flex-col gap-4 overflow-hidden shadow-2xl"
         style={{
           background: chassisGradient,
           boxShadow: `0 60px 120px -20px ${chassisShadowColor}, 0 0 0 1px rgba(255,255,255,0.05), inset 0 1px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(0,0,0,0.5)`,
@@ -91,7 +91,7 @@ export default function DeviceChassis({
 
         {/* ─── SCREEN ─── */}
         <div
-          className="relative w-full rounded-2xl overflow-hidden flex flex-col p-4"
+          className="relative w-full rounded-3xl overflow-hidden flex flex-col p-5"
           style={{
             aspectRatio: screenAspectRatio,
             background: screenBackground,
@@ -126,9 +126,9 @@ export default function DeviceChassis({
         {buttons && !controls && (
           <div className="flex items-center justify-between px-2 pb-2">
             {/* Left Button */}
-            <div className="group flex flex-col items-center gap-1.5 cursor-pointer">
+            <div className="group flex flex-col items-center gap-2 cursor-pointer">
               <div
-                className="w-10 h-10 rounded-xl flex items-center justify-center transition-all group-hover:bg-white/[0.11] active:scale-95"
+                className="w-14 h-14 rounded-2xl flex items-center justify-center transition-all group-hover:bg-white/[0.11] active:scale-95"
                 style={{
                   background: buttons.sideGradient,
                   border: "1px solid rgba(255,255,255,0.06)",
@@ -139,7 +139,7 @@ export default function DeviceChassis({
               </div>
               <span
                 style={{
-                  fontSize: 5,
+                  fontSize: 7,
                   fontWeight: 900,
                   textTransform: "uppercase",
                   letterSpacing: "0.2em",
@@ -153,7 +153,7 @@ export default function DeviceChassis({
             {/* Center Button */}
             <div className="relative group cursor-pointer">
               <div
-                className="w-16 h-16 rounded-full p-1"
+                className="w-20 h-20 rounded-full p-1"
                 style={{
                   background:
                     "linear-gradient(135deg, rgba(255,255,255,0.1), transparent)",
@@ -173,9 +173,9 @@ export default function DeviceChassis({
             </div>
 
             {/* Right Button */}
-            <div className="group flex flex-col items-center gap-1.5 cursor-pointer">
+            <div className="group flex flex-col items-center gap-2 cursor-pointer">
               <div
-                className="w-10 h-10 rounded-xl flex items-center justify-center transition-all group-hover:bg-white/[0.11] active:scale-95"
+                className="w-14 h-14 rounded-2xl flex items-center justify-center transition-all group-hover:bg-white/[0.11] active:scale-95"
                 style={{
                   background: buttons.sideGradient,
                   border: "1px solid rgba(255,255,255,0.06)",
@@ -186,7 +186,7 @@ export default function DeviceChassis({
               </div>
               <span
                 style={{
-                  fontSize: 5,
+                  fontSize: 7,
                   fontWeight: 900,
                   textTransform: "uppercase",
                   letterSpacing: "0.2em",
@@ -202,12 +202,12 @@ export default function DeviceChassis({
         {/* ─── BOTTOM ENGRAVING ─── */}
         <div className="mt-2 flex items-center justify-center gap-2 opacity-30">
           <div
-            className="w-1 h-1 rounded-full"
+            className="w-1.5 h-1.5 rounded-full"
             style={{ background: engravingColor }}
           />
           <p
             style={{
-              fontSize: 6,
+              fontSize: 8,
               fontWeight: 900,
               textTransform: "uppercase",
               letterSpacing: "0.3em",
@@ -218,7 +218,7 @@ export default function DeviceChassis({
             {engravingText}
           </p>
           <div
-            className="w-1 h-1 rounded-full"
+            className="w-1.5 h-1.5 rounded-full"
             style={{ background: engravingColor }}
           />
         </div>
