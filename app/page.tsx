@@ -182,7 +182,7 @@ export default function Home() {
       <section className="relative z-20 w-full h-screen bg-[#0A0F0A] overflow-hidden">
         <div className="absolute inset-0 w-full h-full">
           <img 
-            src="/images/sanctuary.jpg" 
+            src="/images/sanctuary_8k.png" 
             alt="Botanical Sanctuary"
             className="w-full h-full object-cover opacity-70" 
           />
