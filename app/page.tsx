@@ -5,12 +5,6 @@ import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { MeshGradient } from "@paper-design/shaders-react";
 import { BentoGrid, BentoCard } from "./components/Bento";
-import Mixtape from "./components/Mixtape";
-import WardScanner from "./components/WardScanner";
-import WildViewfinder from "./components/WildViewfinder";
-import GenesisEngine from "./components/GenesisEngine";
-import MarketplaceVisual from "./components/MarketplaceVisual";
-import CompendiumVisual from "./components/CompendiumVisual";
 import Clock from "./components/Clock";
 import { 
   ShieldAlert, 
@@ -25,110 +19,74 @@ const features = [
   {
     id: "ward-mode",
     name: "Ward Mode: Health Hub",
-    description: "Stop the guessing game. The Ward is full-spectrum plant clinic that lives in your pocket, translating silent distress into actionable data, providing a clinical-grade roadmap from diagnosis to full recovery.",
-    href: "#ward-mode",
+    href: "/ward",
     cta: "System scan",
     className: "md:col-span-2",
     Icon: ShieldAlert,
-    highlights: [
-      "The Diagnostics — Our neural engine identifies pathogens, nutrient gaps, and atmospheric red flags to bridge prevention and cure.",
-      "Call to Action — Receive comprehensive doctor reports and care cards for daily guidance. When your plant loses its balance, The Ward opens you up to the Farmer’s Market, a unique marketplace of tailor-made care packages and organic elixirs specifically prescribed by the Ward.",
-      "The Air and the Hour — Receive hour-by-hour care updates that adapt in real-time. By syncing your recovery plan with the local weather and the light in your home, the Ward ensures your collection stays in its flow state, always."
-    ],
+    color: "#0A1A14", // Deep Hospital Emerald
     background: <div className="absolute inset-0 bg-[#0A1A14]/40 overflow-hidden">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
       <div className="absolute inset-0 bg-gradient-to-br from-[#10B981]/10 to-transparent" />
     </div>,
-    color: "#0A1A14", // Deep Hospital Emerald
   },
   {
     id: "wild-mode",
     name: "Wild Mode: Adventure is out there!",
-    description: "Spot the rare. Name the unknown. All off the grid.",
-    href: "#wild-mode",
+    href: "/wild",
     cta: "Explore the wild",
     className: "md:col-span-1",
     Icon: Map,
-    highlights: [
-      "Identify that “thing” on your hike — Our neural engine draws from a massive local database of over four thousand species, providing high-fidelity data even when you are off the grid.",
-      "Go beyond the name — Access a deep library of botanical facts, rarity rankings, and the unique history of every plant you encounter.",
-      "The Log — Record your finds and map your journey in real-time to build a living timeline of every signature encountered in the field."
-    ],
+    color: "#0F160F", // Tactical Dark Forest
     background: <div className="absolute inset-0 bg-[#0F160F]/40">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] opacity-10" />
       <div className="absolute inset-0 bg-gradient-to-tr from-[#4ADE80]/10 to-transparent" />
     </div>,
-    color: "#0F160F", // Tactical Dark Forest
   },
   {
     id: "botanical-sonification",
     name: "The Chime: Living Data Compositions",
-    description: "Transform bio-data into adaptive frequencies and finally understand what your plants are saying.",
-    href: "#botanical-sonification-detail",
+    href: "/chime",
     cta: "Listen to the leaves",
     className: "md:col-span-1",
     Icon: Music,
-    highlights: [
-      "Gene Signatures — We translate the unique genome of your plant into a one-of-a-kind musical signature.",
-      "Vital Signs — We render biological data and the pulse of your home into an audible stream.",
-      "Playlist Gardens — You can now curate a private living library of sound."
-    ],
-    background: <div className="absolute inset-0 bg-[#13141C]/40" />,
     color: "#13141C", // Obsidian Indigo
+    background: <div className="absolute inset-0 bg-[#13141C]/40" />,
   },
   {
     id: "marketplace",
     name: "The Farmer’s Market: Plants and Plant Stuff",
-    description: "Bridging the gap between digital diagnosis and physical recovery.",
-    href: "#marketplace",
+    href: "/market",
     cta: "Enter market",
     className: "md:col-span-2",
     Icon: ShoppingBag,
-    highlights: [
-      "A curated inventory of plants ranked by their ability to thrive in your current microclimate.",
-      "Data to the Dirt – Utilizing the doctor’s reports from the Ward mode and your Wild Mode logs, the Farmer’s market suggests care packages and tool kits that match your patch.",
-      "The Humans behind the Data — Connect with master gardeners for 1-on-1 consultations"
-    ],
+    color: "#1A1A1A", // Deep Graphite
     background: <div className="absolute inset-0 bg-[#1A1A1A]/60 opacity-40">
       <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent" />
     </div>,
-    color: "#1A1A1A", // Deep Graphite
   },
   {
     id: "genesis-engine",
     name: "The Greenhouse: The Alive Archive",
-    description: "Your Little Digital Universe",
-    href: "#genesis-engine",
+    href: "/greenhouse",
     cta: "Open vault",
     className: "md:col-span-2",
     Icon: Dna,
-    highlights: [
-      "Beyond the Scan — Our engine analyzes the biological makeup of your plant to create unique digital life forms.",
-      "The Genetic Vault — Store \"Digital Twins\" of your plants in your pocket universe, carrying historical health records and growth curves. The more you care for the physical plant, the more its digital counterpart evolves within the Greenhouse.",
-      "To the future — Use the Greenhouse to simulate years of growth in seconds. By going forward in time you can simulate how a heatwave in July or a low-light winter will impact your plant’s health signature, giving you the data to intervene before the clock even starts."
-    ],
+    color: "#1A0A1A", // Deep Amethyst
     background: <div className="absolute inset-0 bg-[#1A0A1A]/40 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-t from-[#E040FB]/10 to-transparent" />
     </div>,
-    color: "#1A0A1A", // Deep Amethyst
   },
   {
     id: "compendium",
     name: "Sprout and About: The Plant Encyclopedia",
-    description: "Thousands of species and Infinite Curiosities",
-    href: "#compendium",
+    href: "/sprout",
     cta: "Start exploring",
     className: "md:col-span-1",
     Icon: Library,
-    highlights: [
-      "A detailed repository for the nerds covering four thousand species",
-      "The neural foundation of the otu ecosystem as an on-device intelligence framework designed to deliver scans, diagnostics, and recovery strategies.",
-      "An encyclopedia to learn and understand biological blueprints, toxicity guides, histories, and clinical data"
-    ],
+    color: "#1A1810", // Dark Brass
     background: <div className="absolute inset-0 bg-[#1A1810]/40 opacity-40">
       <div className="absolute inset-0 bg-gradient-to-tr from-[#9CA764]/10 to-transparent" />
     </div>,
-    color: "#1A1810", // Dark Brass
   },
 ];
 
@@ -255,87 +213,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Detailed subsections for each feature */}
-      {features.map((feature, index) => (
-        <section 
-          key={feature.id} 
-          id={feature.href.replace("#", "")}
-          className={cn(
-            "min-h-screen flex items-center px-6 py-24 md:px-12 lg:px-24 border-t border-[#9CA764]/10",
-            index % 2 === 0 ? "bg-[#FDFBF7]" : "bg-[#F1E8C7]/30"
-          )}
-        >
-          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div className="space-y-12">
-              <div className="bg-[#9CA764]/10 p-6 rounded-3xl w-fit">
-                <feature.Icon className="h-16 w-16 text-[#9CA764]" />
-              </div>
-              <div className="space-y-6">
-                <h2 className="text-2xl md:text-3xl font-sans uppercase tracking-[0.3em] text-[#9CA764] font-black">{feature.name.split(":")[0]}</h2>
-                <h3 className="text-4xl md:text-6xl font-sans text-[#1B261B] leading-tight font-bold">
-                  {feature.name.split(":")[1] || feature.name}
-                </h3>
-                <p className="text-xl md:text-2xl text-[#1B261B]/70 font-normal leading-relaxed max-w-xl">
-                  {feature.description}
-                </p>
-              </div>
-              <ul className="space-y-6">
-                {feature.highlights.map((highlight, i) => (
-                  <li key={i} className="flex gap-4 items-start">
-                    <div className="h-2 w-2 rounded-full bg-[#9CA764] mt-3 shrink-0" />
-                    <p className="text-lg text-[#1B261B]/60 font-normal leading-relaxed">{highlight}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            
-            <div className="relative flex items-center justify-center min-h-[500px]">
-               {feature.id === "botanical-sonification" ? (
-                 <div className="w-full flex justify-center">
-                    <Mixtape />
-                 </div>
-               ) : feature.id === "ward-mode" ? (
-                 <div className="w-full flex justify-center">
-                    <WardScanner />
-                 </div>
-               ) : feature.id === "wild-mode" ? (
-                 <div className="w-full flex justify-center">
-                    <WildViewfinder />
-                 </div>
-               ) : feature.id === "genesis-engine" ? (
-                 <div className="w-full flex justify-center">
-                    <GenesisEngine />
-                 </div>
-               ) : feature.id === "marketplace" ? (
-                 <div className="w-full flex justify-center">
-                    <MarketplaceVisual />
-                 </div>
-               ) : feature.id === "compendium" ? (
-                 <div className="w-full flex justify-center">
-                    <CompendiumVisual />
-                 </div>
-               ) : (
-                 <div className="relative aspect-square rounded-[60px] bg-[#EBE7DD]/30 border border-[#9CA764]/20 overflow-hidden flex items-center justify-center p-6 md:p-12 w-full">
-                   <div className="w-full h-full rounded-[40px] bg-[#9CA764]/5 border border-[#9CA764]/10 flex flex-col items-center justify-center group overflow-hidden relative">
-                      <div className="absolute inset-0 opacity-10 bg-gradient-to-br from-[#9CA764] to-transparent" />
-                      <feature.Icon className="h-32 w-32 text-[#9CA764]/20 group-hover:scale-110 transition-transform duration-700" />
-                      <p className="mt-8 text-sm uppercase tracking-widest text-[#9CA764]/40 font-bold relative z-10">Otu {feature.name.split(":")[0]} Engine</p>
-                      
-                      {/* Abstract floating botanical elements */}
-                      <div className="absolute -top-10 -left-10 w-40 h-40 bg-[#9CA764]/10 rounded-full blur-[80px]" />
-                      <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-[#9CA764]/10 rounded-full blur-[100px]" />
-                   </div>
-                   
-                   {/* Floating elements */}
-                   <div className="absolute top-10 right-10 w-24 h-24 bg-white/80 rounded-3xl shadow-xl flex items-center justify-center animate-bounce" style={{animationDuration: "3s"}}>
-                     <Dna className="text-[#9CA764] h-8 w-8" />
-                   </div>
-                 </div>
-               )}
-            </div>
-          </div>
-        </section>
-      ))}
 
       {/* Footer / Core Stats */}
       <section className="px-6 py-32 md:px-12 lg:px-24 bg-[#1B261B] text-[#F1E8C7]">
