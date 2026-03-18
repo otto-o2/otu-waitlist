@@ -115,7 +115,7 @@ export default function FeaturePageLayout({
                   className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-[150px] opacity-40 animate-pulse pointer-events-none"
                   style={{ background: `radial-gradient(circle, ${color}80 0%, transparent 65%)` }}
                 />
-                <div className="relative z-10 flex justify-center transition-all duration-1000 transform hover:scale-[1.03] hover:translate-y-[-8px]">
+                <div className="relative z-10 w-full flex justify-center transition-all duration-1000 transform hover:scale-[1.03] hover:translate-y-[-8px]">
                   {visual}
                 </div>
              </div>
