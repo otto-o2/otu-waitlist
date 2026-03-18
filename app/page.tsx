@@ -182,14 +182,23 @@ export default function Home() {
       <section className="relative z-20 w-full h-screen bg-[#0A0F0A] overflow-hidden">
         <div className="absolute inset-0 w-full h-full">
           <img 
-            src="/images/sanctuary_8k.png" 
+            src="/images/sanctuary_original.jpg" 
             alt="Botanical Sanctuary"
-            className="w-full h-full object-cover opacity-70" 
+            className="w-full h-full object-cover opacity-90 transition-opacity duration-1000"
+            style={{ 
+              filter: "contrast(1.1) brightness(0.9) saturate(1.1)",
+              imageRendering: "crisp-edges"
+            }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F0A] via-transparent to-[#0A0F0A] opacity-80" />
+          {/* Grainy Texture Overlay to hide scaling artifacts */}
+          <div className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay"
+               style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/stardust.png')" }} />
+               
+          {/* Smoother Gradient Transitions */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F0A] via-transparent to-[#0A0F0A] opacity-90" />
         </div>
         <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-1 h-24 bg-gradient-to-b from-transparent via-[#9CA764]/20 to-transparent" />
+            <div className="w-1 h-24 bg-gradient-to-b from-transparent via-[#9CA764]/40 to-transparent shadow-[0_0_20px_rgba(156,167,100,0.2)]" />
         </div>
       </section>
 
