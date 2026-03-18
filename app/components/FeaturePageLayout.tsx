@@ -54,37 +54,37 @@ export default function FeaturePageLayout({
       </nav>
 
       {/* Main Content */}
-      <section className="relative z-10 px-6 py-20 md:px-12 lg:px-24 flex items-center min-h-[80vh]">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center w-full">
-          <div className="flex flex-col justify-center h-full">
-            <div className="space-y-12">
-              <div className="space-y-6">
-                <div className="p-6 rounded-[2.5rem] w-fit border border-white/10" style={{ backgroundColor: `${color}40` }}>
-                  <Icon className="h-16 w-16" style={{ color: '#9CA764' }} />
+      <section className="relative z-10 px-6 py-24 md:px-12 lg:px-24">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-center">
+          <div className="flex flex-col">
+            <div className="space-y-16">
+              <div className="space-y-8">
+                <div className="p-7 rounded-[2.5rem] w-fit border border-white/10" style={{ backgroundColor: `${color}40` }}>
+                  <Icon className="h-20 w-20" style={{ color: '#9CA764' }} />
                 </div>
-                <div className="space-y-4">
-                  <p className="text-sm md:text-xl font-sans font-black tracking-[0.6em] text-[#9CA764] uppercase">
+                <div className="space-y-6">
+                  <p className="text-sm md:text-2xl font-sans font-black tracking-[0.6em] text-[#9CA764] uppercase">
                     {subtitle}
                   </p>
-                  <h1 className="text-5xl md:text-8xl font-sans font-bold tracking-tighter leading-tight drop-shadow-2xl">
+                  <h1 className="text-6xl md:text-9xl font-sans font-bold tracking-tighter leading-[0.9] drop-shadow-2xl">
                     {title}
                   </h1>
-                  <p className="text-xl md:text-2xl text-[#F1E8C7]/70 font-medium leading-relaxed max-w-xl">
+                  <p className="text-2xl md:text-3xl text-[#F1E8C7]/70 font-medium leading-relaxed max-w-xl">
                     {description}
                   </p>
                 </div>
               </div>
 
-              <div className="space-y-8">
-                <div className="w-12 h-px bg-[#9CA764]/30" />
-                <ul className="space-y-8">
+              <div className="space-y-10">
+                <div className="w-20 h-px bg-[#9CA764]/30" />
+                <ul className="space-y-10">
                   {highlights.map((highlight, i) => {
                     const [label, content] = highlight.includes("—") ? highlight.split("—") : highlight.includes("–") ? highlight.split("–") : ["", highlight];
                     return (
-                      <li key={i} className="group flex gap-6 items-start">
-                        <div className="h-3 w-3 rounded-full bg-[#9CA764]/40 mt-3 shrink-0 group-hover:scale-125 transition-transform" />
-                        <p className="text-lg md:text-xl leading-relaxed text-[#F1E8C7]/60 group-hover:text-[#F1E8C7] transition-colors">
-                          {label && <strong className="text-[#9CA764] uppercase tracking-wider block mb-1 text-sm">{label.trim()}</strong>}
+                      <li key={i} className="group flex gap-8 items-start">
+                        <div className="h-4 w-4 rounded-full bg-[#9CA764]/40 mt-3 shrink-0 group-hover:scale-125 transition-transform" />
+                        <p className="text-xl md:text-2xl leading-relaxed text-[#F1E8C7]/60 group-hover:text-[#F1E8C7] transition-colors">
+                          {label && <strong className="text-[#9CA764] uppercase tracking-wider block mb-2 text-sm">{label.trim()}</strong>}
                           {content.trim()}
                         </p>
                       </li>
@@ -95,12 +95,14 @@ export default function FeaturePageLayout({
             </div>
           </div>
 
-          <div className="relative flex items-center justify-center h-full w-full">
-             <div className="w-full relative flex justify-center items-center">
+          <div className="relative flex items-center justify-center w-full">
+             <div className="w-full relative flex justify-center">
                 {/* Visual Backdrop Glow */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-gradient-to-br from-[#9CA764]/20 to-transparent rounded-full blur-[100px] opacity-40 animate-pulse" />
-                <div className="relative z-10 flex justify-center transition-all duration-700 hover:translate-y-[-10px]">
-                  {visual}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] bg-gradient-to-br from-[#9CA764]/10 to-transparent rounded-full blur-[120px] opacity-30 animate-pulse pointer-events-none" />
+                <div className="relative z-10 flex justify-center transition-all duration-1000 transform hover:scale-[1.02] hover:translate-y-[-5px]">
+                  <div className="w-full max-w-[450px] lg:max-w-[550px]">
+                    {visual}
+                  </div>
                 </div>
              </div>
           </div>
