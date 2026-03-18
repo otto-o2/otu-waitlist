@@ -43,8 +43,6 @@ interface DeviceChassisProps {
   engravingText: string;
   /** Engraving accent color */
   engravingColor: string;
-  /** Override outer aspect ratio (default "0.65/1") */
-  aspectRatio?: string;
   /** Override screen aspect ratio (default "1/1.1") */
   screenAspectRatio?: string;
   /** Extra absolutely-positioned chassis decorations */
@@ -62,17 +60,15 @@ export default function DeviceChassis({
   controls,
   engravingText,
   engravingColor,
-  aspectRatio = "0.65/1",
   screenAspectRatio = "1/1.1",
   chassisOverlay,
 }: DeviceChassisProps) {
   return (
     <div
       className="relative w-full max-w-[440px] select-none"
-      style={{ aspectRatio }}
     >
       <div
-        className="relative w-full h-full rounded-[42px] p-6 flex flex-col gap-4 overflow-hidden shadow-2xl"
+        className="relative w-full rounded-[42px] p-6 flex flex-col gap-4 overflow-hidden shadow-2xl"
         style={{
           background: chassisGradient,
           boxShadow: `0 60px 120px -20px ${chassisShadowColor}, 0 0 0 1px rgba(255,255,255,0.05), inset 0 1px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(0,0,0,0.5)`,

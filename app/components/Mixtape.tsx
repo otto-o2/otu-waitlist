@@ -129,7 +129,6 @@ const Mixtape = () => {
       chassisShadowColor="rgba(5,5,15,0.75)"
       screenBackground="linear-gradient(160deg, #0D1A20 0%, #091318 100%)"
       phosphorGlow="rgba(180,150,80,0.06)"
-      aspectRatio="0.55/1"
       screenAspectRatio="1.2/1"
       chassisOverlay={
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-[3px] bg-black/50 rounded-b-full z-10" />
