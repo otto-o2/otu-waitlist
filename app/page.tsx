@@ -70,11 +70,11 @@ const features = [
       "Go beyond the name — Access a deep library of botanical facts, rarity rankings, and the unique history of every plant you encounter.",
       "The Log — Record your finds and map your journey in real-time to build a living timeline of every signature encountered in the field."
     ],
-    background: <div className="absolute inset-0 bg-[#1B100E]/40">
+    background: <div className="absolute inset-0 bg-[#0A0F0A]/40">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] opacity-5" />
-      <div className="absolute inset-0 bg-gradient-to-tr from-[#39FF14]/20 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-tr from-[#1B2B1B]/20 to-transparent" />
     </div>,
-    color: "#39FF14", // Tactical Radar Green
+    color: "#4ADE80", // Tactical Emerald
   },
   {
     id: "genesis-engine",
