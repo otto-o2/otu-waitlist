@@ -123,9 +123,9 @@ const WildViewfinder = () => {
       <div
         className="relative w-full h-full rounded-[42px] p-5 flex flex-col gap-4 overflow-hidden shadow-2xl"
         style={{
-          background: "linear-gradient(160deg, #2B2D3A 0%, #1C1E28 55%, #13141C 100%)",
+          background: "linear-gradient(160deg, #3E2723 0%, #2D1B18 55%, #1B100E 100%)",
           boxShadow:
-            "0 60px 120px -20px rgba(5,5,15,0.75), 0 0 0 1px rgba(255,255,255,0.06), inset 0 1px 0 rgba(255,255,255,0.10), inset 0 -1px 0 rgba(0,0,0,0.5)",
+            "0 60px 120px -20px rgba(27,16,14,0.8), 0 0 0 1px rgba(255,255,255,0.05), inset 0 1px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(0,0,0,0.5)",
         }}
       >
         <div className="absolute inset-0 pointer-events-none opacity-[0.08]" 
@@ -136,10 +136,18 @@ const WildViewfinder = () => {
           className="relative w-full rounded-2xl overflow-hidden flex flex-col p-3"
           style={{
             aspectRatio: "1/1.1",
-            background: "linear-gradient(160deg, #0D1A20 0%, #091318 100%)",
+            background: "linear-gradient(160deg, #1A0D08 0%, #0D0604 100%)",
             boxShadow: "inset 0 2px 14px rgba(0,0,0,0.9), 0 0 0 1px rgba(255,255,255,0.04)",
           }}
         >
+          {/* Polarized Amber Lens Texture */}
+          <div
+            className="absolute inset-0 pointer-events-none opacity-[0.08] z-10"
+            style={{
+              backgroundImage: "url('https://www.transparenttextures.com/patterns/stardust.png')",
+              mixBlendMode: "overlay"
+            }}
+          />
           {/* Scanlines */}
           <div
             className="absolute inset-0 pointer-events-none opacity-[0.035] z-10"
@@ -153,7 +161,7 @@ const WildViewfinder = () => {
             className="absolute inset-0 pointer-events-none z-10"
             style={{
               background:
-                "radial-gradient(ellipse at 50% 50%, rgba(255,159,28,0.05) 0%, transparent 70%)",
+                "radial-gradient(ellipse at 50% 50%, rgba(255,159,28,0.08) 0%, transparent 80%)",
             }}
           />
           {/* Static Grid Circles */}
@@ -254,17 +262,17 @@ const WildViewfinder = () => {
          <div className="flex items-center justify-between px-2 pb-2">
             <div className="group flex flex-col items-center gap-1.5 cursor-pointer">
                <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all group-hover:bg-white/11 active:scale-95"
-                 style={{ background: "linear-gradient(145deg, #2A2C38 0%, #181A22 100%)", border: "1px solid rgba(255,255,255,0.06)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}>
+                 style={{ background: "linear-gradient(145deg, #4E342E 0%, #2D1B18 100%)", border: "1px solid rgba(255,255,255,0.06)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}>
                   <Binary className="w-4 h-4 text-[#D4DCE8] opacity-60" />
                </div>
-               <span style={{ fontSize: 5, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(215,230,240,0.2)" }}>DECODE</span>
+               <span style={{ fontSize: 5, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(210,180,160,0.3)" }}>DECODE</span>
             </div>
 
             <div className="relative group cursor-pointer">
                <div className="w-16 h-16 rounded-full p-1" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.1), transparent)" }}>
                   <div className="w-full h-full rounded-full flex items-center justify-center" 
                     style={{ 
-                      background: "linear-gradient(135deg, #22242E 0%, #13141C 100%)",
+                      background: "linear-gradient(135deg, #3E2723 0%, #1B100E 100%)",
                       boxShadow: "0 8px 16px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.07)"
                     }}>
                      <Camera className="w-6 h-6 text-[#FF9F1C] transition-all group-hover:scale-110" />
@@ -274,17 +282,17 @@ const WildViewfinder = () => {
 
             <div className="group flex flex-col items-center gap-1.5 cursor-pointer">
                <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all group-hover:bg-white/11 active:scale-95"
-                 style={{ background: "linear-gradient(145deg, #2A2C38 0%, #181A22 100%)", border: "1px solid rgba(255,255,255,0.06)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}>
+                 style={{ background: "linear-gradient(145deg, #4E342E 0%, #2D1B18 100%)", border: "1px solid rgba(255,255,255,0.06)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}>
                   <Compass className="w-4 h-4 text-[#D4DCE8] opacity-60" />
                </div>
-               <span style={{ fontSize: 5, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(215,230,240,0.2)" }}>NAV</span>
+               <span style={{ fontSize: 5, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(210,180,160,0.3)" }}>NAV</span>
             </div>
          </div>
 
         {/* ─── BOTTOM ENGRAVING ─── */}
         <div className="mt-2 flex items-center justify-center gap-2 opacity-20">
           <div className="w-1 h-1 rounded-full bg-[#FF9F1C]" />
-          <p style={{ fontSize: 6, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.3em", color: "#FF9F1C" }}>
+          <p style={{ fontSize: 6, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.3em", color: "#8B5CF6", opacity: 0.4 }}>
             otu wild radar core
           </p>
           <div className="w-1 h-1 rounded-full bg-[#FF9F1C]" />

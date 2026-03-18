@@ -51,11 +51,11 @@ const features = [
       "Call to Action — Receive comprehensive doctor reports and care cards for daily guidance. When your plant loses its balance, The Ward opens you up to the Farmer’s Market, a unique marketplace of tailor-made care packages and organic elixirs specifically prescribed by the Ward.",
       "The Air and the Hour — Receive hour-by-hour care updates that adapt in real-time. By syncing your recovery plan with the local weather and the light in your home, the Ward ensures your collection stays in its flow state, always."
     ],
-    background: <div className="absolute inset-0 bg-[#13141C]/40 overflow-hidden">
+    background: <div className="absolute inset-0 bg-[#0F172A]/40 overflow-hidden">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-5" />
-      <div className="absolute inset-0 bg-gradient-to-br from-[#4CC9F0]/5 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#1E293B]/20 to-transparent" />
     </div>,
-    color: "#4CC9F0", // Clinical Cyan
+    color: "#1E293B", // Clinical Navy
   },
   {
     id: "wild-mode",
@@ -70,11 +70,11 @@ const features = [
       "Go beyond the name — Access a deep library of botanical facts, rarity rankings, and the unique history of every plant you encounter.",
       "The Log — Record your finds and map your journey in real-time to build a living timeline of every signature encountered in the field."
     ],
-    background: <div className="absolute inset-0 bg-[#13141C]/40">
+    background: <div className="absolute inset-0 bg-[#1B100E]/40">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] opacity-5" />
-      <div className="absolute inset-0 bg-gradient-to-tr from-[#FF9F1C]/5 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-tr from-[#3E2723]/20 to-transparent" />
     </div>,
-    color: "#FF9F1C", // High-Altitude Amber
+    color: "#3E2723", // Rugged Earth
   },
   {
     id: "genesis-engine",
@@ -89,11 +89,11 @@ const features = [
       "The Genetic Vault — Store \"Digital Twins\" of your plants in your pocket universe, carrying historical health records and growth curves. The more you care for the physical plant, the more its digital counterpart evolves within the Greenhouse.",
       "To the future — Use the Greenhouse to simulate years of growth in seconds. By going forward in time you can simulate how a heatwave in July or a low-light winter will impact your plant’s health signature, giving you the data to intervene before the clock even starts."
     ],
-    background: <div className="absolute inset-0 bg-[#13141C]/40 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-t from-[#B5179E]/5 to-transparent" />
+    background: <div className="absolute inset-0 bg-[#120A1A]/40 overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-t from-[#2D1B3E]/20 to-transparent" />
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/diagmonds-light.png')] opacity-[0.02]" />
     </div>,
-    color: "#B5179E", // Digital Amethyst
+    color: "#2D1B3E", // Cosmic Amethyst
   },
   {
     id: "marketplace",
@@ -108,10 +108,10 @@ const features = [
       "Data to the Dirt – Utilizing the doctor’s reports from the Ward mode and your Wild Mode logs, the Farmer’s market suggests care packages and tool kits that match your patch.",
       "The Humans behind the Data — Connect with master gardeners for 1-on-1 consultations"
     ],
-    background: <div className="absolute inset-0 bg-gradient-to-l from-[#13141C]/60 to-transparent opacity-40">
-      <div className="absolute inset-0 bg-gradient-to-r from-[#9CA764]/5 to-transparent" />
+    background: <div className="absolute inset-0 bg-[#0A0A0A]/60 to-transparent opacity-40">
+      <div className="absolute inset-0 bg-gradient-to-r from-[#262626]/20 to-transparent" />
     </div>,
-    color: "#22242E", // Polished Gunmetal -> Slate Navy
+    color: "#262626", // Industrial Gunmetal
   },
   {
     id: "compendium",
@@ -126,10 +126,10 @@ const features = [
       "The neural foundation of the otu ecosystem as an on-device intelligence framework designed to deliver scans, diagnostics, and recovery strategies.",
       "An encyclopedia to learn and understand biological blueprints, toxicity guides, histories, and clinical data"
     ],
-    background: <div className="absolute inset-0 bg-[#13141C]/40 opacity-40">
-      <div className="absolute inset-0 bg-gradient-to-tr from-[#52B788]/5 to-transparent" />
+    background: <div className="absolute inset-0 bg-[#13120A]/40 opacity-40">
+      <div className="absolute inset-0 bg-gradient-to-tr from-[#2D2A1B]/20 to-transparent" />
     </div>,
-    color: "#1C1E28", // Aged Bronze -> Deep Navy
+    color: "#2D2A1B", // Antique Brass
   },
 ];
 

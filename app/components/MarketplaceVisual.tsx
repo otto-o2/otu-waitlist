@@ -54,9 +54,9 @@ const MarketplaceVisual = () => {
       <div
         className="relative w-full h-full rounded-[42px] p-5 flex flex-col gap-4 overflow-hidden shadow-2xl"
         style={{
-          background: "linear-gradient(160deg, #2B2D3A 0%, #1C1E28 55%, #13141C 100%)",
+          background: "linear-gradient(160deg, #262626 0%, #171717 55%, #0A0A0A 100%)",
           boxShadow:
-            "0 60px 120px -20px rgba(5,5,15,0.75), 0 0 0 1px rgba(255,255,255,0.06), inset 0 1px 0 rgba(255,255,255,0.10), inset 0 -1px 0 rgba(0,0,0,0.5)",
+            "0 60px 120px -20px rgba(10,10,10,0.8), 0 0 0 1px rgba(255,255,255,0.05), inset 0 1px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(0,0,0,0.5)",
         }}
       >
         <div className="absolute inset-0 pointer-events-none opacity-[0.08]" 
@@ -67,10 +67,18 @@ const MarketplaceVisual = () => {
           className="relative w-full rounded-2xl overflow-hidden flex flex-col p-3"
           style={{
             aspectRatio: "1/1.1",
-            background: "linear-gradient(160deg, #0D1A20 0%, #091318 100%)",
+            background: "linear-gradient(160deg, #121212 0%, #080808 100%)",
             boxShadow: "inset 0 2px 14px rgba(0,0,0,0.9), 0 0 0 1px rgba(255,255,255,0.04)",
           }}
         >
+          {/* Brushed Carbon Fiber Overlay */}
+          <div
+            className="absolute inset-0 pointer-events-none opacity-[0.05] z-10"
+            style={{
+              backgroundImage: "url('https://www.transparenttextures.com/patterns/carbon-fibre.png')",
+              mixBlendMode: "screen"
+            }}
+          />
           {/* Scanlines */}
           <div
             className="absolute inset-0 pointer-events-none opacity-[0.035] z-10"
@@ -84,7 +92,7 @@ const MarketplaceVisual = () => {
             className="absolute inset-0 pointer-events-none z-10"
             style={{
               background:
-                "radial-gradient(ellipse at 50% 50%, rgba(156,167,100,0.05) 0%, transparent 70%)",
+                "radial-gradient(ellipse at 50% 50%, rgba(136,153,170,0.08) 0%, transparent 80%)",
             }}
           />
           {/* Supermarket HUD header */}
@@ -155,37 +163,37 @@ const MarketplaceVisual = () => {
         {/* ─── INTERFACE ─── */}
         <div className="flex items-center justify-between px-2 pb-2">
            <div className="group flex flex-col items-center gap-1.5 cursor-pointer">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all group-hover:bg-white/11 active:scale-95"
-                style={{ background: "linear-gradient(145deg, #2A2C38 0%, #181A22 100%)", border: "1px solid rgba(255,255,255,0.06)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}>
-                 <Tag className="w-4 h-4 text-[#D4DCE8] opacity-60" />
-              </div>
-              <span style={{ fontSize: 5, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(215,230,240,0.2)" }}>List</span>
-           </div>
+               <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all group-hover:bg-white/11 active:scale-95"
+                 style={{ background: "linear-gradient(145deg, #333333 0%, #171717 100%)", border: "1px solid rgba(255,255,255,0.06)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}>
+                  <Tag className="w-4 h-4 text-[#D4DCE8] opacity-60" />
+               </div>
+               <span style={{ fontSize: 5, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(200,200,200,0.3)" }}>List</span>
+            </div>
 
            <div className="relative group cursor-pointer">
               <div className="w-16 h-16 rounded-full p-1" style={{ background: "linear-gradient(135deg, rgba(255,255,255,0.1), transparent)" }}>
-                 <div className="w-full h-full rounded-full flex items-center justify-center" 
-                   style={{ 
-                     background: "linear-gradient(135deg, #22242E 0%, #13141C 100%)",
-                     boxShadow: "0 8px 16px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.07)"
-                   }}>
-                    <ArrowRightLeft className="w-6 h-6 text-[#9CA764]" />
-                 </div>
+                   <div className="w-full h-full rounded-full flex items-center justify-center" 
+                    style={{ 
+                      background: "linear-gradient(135deg, #262626 0%, #0A0A0A 100%)",
+                      boxShadow: "0 8px 16px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.07)"
+                    }}>
+                     <ArrowRightLeft className="w-6 h-6 text-[#8899AA]" />
+                  </div>
               </div>
            </div>
 
            <div className="group flex flex-col items-center gap-1.5 cursor-pointer">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all group-hover:bg-white/11 active:scale-95"
-                style={{ background: "linear-gradient(145deg, #2A2C38 0%, #181A22 100%)", border: "1px solid rgba(255,255,255,0.06)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}>
-                 <ShoppingBag className="w-4 h-4 text-[#D4DCE8] opacity-60" />
-              </div>
-              <span style={{ fontSize: 5, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(215,230,240,0.2)" }}>Log Out</span>
-           </div>
+               <div className="w-10 h-10 rounded-xl flex items-center justify-center transition-all group-hover:bg-white/11 active:scale-95"
+                 style={{ background: "linear-gradient(145deg, #333333 0%, #171717 100%)", border: "1px solid rgba(255,255,255,0.06)", boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)" }}>
+                  <ShoppingBag className="w-4 h-4 text-[#D4DCE8] opacity-60" />
+               </div>
+               <span style={{ fontSize: 5, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.2em", color: "rgba(200,200,200,0.3)" }}>Log Out</span>
+            </div>
         </div>
 
         {/* ─── LABEL ─── */}
         <div className="mt-2 text-center opacity-10">
-          <p style={{ fontSize: 5, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.3em", color: "#D4DCE8" }}>
+          <p style={{ fontSize: 5, fontWeight: 900, textTransform: "uppercase", letterSpacing: "0.3em", color: "#8899AA", opacity: 0.4 }}>
             otu marketplace exchange v.0.1
           </p>
         </div>
