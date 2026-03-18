@@ -201,8 +201,9 @@ export default function Home() {
       </section>
 
       {/* PAGE 3: THE WORK (EVERYTHING WE DO) */}
-      <section className="relative z-20 px-6 py-40 md:px-12 lg:px-24 bg-[#FDFBF7]">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative z-20 px-6 py-40 md:px-12 lg:px-24 bg-[#F1E8C7]">
+        <div className="absolute inset-0 grid-bg opacity-[0.2] pointer-events-none" />
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="mb-24 flex flex-col items-center gap-6 group">
              <div className="w-px h-16 bg-[#1B261B]/10 overflow-hidden relative">
                 <div className="absolute top-0 left-0 w-full h-full bg-[#9CA764]/40 animate-scroll-line" />
