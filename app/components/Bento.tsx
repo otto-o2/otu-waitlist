@@ -88,36 +88,21 @@ const BentoCard = ({
         <div className="space-y-4">
           {name.includes(":") && (
             <p 
-              className="text-[10px] md:text-xs uppercase tracking-[0.4em] font-black opacity-60 mb-1"
+              className="text-[10px] md:text-sm uppercase tracking-[0.4em] font-black opacity-60 mb-1"
               style={{ color: textColor }}
             >
               {name.split(":")[1].trim()}
             </p>
           )}
-          <h3 className="text-3xl md:text-4xl font-sans font-bold tracking-tighter leading-tight drop-shadow-sm" style={{ color: textColor }}>
+          <h3 className="text-4xl md:text-5xl font-sans font-bold tracking-tighter leading-tight drop-shadow-sm" style={{ color: textColor }}>
             {name.split(":")[0]}
           </h3>
-          <p className="max-w-md font-medium leading-relaxed text-base md:text-lg opacity-80" style={{ color: subTextColor }}>
-            {description}
-          </p>
-
-          {/* Substance / Highlights List */}
-          {props.highlights && props.highlights.length > 0 && (
-            <ul className="mt-8 space-y-3 relative z-10 max-w-xl">
-              {props.highlights.map((highlight: string, i: number) => (
-                <li key={i} className="flex gap-3 text-sm leading-relaxed" style={{ color: subTextColor }}>
-                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#9CA764]/40" />
-                  <span className="opacity-70">{highlight}</span>
-                </li>
-              ))}
-            </ul>
-          )}
         </div>
       </div>
 
       <div
         className={cn(
-          "z-10 flex w-full flex-row items-center p-10 md:p-12 transition-all duration-300 mt-auto",
+          "z-10 flex w-full flex-row items-center p-10 md:p-12 transition-all duration-300",
         )}
       >
         <div 
