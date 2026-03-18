@@ -91,16 +91,16 @@ const features = [
   },
   {
     id: "marketplace",
-    name: "Marketplace: Green Economy",
-    description: "Trade seeds, book plant-sitters, and connect with people who won't roll their eyes when you talk about soil pH.",
+    name: "The Farmer’s Market: Plants and Plant Stuff",
+    description: "Connect with the community and local experts. Trade, grow, and build your perfect botanical collection.",
     href: "#marketplace",
     cta: "Enter market →",
     className: "md:col-span-2",
     Icon: ShoppingBag,
     highlights: [
-      "Peer-to-peer exchange — The world's most trusted trade network for cuttings, rare seeds, and regional fertilizers.",
-      "Book a plant-sitter IRL — Going away? Book a certified plant-sitter to visit your home and keep your babies alive.",
-      "Trade, swap, and connect — Exchange cuttings, share regional growing knowledge, and build real neighborhood relationships."
+      "a curated inventory of plants ranked by their ability to thrive in your current microclimate.",
+      "Data to the Dirt – Utilizing the doctor’s reports from the Ward mode and your Wild Mode logs, the Farmer’s market suggests care packages and tool kits that match your patch.",
+      "the Humans behind the Data — Connect with master gardeners for 1-on-1 consultations"
     ],
     background: <div className="absolute inset-0 bg-gradient-to-l from-[#232323]/40 to-transparent opacity-30" />,
     color: "#1A1A1A", // Polished Gunmetal
