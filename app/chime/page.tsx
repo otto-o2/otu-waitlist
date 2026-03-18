@@ -11,7 +11,7 @@ export default function ChimePage() {
       subtitle="Living Data Compositions"
       description="Transform bio-data into adaptive frequencies and finally understand what your plants are saying."
       icon={Music}
-      color="#13141C"
+      color="#091318"
       visual={<Mixtape />}
       highlights={[
         "Gene Signatures — We translate the unique genome of your plant into a one-of-a-kind musical signature.",

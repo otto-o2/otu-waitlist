@@ -11,7 +11,7 @@ export default function WildPage() {
       subtitle="Adventure is out there!"
       description="Spot the rare. Name the unknown. All off the grid."
       icon={Map}
-      color="#0F160F"
+      color="#020502"
       visual={<WildViewfinder />}
       highlights={[
         "Identify that “thing” on your hike — Our neural engine draws from a massive local database of over four thousand species, providing high-fidelity data even when you are off the grid.",

@@ -11,7 +11,7 @@ export default function SproutPage() {
       subtitle="The Plant Encyclopedia"
       description="Thousands of species and Infinite Curiosities"
       icon={Library}
-      color="#1A1810"
+      color="#0A0906"
       visual={<CompendiumVisual />}
       highlights={[
         "A detailed repository for the nerds covering four thousand species",

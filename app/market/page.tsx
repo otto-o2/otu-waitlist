@@ -11,7 +11,7 @@ export default function MarketPage() {
       subtitle="Plants and Plant Stuff"
       description="Bridging the gap between digital diagnosis and physical recovery."
       icon={ShoppingBag}
-      color="#1A1A1A"
+      color="#080808"
       visual={<MarketplaceVisual />}
       highlights={[
         "A curated inventory of plants ranked by their ability to thrive in your current microclimate.",

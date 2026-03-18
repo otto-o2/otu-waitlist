@@ -27,7 +27,10 @@ export default function FeaturePageLayout({
   className
 }: FeaturePageLayoutProps) {
   return (
-    <main className={cn("min-h-screen relative overflow-hidden bg-[#0A0F0A] text-[#F1E8C7]", className)}>
+    <main 
+      className={cn("min-h-screen relative overflow-hidden text-[#F1E8C7]", className)}
+      style={{ backgroundColor: color }}
+    >
       {/* Background Decor */}
       <div className="absolute inset-0 opacity-20 pointer-events-none">
          <div 
@@ -98,7 +101,10 @@ export default function FeaturePageLayout({
           <div className="relative flex items-center justify-center w-full">
              <div className="w-full relative flex justify-center">
                 {/* Visual Backdrop Glow - Larger and deeper */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[160%] h-[160%] bg-gradient-to-br from-[#9CA764]/10 to-transparent rounded-full blur-[180px] opacity-25 animate-pulse pointer-events-none" />
+                <div 
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[160%] h-[160%] rounded-full blur-[180px] opacity-30 animate-pulse pointer-events-none" 
+                  style={{ background: `radial-gradient(circle, ${color}60 0%, transparent 70%)` }}
+                />
                 <div className="relative z-10 flex justify-center transition-all duration-1000 transform hover:scale-[1.03] hover:translate-y-[-10px]">
                   <div className="w-full lg:max-w-none">
                     {visual}
