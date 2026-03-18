@@ -141,10 +141,10 @@ const Mixtape = () => {
   const remSec = String(remaining % 60).padStart(2, "0");
 
   return (
-    <div className="relative w-full max-w-full select-none" style={{ aspectRatio: "0.65/1" }}>
+    <div className="relative w-full max-w-full select-none" style={{ aspectRatio: "0.58/1" }}>
       {/* iPod Shell — deep muted slate-indigo */}
       <div
-        className="relative w-full h-full rounded-[48px] flex flex-col p-6 overflow-hidden"
+        className="relative w-full h-full rounded-[38px] flex flex-col p-5 overflow-hidden"
         style={{
           background: "linear-gradient(160deg, #2B2D3A 0%, #1C1E28 55%, #13141C 100%)",
           boxShadow:

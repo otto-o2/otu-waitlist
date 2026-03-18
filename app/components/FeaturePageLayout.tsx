@@ -100,7 +100,7 @@ export default function FeaturePageLayout({
                 {/* Visual Backdrop Glow - Larger and deeper */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[160%] h-[160%] bg-gradient-to-br from-[#9CA764]/10 to-transparent rounded-full blur-[180px] opacity-25 animate-pulse pointer-events-none" />
                 <div className="relative z-10 flex justify-center transition-all duration-1000 transform hover:scale-[1.03] hover:translate-y-[-10px]">
-                  <div className="lg:w-[750px] w-full max-w-[550px] lg:max-w-none">
+                  <div className="w-full max-w-[600px] lg:max-w-[850px]">
                     {visual}
                   </div>
                 </div>

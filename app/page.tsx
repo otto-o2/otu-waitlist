@@ -24,7 +24,6 @@ const features = [
     className: "md:col-span-2",
     Icon: ShieldAlert,
     color: "#0A1A14", // Deep Hospital Emerald
-    description: "Holistic health tracking for your botanical inventory.",
     background: <div className="absolute inset-0 bg-[#0A1A14]/40 overflow-hidden">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
       <div className="absolute inset-0 bg-gradient-to-br from-[#10B981]/10 to-transparent" />
@@ -38,7 +37,6 @@ const features = [
     className: "md:col-span-1",
     Icon: Map,
     color: "#0F160F", // Tactical Dark Forest
-    description: "On-the-go plant identification and exploration.",
     background: <div className="absolute inset-0 bg-[#0F160F]/40">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] opacity-10" />
       <div className="absolute inset-0 bg-gradient-to-tr from-[#4ADE80]/10 to-transparent" />
@@ -52,7 +50,6 @@ const features = [
     className: "md:col-span-1",
     Icon: Music,
     color: "#13141C", // Obsidian Indigo
-    description: "Dynamic musical signatures derived from plant genome data.",
     background: <div className="absolute inset-0 bg-[#13141C]/40" />,
   },
   {
@@ -63,7 +60,6 @@ const features = [
     className: "md:col-span-2",
     Icon: ShoppingBag,
     color: "#1A1A1A", // Deep Graphite
-    description: "A premium marketplace for rare plants and gardening essentials.",
     background: <div className="absolute inset-0 bg-[#1A1A1A]/60 opacity-40">
       <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent" />
     </div>,
@@ -76,7 +72,6 @@ const features = [
     className: "md:col-span-2",
     Icon: Dna,
     color: "#1A0A1A", // Deep Amethyst
-    description: "Interactive digital twins and genomic simulations of your garden.",
     background: <div className="absolute inset-0 bg-[#1A0A1A]/40 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-t from-[#E040FB]/10 to-transparent" />
     </div>,
@@ -89,7 +84,6 @@ const features = [
     className: "md:col-span-1",
     Icon: Library,
     color: "#1A1810", // Dark Brass
-    description: "The ultimate reference guide for every species in your collection.",
     background: <div className="absolute inset-0 bg-[#1A1810]/40 opacity-40">
       <div className="absolute inset-0 bg-gradient-to-tr from-[#9CA764]/10 to-transparent" />
     </div>,

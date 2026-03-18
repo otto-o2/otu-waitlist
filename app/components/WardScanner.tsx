@@ -23,7 +23,7 @@ const WardScanner = () => {
     <div className="relative w-full max-w-full select-none" style={{ aspectRatio: "0.65/1" }}>
       {/* ─── HARDWARE CHASSIS (Clinical Teal) ─── */}
       <div
-        className="relative w-full h-full rounded-[48px] p-6 flex flex-col gap-4 overflow-hidden shadow-2xl"
+        className="relative w-full h-full rounded-[42px] p-5 flex flex-col gap-4 overflow-hidden shadow-2xl"
         style={{
           background: "linear-gradient(160deg, #1E293B 0%, #0F172A 55%, #020617 100%)",
           boxShadow:

@@ -17,7 +17,7 @@ const CompendiumVisual = () => {
     <div className="relative w-full max-w-full select-none" style={{ aspectRatio: "0.65/1" }}>
       {/* ─── HARDWARE CHASSIS (Midnight Forest) ─── */}
       <div
-        className="relative w-full h-full rounded-[48px] p-6 flex flex-col gap-4 overflow-hidden shadow-2xl"
+        className="relative w-full h-full rounded-[42px] p-5 flex flex-col gap-4 overflow-hidden shadow-2xl"
         style={{
           background: "linear-gradient(160deg, #2D2A1B 0%, #1E1C12 55%, #13120A 100%)",
           boxShadow:
