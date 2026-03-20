@@ -71,8 +71,8 @@ const features = [
     cta: "Open vault",
     className: "md:col-span-2",
     Icon: Dna,
-    color: "#1A0A1A", // Deep Amethyst
-    background: <div className="absolute inset-0 bg-[#1A0A1A]/40 overflow-hidden">
+    color: "#050205", // Deeper Amethyst
+    background: <div className="absolute inset-0 bg-[#050205]/40 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-t from-[#E040FB]/10 to-transparent" />
     </div>,
   },
