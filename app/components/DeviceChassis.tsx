@@ -68,7 +68,7 @@ export default function DeviceChassis({
       className="relative w-full max-w-[440px] select-none"
     >
       <div
-        className="relative w-full rounded-[42px] p-6 flex flex-col gap-4 overflow-hidden shadow-2xl"
+        className="relative w-full rounded-[42px] p-6 flex flex-col gap-9 overflow-hidden shadow-2xl"
         style={{
           background: chassisGradient,
           boxShadow: `0 60px 120px -20px ${chassisShadowColor}, 0 0 0 1px rgba(255,255,255,0.05), inset 0 1px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(0,0,0,0.5)`,
@@ -120,7 +120,7 @@ export default function DeviceChassis({
         {/* ─── CONTROLS ─── */}
         {controls}
         {buttons && !controls && (
-          <div className="flex items-center justify-between px-2 pb-2">
+          <div className="flex items-center justify-between px-2 pb-2 mt-auto">
             {/* Left Button */}
             <div className="group flex flex-col items-center gap-2 cursor-pointer">
               <div
@@ -196,7 +196,7 @@ export default function DeviceChassis({
         )}
 
         {/* ─── BOTTOM ENGRAVING ─── */}
-        <div className="mt-2 flex items-center justify-center gap-2 opacity-30">
+        <div className="mt-auto flex items-center justify-center gap-2 opacity-30">
           <div
             className="w-1.5 h-1.5 rounded-full"
             style={{ background: engravingColor }}
