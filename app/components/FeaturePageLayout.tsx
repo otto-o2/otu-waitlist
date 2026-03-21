@@ -6,6 +6,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 interface FeaturePageLayoutProps {
+  id?: string;
   title: string;
   subtitle: string;
   description: string;
@@ -14,9 +15,11 @@ interface FeaturePageLayoutProps {
   icon: any;
   color: string;
   className?: string;
+  hideNav?: boolean;
 }
 
 export default function FeaturePageLayout({
+  id,
   title,
   subtitle,
   description,
@@ -24,11 +27,13 @@ export default function FeaturePageLayout({
   visual,
   icon: Icon,
   color,
-  className
+  className,
+  hideNav = false,
 }: FeaturePageLayoutProps) {
   return (
-    <main 
-      className={cn("min-h-screen relative overflow-hidden text-[#F1E8C7]", className)}
+    <section 
+      id={id}
+      className={cn("relative overflow-hidden text-[#F1E8C7] py-24 md:py-32", className)}
       style={{ backgroundColor: color }}
     >
       {/* Background Decor */}
@@ -103,15 +108,17 @@ export default function FeaturePageLayout({
                 </ul>
               </div>
 
-              <div className="pt-12">
-                <Link 
-                  href="/#features"
-                  className="inline-flex items-center gap-4 text-[#9CA764] hover:text-[#B5C084] transition-colors group text-2xl font-bold"
-                >
-                  <ArrowLeft className="w-8 h-8 group-hover:-translate-x-2 transition-transform" />
-                  Back to Hub
-                </Link>
-              </div>
+              {!hideNav && (
+                <div className="pt-12">
+                  <Link 
+                    href="/#features"
+                    className="inline-flex items-center gap-4 text-[#9CA764] hover:text-[#B5C084] transition-colors group text-2xl font-bold"
+                  >
+                    <ArrowLeft className="w-8 h-8 group-hover:-translate-x-2 transition-transform" />
+                    Back to Hub
+                  </Link>
+                </div>
+              )}
             </div>
 
             {/* Right Side: Graphic vertically centered against the list block */}
@@ -142,6 +149,6 @@ export default function FeaturePageLayout({
       {/* Grain */}
       <div className="fixed inset-0 pointer-events-none opacity-[0.03] mix-blend-multiply z-[999]" 
            style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }} />
-    </main>
+    </section>
   );
 }

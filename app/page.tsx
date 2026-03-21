@@ -19,7 +19,7 @@ const features = [
   {
     id: "ward-mode",
     name: "Ward Mode: Health Hub",
-    href: "/ward",
+    href: "/features#ward-mode",
     cta: "System scan",
     className: "md:col-span-2",
     Icon: ShieldAlert,
@@ -32,7 +32,7 @@ const features = [
   {
     id: "wild-mode",
     name: "Wild Mode: Adventure is out there!",
-    href: "/wild",
+    href: "/features#wild-mode",
     cta: "Explore the wild",
     className: "md:col-span-1",
     Icon: Map,
@@ -45,7 +45,7 @@ const features = [
   {
     id: "botanical-sonification",
     name: "The Chime: Living Data Compositions",
-    href: "/chime",
+    href: "/features#botanical-sonification",
     cta: "Listen to the leaves",
     className: "md:col-span-1",
     Icon: Music,
@@ -55,7 +55,7 @@ const features = [
   {
     id: "marketplace",
     name: "The Farmer’s Market: Plants and Plant Stuff",
-    href: "/market",
+    href: "/features#marketplace",
     cta: "Enter market",
     className: "md:col-span-2",
     Icon: ShoppingBag,
@@ -67,7 +67,7 @@ const features = [
   {
     id: "genesis-engine",
     name: "The Greenhouse: The Alive Archive",
-    href: "/greenhouse",
+    href: "/features#genesis-engine",
     cta: "Open vault",
     className: "md:col-span-2",
     Icon: Dna,
@@ -79,7 +79,7 @@ const features = [
   {
     id: "compendium",
     name: "Sprout and About: The Plant Encyclopedia",
-    href: "/sprout",
+    href: "/features#compendium",
     cta: "Start exploring",
     className: "md:col-span-1",
     Icon: Library,
