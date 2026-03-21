@@ -39,11 +39,11 @@ export default function FeaturePageLayout({
       {/* Background Decor */}
       <div className="absolute inset-0 opacity-20 pointer-events-none">
          <div 
-           className="absolute top-0 right-0 w-[800px] h-[800px] rounded-full blur-[150px]" 
+           className="absolute top-0 right-0 w-[400px] h-[400px] md:w-[800px] md:h-[800px] rounded-full blur-[80px] md:blur-[150px]" 
            style={{ backgroundColor: `${color}30` }}
          />
          <div 
-           className="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full blur-[120px]" 
+           className="absolute bottom-0 left-0 w-[300px] h-[300px] md:w-[600px] md:h-[600px] rounded-full blur-[60px] md:blur-[120px]" 
            style={{ backgroundColor: `${color}20` }}
          />
       </div>
@@ -126,10 +126,10 @@ export default function FeaturePageLayout({
                <div className="w-full flex justify-center">
                   {/* Visual Backdrop Glow */}
                   <div
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-[150px] opacity-40 animate-pulse pointer-events-none"
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] md:w-[500px] md:h-[500px] rounded-full blur-[80px] md:blur-[150px] opacity-40 md:animate-pulse pointer-events-none"
                     style={{ background: `radial-gradient(circle, ${color}80 0%, transparent 65%)` }}
                   />
-                  <div className="relative z-10 w-full flex justify-center transition-all duration-1000 transform hover:scale-[1.03] hover:translate-y-[-8px]">
+                  <div className="relative z-10 w-full flex justify-center transition-all duration-1000 transform md:hover:scale-[1.03] md:hover:translate-y-[-8px]">
                     {visual}
                   </div>
                </div>

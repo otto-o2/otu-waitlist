@@ -124,6 +124,7 @@ export default function Home() {
     <main className="relative bg-[#FDFBF7]">
       {/* Hero Section */}
       <section className="relative w-full h-screen overflow-hidden flex flex-col items-center justify-center p-6 md:p-12 lg:p-24">
+        <div className="absolute top-8 left-12 font-mono text-[10px] tracking-[0.2em] uppercase text-[#1B261B]/60 hidden md:block z-20">002: NEURAL_MAPPING</div>
         <MeshGradient
           className="w-full h-full absolute inset-0"
           colors={["#FDFBF7", "#F1E8C7", "#EBE7DD", "#9CA764"]}
@@ -241,7 +242,6 @@ export default function Home() {
           style={{ backgroundImage: "linear-gradient(#9CA764 1px, transparent 1px), linear-gradient(90deg, #9CA764 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
 
         <div className="max-w-7xl mx-auto flex flex-col items-center justify-center text-center relative z-10 w-full px-6 md:px-12 lg:px-24">
-          <div className="absolute top-8 left-12 tech-label hidden md:block">002: NEURAL_MAPPING</div>
           
           <div className="space-y-12 max-w-4xl mx-auto flex flex-col items-center">
             

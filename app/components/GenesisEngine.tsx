@@ -8,9 +8,10 @@ const GenesisEngine = () => {
   const [dnaTime, setDnaTime] = useState(0);
 
   useEffect(() => {
+    // 60ms is roughly 15-16 FPS, which is smoother for mobile React state updates without taxing the main thread.
     const interval = setInterval(() => {
-      setDnaTime(prev => prev + 0.05);
-    }, 30);
+      setDnaTime(prev => prev + 0.1); // Increased step size to maintain animation speed
+    }, 60);
     return () => clearInterval(interval);
   }, []);
 
