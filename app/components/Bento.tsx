@@ -83,7 +83,7 @@ const BentoCard = ({
       {/* Subtle Inner Glow */}
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-white/5 to-transparent z-0" />
       
-      <div className="z-10 flex flex-col gap-5 p-10 md:p-12 transition-all duration-300 items-center text-center">
+      <div className="z-10 flex flex-col gap-5 p-10 md:p-12 transition-all duration-300">
         <div 
           className="p-4 rounded-2xl w-fit backdrop-blur-md border border-white/10"
           style={{ 
@@ -114,7 +114,7 @@ const BentoCard = ({
 
       <div
         className={cn(
-          "z-10 flex w-full flex-row items-center justify-center p-10 md:p-12 transition-all duration-300",
+          "z-10 flex w-full flex-row items-center p-10 md:p-12 transition-all duration-300",
         )}
       >
         <div 
