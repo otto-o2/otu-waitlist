@@ -94,20 +94,21 @@ export function WaitlistForm() {
       {/* Urgency Hook */}
       <div className="mt-16 flex flex-col items-center gap-8 w-full">
         {/* Subtle, floating top hook (No pill) */}
-        <p className="text-center text-[#9CA764]/80 text-sm md:text-base font-mono uppercase tracking-[0.15em] md:tracking-[0.25em] max-w-3xl">
-          good things take time. so do good apps. we are worth the wait
+        <p className="text-center text-[#9CA764]/80 text-sm md:text-base font-mono uppercase tracking-[0.15em] md:tracking-[0.25em] max-w-3xl leading-relaxed">
+          good things take time. so do good apps.<br />
+          we are worth the wait
         </p>
 
         {/* Separator */}
         <div className="w-12 h-px bg-[#F1E8C7]/10" />
 
-        {/* Pill design for the 'first 500' line */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-4 w-full">
-          <div className="px-4 py-2 rounded-full border border-[#F1E8C7]/20 bg-[#F1E8C7]/5 text-xs md:text-sm tracking-[0.1em] text-[#F1E8C7] uppercase font-bold text-center whitespace-normal md:whitespace-nowrap">
+        {/* Centered Pill design for the 'first 500' line */}
+        <div className="flex flex-col items-center justify-center gap-3 w-full">
+          <div className="px-5 py-2.5 rounded-full border border-[#F1E8C7]/20 bg-[#F1E8C7]/5 text-xs md:text-sm tracking-[0.1em] text-[#F1E8C7] uppercase font-bold text-center">
             the first 500 sign-ups get a head start
           </div>
-          <p className="text-center md:text-left text-[#F1E8C7]/50 text-sm md:text-base font-sans tracking-wide max-w-lg">
-            — app-credits, early access, bragging rights. the list goes on.
+          <p className="text-center text-[#F1E8C7]/40 text-sm md:text-base font-sans tracking-wide">
+            (app-credits, early access, bragging rights. the list goes on.)
           </p>
         </div>
       </div>
