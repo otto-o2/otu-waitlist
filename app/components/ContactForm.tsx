@@ -62,7 +62,7 @@ export function ContactForm() {
           
           <input
             type="text"
-            placeholder="what's your name?"
+            placeholder="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
             disabled={status === "loading"}
@@ -71,7 +71,7 @@ export function ContactForm() {
           />
           <input
             type="email"
-            placeholder="best email to reach you?"
+            placeholder="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             disabled={status === "loading"}
@@ -79,7 +79,7 @@ export function ContactForm() {
             className="w-full bg-[#1B261B] border border-white/5 rounded-3xl text-[#F1E8C7] placeholder:text-[#F1E8C7]/30 px-8 py-5 font-sans text-lg md:text-xl outline-none focus:border-[#9CA764]/50 focus:bg-[#0A0F0A] transition-colors lowercase tracking-wide disabled:opacity-50 relative z-10"
           />
           <textarea
-            placeholder="what do you want to tell us?"
+            placeholder="what's wrong?"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             disabled={status === "loading"}

@@ -56,7 +56,8 @@ export default function FeaturesPage() {
         subtitle="Health Hub"
         description="Stop the guessing game. The Ward is full-spectrum plant clinic that lives in your pocket, translating silent distress into actionable data, providing a clinical-grade roadmap from diagnosis to full recovery."
         icon={ShieldAlert}
-        color="#070B14"
+        color="#0A1A14"
+        backdropColor="#34D399"
         visual={<WardScanner />}
         highlights={[
           "The Diagnostics — Our neural engine identifies pathogens, nutrient gaps, and atmospheric red flags to bridge prevention and cure.",
@@ -72,7 +73,8 @@ export default function FeaturesPage() {
         subtitle="Adventure is out there!"
         description="Spot the rare. Name the unknown. All off the grid."
         icon={Map}
-        color="#020502"
+        color="#061A0C"
+        backdropColor="#4ADE80"
         visual={<WildViewfinder />}
         highlights={[
           "Identify that “thing” on your hike — Our neural engine draws from a massive local database of over four thousand species, providing high-fidelity data even when you are off the grid.",

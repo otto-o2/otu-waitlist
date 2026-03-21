@@ -265,7 +265,7 @@ export default function Home() {
 
             {showContact && (
               <div className="w-full max-w-2xl mx-auto pt-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-                <h3 className="text-xl md:text-3xl font-sans font-black tracking-widest text-[#9CA764] uppercase mb-8">drop us a line</h3>
+                <h3 className="text-xl md:text-3xl font-sans font-black tracking-widest text-[#9CA764] uppercase mb-8">tell us whats up</h3>
                 <ContactForm />
               </div>
             )}

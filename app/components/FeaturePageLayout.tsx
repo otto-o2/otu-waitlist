@@ -14,6 +14,7 @@ interface FeaturePageLayoutProps {
   visual: ReactNode;
   icon: any;
   color: string;
+  backdropColor?: string;
   className?: string;
   hideNav?: boolean;
 }
@@ -27,9 +28,11 @@ export default function FeaturePageLayout({
   visual,
   icon: Icon,
   color,
+  backdropColor,
   className,
   hideNav = false,
 }: FeaturePageLayoutProps) {
+  const glowHex = backdropColor || color;
   return (
     <section 
       id={id}
@@ -40,11 +43,11 @@ export default function FeaturePageLayout({
       <div className="absolute inset-0 opacity-20 pointer-events-none">
          <div 
            className="absolute top-[-200px] right-[-200px] w-[600px] h-[600px] md:w-[1000px] md:h-[1000px]" 
-           style={{ background: `radial-gradient(circle, ${color}30 0%, transparent 70%)` }}
+           style={{ background: `radial-gradient(circle, ${glowHex}30 0%, transparent 70%)` }}
          />
          <div 
            className="absolute bottom-[-150px] left-[-150px] w-[500px] h-[500px] md:w-[800px] md:h-[800px]" 
-           style={{ background: `radial-gradient(circle, ${color}20 0%, transparent 70%)` }}
+           style={{ background: `radial-gradient(circle, ${glowHex}20 0%, transparent 70%)` }}
          />
       </div>
 
@@ -127,7 +130,7 @@ export default function FeaturePageLayout({
                   {/* Visual Backdrop Glow */}
                   <div
                     className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] md:w-[500px] md:h-[500px] rounded-full opacity-40 md:animate-pulse pointer-events-none"
-                    style={{ background: `radial-gradient(circle, ${color}80 0%, transparent 65%)` }}
+                    style={{ background: `radial-gradient(circle, ${glowHex}80 0%, transparent 65%)` }}
                   />
                   <div className="relative z-10 w-full flex justify-center transition-all duration-1000 transform md:hover:scale-[1.03] md:hover:translate-y-[-8px]">
                     {visual}
