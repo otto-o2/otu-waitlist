@@ -11,7 +11,7 @@ export default function GreenhousePage() {
       subtitle="The Alive Archive"
       description="Your Little Digital Universe"
       icon={Dna}
-      color="#040205"
+      color="#0D0218"
       visual={<GenesisEngine />}
       highlights={[
         "Beyond the Scan — Our engine analyzes the biological makeup of your plant to create unique digital life forms.",

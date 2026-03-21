@@ -50,14 +50,12 @@ export default function FeaturePageLayout({
 
       {/* Navigation */}
       {!hideNav && (
-        <nav className="relative z-50 p-6 md:p-12">
+        <nav className="relative z-50 p-6 md:p-12 mb-12">
           <Link 
             href="/#features" 
-            className="flex items-center gap-4 text-sm font-black uppercase tracking-[0.4em] opacity-60 hover:opacity-100 transition-opacity group"
+            className="inline-flex items-center gap-3 px-8 py-3 rounded-full border border-white/10 hover:bg-white/5 transition-colors text-[10px] uppercase tracking-widest font-bold group w-fit"
           >
-            <div className="p-3 rounded-full border border-white/10 group-hover:bg-white/5 transition-colors">
-              <ArrowLeft className="h-4 w-4" />
-            </div>
+            <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
             Back to Hub
           </Link>
         </nav>
@@ -114,9 +112,9 @@ export default function FeaturePageLayout({
                 <div className="pt-12">
                   <Link 
                     href="/#features"
-                    className="inline-flex items-center gap-4 text-[#9CA764] hover:text-[#B5C084] transition-colors group text-2xl font-bold"
+                    className="inline-flex items-center gap-3 px-8 py-3 rounded-full border border-white/10 hover:bg-white/5 transition-colors text-[10px] uppercase tracking-widest font-bold group"
                   >
-                    <ArrowLeft className="w-8 h-8 group-hover:-translate-x-2 transition-transform" />
+                    <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
                     Back to Hub
                   </Link>
                 </div>

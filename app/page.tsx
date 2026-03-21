@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import Link from 'next/link';
 import { WaitlistForm } from "@/app/components/WaitlistForm";
+import { ContactForm } from "@/app/components/ContactForm";
 
 const features = [
   {
@@ -38,7 +39,7 @@ const features = [
     cta: "Explore the wild",
     className: "md:col-span-1",
     Icon: Map,
-    color: "#0F160F", // Tactical Dark Forest
+    color: "#040D04", // Deeper Tactical Dark Forest
     background: <div className="absolute inset-0 bg-[#0F160F]/40">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] opacity-10" />
       <div className="absolute inset-0 bg-gradient-to-tr from-[#4ADE80]/10 to-transparent" />
@@ -73,7 +74,7 @@ const features = [
     cta: "Open vault",
     className: "md:col-span-2",
     Icon: Dna,
-    color: "#050205", // Deeper Amethyst
+    color: "#0D0218", // Deeper Amethyst
     background: <div className="absolute inset-0 bg-[#050205]/40 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-t from-[#E040FB]/10 to-transparent" />
     </div>,
@@ -85,7 +86,7 @@ const features = [
     cta: "Start exploring",
     className: "md:col-span-1",
     Icon: Library,
-    color: "#1A1810", // Dark Brass
+    color: "#060B06", // Midnight Brass / Forest
     background: <div className="absolute inset-0 bg-[#1A1810]/40 opacity-40">
       <div className="absolute inset-0 bg-gradient-to-tr from-[#9CA764]/10 to-transparent" />
     </div>,
@@ -94,6 +95,7 @@ const features = [
 
 export default function Home() {
   const [speed] = useState(0.4);
+  const [showContact, setShowContact] = useState(false);
 
   // Ensure the page always opens at the top (Hero section)
   useEffect(() => {
@@ -255,8 +257,16 @@ export default function Home() {
               <div className="flex gap-6 md:gap-12 opacity-60">
                 <span className="hover:text-[#F1E8C7] transition-colors cursor-pointer">Privacy Policy</span>
                 <span className="hover:text-[#F1E8C7] transition-colors cursor-pointer">Terms of Service</span>
+                <span onClick={() => setShowContact(!showContact)} className="hover:text-[#F1E8C7] transition-colors cursor-pointer text-[#9CA764] font-bold">Talk to Us</span>
               </div>
             </div>
+
+            {showContact && (
+              <div className="w-full max-w-2xl mx-auto pt-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
+                <h3 className="text-xl md:text-3xl font-sans font-black tracking-widest text-[#9CA764] uppercase mb-8">drop us a line</h3>
+                <ContactForm />
+              </div>
+            )}
 
             <button 
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
