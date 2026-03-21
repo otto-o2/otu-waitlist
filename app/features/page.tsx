@@ -90,7 +90,7 @@ export default function FeaturesPage() {
         subtitle="Living Data Compositions"
         description="Transform bio-data into adaptive frequencies and finally understand what your plants are saying."
         icon={Music}
-        color="#091318"
+        color="#13141C"
         visual={<Mixtape />}
         highlights={[
           "Gene Signatures — We translate the unique genome of your plant into a one-of-a-kind musical signature.",
@@ -106,7 +106,7 @@ export default function FeaturesPage() {
         subtitle="Plants and Plant Stuff"
         description="Bridging the gap between digital diagnosis and physical recovery."
         icon={ShoppingBag}
-        color="#080808"
+        color="#1A1A1A"
         visual={<MarketplaceVisual />}
         highlights={[
           "A curated inventory of plants ranked by their ability to thrive in your current microclimate.",
@@ -122,7 +122,8 @@ export default function FeaturesPage() {
         subtitle="The Alive Archive"
         description="Your Little Digital Universe"
         icon={Dna}
-        color="#040205"
+        color="#1A0B2E"
+        backdropColor="#E879F9"
         visual={<GenesisEngine />}
         highlights={[
           "Beyond the Scan — Our engine analyzes the biological makeup of your plant to create unique digital life forms.",
@@ -138,7 +139,8 @@ export default function FeaturesPage() {
         subtitle="The Plant Encyclopedia"
         description="Thousands of species and Infinite Curiosities"
         icon={Library}
-        color="#0A0906"
+        color="#060B06"
+        backdropColor="#D4AF37"
         visual={<CompendiumVisual />}
         highlights={[
           "A detailed repository for the nerds covering four thousand species",
