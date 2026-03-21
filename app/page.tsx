@@ -140,7 +140,7 @@ export default function Home() {
 
         {/* Branding Title (The Majestic Format) */}
         <div className="relative z-10 text-center flex flex-col items-center gap-6 w-full max-w-[1400px]">
-          <p className="text-xl md:text-2xl font-sans font-light tracking-[0.6em] text-[#1B261B]/40 ml-[0.6em] lowercase">
+          <p className="text-xl md:text-2xl font-sans font-bold tracking-[0.6em] text-[#1B261B]/80 ml-[0.6em] lowercase drop-shadow-sm">
             (otu)
           </p>
           <h1
@@ -201,7 +201,7 @@ export default function Home() {
       </section>
 
       {/* PAGE 3: THE WORK (EVERYTHING WE DO) */}
-      <section className="relative z-20 px-6 py-40 md:px-12 lg:px-24 bg-[#F1E8C7]">
+      <section id="features" className="relative z-20 px-6 py-40 md:px-12 lg:px-24 bg-[#F1E8C7]">
         <div className="absolute inset-0 grid-bg opacity-[0.2] pointer-events-none" />
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="mb-24 flex flex-col items-center gap-6 group">

@@ -51,13 +51,13 @@ export default function FeaturePageLayout({
       {/* Navigation */}
       <nav className="relative z-50 p-6 md:p-12">
         <Link 
-          href="/" 
+          href="/#features" 
           className="flex items-center gap-4 text-sm font-black uppercase tracking-[0.4em] opacity-60 hover:opacity-100 transition-opacity group"
         >
           <div className="p-3 rounded-full border border-white/10 group-hover:bg-white/5 transition-colors">
             <ArrowLeft className="h-4 w-4" />
           </div>
-          Back to Home
+          Back to Hub
         </Link>
       </nav>
 

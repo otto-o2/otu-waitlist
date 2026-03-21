@@ -31,19 +31,6 @@ export default function FeaturesPage() {
 
   return (
     <main className="bg-[#0A0F0A] min-h-screen">
-      {/* Global Navigation - Fixed or sticky at top could work, but here we place a floating back button */}
-      <div className="fixed top-6 left-6 md:top-12 md:left-12 z-[100]">
-        <Link 
-          href="/#features" 
-          className="flex items-center gap-4 text-sm font-black uppercase tracking-[0.4em] text-white opacity-60 hover:opacity-100 transition-opacity group"
-        >
-          <div className="p-3 rounded-full border border-white/10 group-hover:bg-white/5 transition-colors bg-black/50 backdrop-blur-md">
-            <ArrowLeft className="h-4 w-4" />
-          </div>
-          <span className="hidden md:inline drop-shadow-md">Back to Hub</span>
-        </Link>
-      </div>
-
       <FeaturePageLayout
         id="ward-mode"
         hideNav={true}
