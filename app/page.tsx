@@ -262,12 +262,14 @@ export default function Home() {
           
         <div className="max-w-7xl mx-auto flex flex-col items-center justify-center text-center relative z-10 gap-10">
           
-          <div className="flex flex-col gap-3 font-mono text-[10px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.3em] font-medium text-white/50">
-            <p className="text-[#F1E8C7] font-bold text-sm tracking-[0.4em] mb-4">© 2026 Biology 2.0 Ecosystem</p>
-            <p>SRV: ONLINE</p>
-            <p>CPU: 0.04%</p>
-            <p>LOC: BERLIN_VAULT and Biology 2.0 Ecosystem (do not seek life advice)</p>
-            <p>otu is for plants (do not seek life advice)</p>
+          <div className="flex flex-col items-center gap-6 font-mono text-[10px] md:text-xs uppercase tracking-[0.15em] font-medium text-white/50">
+            <p className="text-[#F1E8C7] font-bold text-xs md:text-sm tracking-[0.3em]">
+              © {new Date().getFullYear()} otu plant intelligence (the first version)
+            </p>
+            <div className="flex gap-6 md:gap-12 opacity-60">
+              <span className="hover:text-[#F1E8C7] transition-colors cursor-pointer">Privacy Policy</span>
+              <span className="hover:text-[#F1E8C7] transition-colors cursor-pointer">Terms of Service</span>
+            </div>
           </div>
           
           <button 
