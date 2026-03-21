@@ -246,8 +246,8 @@ export default function TermsOfService() {
             <p>If you have questions about these terms, need clarification on anything, or just want to say hello, you can reach us through our website at meetotu.com.</p>
             <p>We're real people who talk to their plants (and now build apps for them). Happy you're here.</p>
 
-            <div className="pt-16 mt-16 pb-16 border-t border-[#9CA764]/20 flex flex-col items-start gap-4">
-              <BushGreenLogo width={40} height={40} className="mb-2 opacity-80" />
+            <div className="pt-16 mt-16 pb-16 border-t border-black/10 flex flex-col items-start gap-4">
+              <BushGreenLogo width={120} className="mb-2 opacity-80" />
               <div className="flex flex-col gap-2">
                 <span className="font-mono text-xs tracking-widest text-[#9CA764]">Last updated: March 2026</span>
                 <span className="font-mono text-xs tracking-widest text-[#9CA764]">© Otu. All rights reserved.</span>

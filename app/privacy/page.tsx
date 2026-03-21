@@ -256,7 +256,7 @@ export default function PrivacyPolicy() {
             <p>For anything data related, whether that is questions, access requests, deletion requests, or just to say hi, you can reach us through our website at meetotu.com.</p>
 
             <div className="pt-16 pb-16 mt-16 border-t border-black/10 flex flex-col items-start gap-4">
-              <BushGreenLogo width={40} height={40} className="mb-2 opacity-80" />
+              <BushGreenLogo width={120} className="mb-2 opacity-80" />
               <div className="flex flex-col gap-2">
                 <span className="font-mono text-xs tracking-widest text-[#9CA764] mix-blend-multiply">Last updated: March 2026</span>
                 <span className="font-mono text-xs tracking-widest text-[#0A0F0A]/50">© Otu. All rights reserved.</span>

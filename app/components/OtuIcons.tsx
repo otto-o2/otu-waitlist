@@ -24,5 +24,5 @@ export function FluffyTree(props: React.SVGProps<SVGSVGElement>) {
 import { OtuLeafLoader } from "./OtuLeafLoader";
 
 export function BushGreenLogo(props: React.SVGProps<SVGSVGElement>) {
-  return <OtuLeafLoader {...props} />;
+  return <OtuLeafLoader size={Number(props.width) || undefined} {...props} />;
 }

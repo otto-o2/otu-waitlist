@@ -29,9 +29,9 @@ export function SubmissionPreview({ type, data }: SubmissionPreviewProps) {
       <div className="flex flex-col items-center justify-center p-12 rounded-[40px] border border-[#9CA764]/20 bg-[#111A11] backdrop-blur-sm text-center max-w-2xl mx-auto w-full group relative overflow-hidden min-h-[400px]">
         <div className="absolute inset-0 bg-gradient-to-br from-[#9CA764]/5 to-transparent pointer-events-none" />
         <div className="animate-in zoom-in duration-700 fade-in flex flex-col items-center gap-6 relative z-10">
-          <div className="w-20 h-20 bg-[#F1E8C7] rounded-full flex items-center justify-center shadow-[0_12px_24px_rgba(0,0,0,0.06),_0_4px_8px_rgba(0,0,0,0.04)]">
-            <BushGreenLogo width={48} height={48} />
-          </div>
+            <div className="w-32 h-32 bg-[#F1E8C7] rounded-full flex items-center justify-center shadow-[0_12px_24px_rgba(0,0,0,0.06),_0_4px_8px_rgba(0,0,0,0.04)]">
+              <BushGreenLogo width={80} />
+            </div>
           <div className="flex flex-col items-center gap-2">
             <h1 className="text-xl md:text-2xl font-sans font-bold text-[#1a1f1c] tracking-wider lowercase">
               <span className="text-[#F1E8C7]">otu plant intelligence</span>
@@ -69,7 +69,7 @@ export function SubmissionPreview({ type, data }: SubmissionPreviewProps) {
            <span className="font-mono text-[10px] tracking-widest text-[#9CA764] uppercase opacity-80">
              transmission preview
            </span>
-        </div>
+         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="flex flex-col gap-1">
             <span className="font-mono text-[10px] tracking-widest text-white/30 uppercase">name</span>
