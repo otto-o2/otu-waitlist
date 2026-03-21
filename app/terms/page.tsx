@@ -28,17 +28,17 @@ export default function TermsOfService() {
         <nav className="p-8 md:p-12 lg:p-16 pb-0">
           <Link 
             href="/" 
-            className="inline-flex items-center gap-3 px-8 py-3 rounded-full border border-white/10 hover:bg-white/5 transition-colors text-[10px] uppercase tracking-widest font-bold group w-fit"
+            className="inline-flex items-center gap-3 px-10 py-4 rounded-full border border-white/10 hover:bg-white/5 transition-colors text-sm md:text-base uppercase tracking-widest font-black group w-fit"
           >
-            <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
+            <ArrowLeft className="h-5 w-5 group-hover:-translate-x-1 transition-transform" />
             Back to Hub
           </Link>
         </nav>
 
         <div className="p-8 md:p-12 lg:p-16 pt-8 md:pt-12">
           
-          <div className="flex flex-col gap-6 mb-16 border-b border-[#9CA764]/20 pb-12">
-            <h2 className="font-mono tracking-[0.3em] uppercase text-[#9CA764] text-xs md:text-sm drop-shadow-sm">OTU</h2>
+          <div className="flex flex-col gap-6 mb-16 border-b border-[#9CA764]/20 pb-12 items-center text-center md:items-start md:text-left">
+            <h2 className="font-mono tracking-[0.3em] uppercase text-[#9CA764] text-xl md:text-3xl drop-shadow-sm font-black">OTU</h2>
             <h1 className="text-4xl md:text-6xl font-sans font-black tracking-tight lowercase text-[#F1E8C7]">
               Our Terms of Service
             </h1>
@@ -91,7 +91,7 @@ export default function TermsOfService() {
             </p>
 
             <h3 className="text-2xl font-bold text-[#F1E8C7] tracking-wide lowercase pt-8 flex gap-4">
-              <span className="font-mono text-[#9CA764] tracking-widest uppercase">IV.</span> 
+              <span className="font-mono text-[#9CA764] tracking-widest uppercase">IIII.</span> 
               <span>your account</span>
             </h3>
             <p>When the app launches, you may need to create an account to access certain features. If and when that happens:</p>

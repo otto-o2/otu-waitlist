@@ -26,17 +26,17 @@ export default function PrivacyPolicy() {
         <nav className="p-8 md:p-12 lg:p-16 pb-0">
           <Link 
             href="/" 
-            className="inline-flex items-center gap-3 px-8 py-3 rounded-full border border-black/10 hover:bg-black/5 transition-colors text-[10px] uppercase tracking-widest font-bold group w-fit"
+            className="inline-flex items-center gap-3 px-10 py-4 rounded-full border border-black/10 hover:bg-black/5 transition-colors text-sm md:text-base uppercase tracking-widest font-black group w-fit text-[#0A0F0A]"
           >
-            <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
+            <ArrowLeft className="h-5 w-5 group-hover:-translate-x-1 transition-transform" />
             Back to Hub
           </Link>
         </nav>
 
         <div className="p-8 md:p-12 lg:p-16 pt-8 md:pt-12">
           
-          <div className="flex flex-col gap-6 mb-16 border-b border-black/10 pb-12">
-            <h2 className="font-mono tracking-[0.3em] uppercase text-[#9CA764] text-xs md:text-sm mix-blend-multiply drop-shadow-sm">OTU</h2>
+          <div className="flex flex-col gap-6 mb-16 border-b border-black/10 pb-12 items-center text-center md:items-start md:text-left">
+            <h2 className="font-mono tracking-[0.3em] uppercase text-[#9CA764] text-xl md:text-3xl mix-blend-multiply drop-shadow-sm font-black">OTU</h2>
             <h1 className="text-4xl md:text-6xl font-sans font-black tracking-tight lowercase text-[#0A0F0A]">
               Our Privacy Policy
             </h1>
@@ -84,7 +84,7 @@ export default function PrivacyPolicy() {
             <p>That’s it. Nothing sneaky. No location tracking, no device fingerprinting, no cookies chasing you around the internet. Not yet, and not ever without telling you first.</p>
 
             <h3 className="text-2xl font-bold text-[#0A0F0A] tracking-wide lowercase pt-8 flex gap-4">
-              <span className="font-mono text-[#9CA764] tracking-widest uppercase">IV.</span> 
+              <span className="font-mono text-[#9CA764] tracking-widest uppercase">IIII.</span> 
               <span>why we collect it</span>
             </h3>
             <ul className="list-none space-y-4 pl-0">

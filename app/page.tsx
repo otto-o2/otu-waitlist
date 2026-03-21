@@ -39,8 +39,8 @@ const features = [
     cta: "Explore the wild",
     className: "md:col-span-1",
     Icon: Map,
-    color: "#040D04", // Deeper Tactical Dark Forest
-    background: <div className="absolute inset-0 bg-[#0F160F]/40">
+    color: "#061A0C", // Deep Green
+    background: <div className="absolute inset-0 bg-[#092110]/50">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/graphy.png')] opacity-10" />
       <div className="absolute inset-0 bg-gradient-to-tr from-[#4ADE80]/10 to-transparent" />
     </div>,
@@ -74,8 +74,8 @@ const features = [
     cta: "Open vault",
     className: "md:col-span-2",
     Icon: Dna,
-    color: "#0D0218", // Deeper Amethyst
-    background: <div className="absolute inset-0 bg-[#050205]/40 overflow-hidden">
+    color: "#1A0B2E", // Deep Purple
+    background: <div className="absolute inset-0 bg-[#1A0B2E]/60 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-t from-[#E040FB]/10 to-transparent" />
     </div>,
   },

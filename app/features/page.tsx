@@ -30,7 +30,25 @@ export default function FeaturesPage() {
   }, []);
 
   return (
-    <main className="bg-[#0A0F0A] min-h-screen">
+    <main className="bg-[#0A0F0A] min-h-screen relative font-sans text-[#F1E8C7]">
+      <div className="absolute top-8 left-8 z-[100] hidden md:block">
+        <Link 
+          href="/" 
+          className="inline-flex items-center gap-3 px-10 py-4 rounded-full border border-white/20 hover:bg-white/10 transition-colors text-sm md:text-base uppercase tracking-widest font-black group w-fit text-[#F1E8C7] backdrop-blur-md"
+        >
+          <ArrowLeft className="h-5 w-5 group-hover:-translate-x-1 transition-transform" />
+          Back to Hub
+        </Link>
+      </div>
+      <div className="absolute top-6 left-6 z-[100] md:hidden">
+        <Link 
+          href="/" 
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 hover:bg-white/10 transition-colors text-xs uppercase tracking-widest font-black group w-fit text-[#F1E8C7] backdrop-blur-md"
+        >
+          <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
+          Back
+        </Link>
+      </div>
       <FeaturePageLayout
         id="ward-mode"
         hideNav={true}
