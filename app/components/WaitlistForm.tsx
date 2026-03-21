@@ -92,13 +92,24 @@ export function WaitlistForm() {
       </form>
 
       {/* Urgency Hook */}
-      <div className="mt-12 flex flex-col items-center gap-6">
-        <div className="px-6 py-3 rounded-full border border-[#9CA764]/30 bg-[#9CA764]/10 text-sm md:text-lg tracking-[0.2em] text-[#9CA764] uppercase font-bold inline-block text-center shadow-lg">
+      <div className="mt-16 flex flex-col items-center gap-8 w-full">
+        {/* Subtle, floating top hook (No pill) */}
+        <p className="text-center text-[#9CA764]/80 text-sm md:text-base font-mono uppercase tracking-[0.15em] md:tracking-[0.25em] max-w-3xl">
           good things take time. so do good apps. we are worth the wait
-        </div>
-        <p className="text-center text-[#F1E8C7]/50 text-base md:text-xl font-sans tracking-wide max-w-3xl mb-2">
-          <span className="text-[#F1E8C7]">the first 500 sign-ups get a head start</span> — app-credits, early access, bragging rights. the list goes on.
         </p>
+
+        {/* Separator */}
+        <div className="w-12 h-px bg-[#F1E8C7]/10" />
+
+        {/* Pill design for the 'first 500' line */}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-4 w-full">
+          <div className="px-4 py-2 rounded-full border border-[#F1E8C7]/20 bg-[#F1E8C7]/5 text-xs md:text-sm tracking-[0.1em] text-[#F1E8C7] uppercase font-bold text-center whitespace-normal md:whitespace-nowrap">
+            the first 500 sign-ups get a head start
+          </div>
+          <p className="text-center md:text-left text-[#F1E8C7]/50 text-sm md:text-base font-sans tracking-wide max-w-lg">
+            — app-credits, early access, bragging rights. the list goes on.
+          </p>
+        </div>
       </div>
     </div>
   );
