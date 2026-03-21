@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { BookOpen, ChevronLeft, ChevronRight, Bookmark, Share2, HelpCircle } from "lucide-react";
+import { FluffyTree } from "@/app/components/OtuIcons";
 import DeviceChassis from "./DeviceChassis";
 
 const CompendiumVisual = () => {
@@ -50,7 +51,7 @@ const CompendiumVisual = () => {
       <div className="flex-1 flex flex-col gap-1 font-serif text-[#D8F3DC] overflow-hidden scrollbar-hide">
         <div className="flex justify-between items-start">
           <h3 className="font-bold leading-none text-[#95D5B1]" style={{ fontSize: 18, letterSpacing: "-0.02em" }}>The Banyan Tree</h3>
-          <span className="text-[22px] transform -translate-y-1">🌳</span>
+          <span className="transform -translate-y-1"><FluffyTree className="w-[22px] h-[22px]" /></span>
         </div>
 
         <div className="space-y-2 overflow-y-auto pr-1 pb-4" style={{ fontSize: '10px', lineHeight: '1.3' }}>

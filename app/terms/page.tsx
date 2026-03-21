@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
+import { FluffyTree, BushGreenLogo } from "@/app/components/OtuIcons";
 
 export default function TermsOfService() {
   return (
@@ -97,19 +98,19 @@ export default function TermsOfService() {
             <p>When the app launches, you may need to create an account to access certain features. If and when that happens:</p>
             <ul className="list-none space-y-4 pl-0">
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌳</span>
+                <div className="mt-1 shrink-0"><FluffyTree /></div>
                 <span>You are responsible for keeping your login details safe.</span>
               </li>
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌳</span>
+                <div className="mt-1 shrink-0"><FluffyTree /></div>
                 <span>You are responsible for everything that happens under your account.</span>
               </li>
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌳</span>
+                <div className="mt-1 shrink-0"><FluffyTree /></div>
                 <span>You agree to provide accurate information when signing up.</span>
               </li>
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌳</span>
+                <div className="mt-1 shrink-0"><FluffyTree /></div>
                 <span>You must be at least 13 years old to use Otu. If you are under 13, go water a plant instead.</span>
               </li>
             </ul>
@@ -155,19 +156,19 @@ export default function TermsOfService() {
             <p>Everything that makes Otu what it is belongs to us. That includes, but is not limited to:</p>
             <ul className="list-none space-y-4 pl-0">
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌳</span>
+                <div className="mt-1 shrink-0"><FluffyTree /></div>
                 <span>The Otu name, logo, and branding.</span>
               </li>
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌳</span>
+                <div className="mt-1 shrink-0"><FluffyTree /></div>
                 <span>The app design, interface, and user experience.</span>
               </li>
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌳</span>
+                <div className="mt-1 shrink-0"><FluffyTree /></div>
                 <span>Our plant database, care guides, and written content.</span>
               </li>
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌳</span>
+                <div className="mt-1 shrink-0"><FluffyTree /></div>
                 <span>The underlying code, algorithms, and AI models.</span>
               </li>
             </ul>
@@ -245,9 +246,12 @@ export default function TermsOfService() {
             <p>If you have questions about these terms, need clarification on anything, or just want to say hello, you can reach us through our website at meetotu.com.</p>
             <p>We're real people who talk to their plants (and now build apps for them). Happy you're here.</p>
 
-            <div className="pt-16 mt-16 pb-16 border-t border-[#9CA764]/20 flex flex-col gap-2">
-              <span className="font-mono text-xs tracking-widest text-[#9CA764]">Last updated: March 2026</span>
-              <span className="font-mono text-xs tracking-widest text-[#9CA764]">© Otu. All rights reserved.</span>
+            <div className="pt-16 mt-16 pb-16 border-t border-[#9CA764]/20 flex flex-col items-start gap-4">
+              <BushGreenLogo width={40} height={40} className="mb-2 opacity-80" />
+              <div className="flex flex-col gap-2">
+                <span className="font-mono text-xs tracking-widest text-[#9CA764]">Last updated: March 2026</span>
+                <span className="font-mono text-xs tracking-widest text-[#9CA764]">© Otu. All rights reserved.</span>
+              </div>
             </div>
           </div>
         </div>

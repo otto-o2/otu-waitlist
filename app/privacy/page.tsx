@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
+import { FluffyTree, BushGreenLogo } from "@/app/components/OtuIcons";
 
 export default function PrivacyPolicy() {
   return (
@@ -69,15 +70,15 @@ export default function PrivacyPolicy() {
             <p>Right now, just three things:</p>
             <ul className="list-none space-y-4 pl-0">
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌳</span>
+                <div className="mt-1 shrink-0"><FluffyTree /></div>
                 <span>Your name, so we know who showed up early.</span>
               </li>
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌳</span>
+                <div className="mt-1 shrink-0"><FluffyTree /></div>
                 <span>Your email address, so we can find you on launch day.</span>
               </li>
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌳</span>
+                <div className="mt-1 shrink-0"><FluffyTree /></div>
                 <span>Your response to our "Why do you want a plant app?" question, so we can build something that actually works for you.</span>
               </li>
             </ul>
@@ -89,15 +90,15 @@ export default function PrivacyPolicy() {
             </h3>
             <ul className="list-none space-y-4 pl-0">
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌱</span>
+                <div className="mt-1 shrink-0"><FluffyTree /></div>
                 <span>To add you to the Otu waitlist.</span>
               </li>
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌱</span>
+                <div className="mt-1 shrink-0"><FluffyTree /></div>
                 <span>To send you your launch day credits when the app goes live.</span>
               </li>
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌱</span>
+                <div className="mt-1 shrink-0"><FluffyTree /></div>
                 <span>To understand what our users actually need. This is used for product research only.</span>
               </li>
             </ul>
@@ -110,11 +111,11 @@ export default function PrivacyPolicy() {
             <p>Your data is only accessible to:</p>
             <ul className="list-none space-y-4 pl-0">
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌳</span>
+                <div className="mt-1 shrink-0"><FluffyTree /></div>
                 <span>Us. The Otu team. That’s a very small circle.</span>
               </li>
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌳</span>
+                <div className="mt-1 shrink-0"><FluffyTree /></div>
                 <span>Loops.so, our email platform and data processor. They handle waitlist emails on our behalf.</span>
               </li>
             </ul>
@@ -165,11 +166,11 @@ export default function PrivacyPolicy() {
             <p>We will hold onto your data until:</p>
             <ul className="list-none space-y-4 pl-0">
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌳</span>
+                <div className="mt-1 shrink-0"><FluffyTree /></div>
                 <span>The app launches and your early bird credits have been delivered, or</span>
               </li>
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌳</span>
+                <div className="mt-1 shrink-0"><FluffyTree /></div>
                 <span>You unsubscribe or ask us to delete it, whichever comes first.</span>
               </li>
             </ul>
@@ -221,15 +222,15 @@ export default function PrivacyPolicy() {
             <p>Our waitlist form includes an unchecked consent checkbox. By checking it, you confirm that:</p>
             <ul className="list-none space-y-4 pl-0">
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌳</span>
+                <div className="mt-1 shrink-0"><FluffyTree /></div>
                 <span>You have read and understood this privacy policy.</span>
               </li>
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌳</span>
+                <div className="mt-1 shrink-0"><FluffyTree /></div>
                 <span>You consent to your data being collected and processed as described above.</span>
               </li>
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌳</span>
+                <div className="mt-1 shrink-0"><FluffyTree /></div>
                 <span>You acknowledge that your data may be transferred to servers outside your region via Loops.so.</span>
               </li>
             </ul>
@@ -254,9 +255,12 @@ export default function PrivacyPolicy() {
             <p>We're real people who talk to their plants (and now build apps for them). Happy you're here.</p>
             <p>For anything data related, whether that is questions, access requests, deletion requests, or just to say hi, you can reach us through our website at meetotu.com.</p>
 
-            <div className="pt-16 pb-16 mt-16 border-t border-black/10 flex flex-col gap-2">
-              <span className="font-mono text-xs tracking-widest text-[#9CA764] mix-blend-multiply">Last updated: March 2026</span>
-              <span className="font-mono text-xs tracking-widest text-[#0A0F0A]/50">© Otu. All rights reserved.</span>
+            <div className="pt-16 pb-16 mt-16 border-t border-black/10 flex flex-col items-start gap-4">
+              <BushGreenLogo width={40} height={40} className="mb-2 opacity-80" />
+              <div className="flex flex-col gap-2">
+                <span className="font-mono text-xs tracking-widest text-[#9CA764] mix-blend-multiply">Last updated: March 2026</span>
+                <span className="font-mono text-xs tracking-widest text-[#0A0F0A]/50">© Otu. All rights reserved.</span>
+              </div>
             </div>
           </div>
         </div>

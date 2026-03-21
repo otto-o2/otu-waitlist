@@ -17,6 +17,7 @@ import {
 import Link from 'next/link';
 import { WaitlistForm } from "@/app/components/WaitlistForm";
 import { ContactForm } from "@/app/components/ContactForm";
+import { BushGreenLogo } from "@/app/components/OtuIcons";
 
 const features = [
   {
@@ -251,6 +252,7 @@ export default function Home() {
             </h2>
             
             <div className="flex flex-col items-center gap-6 font-mono text-[10px] md:text-xs uppercase tracking-[0.15em] font-medium text-white/50 pt-8">
+              <BushGreenLogo width={48} height={48} className="opacity-80" />
               <p className="text-[#F1E8C7] font-bold text-xs md:text-sm tracking-[0.3em] font-sans">
                 © {new Date().getFullYear()} otu plant intelligence (the first version)
               </p>

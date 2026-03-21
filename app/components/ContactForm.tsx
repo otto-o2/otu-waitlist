@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { SubmissionPreview } from "./SubmissionPreview";
 
 export function ContactForm() {
   const [email, setEmail] = useState("");
@@ -45,25 +46,16 @@ export function ContactForm() {
   };
 
   if (status === "success") {
-    return (
-      <div className="flex flex-col items-center justify-center p-8 rounded-2xl border border-[#9CA764]/20 bg-[#9CA764]/5 backdrop-blur-sm text-center max-w-md mx-auto w-full group transition-all duration-500 hover:border-[#9CA764]/40 hover:bg-[#9CA764]/10">
-        <div className="w-12 h-12 rounded-full border border-[#9CA764]/30 bg-[#9CA764]/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
-          <CheckCircle2 className="w-6 h-6 text-[#9CA764]" />
-        </div>
-        <h3 className="text-xl md:text-2xl font-sans font-bold text-[#F1E8C7] mb-2 font-black tracking-widest lowercase">
-          we received it.
-        </h3>
-        <p className="text-[#9CA764] text-sm md:text-base tracking-[0.2em] font-sans">
-          thank you for reaching out.<br/>we'll get back to you soon.
-        </p>
-      </div>
-    );
+    return <SubmissionPreview type="contact" data={{ name, email, message }} />;
   }
 
   return (
     <div className="w-full max-w-5xl mx-auto flex flex-col gap-10 items-center">
       {/* The Form */}
       <form onSubmit={handleSubmit} className="relative w-full max-w-2xl mx-auto flex flex-col gap-4">
+        <div className="flex justify-end mb-2 absolute -top-8 right-0">
+          <button type="button" onClick={() => setStatus('success')} className="text-[#9CA764]/50 hover:text-[#9CA764] text-[10px] font-mono uppercase tracking-widest transition-colors z-20">Preview Success Flow</button>
+        </div>
         <div className="flex flex-col gap-4 p-6 md:p-8 rounded-[40px] bg-[#111A11] border border-[#9CA764]/20 shadow-2xl relative overflow-hidden">
           {/* Subtle gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#9CA764]/5 to-transparent pointer-events-none" />
