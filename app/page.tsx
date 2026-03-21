@@ -14,6 +14,8 @@ import {
   ShoppingBag, 
   Library
 } from "lucide-react";
+import Link from 'next/link';
+import { WaitlistForm } from "@/app/components/WaitlistForm";
 
 const features = [
   {
@@ -157,6 +159,9 @@ export default function Home() {
           >
             haus der<br />grünen
           </h1>
+          <p className="font-sans font-bold text-[#1B261B]/80 tracking-widest text-[10px] md:text-sm uppercase mt-4 md:mt-8">
+            you kill plants. otu fixes that.
+          </p>
         </div>
 
         {/* Scroll Indicator: Minimalist Vertical Line */}
@@ -181,17 +186,39 @@ export default function Home() {
         </div>
       </section>
 
+      {/* PAGE 1.5: THE WAITLIST */}
+      <section className="relative z-20 w-full min-h-screen py-32 flex flex-col items-center justify-center px-6 md:px-12 lg:px-24 bg-[#0A0F0A] overflow-hidden">
+        {/* Architectural Grid Overlay (Dark Theme) */}
+        <div className="absolute inset-0 opacity-[0.05]" 
+          style={{ backgroundImage: "linear-gradient(#9CA764 1px, transparent 1px), linear-gradient(90deg, #9CA764 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
+        <div className="absolute inset-0 opacity-[0.1]" 
+          style={{ backgroundImage: "linear-gradient(#9CA764 1px, transparent 1px), linear-gradient(90deg, #9CA764 1px, transparent 1px)", backgroundSize: "200px 200px" }} />
+        
+        <div className="absolute top-8 left-12 tech-label hidden md:block">001.5: INTAKE_PROTOCOL</div>
+        <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center gap-12 mt-12 md:mt-0">
+          <WaitlistForm />
+        </div>
+      </section>
+
       {/* PAGE 3: THE WORK (EVERYTHING WE DO) */}
       <section id="features" className="relative z-20 px-6 py-40 md:px-12 lg:px-24 bg-[#F1E8C7]">
-        <div className="absolute inset-0 grid-bg opacity-[0.2] pointer-events-none" />
+        {/* Architectural Grid Overlay (Cream Theme) */}
+        <div className="absolute inset-0 opacity-[0.05]" 
+          style={{ backgroundImage: "linear-gradient(#1B261B 1px, transparent 1px), linear-gradient(90deg, #1B261B 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
+        <div className="absolute inset-0 opacity-[0.08]" 
+          style={{ backgroundImage: "linear-gradient(#1B261B 1px, transparent 1px), linear-gradient(90deg, #1B261B 1px, transparent 1px)", backgroundSize: "200px 200px" }} />
+
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="mb-24 flex flex-col items-center gap-6 group">
-             <div className="w-px h-16 bg-[#1B261B]/10 overflow-hidden relative">
-                <div className="absolute top-0 left-0 w-full h-full bg-[#9CA764]/40 animate-scroll-line" />
+          <div className="mb-24 flex flex-col items-center gap-8 group">
+             <div className="w-px h-16 bg-[#1B261B]/20 overflow-hidden relative">
+                <div className="absolute top-0 left-0 w-full h-full bg-[#1B261B]/60 animate-scroll-line" />
              </div>
-             <div className="text-center">
-               <span className="text-[10px] mono-tag opacity-40 block mb-2">(EVERYTHING_WE_DO)</span>
-               <span className="text-[12px] md:text-sm uppercase tracking-[1em] font-black text-[#1B261B] ml-[1em]">otu is for plants.</span>
+             <div className="text-center space-y-4">
+               <h2 className="text-3xl md:text-5xl font-sans font-black tracking-[0.2em] text-[#1B261B] uppercase drop-shadow-sm">
+                 EVERYTHING WE DO
+               </h2>
+               <div className="w-16 h-px bg-[#1B261B]/30 mx-auto" />
+               <p className="text-[12px] md:text-sm uppercase tracking-[0.5em] font-bold text-[#1B261B]/70 ml-[0.5em]">otu is for plants.</p>
              </div>
           </div>
 
