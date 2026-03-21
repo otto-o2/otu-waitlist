@@ -255,8 +255,8 @@ export default function Home() {
                 © {new Date().getFullYear()} otu plant intelligence (the first version)
               </p>
               <div className="flex gap-6 md:gap-12 opacity-60">
-                <span className="hover:text-[#F1E8C7] transition-colors cursor-pointer">Privacy Policy</span>
-                <span className="hover:text-[#F1E8C7] transition-colors cursor-pointer">Terms of Service</span>
+                <Link href="/privacy" className="hover:text-[#F1E8C7] transition-colors cursor-pointer">Privacy Policy</Link>
+                <Link href="/terms" className="hover:text-[#F1E8C7] transition-colors cursor-pointer">Terms of Service</Link>
                 <span onClick={() => setShowContact(!showContact)} className="hover:text-[#F1E8C7] transition-colors cursor-pointer text-[#9CA764] font-bold">Talk to Us</span>
               </div>
             </div>
