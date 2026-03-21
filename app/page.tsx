@@ -234,65 +234,48 @@ export default function Home() {
 
       {/* PAGE 2: THE INTELLIGENCE */}
       <section className="relative z-20 w-full h-screen flex flex-col items-center justify-center px-6 md:px-12 lg:px-24 bg-[#0A0F0A] overflow-hidden">
-        <div className="absolute inset-0 grid-bg opacity-[0.15] pointer-events-none" />
+        {/* Subtle grid on intelligence page */}
+        <div className="absolute inset-0 opacity-[0.2] pointer-events-none" 
+          style={{ backgroundImage: "linear-gradient(#9CA764 1px, transparent 1px), linear-gradient(90deg, #9CA764 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
+          
         <div className="absolute top-8 left-12 tech-label hidden md:block">002: NEURAL_MAPPING</div>
-        <div className="max-w-7xl mx-auto flex flex-col items-center gap-12 text-center relative z-10">
-          <div className="space-y-6">
-            <p className="text-[14px] md:text-xl font-sans font-black tracking-[0.8em] text-[#9CA764] uppercase ml-[0.8em]">
+        <div className="max-w-7xl mx-auto flex flex-col items-center gap-12 text-center relative z-10 w-full">
+          <div className="space-y-8 max-w-4xl mx-auto">
+            <p className="text-[12px] md:text-sm font-mono font-bold tracking-[0.5em] md:tracking-[0.8em] text-[#9CA764] uppercase ml-[0.8em]">
               otu plant intelligence
             </p>
             <div className="w-16 h-px bg-[#9CA764]/30 mx-auto" />
-            <p className="text-2xl md:text-5xl font-sans font-black tracking-[0.3em] text-[#F1E8C7] uppercase leading-tight">
-              scan it. name it. <br /> let it live a little.
-            </p>
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-sans font-black tracking-widest text-[#F1E8C7] uppercase leading-relaxed drop-shadow-lg">
+              good things take time. so do good apps.<br/>
+              we are worth the wait.
+            </h2>
           </div>
         </div>
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
-          style={{ backgroundImage: "linear-gradient(#9CA764 1px, transparent 1px), linear-gradient(90deg, #9CA764 1px, transparent 1px)", backgroundSize: "100px 100px" }} />
       </section>
 
 
-      {/* Footer / Core Stats */}
-      <section className="px-6 py-32 md:px-12 lg:px-24 bg-[#1B261B] text-[#F1E8C7]">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-20 p-20 rounded-[80px] border border-white/5 bg-white/5">
-            <div className="space-y-6">
-              <h4 className="font-sans font-bold text-3xl">Self-Learning Core</h4>
-              <p className="text-[#F1E8C7]/60 text-lg leading-relaxed font-normal">Every scan feeds into a personalized growth engine that adapts to your skills.</p>
-            </div>
-            <div className="space-y-6">
-              <h4 className="font-sans font-bold text-3xl">Adaptive UX</h4>
-              <p className="text-[#F1E8C7]/60 text-lg leading-relaxed font-normal">Notifications that learn your habits. From "forgetful waterer" to "master botanist".</p>
-            </div>
-            <div className="space-y-6">
-              <h4 className="font-sans font-bold text-3xl">The Integrated Experience</h4>
-              <p className="text-[#F1E8C7]/60 text-lg leading-relaxed font-normal">One centralized vault for every capture, from office ferns to rare mountain orchids.</p>
-            </div>
+      {/* Footer / Minimal Stack */}
+      <section className="px-6 py-20 md:px-12 lg:px-24 bg-[#1B261B] text-[#F1E8C7] relative z-20 overflow-hidden">
+        {/* Subtle grid on footer */}
+        <div className="absolute inset-0 opacity-[0.05] pointer-events-none" 
+          style={{ backgroundImage: "linear-gradient(#F1E8C7 1px, transparent 1px), linear-gradient(90deg, #F1E8C7 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
+          
+        <div className="max-w-7xl mx-auto flex flex-col items-center justify-center text-center relative z-10 gap-10">
+          
+          <div className="flex flex-col gap-3 font-mono text-[10px] md:text-xs uppercase tracking-[0.2em] md:tracking-[0.3em] font-medium text-white/50">
+            <p className="text-[#F1E8C7] font-bold text-sm tracking-[0.4em] mb-4">© 2026 Biology 2.0 Ecosystem</p>
+            <p>SRV: ONLINE</p>
+            <p>CPU: 0.04%</p>
+            <p>LOC: BERLIN_VAULT and Biology 2.0 Ecosystem (do not seek life advice)</p>
+            <p>otu is for plants (do not seek life advice)</p>
           </div>
           
-          <div className="mt-32 pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-8">
-            <div className="flex flex-col items-center md:items-start gap-2">
-              <p className="font-sans text-2xl font-bold uppercase tracking-widest">haus der grünen</p>
-              <p className="text-white/30 text-[10px] uppercase tracking-[0.4em] font-bold">© 2026 Biology 2.0 Ecosystem</p>
-              <div className="flex gap-6 tech-label opacity-20 mt-2">
-                <span>SRV: ONLINE</span>
-                <span>CPU: 0.04%</span>
-                <span>LOC: BERLIN_VAULT</span>
-              </div>
-            </div>
-            
-            <button 
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="px-8 py-3 rounded-full border border-white/10 hover:bg-white/5 transition-colors text-xs uppercase tracking-widest font-bold"
-            >
-              Back to Top
-            </button>
-
-            <p className="text-white/30 text-[10px] uppercase tracking-[0.3em] font-medium text-center md:text-right">
-              Biology 2.0 Ecosystem <br className="md:hidden" />
-              <span className="opacity-50">(do not seek life advice)</span>
-            </p>
-          </div>
+          <button 
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="mt-8 px-8 py-3 rounded-full border border-white/10 hover:bg-white/5 transition-colors text-[10px] uppercase tracking-widest font-bold"
+          >
+            Back to Top
+          </button>
         </div>
       </section>
 
