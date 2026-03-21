@@ -33,7 +33,7 @@ export default function FeaturePageLayout({
   return (
     <section 
       id={id}
-      className={cn("relative overflow-hidden text-[#F1E8C7] py-24 md:py-32", className)}
+      className={cn("relative overflow-hidden text-[#F1E8C7] py-12 md:py-16", className)}
       style={{ backgroundColor: color }}
     >
       {/* Background Decor */}
@@ -49,17 +49,19 @@ export default function FeaturePageLayout({
       </div>
 
       {/* Navigation */}
-      <nav className="relative z-50 p-6 md:p-12">
-        <Link 
-          href="/#features" 
-          className="flex items-center gap-4 text-sm font-black uppercase tracking-[0.4em] opacity-60 hover:opacity-100 transition-opacity group"
-        >
-          <div className="p-3 rounded-full border border-white/10 group-hover:bg-white/5 transition-colors">
-            <ArrowLeft className="h-4 w-4" />
-          </div>
-          Back to Hub
-        </Link>
-      </nav>
+      {!hideNav && (
+        <nav className="relative z-50 p-6 md:p-12">
+          <Link 
+            href="/#features" 
+            className="flex items-center gap-4 text-sm font-black uppercase tracking-[0.4em] opacity-60 hover:opacity-100 transition-opacity group"
+          >
+            <div className="p-3 rounded-full border border-white/10 group-hover:bg-white/5 transition-colors">
+              <ArrowLeft className="h-4 w-4" />
+            </div>
+            Back to Hub
+          </Link>
+        </nav>
+      )}
 
       {/* Main Content */}
       <section className="relative z-10 px-6 py-24 md:px-12 lg:px-24">
@@ -139,12 +141,7 @@ export default function FeaturePageLayout({
         </div>
       </section>
 
-      {/* Footer Branding */}
-      <footer className="relative z-10 p-12 md:p-24 mt-20 opacity-20 pointer-events-none">
-        <p className="font-sans text-9xl font-bold uppercase tracking-widest text-[#F1E8C7]/5 select-none text-center">
-          {title}
-        </p>
-      </footer>
+      {/* Removed huge spacer footer for continuous feel */}
 
       {/* Grain */}
       <div className="fixed inset-0 pointer-events-none opacity-[0.03] mix-blend-multiply z-[999]" 

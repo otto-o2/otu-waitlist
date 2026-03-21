@@ -181,25 +181,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PAGE 2: THE INTELLIGENCE */}
-      <section className="relative z-20 w-full h-screen flex flex-col items-center justify-center px-6 md:px-12 lg:px-24 bg-[#0A0F0A] overflow-hidden">
-        <div className="absolute inset-0 grid-bg opacity-[0.15] pointer-events-none" />
-        <div className="absolute top-8 left-12 tech-label hidden md:block">002: NEURAL_MAPPING</div>
-        <div className="max-w-7xl mx-auto flex flex-col items-center gap-12 text-center relative z-10">
-          <div className="space-y-6">
-            <p className="text-[14px] md:text-xl font-sans font-black tracking-[0.8em] text-[#9CA764] uppercase ml-[0.8em]">
-              otu plant intelligence
-            </p>
-            <div className="w-16 h-px bg-[#9CA764]/30 mx-auto" />
-            <p className="text-2xl md:text-5xl font-sans font-black tracking-[0.3em] text-[#F1E8C7] uppercase leading-tight">
-              scan it. name it. <br /> let it live a little.
-            </p>
-          </div>
-        </div>
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
-          style={{ backgroundImage: "linear-gradient(#9CA764 1px, transparent 1px), linear-gradient(90deg, #9CA764 1px, transparent 1px)", backgroundSize: "100px 100px" }} />
-      </section>
-
       {/* PAGE 3: THE WORK (EVERYTHING WE DO) */}
       <section id="features" className="relative z-20 px-6 py-40 md:px-12 lg:px-24 bg-[#F1E8C7]">
         <div className="absolute inset-0 grid-bg opacity-[0.2] pointer-events-none" />
@@ -220,6 +201,25 @@ export default function Home() {
             ))}
           </BentoGrid>
         </div>
+      </section>
+
+      {/* PAGE 2: THE INTELLIGENCE */}
+      <section className="relative z-20 w-full h-screen flex flex-col items-center justify-center px-6 md:px-12 lg:px-24 bg-[#0A0F0A] overflow-hidden">
+        <div className="absolute inset-0 grid-bg opacity-[0.15] pointer-events-none" />
+        <div className="absolute top-8 left-12 tech-label hidden md:block">002: NEURAL_MAPPING</div>
+        <div className="max-w-7xl mx-auto flex flex-col items-center gap-12 text-center relative z-10">
+          <div className="space-y-6">
+            <p className="text-[14px] md:text-xl font-sans font-black tracking-[0.8em] text-[#9CA764] uppercase ml-[0.8em]">
+              otu plant intelligence
+            </p>
+            <div className="w-16 h-px bg-[#9CA764]/30 mx-auto" />
+            <p className="text-2xl md:text-5xl font-sans font-black tracking-[0.3em] text-[#F1E8C7] uppercase leading-tight">
+              scan it. name it. <br /> let it live a little.
+            </p>
+          </div>
+        </div>
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+          style={{ backgroundImage: "linear-gradient(#9CA764 1px, transparent 1px), linear-gradient(90deg, #9CA764 1px, transparent 1px)", backgroundSize: "100px 100px" }} />
       </section>
 
 
