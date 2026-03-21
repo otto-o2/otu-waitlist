@@ -9,6 +9,7 @@ export function WaitlistForm() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [intent, setIntent] = useState("");
+  const [agreed, setAgreed] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -67,7 +68,7 @@ export function WaitlistForm() {
           
           <input
             type="text"
-            placeholder="what are you called? (your name)"
+            placeholder="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
             disabled={status === "loading"}
@@ -76,7 +77,7 @@ export function WaitlistForm() {
           />
           <input
             type="email"
-            placeholder="where should we send the invite? (your email)"
+            placeholder="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             disabled={status === "loading"}
@@ -84,7 +85,7 @@ export function WaitlistForm() {
             className="w-full bg-[#1B261B] border border-white/5 rounded-3xl text-[#F1E8C7] placeholder:text-[#F1E8C7]/30 px-8 py-5 font-sans text-lg md:text-xl outline-none focus:border-[#9CA764]/50 focus:bg-[#0A0F0A] transition-colors lowercase tracking-wide disabled:opacity-50 relative z-10"
           />
           <textarea
-            placeholder="what's the master plan? (e.g. save my bonsai, build a jungle...)"
+            placeholder="what do you want to achieve from the app?"
             value={intent}
             onChange={(e) => setIntent(e.target.value)}
             disabled={status === "loading"}
@@ -93,9 +94,29 @@ export function WaitlistForm() {
             className="w-full bg-[#1B261B] border border-white/5 rounded-3xl text-[#F1E8C7] placeholder:text-[#F1E8C7]/40 px-8 py-5 font-sans text-base md:text-lg outline-none focus:border-[#9CA764]/50 focus:bg-[#0A0F0A] transition-colors lowercase tracking-wide disabled:opacity-50 resize-none relative z-10"
           />
           
+          {/* Custom Marker Tick Box */}
+          <div 
+            className="flex items-start gap-4 px-4 mt-2 relative z-10 group/checkbox cursor-pointer" 
+            onClick={() => setAgreed(!agreed)}
+          >
+            <div className="w-6 h-6 shrink-0 relative flex items-center justify-center mt-0.5 transition-transform group-hover/checkbox:scale-105">
+              <svg viewBox="0 0 24 24" className={cn("absolute inset-0 w-full h-full transition-colors", agreed ? "text-[#9CA764]" : "text-[#F1E8C7]/30 group-hover/checkbox:text-[#F1E8C7]/60")}>
+                <path d="M3.5 4.5 C 10 3.5, 18 4, 20.5 4.5 C 21.5 10, 20.5 18, 20.5 20.5 C 14 21.5, 6 21, 3.5 20.5 C 2.5 15, 3 7, 3.5 4.5 Z" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              {agreed && (
+                <svg viewBox="0 0 24 24" className="absolute inset-0 w-full h-full text-[#9CA764] animate-in zoom-in duration-200" style={{ transform: "scale(1.2)" }}>
+                  <path d="M5 13 C 7 14, 9 17, 10 19 C 13.5 11, 18 5, 24 0" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              )}
+            </div>
+            <p className="text-sm md:text-base font-sans text-[#F1E8C7]/60 lowercase tracking-wide select-none pt-0.5">
+              i agree to the <a href="/terms" target="_blank" className="text-[#9CA764] hover:text-white transition-colors underline decoration-[#9CA764]/30 underline-offset-4" onClick={(e) => e.stopPropagation()}>terms</a> & <a href="/privacy" target="_blank" className="text-[#9CA764] hover:text-white transition-colors underline decoration-[#9CA764]/30 underline-offset-4" onClick={(e) => e.stopPropagation()}>privacy policy</a>
+            </p>
+          </div>
+
           <button
             type="submit"
-            disabled={status === "loading" || !email || !name || !intent}
+            disabled={status === "loading" || !email || !name || !intent || !agreed}
             className="mt-4 w-full bg-[#F1E8C7] hover:bg-white text-[#0A0F0A] rounded-3xl px-8 py-5 font-black text-xl md:text-2xl transition-all flex items-center justify-center gap-3 group/btn disabled:opacity-50 disabled:cursor-not-allowed lowercase relative z-10"
           >
             {status === "loading" ? "submitting..." : "join the waitlist"}
