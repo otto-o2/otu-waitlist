@@ -58,26 +58,33 @@ export default function FeaturePageLayout({
 
       {/* Main Content */}
       <section className="relative z-10 px-6 py-24 md:px-12 lg:px-24">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-center">
-          <div className="flex flex-col">
-            <div className="space-y-16">
-              <div className="space-y-8">
-                <div className="p-7 rounded-[2.5rem] w-fit border border-white/10" style={{ backgroundColor: `${color}40` }}>
-                  <Icon className="h-20 w-20" style={{ color: '#9CA764' }} />
-                </div>
-                <div className="space-y-6">
-                  <p className="text-sm md:text-2xl font-sans font-black tracking-[0.6em] text-[#9CA764] uppercase">
-                    {subtitle}
-                  </p>
-                  <h1 className="text-6xl md:text-9xl font-sans font-bold tracking-tighter leading-[0.9] drop-shadow-2xl">
-                    {title}
-                  </h1>
-                  <p className="text-2xl md:text-3xl text-[#F1E8C7]/70 font-medium leading-relaxed max-w-xl">
-                    {description}
-                  </p>
-                </div>
+        <div className="max-w-7xl mx-auto flex flex-col gap-16 lg:gap-24">
+          
+          {/* Header Row */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32">
+            <div className="space-y-8">
+              <div className="p-7 rounded-[2.5rem] w-fit border border-white/10" style={{ backgroundColor: `${color}40` }}>
+                <Icon className="h-20 w-20" style={{ color: '#9CA764' }} />
               </div>
+              <div className="space-y-6">
+                <p className="text-sm md:text-2xl font-sans font-black tracking-[0.6em] text-[#9CA764] uppercase">
+                  {subtitle}
+                </p>
+                <h1 className="text-6xl md:text-9xl font-sans font-bold tracking-tighter leading-[0.9] drop-shadow-2xl">
+                  {title}
+                </h1>
+                <p className="text-2xl md:text-3xl text-[#F1E8C7]/70 font-medium leading-relaxed max-w-xl">
+                  {description}
+                </p>
+              </div>
+            </div>
+          </div>
 
+          {/* Body Row (List & Graphic aligned) */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-center">
+            
+            {/* Left Side: Body List */}
+            <div className="space-y-16">
               <div className="space-y-10">
                 <div className="w-20 h-px bg-[#9CA764]/30" />
                 <ul className="space-y-10">
@@ -106,19 +113,21 @@ export default function FeaturePageLayout({
                 </Link>
               </div>
             </div>
-          </div>
 
-          <div className="relative flex items-center justify-center w-full h-full">
-             <div className="w-full flex justify-center">
-                {/* Visual Backdrop Glow */}
-                <div
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-[150px] opacity-40 animate-pulse pointer-events-none"
-                  style={{ background: `radial-gradient(circle, ${color}80 0%, transparent 65%)` }}
-                />
-                <div className="relative z-10 w-full flex justify-center transition-all duration-1000 transform hover:scale-[1.03] hover:translate-y-[-8px]">
-                  {visual}
-                </div>
-             </div>
+            {/* Right Side: Graphic vertically centered against the list block */}
+            <div className="relative flex items-center justify-center w-full h-full">
+               <div className="w-full flex justify-center">
+                  {/* Visual Backdrop Glow */}
+                  <div
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-[150px] opacity-40 animate-pulse pointer-events-none"
+                    style={{ background: `radial-gradient(circle, ${color}80 0%, transparent 65%)` }}
+                  />
+                  <div className="relative z-10 w-full flex justify-center transition-all duration-1000 transform hover:scale-[1.03] hover:translate-y-[-8px]">
+                    {visual}
+                  </div>
+               </div>
+            </div>
+            
           </div>
         </div>
       </section>

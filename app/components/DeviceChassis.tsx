@@ -68,8 +68,9 @@ export default function DeviceChassis({
       className="relative w-full max-w-[440px] select-none"
     >
       <div
-        className="relative w-full rounded-[42px] p-6 flex flex-col gap-9 overflow-hidden shadow-2xl"
+        className="relative w-full rounded-[42px] p-6 flex flex-col overflow-hidden shadow-2xl"
         style={{
+          aspectRatio: "1.1 / 1.7",
           background: chassisGradient,
           boxShadow: `0 60px 120px -20px ${chassisShadowColor}, 0 0 0 1px rgba(255,255,255,0.05), inset 0 1px 0 rgba(255,255,255,0.1), inset 0 -1px 0 rgba(0,0,0,0.5)`,
         }}
@@ -87,7 +88,7 @@ export default function DeviceChassis({
 
         {/* ─── SCREEN ─── */}
         <div
-          className="relative w-full rounded-3xl overflow-hidden flex flex-col p-5"
+          className="relative w-full rounded-3xl overflow-hidden flex flex-col p-5 mb-4"
           style={{
             aspectRatio: screenAspectRatio,
             background: screenBackground,
@@ -117,106 +118,112 @@ export default function DeviceChassis({
           {children}
         </div>
 
-        {/* ─── CONTROLS ─── */}
-        {controls}
-        {buttons && !controls && (
-          <div className="flex items-center justify-between px-2 pb-2 mt-auto">
-            {/* Left Button */}
-            <div className="group flex flex-col items-center gap-2 cursor-pointer">
-              <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center transition-all group-hover:bg-white/[0.11] active:scale-95"
-                style={{
-                  background: buttons.sideGradient,
-                  border: "1px solid rgba(255,255,255,0.06)",
-                  boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)",
-                }}
-              >
-                {buttons.left.icon}
-              </div>
-              <span
-                style={{
-                  fontSize: 7,
-                  fontWeight: 900,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.2em",
-                  color: buttons.labelColor,
-                }}
-              >
-                {buttons.left.label}
-              </span>
-            </div>
+        {/* ─── LOWER SECTION: CENTERED CONTROLS ─── */}
+        <div className="flex-1 flex flex-col justify-center py-2 relative z-20">
+          <div className="w-full">
+            {controls}
+            {buttons && !controls && (
+              <div className="flex items-center justify-between px-2 pb-2">
+                {/* Left Button */}
+                <div className="group flex flex-col items-center gap-1.5 cursor-pointer">
+                  <div
+                    className="w-14 h-14 rounded-2xl flex items-center justify-center transition-all group-hover:bg-white/[0.11] active:scale-95"
+                    style={{
+                      background: buttons.sideGradient,
+                      border: "1px solid rgba(255,255,255,0.06)",
+                      boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)",
+                    }}
+                  >
+                    {buttons.left.icon}
+                  </div>
+                  <span
+                    style={{
+                      fontSize: 7,
+                      fontWeight: 900,
+                      textTransform: "uppercase",
+                      letterSpacing: "0.2em",
+                      color: buttons.labelColor,
+                      opacity: 0.4
+                    }}
+                  >
+                    {buttons.left.label}
+                  </span>
+                </div>
 
-            {/* Center Button */}
-            <div className="relative group cursor-pointer">
-              <div
-                className="w-20 h-20 rounded-full p-1"
-                style={{
-                  background:
-                    "linear-gradient(135deg, rgba(255,255,255,0.1), transparent)",
-                }}
-              >
-                <div
-                  className="w-full h-full rounded-full flex items-center justify-center"
-                  style={{
-                    background: buttons.centerGradient,
-                    boxShadow:
-                      "0 8px 16px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.07)",
-                  }}
-                >
-                  {buttons.center.icon}
+                {/* Center Button */}
+                <div className="relative group cursor-pointer">
+                  <div
+                    className="w-20 h-20 rounded-full p-1"
+                    style={{
+                      background:
+                        "linear-gradient(135deg, rgba(255,255,255,0.1), transparent)",
+                    }}
+                  >
+                    <div
+                      className="w-full h-full rounded-full flex items-center justify-center"
+                      style={{
+                        background: buttons.centerGradient,
+                        boxShadow:
+                          "0 8px 16px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.07)",
+                      }}
+                    >
+                      {buttons.center.icon}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right Button */}
+                <div className="group flex flex-col items-center gap-1.5 cursor-pointer">
+                  <div
+                    className="w-14 h-14 rounded-2xl flex items-center justify-center transition-all group-hover:bg-white/[0.11] active:scale-95"
+                    style={{
+                      background: buttons.sideGradient,
+                      border: "1px solid rgba(255,255,255,0.06)",
+                      boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)",
+                    }}
+                  >
+                    {buttons.right.icon}
+                  </div>
+                  <span
+                    style={{
+                      fontSize: 7,
+                      fontWeight: 900,
+                      textTransform: "uppercase",
+                      letterSpacing: "0.2em",
+                      color: buttons.labelColor,
+                      opacity: 0.4
+                    }}
+                  >
+                    {buttons.right.label}
+                  </span>
                 </div>
               </div>
-            </div>
-
-            {/* Right Button */}
-            <div className="group flex flex-col items-center gap-2 cursor-pointer">
-              <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center transition-all group-hover:bg-white/[0.11] active:scale-95"
-                style={{
-                  background: buttons.sideGradient,
-                  border: "1px solid rgba(255,255,255,0.06)",
-                  boxShadow: "inset 0 1px 0 rgba(255,255,255,0.06)",
-                }}
-              >
-                {buttons.right.icon}
-              </div>
-              <span
-                style={{
-                  fontSize: 7,
-                  fontWeight: 900,
-                  textTransform: "uppercase",
-                  letterSpacing: "0.2em",
-                  color: buttons.labelColor,
-                }}
-              >
-                {buttons.right.label}
-              </span>
-            </div>
+            )}
           </div>
-        )}
 
-        {/* ─── BOTTOM ENGRAVING ─── */}
-        <div className="mt-auto flex items-center justify-center gap-2 opacity-30">
-          <div
-            className="w-1.5 h-1.5 rounded-full"
-            style={{ background: engravingColor }}
-          />
-          <p
-            style={{
-              fontSize: 8,
-              fontWeight: 900,
-              textTransform: "uppercase",
-              letterSpacing: "0.3em",
-              color: engravingColor,
-              opacity: 0.4,
-            }}
-          >
-            {engravingText}
-          </p>
-          <div
-            className="w-1.5 h-1.5 rounded-full"
-            style={{ background: engravingColor }}
-          />
+          {/* ─── BOTTOM ENGRAVING ─── */}
+          <div className="mt-8 flex items-center justify-center gap-2 opacity-30">
+            <div
+              className="w-1 h-1 rounded-full"
+              style={{ background: engravingColor }}
+            />
+            <p
+              style={{
+                fontSize: 8,
+                fontWeight: 900,
+                textTransform: "uppercase",
+                letterSpacing: "0.3em",
+                color: engravingColor,
+                opacity: 0.4,
+              }}
+            >
+              {engravingText}
+            </p>
+            <div
+              className="w-1 h-1 rounded-full"
+              style={{ background: engravingColor }}
+            />
+          </div>
         </div>
 
         {/* Edge highlight */}
