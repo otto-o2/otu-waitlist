@@ -26,7 +26,7 @@ const GenesisEngine = () => {
           style={{ backgroundImage: "url('https://www.transparenttextures.com/patterns/crystal-layer.png')", mixBlendMode: "screen" }}
         />
       }
-      phosphorGlow="rgba(181,23,158,0.18)"
+      phosphorGlow="rgba(232,121,249,0.25)"
       buttons={{
         left: { icon: <Database className="w-5 h-5 text-[#D4DCE8] opacity-60" />, label: "Index" },
         center: { icon: <Binary className="w-8 h-8 text-[#B5179E]" /> },

@@ -30,7 +30,7 @@ const WardScanner = () => {
           style={{ background: "radial-gradient(circle at 50% 50%, rgba(255,255,255,0.03), transparent)" }}
         />
       }
-      phosphorGlow="rgba(16,185,129,0.06)"
+      phosphorGlow="rgba(52,211,153,0.15)"
       buttons={{
         left: { icon: <Cpu className="w-5 h-5 text-[#D4DCE8] opacity-60" />, label: "Diagnostic" },
         center: { icon: <Activity className="w-8 h-8 text-[#10B981]" /> },

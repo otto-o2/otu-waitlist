@@ -30,7 +30,7 @@ const features = [
     color: "#0A1A14", // Deep Hospital Emerald
     background: <div className="absolute inset-0 bg-[#0A1A14]/40 overflow-hidden">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
-      <div className="absolute inset-0 bg-gradient-to-br from-[#10B981]/10 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[#34D399]/25 to-transparent" />
     </div>,
   },
   {
@@ -77,7 +77,7 @@ const features = [
     Icon: Dna,
     color: "#1A0B2E", // Deep Purple
     background: <div className="absolute inset-0 bg-[#1A0B2E]/60 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-t from-[#E040FB]/10 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#E879F9]/25 to-transparent" />
     </div>,
   },
   {

@@ -57,36 +57,8 @@ export function OtuLeafLoader(props: React.SVGProps<SVGSVGElement> & { size?: nu
   const activeRef = useRef<keyof typeof LEAF_DRAWINGS>("f0");
   const svgRef = useRef<SVGSVGElement>(null);
 
-  useEffect(() => {
-    let raf = 0;
-    const start = performance.now();
-    const fps = 30;
-    const totalFrames = 237;
+  // Animation removed as per user request to make it a still bush and improve performance
 
-    function tick(now: number) {
-      const elapsed = (now - start) / 1000;
-      const frame = Math.floor(elapsed * fps) % totalFrames;
-      const next = leafDrawingAtFrame(frame);
-
-      if (next !== activeRef.current) {
-        activeRef.current = next;
-        const drawing = LEAF_DRAWINGS[next];
-        const svg = svgRef.current;
-        if (svg) {
-          const outerPath = svg.querySelector(".otu-leaf-outer");
-          const darkPath  = svg.querySelector(".otu-leaf-dark");
-          const clipPath  = svg.querySelector(".otu-leaf-clip");
-          if (outerPath) outerPath.setAttribute("d", drawing.outer);
-          if (darkPath)  darkPath.setAttribute("d", drawing.dark);
-          if (clipPath)  clipPath.setAttribute("d", drawing.outer);
-        }
-      }
-      raf = requestAnimationFrame(tick);
-    }
-
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, []);
 
   const initial = LEAF_DRAWINGS.f0;
   let h = Math.round(size * 0.39);
