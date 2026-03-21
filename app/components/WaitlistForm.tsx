@@ -75,7 +75,7 @@ export function WaitlistForm() {
           
           <input
             type="text"
-            placeholder="what's your name?"
+            placeholder="what are you called? (your name)"
             value={name}
             onChange={(e) => setName(e.target.value)}
             disabled={status === "loading"}
@@ -84,7 +84,7 @@ export function WaitlistForm() {
           />
           <input
             type="email"
-            placeholder="your best email..."
+            placeholder="where should we send the invite? (your email)"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             disabled={status === "loading"}
@@ -92,7 +92,7 @@ export function WaitlistForm() {
             className="w-full bg-[#1B261B] border border-white/5 rounded-3xl text-[#F1E8C7] placeholder:text-[#F1E8C7]/30 px-8 py-5 font-sans text-lg md:text-xl outline-none focus:border-[#9CA764]/50 focus:bg-[#0A0F0A] transition-colors lowercase tracking-wide disabled:opacity-50 relative z-10"
           />
           <textarea
-            placeholder="what are your big plant plans? (e.g. stop killing my bonsai, build a jungle...)"
+            placeholder="what's the master plan? (e.g. save my bonsai, build a jungle...)"
             value={intent}
             onChange={(e) => setIntent(e.target.value)}
             disabled={status === "loading"}
@@ -118,7 +118,7 @@ export function WaitlistForm() {
       </form>
 
       {/* Urgency Hook */}
-      <div className="mt-16 flex flex-col items-center gap-8 w-full">
+      <div className="mt-8 flex flex-col items-center gap-8 w-full">
         {/* Centered Pill design for the 'first 500' line */}
         <div className="flex flex-col items-center justify-center gap-3 w-full">
           <div className="px-5 py-2.5 rounded-full border border-[#F1E8C7]/20 bg-[#F1E8C7]/5 text-xs md:text-sm tracking-[0.1em] text-[#F1E8C7] uppercase font-bold text-center">
