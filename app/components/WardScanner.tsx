@@ -27,7 +27,7 @@ const WardScanner = () => {
       screenOverlay={
         <div
           className="absolute inset-0 pointer-events-none opacity-40 z-10"
-          style={{ background: "radial-gradient(circle at 50% 50%, rgba(255,255,255,0.03), transparent)", backdropFilter: "blur(0.5px)" }}
+          style={{ background: "radial-gradient(circle at 50% 50%, rgba(255,255,255,0.03), transparent)" }}
         />
       }
       phosphorGlow="rgba(16,185,129,0.06)"

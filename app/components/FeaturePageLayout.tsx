@@ -36,15 +36,15 @@ export default function FeaturePageLayout({
       className={cn("relative overflow-hidden text-[#F1E8C7] py-12 md:py-16", className)}
       style={{ backgroundColor: color }}
     >
-      {/* Background Decor */}
+      {/* Background Decor (Optimized for performance) */}
       <div className="absolute inset-0 opacity-20 pointer-events-none">
          <div 
-           className="absolute top-0 right-0 w-[400px] h-[400px] md:w-[800px] md:h-[800px] rounded-full blur-[80px] md:blur-[150px]" 
-           style={{ backgroundColor: `${color}30` }}
+           className="absolute top-[-200px] right-[-200px] w-[600px] h-[600px] md:w-[1000px] md:h-[1000px]" 
+           style={{ background: `radial-gradient(circle, ${color}30 0%, transparent 70%)` }}
          />
          <div 
-           className="absolute bottom-0 left-0 w-[300px] h-[300px] md:w-[600px] md:h-[600px] rounded-full blur-[60px] md:blur-[120px]" 
-           style={{ backgroundColor: `${color}20` }}
+           className="absolute bottom-[-150px] left-[-150px] w-[500px] h-[500px] md:w-[800px] md:h-[800px]" 
+           style={{ background: `radial-gradient(circle, ${color}20 0%, transparent 70%)` }}
          />
       </div>
 
@@ -126,7 +126,7 @@ export default function FeaturePageLayout({
                <div className="w-full flex justify-center">
                   {/* Visual Backdrop Glow */}
                   <div
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] md:w-[500px] md:h-[500px] rounded-full blur-[80px] md:blur-[150px] opacity-40 md:animate-pulse pointer-events-none"
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] md:w-[500px] md:h-[500px] rounded-full opacity-40 md:animate-pulse pointer-events-none"
                     style={{ background: `radial-gradient(circle, ${color}80 0%, transparent 65%)` }}
                   />
                   <div className="relative z-10 w-full flex justify-center transition-all duration-1000 transform md:hover:scale-[1.03] md:hover:translate-y-[-8px]">
@@ -142,7 +142,7 @@ export default function FeaturePageLayout({
       {/* Removed huge spacer footer for continuous feel */}
 
       {/* Grain */}
-      <div className="fixed inset-0 pointer-events-none opacity-[0.03] mix-blend-multiply z-[999]" 
+      <div className="hidden md:block fixed inset-0 pointer-events-none opacity-[0.03] mix-blend-multiply z-[999]" 
            style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }} />
     </section>
   );

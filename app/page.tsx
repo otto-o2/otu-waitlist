@@ -246,7 +246,7 @@ export default function Home() {
           <div className="space-y-12 max-w-4xl mx-auto flex flex-col items-center">
             
             <h2 className="text-2xl md:text-4xl lg:text-5xl font-sans font-black tracking-widest text-[#F1E8C7] uppercase leading-relaxed drop-shadow-lg">
-              good things take time. so do good apps.<br/>
+              good things take time.<br/>so do good apps.<br/>
               we are worth the wait.
             </h2>
             

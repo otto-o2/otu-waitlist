@@ -16,6 +16,9 @@ export default function PrivacyPolicy() {
         }}
       />
       
+      {/* Top Left Label */}
+      <div className="absolute top-8 left-8 md:top-8 md:left-12 font-mono text-[10px] tracking-[0.2em] uppercase text-[#0A0F0A]/40 z-20 hidden md:block">002: NEURAL_MAPPING</div>
+
       {/* Main Content Area */}
       <main className="relative z-10 w-full max-w-5xl mx-auto bg-[#FAF8ED] border border-black/5 rounded-t-[40px] md:rounded-t-[60px] shadow-[0_0_60px_rgba(0,0,0,0.05)] flex-1 flex flex-col overflow-hidden">
         
@@ -41,7 +44,7 @@ export default function PrivacyPolicy() {
 
           <div className="prose prose-stone max-w-none text-[#0A0F0A]/80 font-sans text-lg md:text-xl leading-relaxed space-y-8">
             <h3 className="text-2xl font-bold text-[#0A0F0A] tracking-wide lowercase pt-4 flex gap-4">
-              <span className="font-mono text-[#9CA764] tracking-widest">I.</span> 
+              <span className="font-mono text-[#9CA764] tracking-widest uppercase">I.</span> 
               <span>hey. before you go any further.</span>
             </h3>
             <p>
@@ -49,7 +52,7 @@ export default function PrivacyPolicy() {
             </p>
 
             <h3 className="text-2xl font-bold text-[#0A0F0A] tracking-wide lowercase pt-8 flex gap-4">
-              <span className="font-mono text-[#9CA764] tracking-widest">II.</span> 
+              <span className="font-mono text-[#9CA764] tracking-widest uppercase">II.</span> 
               <span>who we are</span>
             </h3>
             <p>
@@ -60,28 +63,28 @@ export default function PrivacyPolicy() {
             </p>
 
             <h3 className="text-2xl font-bold text-[#0A0F0A] tracking-wide lowercase pt-8 flex gap-4">
-              <span className="font-mono text-[#9CA764] tracking-widest">III.</span> 
+              <span className="font-mono text-[#9CA764] tracking-widest uppercase">III.</span> 
               <span>what we collect</span>
             </h3>
             <p>Right now, just three things:</p>
             <ul className="list-none space-y-4 pl-0">
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌿</span>
+                <span className="text-[#9CA764] mt-1">🌳</span>
                 <span>Your name, so we know who showed up early.</span>
               </li>
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌿</span>
+                <span className="text-[#9CA764] mt-1">🌳</span>
                 <span>Your email address, so we can find you on launch day.</span>
               </li>
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌿</span>
+                <span className="text-[#9CA764] mt-1">🌳</span>
                 <span>Your response to our "Why do you want a plant app?" question, so we can build something that actually works for you.</span>
               </li>
             </ul>
             <p>That’s it. Nothing sneaky. No location tracking, no device fingerprinting, no cookies chasing you around the internet. Not yet, and not ever without telling you first.</p>
 
             <h3 className="text-2xl font-bold text-[#0A0F0A] tracking-wide lowercase pt-8 flex gap-4">
-              <span className="font-mono text-[#9CA764] tracking-widest">IV.</span> 
+              <span className="font-mono text-[#9CA764] tracking-widest uppercase">IV.</span> 
               <span>why we collect it</span>
             </h3>
             <ul className="list-none space-y-4 pl-0">
@@ -101,24 +104,24 @@ export default function PrivacyPolicy() {
             <p>We collect this data based on your explicit consent, meaning you gave it to us willingly by filling in the form and checking the consent box. You can take it back at any time.</p>
 
             <h3 className="text-2xl font-bold text-[#0A0F0A] tracking-wide lowercase pt-8 flex gap-4">
-              <span className="font-mono text-[#9CA764] tracking-widest">V.</span> 
+              <span className="font-mono text-[#9CA764] tracking-widest uppercase">V.</span> 
               <span>who sees your data</span>
             </h3>
             <p>Your data is only accessible to:</p>
             <ul className="list-none space-y-4 pl-0">
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌿</span>
+                <span className="text-[#9CA764] mt-1">🌳</span>
                 <span>Us. The Otu team. That’s a very small circle.</span>
               </li>
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌿</span>
+                <span className="text-[#9CA764] mt-1">🌳</span>
                 <span>Loops.so, our email platform and data processor. They handle waitlist emails on our behalf.</span>
               </li>
             </ul>
             <p>We do not share your data with partners, vendors, investors, or anyone else in a way that identifies you personally. If we ever need to share aggregated, anonymised insights (like "70% of our waitlist wants a watering reminder"), no one will ever know it was you.</p>
 
             <h3 className="text-2xl font-bold text-[#0A0F0A] tracking-wide lowercase pt-8 flex gap-4">
-              <span className="font-mono text-[#9CA764] tracking-widest">VI.</span> 
+              <span className="font-mono text-[#9CA764] tracking-widest uppercase">VI.</span> 
               <span>what we don’t do with it</span>
             </h3>
             <ul className="list-none space-y-4 pl-0">
@@ -149,31 +152,31 @@ export default function PrivacyPolicy() {
             </ul>
 
             <h3 className="text-2xl font-bold text-[#0A0F0A] tracking-wide lowercase pt-8 flex gap-4">
-              <span className="font-mono text-[#9CA764] tracking-widest">VII.</span> 
+              <span className="font-mono text-[#9CA764] tracking-widest uppercase">VII.</span> 
               <span>how we store it</span>
             </h3>
             <p>Your data is stored securely via Loops.so with industry standard protections. Our waitlist form is served over HTTPS (thank you, Vercel), so your information is encrypted in transit.</p>
             <p>We take reasonable technical and organisational measures to keep your data safe and out of the wrong hands.</p>
 
             <h3 className="text-2xl font-bold text-[#0A0F0A] tracking-wide lowercase pt-8 flex gap-4">
-              <span className="font-mono text-[#9CA764] tracking-widest">VIII.</span> 
+              <span className="font-mono text-[#9CA764] tracking-widest uppercase">VIII.</span> 
               <span>how long we keep it</span>
             </h3>
             <p>We will hold onto your data until:</p>
             <ul className="list-none space-y-4 pl-0">
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌿</span>
+                <span className="text-[#9CA764] mt-1">🌳</span>
                 <span>The app launches and your early bird credits have been delivered, or</span>
               </li>
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌿</span>
+                <span className="text-[#9CA764] mt-1">🌳</span>
                 <span>You unsubscribe or ask us to delete it, whichever comes first.</span>
               </li>
             </ul>
             <p>After that, we will only keep what you have given us explicit permission to keep. Anything else gets deleted.</p>
 
             <h3 className="text-2xl font-bold text-[#0A0F0A] tracking-wide lowercase pt-8 flex gap-4">
-              <span className="font-mono text-[#9CA764] tracking-widest">IX.</span> 
+              <span className="font-mono text-[#9CA764] tracking-widest uppercase">IX.</span> 
               <span>your rights</span>
             </h3>
             <p>You are in control. At any time, you can:</p>
@@ -206,46 +209,46 @@ export default function PrivacyPolicy() {
             <p>To exercise any of these, just reach out to us and we will sort it within 30 days. If it involves removing you from Loops.so, we will handle that too.</p>
 
             <h3 className="text-2xl font-bold text-[#0A0F0A] tracking-wide lowercase pt-8 flex gap-4">
-              <span className="font-mono text-[#9CA764] tracking-widest">X.</span> 
+              <span className="font-mono text-[#9CA764] tracking-widest uppercase">X.</span> 
               <span>a note on age</span>
             </h3>
             <p>Otu is not intended for anyone under the age of 13. If you are under 13, go water a plant instead of signing up. We do not knowingly collect personal data from children.</p>
 
             <h3 className="text-2xl font-bold text-[#0A0F0A] tracking-wide lowercase pt-8 flex gap-4">
-              <span className="font-mono text-[#9CA764] tracking-widest">XI.</span> 
+              <span className="font-mono text-[#9CA764] tracking-widest uppercase">XI.</span> 
               <span>consent on the form</span>
             </h3>
             <p>Our waitlist form includes an unchecked consent checkbox. By checking it, you confirm that:</p>
             <ul className="list-none space-y-4 pl-0">
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌿</span>
+                <span className="text-[#9CA764] mt-1">🌳</span>
                 <span>You have read and understood this privacy policy.</span>
               </li>
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌿</span>
+                <span className="text-[#9CA764] mt-1">🌳</span>
                 <span>You consent to your data being collected and processed as described above.</span>
               </li>
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌿</span>
+                <span className="text-[#9CA764] mt-1">🌳</span>
                 <span>You acknowledge that your data may be transferred to servers outside your region via Loops.so.</span>
               </li>
             </ul>
             <p>We will never pre check that box for you. Consent has to be yours.</p>
 
             <h3 className="text-2xl font-bold text-[#0A0F0A] tracking-wide lowercase pt-8 flex gap-4">
-              <span className="font-mono text-[#9CA764] tracking-widest">XII.</span> 
+              <span className="font-mono text-[#9CA764] tracking-widest uppercase">XII.</span> 
               <span>changes to this policy</span>
             </h3>
             <p>If anything changes about how we handle your data, we will update this page and let you know. We will not just quietly swap things out and hope you do not notice. That is not very Otu of us.</p>
 
             <h3 className="text-2xl font-bold text-[#0A0F0A] tracking-wide lowercase pt-8 flex gap-4">
-              <span className="font-mono text-[#9CA764] tracking-widest">XIII.</span> 
+              <span className="font-mono text-[#9CA764] tracking-widest uppercase">XIII.</span> 
               <span>the legal bit we have to say</span>
             </h3>
             <p>This policy is compliant with applicable data protection laws. By submitting the waitlist form and checking the consent box, you confirm that you have read and understood this policy and consent to your data being processed as described above.</p>
 
             <h3 className="text-2xl font-bold text-[#0A0F0A] tracking-wide lowercase pt-8 flex gap-4">
-              <span className="font-mono text-[#9CA764] tracking-widest">XIV.</span> 
+              <span className="font-mono text-[#9CA764] tracking-widest uppercase">XIV.</span> 
               <span>talk to us</span>
             </h3>
             <p>We're real people who talk to their plants (and now build apps for them). Happy you're here.</p>

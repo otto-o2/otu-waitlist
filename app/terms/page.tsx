@@ -18,6 +18,9 @@ export default function TermsOfService() {
       
       <div className="fixed inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20 pointer-events-none" />
 
+      {/* Top Left Label */}
+      <div className="absolute top-8 left-8 md:top-8 md:left-12 font-mono text-[10px] tracking-[0.2em] uppercase text-[#9CA764]/60 z-20 hidden md:block">002: NEURAL_MAPPING</div>
+
       {/* Main Content Area */}
       <main className="relative z-10 w-full max-w-5xl mx-auto bg-[#111A11] border border-[#9CA764]/20 rounded-t-[40px] md:rounded-t-[60px] shadow-[0_0_60px_rgba(0,0,0,0.5)] flex-1 flex flex-col overflow-hidden">
         
@@ -43,7 +46,7 @@ export default function TermsOfService() {
 
           <div className="prose prose-invert max-w-none text-[#F1E8C7]/80 font-sans text-lg md:text-xl leading-relaxed space-y-8">
             <h3 className="text-2xl font-bold text-[#F1E8C7] tracking-wide lowercase pt-4 flex gap-4">
-              <span className="font-mono text-[#9CA764] tracking-widest">I.</span> 
+              <span className="font-mono text-[#9CA764] tracking-widest uppercase">I.</span> 
               <span>hi. read this before we get started.</span>
             </h3>
             <p>
@@ -54,7 +57,7 @@ export default function TermsOfService() {
             </p>
 
             <h3 className="text-2xl font-bold text-[#F1E8C7] tracking-wide lowercase pt-8 flex gap-4">
-              <span className="font-mono text-[#9CA764] tracking-widest">II.</span> 
+              <span className="font-mono text-[#9CA764] tracking-widest uppercase">II.</span> 
               <span>what otu is</span>
             </h3>
             <p>
@@ -65,7 +68,7 @@ export default function TermsOfService() {
             </p>
 
             <h3 className="text-2xl font-bold text-[#F1E8C7] tracking-wide lowercase pt-8 flex gap-4">
-              <span className="font-mono text-[#9CA764] tracking-widest">III.</span> 
+              <span className="font-mono text-[#9CA764] tracking-widest uppercase">III.</span> 
               <span>what otu is not</span>
             </h3>
             <p>Let us be clear about a few things:</p>
@@ -88,32 +91,32 @@ export default function TermsOfService() {
             </p>
 
             <h3 className="text-2xl font-bold text-[#F1E8C7] tracking-wide lowercase pt-8 flex gap-4">
-              <span className="font-mono text-[#9CA764] tracking-widest">IV.</span> 
+              <span className="font-mono text-[#9CA764] tracking-widest uppercase">IV.</span> 
               <span>your account</span>
             </h3>
             <p>When the app launches, you may need to create an account to access certain features. If and when that happens:</p>
             <ul className="list-none space-y-4 pl-0">
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌿</span>
+                <span className="text-[#9CA764] mt-1">🌳</span>
                 <span>You are responsible for keeping your login details safe.</span>
               </li>
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌿</span>
+                <span className="text-[#9CA764] mt-1">🌳</span>
                 <span>You are responsible for everything that happens under your account.</span>
               </li>
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌿</span>
+                <span className="text-[#9CA764] mt-1">🌳</span>
                 <span>You agree to provide accurate information when signing up.</span>
               </li>
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌿</span>
+                <span className="text-[#9CA764] mt-1">🌳</span>
                 <span>You must be at least 13 years old to use Otu. If you are under 13, go water a plant instead.</span>
               </li>
             </ul>
             <p>If you suspect someone else is using your account, let us know immediately and we will help you sort it out.</p>
 
             <h3 className="text-2xl font-bold text-[#F1E8C7] tracking-wide lowercase pt-8 flex gap-4">
-              <span className="font-mono text-[#9CA764] tracking-widest">V.</span> 
+              <span className="font-mono text-[#9CA764] tracking-widest uppercase">V.</span> 
               <span>how to use otu (and how not to)</span>
             </h3>
             <p>We built Otu for people who love plants. Please keep it that way. When using Otu, you agree not to:</p>
@@ -146,46 +149,46 @@ export default function TermsOfService() {
             <p>Basically, do not be the reason we have to write more rules. Be kind, be curious, and be good to your plants.</p>
 
             <h3 className="text-2xl font-bold text-[#F1E8C7] tracking-wide lowercase pt-8 flex gap-4">
-              <span className="font-mono text-[#9CA764] tracking-widest">VI.</span> 
+              <span className="font-mono text-[#9CA764] tracking-widest uppercase">VI.</span> 
               <span>our stuff (intellectual property)</span>
             </h3>
             <p>Everything that makes Otu what it is belongs to us. That includes, but is not limited to:</p>
             <ul className="list-none space-y-4 pl-0">
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌿</span>
+                <span className="text-[#9CA764] mt-1">🌳</span>
                 <span>The Otu name, logo, and branding.</span>
               </li>
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌿</span>
+                <span className="text-[#9CA764] mt-1">🌳</span>
                 <span>The app design, interface, and user experience.</span>
               </li>
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌿</span>
+                <span className="text-[#9CA764] mt-1">🌳</span>
                 <span>Our plant database, care guides, and written content.</span>
               </li>
               <li className="flex items-start gap-4">
-                <span className="text-[#9CA764] mt-1">🌿</span>
+                <span className="text-[#9CA764] mt-1">🌳</span>
                 <span>The underlying code, algorithms, and AI models.</span>
               </li>
             </ul>
             <p>You are welcome to use Otu as intended, but you may not copy, modify, distribute, or create derivative works from any part of it without our written permission.</p>
 
             <h3 className="text-2xl font-bold text-[#F1E8C7] tracking-wide lowercase pt-8 flex gap-4">
-              <span className="font-mono text-[#9CA764] tracking-widest">VII.</span> 
+              <span className="font-mono text-[#9CA764] tracking-widest uppercase">VII.</span> 
               <span>your stuff (user content)</span>
             </h3>
             <p>When you submit content to Otu, like your waitlist response or, in the future, photos, notes, or plant names, you keep ownership of that content. It is still yours.</p>
             <p>However, by submitting it, you give us a non exclusive, royalty free licence to use it for the purpose of running and improving Otu. For example, if you submit a photo for plant identification, we need permission to process that image. We will not use your content for anything unrelated without asking you first.</p>
 
             <h3 className="text-2xl font-bold text-[#F1E8C7] tracking-wide lowercase pt-8 flex gap-4">
-              <span className="font-mono text-[#9CA764] tracking-widest">VIII.</span> 
+              <span className="font-mono text-[#9CA764] tracking-widest uppercase">VIII.</span> 
               <span>the waitlist</span>
             </h3>
             <p>Signing up for the Otu waitlist does not guarantee anything specific. It means you will be among the first to know when we launch, and you may receive early bird credits or perks as a thank you.</p>
             <p>We reserve the right to change, delay, or modify the launch timeline, features, or any promotional offers associated with the waitlist. We will do our best to keep you informed, but building an app takes time and things can shift.</p>
 
             <h3 className="text-2xl font-bold text-[#F1E8C7] tracking-wide lowercase pt-8 flex gap-4">
-              <span className="font-mono text-[#9CA764] tracking-widest">IX.</span> 
+              <span className="font-mono text-[#9CA764] tracking-widest uppercase">IX.</span> 
               <span>the fine print (disclaimers)</span>
             </h3>
             <p>Otu is provided on an "as is" and "as available" basis. We make no warranties, express or implied, about the accuracy, reliability, or availability of the app or its content.</p>
@@ -207,7 +210,7 @@ export default function TermsOfService() {
             <p>We are building something we believe in, and we will always do our best. But perfection is not something we can promise. Plants are unpredictable. So is software.</p>
 
             <h3 className="text-2xl font-bold text-[#F1E8C7] tracking-wide lowercase pt-8 flex gap-4">
-              <span className="font-mono text-[#9CA764] tracking-widest">X.</span> 
+              <span className="font-mono text-[#9CA764] tracking-widest uppercase">X.</span> 
               <span>limitation of liability</span>
             </h3>
             <p>To the fullest extent permitted by law, Otu and its team shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the app.</p>
@@ -215,28 +218,28 @@ export default function TermsOfService() {
             <p>In other words, if your cactus dies, we are sorry, but we cannot be held legally responsible. We are rooting for your plants, truly, but liability has limits.</p>
 
             <h3 className="text-2xl font-bold text-[#F1E8C7] tracking-wide lowercase pt-8 flex gap-4">
-              <span className="font-mono text-[#9CA764] tracking-widest">XI.</span> 
+              <span className="font-mono text-[#9CA764] tracking-widest uppercase">XI.</span> 
               <span>ending things</span>
             </h3>
             <p>You can stop using Otu at any time. If you want to be removed from the waitlist or have your data deleted, just reach out to us.</p>
             <p>We also reserve the right to suspend or terminate your access if you violate these terms, misuse the platform, or do anything that could harm Otu or its users. We would rather not, but we will if we have to.</p>
 
             <h3 className="text-2xl font-bold text-[#F1E8C7] tracking-wide lowercase pt-8 flex gap-4">
-              <span className="font-mono text-[#9CA764] tracking-widest">XII.</span> 
+              <span className="font-mono text-[#9CA764] tracking-widest uppercase">XII.</span> 
               <span>changes to these terms</span>
             </h3>
             <p>We may update these terms from time to time as the app evolves. If we make significant changes, we will let you know. We will not just quietly rewrite the rules and hope no one notices. That is not very Otu of us.</p>
             <p>Continued use of Otu after changes are posted means you accept the updated terms.</p>
 
             <h3 className="text-2xl font-bold text-[#F1E8C7] tracking-wide lowercase pt-8 flex gap-4">
-              <span className="font-mono text-[#9CA764] tracking-widest">XIII.</span> 
+              <span className="font-mono text-[#9CA764] tracking-widest uppercase">XIII.</span> 
               <span>governing law</span>
             </h3>
             <p>These terms are governed by and interpreted in accordance with applicable laws. Any disputes will be resolved through the appropriate legal channels in the jurisdiction where we operate.</p>
             <p>We hope it never comes to that. We would much rather talk it out over green tea.</p>
 
             <h3 className="text-2xl font-bold text-[#F1E8C7] tracking-wide lowercase pt-8 flex gap-4">
-              <span className="font-mono text-[#9CA764] tracking-widest">XIV.</span> 
+              <span className="font-mono text-[#9CA764] tracking-widest uppercase">XIV.</span> 
               <span>talk to us</span>
             </h3>
             <p>If you have questions about these terms, need clarification on anything, or just want to say hello, you can reach us through our website at meetotu.com.</p>
