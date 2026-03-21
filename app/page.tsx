@@ -159,9 +159,6 @@ export default function Home() {
           >
             haus der<br />grünen
           </h1>
-          <p className="font-sans font-bold text-[#1B261B]/80 tracking-widest text-[10px] md:text-sm uppercase mt-4 md:mt-8">
-            you kill plants. otu fixes that.
-          </p>
         </div>
 
         {/* Scroll Indicator: Minimalist Vertical Line */}
@@ -172,53 +169,58 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PAGE 1: THE ANTICIPATION */}
-      <section className="relative z-20 w-full h-screen flex flex-col items-center justify-center px-6 md:px-12 lg:px-24 bg-[#0A0F0A] overflow-hidden">
-        <div className="absolute inset-0 grid-bg opacity-[0.15] pointer-events-none" />
-        <div className="absolute top-8 right-12 tech-label hidden md:block">001: ANTICIPATE_MODE</div>
-        <div className="absolute bottom-12 left-12 tech-label hidden md:block">SYSTEM: ACTIVE</div>
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gradient-to-b from-[#9CA764]/5 to-transparent pointer-events-none" />
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-8 sm:gap-16 md:gap-24 lg:gap-32 relative z-10 w-full">
-          <Clock />
-          <h2 className="text-4xl md:text-5xl lg:text-7xl font-sans text-[#F1E8C7] font-bold leading-[1.1] max-w-2xl tracking-tight text-center md:text-left drop-shadow-2xl">
-            they have only <br className="hidden md:block" /> been waiting for this <br className="hidden md:block" /> moment to arrive.
-          </h2>
-        </div>
-      </section>
-
-      {/* PAGE 1.5: THE WAITLIST */}
-      <section className="relative z-20 w-full min-h-screen py-32 flex flex-col items-center justify-center px-6 md:px-12 lg:px-24 bg-[#0A0F0A] overflow-hidden">
-        {/* Architectural Grid Overlay (Dark Theme) */}
-        <div className="absolute inset-0 opacity-[0.05]" 
-          style={{ backgroundImage: "linear-gradient(#9CA764 1px, transparent 1px), linear-gradient(90deg, #9CA764 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
-        <div className="absolute inset-0 opacity-[0.1]" 
-          style={{ backgroundImage: "linear-gradient(#9CA764 1px, transparent 1px), linear-gradient(90deg, #9CA764 1px, transparent 1px)", backgroundSize: "200px 200px" }} />
+      {/* PAGE 1: THE ANTICIPATION & WAITLIST */}
+      <section className="relative z-20 w-full flex flex-col px-6 md:px-12 lg:px-24 bg-[#0A0F0A] overflow-hidden">
+        {/* Cute Math Grid Notebook Overlay (Dark Theme) */}
+        <div className="absolute inset-0 opacity-[0.15] pointer-events-none" 
+          style={{ backgroundImage: "linear-gradient(#9CA764 1px, transparent 1px), linear-gradient(90deg, #9CA764 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
         
-        <div className="absolute top-8 left-12 tech-label hidden md:block">001.5: INTAKE_PROTOCOL</div>
-        <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center gap-12 mt-12 md:mt-0">
-          <WaitlistForm />
+        {/* --- CLOCK SEGMENT --- */}
+        <div className="relative min-h-screen flex flex-col items-center justify-center py-24">
+          <div className="absolute top-8 right-12 font-mono text-[10px] tracking-[0.2em] uppercase text-[#9CA764]/70 hidden md:block">001: ANTICIPATE_MODE</div>
+          <div className="absolute bottom-12 left-12 font-mono text-[10px] tracking-[0.2em] uppercase text-[#9CA764]/70 hidden md:block">SYSTEM: ACTIVE</div>
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gradient-to-b from-[#9CA764]/10 to-transparent pointer-events-none" />
+          
+          <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-8 sm:gap-16 md:gap-24 lg:gap-32 relative z-10 w-full">
+            <Clock />
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-sans text-[#F1E8C7] font-bold leading-[1.1] max-w-2xl tracking-tight text-center md:text-left drop-shadow-2xl">
+              they have only <br className="hidden md:block" /> been waiting for this <br className="hidden md:block" /> moment to arrive.
+            </h2>
+          </div>
+        </div>
+
+        {/* --- WAITLIST SEGMENT --- */}
+        <div className="relative min-h-screen flex flex-col items-center justify-center py-24 pb-40">
+          <div className="absolute top-8 left-12 font-mono text-[10px] tracking-[0.2em] uppercase text-[#9CA764]/70 hidden md:block">001.5: INTAKE_PROTOCOL</div>
+          <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center gap-12 mt-12 md:mt-0">
+            <div className="space-y-6 text-center">
+               <h2 className="text-5xl md:text-7xl lg:text-8xl font-sans font-black tracking-tight text-[#F1E8C7] uppercase leading-[0.9] drop-shadow-lg">
+                 you kill plants.<br/>
+                 <span className="text-[#9CA764]">otu fixes that.</span>
+               </h2>
+               <div className="w-12 h-px bg-[#9CA764]/50 mx-auto" />
+            </div>
+            <WaitlistForm />
+          </div>
         </div>
       </section>
 
       {/* PAGE 3: THE WORK (EVERYTHING WE DO) */}
-      <section id="features" className="relative z-20 px-6 py-40 md:px-12 lg:px-24 bg-[#F1E8C7]">
-        {/* Architectural Grid Overlay (Cream Theme) */}
-        <div className="absolute inset-0 opacity-[0.05]" 
-          style={{ backgroundImage: "linear-gradient(#1B261B 1px, transparent 1px), linear-gradient(90deg, #1B261B 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
-        <div className="absolute inset-0 opacity-[0.08]" 
-          style={{ backgroundImage: "linear-gradient(#1B261B 1px, transparent 1px), linear-gradient(90deg, #1B261B 1px, transparent 1px)", backgroundSize: "200px 200px" }} />
+      <section id="features" className="relative z-20 px-6 py-40 md:px-12 lg:px-24 bg-[#F1E8C7] overflow-hidden">
+        {/* Cute Math Grid Notebook Overlay (Cream Theme) */}
+        <div className="absolute inset-0 opacity-[0.12] pointer-events-none" 
+          style={{ backgroundImage: "linear-gradient(#1B261B 1px, transparent 1px), linear-gradient(90deg, #1B261B 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="mb-24 flex flex-col items-center gap-8 group">
              <div className="w-px h-16 bg-[#1B261B]/20 overflow-hidden relative">
                 <div className="absolute top-0 left-0 w-full h-full bg-[#1B261B]/60 animate-scroll-line" />
              </div>
-             <div className="text-center space-y-4">
-               <h2 className="text-3xl md:text-5xl font-sans font-black tracking-[0.2em] text-[#1B261B] uppercase drop-shadow-sm">
-                 EVERYTHING WE DO
+             <div className="text-center space-y-6">
+               <h2 className="text-2xl md:text-5xl lg:text-6xl font-mono font-bold tracking-[0.2em] text-[#1B261B]/90 uppercase">
+                 EVERYTHING_WE_DO
                </h2>
                <div className="w-16 h-px bg-[#1B261B]/30 mx-auto" />
-               <p className="text-[12px] md:text-sm uppercase tracking-[0.5em] font-bold text-[#1B261B]/70 ml-[0.5em]">otu is for plants.</p>
              </div>
           </div>
 
