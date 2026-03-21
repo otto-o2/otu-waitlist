@@ -232,52 +232,49 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PAGE 2: THE INTELLIGENCE */}
-      <section className="relative z-20 w-full h-screen flex flex-col items-center justify-center px-6 md:px-12 lg:px-24 bg-[#0A0F0A] overflow-hidden">
-        {/* Subtle grid on intelligence page */}
-        <div className="absolute inset-0 opacity-[0.2] pointer-events-none" 
+      {/* SEAMLESS INTELLIGENCE + FOOTER SECTION */}
+      <section className="relative z-20 w-full bg-[#1B261B] text-[#F1E8C7] overflow-hidden">
+        {/* Shared subtle math grid */}
+        <div className="absolute inset-0 opacity-[0.08] pointer-events-none" 
           style={{ backgroundImage: "linear-gradient(#9CA764 1px, transparent 1px), linear-gradient(90deg, #9CA764 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
-          
-        <div className="absolute top-8 left-12 tech-label hidden md:block">002: NEURAL_MAPPING</div>
-        <div className="max-w-7xl mx-auto flex flex-col items-center gap-12 text-center relative z-10 w-full">
-          <div className="space-y-8 max-w-4xl mx-auto">
-            <p className="text-[12px] md:text-sm font-mono font-bold tracking-[0.5em] md:tracking-[0.8em] text-[#9CA764] uppercase ml-[0.8em]">
-              otu plant intelligence
-            </p>
-            <div className="w-16 h-px bg-[#9CA764]/30 mx-auto" />
-            <h2 className="text-2xl md:text-4xl lg:text-5xl font-sans font-black tracking-widest text-[#F1E8C7] uppercase leading-relaxed drop-shadow-lg">
-              good things take time. so do good apps.<br/>
-              we are worth the wait.
-            </h2>
-          </div>
-        </div>
-      </section>
 
-
-      {/* Footer / Minimal Stack */}
-      <section className="px-6 py-20 md:px-12 lg:px-24 bg-[#1B261B] text-[#F1E8C7] relative z-20 overflow-hidden">
-        {/* Subtle grid on footer */}
-        <div className="absolute inset-0 opacity-[0.05] pointer-events-none" 
-          style={{ backgroundImage: "linear-gradient(#F1E8C7 1px, transparent 1px), linear-gradient(90deg, #F1E8C7 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
-          
-        <div className="max-w-7xl mx-auto flex flex-col items-center justify-center text-center relative z-10 gap-10">
-          
-          <div className="flex flex-col items-center gap-6 font-mono text-[10px] md:text-xs uppercase tracking-[0.15em] font-medium text-white/50">
-            <p className="text-[#F1E8C7] font-bold text-xs md:text-sm tracking-[0.3em]">
-              © {new Date().getFullYear()} otu plant intelligence (the first version)
-            </p>
-            <div className="flex gap-6 md:gap-12 opacity-60">
-              <span className="hover:text-[#F1E8C7] transition-colors cursor-pointer">Privacy Policy</span>
-              <span className="hover:text-[#F1E8C7] transition-colors cursor-pointer">Terms of Service</span>
+        {/* PAGE 2: THE INTELLIGENCE */}
+        <div className="w-full h-screen flex flex-col items-center justify-center px-6 md:px-12 lg:px-24 relative">
+          <div className="absolute top-8 left-12 tech-label hidden md:block">002: NEURAL_MAPPING</div>
+          <div className="max-w-7xl mx-auto flex flex-col items-center gap-12 text-center relative z-10 w-full">
+            <div className="space-y-8 max-w-4xl mx-auto">
+              <p className="text-[12px] md:text-sm font-mono font-bold tracking-[0.5em] md:tracking-[0.8em] text-[#9CA764] uppercase ml-[0.8em]">
+                otu plant intelligence
+              </p>
+              <div className="w-16 h-px bg-[#9CA764]/30 mx-auto" />
+              <h2 className="text-2xl md:text-4xl lg:text-5xl font-sans font-black tracking-widest text-[#F1E8C7] uppercase leading-relaxed drop-shadow-lg">
+                good things take time. so do good apps.<br/>
+                we are worth the wait.
+              </h2>
             </div>
           </div>
-          
-          <button 
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="mt-8 px-8 py-3 rounded-full border border-white/10 hover:bg-white/5 transition-colors text-[10px] uppercase tracking-widest font-bold"
-          >
-            Back to Top
-          </button>
+        </div>
+
+        {/* Footer / Minimal Stack */}
+        <div className="px-6 pb-20 pt-10 md:px-12 lg:px-24">
+          <div className="max-w-7xl mx-auto flex flex-col items-center justify-center text-center relative z-10 gap-10">
+            <div className="flex flex-col items-center gap-6 font-mono text-[10px] md:text-xs uppercase tracking-[0.15em] font-medium text-white/50">
+              <p className="text-[#F1E8C7] font-bold text-xs md:text-sm tracking-[0.3em]">
+                © {new Date().getFullYear()} otu plant intelligence (the first version)
+              </p>
+              <div className="flex gap-6 md:gap-12 opacity-60">
+                <span className="hover:text-[#F1E8C7] transition-colors cursor-pointer">Privacy Policy</span>
+                <span className="hover:text-[#F1E8C7] transition-colors cursor-pointer">Terms of Service</span>
+              </div>
+            </div>
+            
+            <button 
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="mt-8 px-8 py-3 rounded-full border border-white/10 hover:bg-white/5 transition-colors text-[10px] uppercase tracking-widest font-bold"
+            >
+              Back to Top
+            </button>
+          </div>
         </div>
       </section>
 

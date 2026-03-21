@@ -6,6 +6,8 @@ import { cn } from "@/lib/utils";
 
 export function WaitlistForm() {
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [intent, setIntent] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -24,7 +26,7 @@ export function WaitlistForm() {
       const res = await fetch("/api/waitlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, name, intent }),
       });
 
       if (!res.ok) {
@@ -33,6 +35,8 @@ export function WaitlistForm() {
 
       setStatus("success");
       setEmail("");
+      setName("");
+      setIntent("");
     } catch (error) {
       console.error(error);
       setStatus("error");
@@ -64,28 +68,50 @@ export function WaitlistForm() {
       </p>
 
       {/* The Form */}
-      <form onSubmit={handleSubmit} className="relative w-full max-w-2xl mx-auto group">
-        <div className="absolute -inset-0.5 bg-gradient-to-r from-[#9CA764]/20 to-[#9CA764]/5 rounded-full blur opacity-50 group-hover:opacity-100 transition duration-500"></div>
-        <div className="relative flex items-center p-2 rounded-full bg-[#050A05] border border-white/10 ring-1 ring-white/5 shadow-2xl overflow-hidden">
+      <form onSubmit={handleSubmit} className="relative w-full max-w-2xl mx-auto flex flex-col gap-4">
+        <div className="flex flex-col gap-4 p-6 md:p-8 rounded-[40px] bg-[#111A11] border border-[#9CA764]/20 shadow-2xl relative overflow-hidden">
+          {/* Subtle gradient overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#9CA764]/5 to-transparent pointer-events-none" />
+          
+          <input
+            type="text"
+            placeholder="what's your name?"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            disabled={status === "loading"}
+            required
+            className="w-full bg-[#1B261B] border border-white/5 rounded-3xl text-[#F1E8C7] placeholder:text-[#F1E8C7]/30 px-8 py-5 font-sans text-lg md:text-xl outline-none focus:border-[#9CA764]/50 focus:bg-[#0A0F0A] transition-colors lowercase tracking-wide disabled:opacity-50 relative z-10"
+          />
           <input
             type="email"
-            placeholder="ENTER YOUR EMAIL"
+            placeholder="your best email..."
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             disabled={status === "loading"}
-            className="w-full bg-transparent border-none text-[#F1E8C7] placeholder:text-[#F1E8C7]/30 px-10 py-6 font-sans text-xl md:text-2xl outline-none tracking-widest lowercase disabled:opacity-50"
+            required
+            className="w-full bg-[#1B261B] border border-white/5 rounded-3xl text-[#F1E8C7] placeholder:text-[#F1E8C7]/30 px-8 py-5 font-sans text-lg md:text-xl outline-none focus:border-[#9CA764]/50 focus:bg-[#0A0F0A] transition-colors lowercase tracking-wide disabled:opacity-50 relative z-10"
           />
+          <textarea
+            placeholder="what are your big plant plans? (e.g. stop killing my bonsai, build a jungle...)"
+            value={intent}
+            onChange={(e) => setIntent(e.target.value)}
+            disabled={status === "loading"}
+            required
+            rows={3}
+            className="w-full bg-[#1B261B] border border-white/5 rounded-3xl text-[#F1E8C7] placeholder:text-[#F1E8C7]/40 px-8 py-5 font-sans text-base md:text-lg outline-none focus:border-[#9CA764]/50 focus:bg-[#0A0F0A] transition-colors lowercase tracking-wide disabled:opacity-50 resize-none relative z-10"
+          />
+          
           <button
             type="submit"
-            disabled={status === "loading" || !email}
-            className="flex-shrink-0 bg-[#F1E8C7] hover:bg-white text-[#0A0F0A] rounded-full px-10 py-6 font-black text-xl md:text-2xl transition-all flex items-center gap-3 group/btn disabled:opacity-50 disabled:cursor-not-allowed lowercase"
+            disabled={status === "loading" || !email || !name || !intent}
+            className="mt-4 w-full bg-[#F1E8C7] hover:bg-white text-[#0A0F0A] rounded-3xl px-8 py-5 font-black text-xl md:text-2xl transition-all flex items-center justify-center gap-3 group/btn disabled:opacity-50 disabled:cursor-not-allowed lowercase relative z-10"
           >
-            {status === "loading" ? "submitting..." : "join"}
+            {status === "loading" ? "submitting..." : "join the waitlist"}
             {!status && <ArrowRight className="w-6 h-6 ml-1 group-hover/btn:translate-x-1 transition-transform" /> }
           </button>
         </div>
         {errorMessage && (
-          <p className="absolute -bottom-10 left-0 w-full text-center text-red-500/80 text-sm tracking-widest lowercase">
+          <p className="text-center text-red-500/80 text-sm tracking-widest lowercase mt-2">
             {errorMessage}
           </p>
         )}
