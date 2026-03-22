@@ -29,11 +29,11 @@ export function WaitlistForm() {
         email: email,
         firstName: name,
         plantWishes: intent,
-        mailingLists: "YOUR_MAILING_LIST_ID_HERE"
+        mailingLists: "cmn1op0s0w1190i208xb6aw3q"
       });
 
       const res = await fetch(
-        "https://app.loops.so/api/newsletter-form/YOUR_FORM_ID_HERE",
+        "https://app.loops.so/api/newsletter-form/cmmpd0afm00hk0i13a2ymd3bq",
         {
           method: "POST",
           body: formBody.toString(),
