@@ -25,24 +25,40 @@ export function WaitlistForm() {
     setErrorMessage("");
 
     try {
-      const res = await fetch("/api/waitlist", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, name, intent }),
+      const formBody = new URLSearchParams({
+        email: email,
+        firstName: name,
+        plantWishes: intent,
+        mailingLists: "YOUR_MAILING_LIST_ID_HERE"
       });
 
-      if (!res.ok) {
-        throw new Error("Failed to join waitlist");
-      }
+      const res = await fetch(
+        "https://app.loops.so/api/newsletter-form/YOUR_FORM_ID_HERE",
+        {
+          method: "POST",
+          body: formBody.toString(),
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+        }
+      );
 
-      setStatus("success");
-      setEmail("");
-      setName("");
-      setIntent("");
+      if (res.ok) {
+        setStatus("success");
+        setEmail("");
+        setName("");
+        setIntent("");
+      } else if (res.status === 429) {
+        setStatus("error");
+        setErrorMessage("Rate limited — please try again in a moment.");
+      } else {
+        setStatus("error");
+        setErrorMessage("Something went wrong. Please try again.");
+      }
     } catch (error) {
       console.error(error);
       setStatus("error");
-      setErrorMessage("Something went wrong. Please try again.");
+      setErrorMessage("Network error. Please try again later.");
     }
   };
 
