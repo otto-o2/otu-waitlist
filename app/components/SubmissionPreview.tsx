@@ -62,35 +62,7 @@ export function SubmissionPreview({ type, data }: SubmissionPreviewProps) {
         }
       </p>
 
-      {/* Preview Card */}
-      {type !== "waitlist" && (
-        <div className="w-full bg-[#1B261B] border border-white/5 rounded-3xl p-6 text-left relative z-10 flex flex-col gap-4">
-          <div className="flex items-center gap-2 mb-2">
-             <span className="w-2 h-2 rounded-full bg-[#88CC48]/50" />
-             <span className="font-mono text-[10px] tracking-widest text-[#9CA764] uppercase opacity-80">
-               transmission preview
-             </span>
-           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="flex flex-col gap-1">
-              <span className="font-mono text-[10px] tracking-widest text-white/30 uppercase">name</span>
-              <span className="font-sans text-sm md:text-base text-[#F1E8C7] lowercase tracking-wide">{data.name}</span>
-            </div>
-            <div className="flex flex-col gap-1">
-              <span className="font-mono text-[10px] tracking-widest text-white/30 uppercase">email</span>
-              <span className="font-sans text-sm md:text-base text-[#F1E8C7] lowercase tracking-wide truncate">{data.email}</span>
-            </div>
-            <div className="flex flex-col gap-1 md:col-span-2">
-              <span className="font-mono text-[10px] tracking-widest text-white/30 uppercase">
-                {type === "waitlist" ? "master plan" : "message"}
-              </span>
-              <span className="font-sans text-sm md:text-base text-[#F1E8C7] lowercase tracking-wide leading-relaxed">
-                {type === "waitlist" ? data.intent : data.message}
-              </span>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Preview Card Removed */}
     </div>
   );
 }
