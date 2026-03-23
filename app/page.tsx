@@ -146,9 +146,6 @@ export default function Home() {
 
         {/* Branding Title (The Majestic Format) */}
         <div className="relative z-10 text-center flex flex-col items-center gap-6 w-full max-w-[1400px]">
-          <p className="text-xl md:text-2xl font-sans font-bold tracking-[0.6em] text-[#1B261B]/80 ml-[0.6em] lowercase drop-shadow-sm">
-            plant intelligence
-          </p>
           <h1
             style={{
               fontFamily: "'Outfit', sans-serif",
@@ -161,8 +158,11 @@ export default function Home() {
               width: "100%",
             }}
           >
-            (otu)
+            otu
           </h1>
+          <p className="text-xl md:text-2xl font-sans font-bold tracking-[0.6em] text-[#1B261B]/80 ml-[0.6em] lowercase drop-shadow-sm">
+            plant intelligence
+          </p>
         </div>
 
         {/* Scroll Indicator: Minimalist Vertical Line */}
