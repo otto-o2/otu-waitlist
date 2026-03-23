@@ -34,7 +34,7 @@ export default function FeaturesPage() {
       <div className="absolute top-8 left-8 z-[100] hidden md:block">
         <Link 
           href="/" 
-          className="inline-flex items-center gap-3 px-10 py-4 rounded-full border border-white/20 hover:bg-white/10 transition-colors text-sm md:text-base uppercase tracking-widest font-black group w-fit text-[#F1E8C7] backdrop-blur-md"
+          className="inline-flex items-center gap-3 px-10 py-4 rounded-full border border-white/20 bg-[#0A0F0A]/60 hover:bg-white/10 transition-colors text-sm md:text-base uppercase tracking-widest font-black group w-fit text-[#F1E8C7]"
         >
           <ArrowLeft className="h-5 w-5 group-hover:-translate-x-1 transition-transform" />
           Back to Hub
@@ -43,7 +43,7 @@ export default function FeaturesPage() {
       <div className="absolute top-6 left-6 z-[100] md:hidden">
         <Link 
           href="/" 
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 hover:bg-white/10 transition-colors text-xs uppercase tracking-widest font-black group w-fit text-[#F1E8C7] backdrop-blur-md"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 bg-[#0A0F0A]/80 hover:bg-white/10 transition-colors text-xs uppercase tracking-widest font-black group w-fit text-[#F1E8C7]"
         >
           <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
           Back
@@ -56,7 +56,7 @@ export default function FeaturesPage() {
         subtitle="Health Hub"
         description="Ward Mode is your home plant doctor. Scan any plant in your home and otu reads its condition. Overwatered, root-bound, pest-ridden, or just in the wrong light. It gives you a clear action plan. No guessing. No Googling. Just what's wrong and what to do."
         icon={ShieldAlert}
-        color="#0A1A14"
+        color="#06100C"
         backdropColor="#34D399"
         visual={<WardScanner />}
         highlights={[

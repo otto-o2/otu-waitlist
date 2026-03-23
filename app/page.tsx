@@ -27,8 +27,8 @@ const features = [
     cta: "System scan",
     className: "md:col-span-2",
     Icon: ShieldAlert,
-    color: "#0A1A14", // Deep Hospital Emerald
-    background: <div className="absolute inset-0 bg-[#0A1A14]/40 overflow-hidden">
+    color: "#06100C", // Deeper darker emerald shade
+    background: <div className="absolute inset-0 bg-[#06100C]/40 overflow-hidden">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10" />
       <div className="absolute inset-0 bg-gradient-to-br from-[#34D399]/25 to-transparent" />
     </div>,
@@ -150,7 +150,7 @@ export default function Home() {
             style={{
               fontFamily: "'Outfit', sans-serif",
               fontWeight: 900,
-              fontSize: "clamp(2rem, 9.5vw, 7.5rem)",
+              fontSize: "clamp(2rem, 8vw, 6.5rem)",
               letterSpacing: "0.08em",
               lineHeight: "1.2",
               textTransform: "uppercase",
@@ -160,7 +160,7 @@ export default function Home() {
           >
             otu
           </h1>
-          <p className="text-xl md:text-2xl font-sans font-bold tracking-[0.6em] text-[#1B261B]/80 ml-[0.6em] lowercase drop-shadow-sm mt-4">
+          <p className="text-lg md:text-xl font-sans font-bold tracking-[0.6em] text-[#1B261B]/80 ml-[0.6em] lowercase drop-shadow-sm mt-4">
             plant intelligence
           </p>
         </div>
