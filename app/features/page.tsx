@@ -54,7 +54,7 @@ export default function FeaturesPage() {
         hideNav={true}
         title="Ward Mode"
         subtitle="Health Hub"
-        description="Stop the guessing game. The Ward is full-spectrum plant clinic that lives in your pocket, translating silent distress into actionable data, providing a clinical-grade roadmap from diagnosis to full recovery."
+        description="Ward Mode is your home plant doctor. Scan any plant in your home and otu reads its condition. Overwatered, root-bound, pest-ridden, or just in the wrong light. It gives you a clear action plan. No guessing. No Googling. Just what's wrong and what to do."
         icon={ShieldAlert}
         color="#0A1A14"
         backdropColor="#34D399"
@@ -71,7 +71,7 @@ export default function FeaturesPage() {
         hideNav={true}
         title="Wild Mode"
         subtitle="Adventure is out there!"
-        description="Spot the rare. Name the unknown. All off the grid."
+        description="Wild Mode turns your walk into a field study. Point your camera at any plant, flower, tree, or weed and otu identifies it on the spot. Species, family, toxicity, ecological role, and where it thrives. Built for curiosity, useful for foragers, hikers, parents, and anyone who's ever wondered what that thing growing on the wall actually is."
         icon={Map}
         color="#061A0C"
         backdropColor="#4ADE80"
@@ -88,7 +88,7 @@ export default function FeaturesPage() {
         hideNav={true}
         title="The Chime"
         subtitle="Living Data Compositions"
-        description="Transform bio-data into adaptive frequencies and finally understand what your plants are saying."
+        description="The Chime is otu's most unexpected feature, and the most intimate. Instead of yet another notification telling you to water your plant, The Chime converts your plant's live environment into sound. A thriving plant sounds different from a struggling one. It's a new sensory layer on plant care, for the people who want to feel connected to their plants, not just manage them."
         icon={Music}
         color="#13141C"
         visual={<Mixtape />}
@@ -104,7 +104,7 @@ export default function FeaturesPage() {
         hideNav={true}
         title="The Farmer’s Market"
         subtitle="Plants and Plant Stuff"
-        description="Bridging the gap between digital diagnosis and physical recovery."
+        description="The Farmer's Market is where otu's recommendations become real. When Ward Mode diagnoses your plant and prescribes a fix, The Market already has what you need. The right soil, the right fertiliser, the right tool, sourced from verified local nurseries and suppliers and delivered to your door. It lets you buy plants, plant stuff, and plant people. Your bucket list is tailor-made by otu, built around your personality, your patterns, and your prescriptions."
         icon={ShoppingBag}
         color="#1A1A1A"
         visual={<MarketplaceVisual />}
@@ -120,7 +120,7 @@ export default function FeaturesPage() {
         hideNav={true}
         title="The Greenhouse"
         subtitle="The Alive Archive"
-        description="Your Little Digital Universe"
+        description="The Greenhouse is your plant memory. Every plant you scan with otu gets its own living profile. Species details, when you got it, how it's changed, what went wrong, what worked. Photo timelines show you the story of each plant over months and years. It's not a reminder list. It's a record of something alive, that you kept alive."
         icon={Dna}
         color="#1A0B2E"
         backdropColor="#E879F9"
@@ -137,7 +137,7 @@ export default function FeaturesPage() {
         hideNav={true}
         title="Sprout and About"
         subtitle="The Plant Encyclopedia"
-        description="Thousands of species and Infinite Curiosities"
+        description="otu's reference library, written for real people. Search any plant by name, photo, or symptom and get the full picture. How to grow it, where it thrives, how to mess it up, and why it's worth having around in the first place. For the ones who already know what they are doing, and for the ones who just love to nerd out."
         icon={Library}
         color="#060B06"
         backdropColor="#D4AF37"

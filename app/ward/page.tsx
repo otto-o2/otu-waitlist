@@ -9,7 +9,7 @@ export default function WardPage() {
     <FeaturePageLayout
       title="Ward Mode"
       subtitle="Health Hub"
-      description="Stop the guessing game. The Ward is full-spectrum plant clinic that lives in your pocket, translating silent distress into actionable data, providing a clinical-grade roadmap from diagnosis to full recovery."
+      description="Ward Mode is your home plant doctor. Scan any plant in your home and otu reads its condition. Overwatered, root-bound, pest-ridden, or just in the wrong light. It gives you a clear action plan. No guessing. No Googling. Just what's wrong and what to do."
       icon={ShieldAlert}
       color="#0A1A14"
       backdropColor="#34D399"

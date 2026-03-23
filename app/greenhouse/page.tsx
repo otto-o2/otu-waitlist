@@ -9,7 +9,7 @@ export default function GreenhousePage() {
     <FeaturePageLayout
       title="The Greenhouse"
       subtitle="The Alive Archive"
-      description="Your Little Digital Universe"
+      description="The Greenhouse is your plant memory. Every plant you scan with otu gets its own living profile. Species details, when you got it, how it's changed, what went wrong, what worked. Photo timelines show you the story of each plant over months and years. It's not a reminder list. It's a record of something alive, that you kept alive."
       icon={Dna}
       color="#1A0B2E"
       backdropColor="#E879F9"
