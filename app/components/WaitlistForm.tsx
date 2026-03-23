@@ -15,9 +15,25 @@ export function WaitlistForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    if (!name.trim()) {
+      setStatus("error");
+      setErrorMessage("please enter your name.");
+      return;
+    }
     if (!email || !email.includes("@")) {
       setStatus("error");
-      setErrorMessage("Please enter a valid email address.");
+      setErrorMessage("please enter a valid email address.");
+      return;
+    }
+    if (!intent.trim()) {
+      setStatus("error");
+      setErrorMessage("please tell us what you're looking for.");
+      return;
+    }
+    if (!agreed) {
+      setStatus("error");
+      setErrorMessage("you must agree to the terms and privacy policy.");
       return;
     }
 
@@ -50,15 +66,15 @@ export function WaitlistForm() {
         setIntent("");
       } else if (res.status === 429) {
         setStatus("error");
-        setErrorMessage("Rate limited — please try again in a moment.");
+        setErrorMessage("rate limited — please try again in a moment.");
       } else {
         setStatus("error");
-        setErrorMessage("Something went wrong. Please try again.");
+        setErrorMessage("something went wrong. please try again.");
       }
     } catch (error) {
       console.error(error);
       setStatus("error");
-      setErrorMessage("Network error. Please try again later.");
+      setErrorMessage("network error. please try again later.");
     }
   };
 
@@ -130,11 +146,11 @@ export function WaitlistForm() {
 
           <button
             type="submit"
-            disabled={status === "loading" || !email || !name || !intent || !agreed}
+            disabled={status === "loading"}
             className="mt-4 w-full bg-[#F1E8C7] hover:bg-white text-[#0A0F0A] rounded-3xl px-8 py-5 font-black text-xl md:text-2xl transition-all flex items-center justify-center gap-3 group/btn disabled:opacity-50 disabled:cursor-not-allowed lowercase relative z-10"
           >
             {status === "loading" ? "submitting..." : "join the partyy"}
-            {!status && <ArrowRight className="w-6 h-6 ml-1 group-hover/btn:translate-x-1 transition-transform" /> }
+            {status !== "loading" && <ArrowRight className="w-6 h-6 ml-1 group-hover/btn:translate-x-1 transition-transform" /> }
           </button>
         </div>
         {errorMessage && (
