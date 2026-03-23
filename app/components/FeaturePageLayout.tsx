@@ -66,7 +66,7 @@ export default function FeaturePageLayout({
 
       {/* Main Content */}
       <section className="relative z-10 px-6 py-24 md:px-12 lg:px-24">
-        <div className="max-w-7xl mx-auto flex flex-col gap-16 lg:gap-24">
+        <div className="max-w-7xl mx-auto flex flex-col gap-4 lg:gap-8">
           
           {/* Header Row */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32">
@@ -81,7 +81,7 @@ export default function FeaturePageLayout({
                 <h1 className="text-6xl md:text-9xl font-sans font-bold tracking-tighter leading-[0.9] drop-shadow-2xl">
                   {title}
                 </h1>
-                <p className="text-2xl md:text-3xl text-[#F1E8C7]/70 font-medium leading-relaxed max-w-xl">
+                <p className="text-xl md:text-2xl text-[#F1E8C7]/70 font-medium leading-relaxed max-w-2xl">
                   {description}
                 </p>
               </div>
@@ -89,13 +89,13 @@ export default function FeaturePageLayout({
           </div>
 
           {/* Body Row (List & Graphic aligned) */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-32 items-center">
             
             {/* Left Side: Body List */}
-            <div className="space-y-16">
-              <div className="space-y-10">
+            <div className="space-y-12">
+              <div className="space-y-8">
                 <div className="w-20 h-px bg-[#9CA764]/30" />
-                <ul className="space-y-10">
+                <ul className="space-y-8">
                   {highlights.map((highlight, i) => {
                     const [label, content] = highlight.includes("—") ? highlight.split("—") : highlight.includes("–") ? highlight.split("–") : ["", highlight];
                     return (
