@@ -59,9 +59,7 @@ export function ContactForm() {
     <div className="w-full max-w-5xl mx-auto flex flex-col gap-10 items-center">
       {/* The Form */}
       <form onSubmit={handleSubmit} className="relative w-full max-w-2xl mx-auto flex flex-col gap-4">
-        <div className="flex justify-end mb-2 absolute -top-8 right-0">
-          <button type="button" onClick={() => setStatus('success')} className="text-[#9CA764]/50 hover:text-[#9CA764] text-[10px] font-mono uppercase tracking-widest transition-colors z-20">Preview Success Flow</button>
-        </div>
+
         <div className="flex flex-col gap-4 p-6 md:p-8 rounded-[40px] bg-[#111A11] border border-[#9CA764]/20 shadow-2xl relative overflow-hidden">
           {/* Subtle gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#9CA764]/5 to-transparent pointer-events-none" />
