@@ -150,9 +150,9 @@ export default function Home() {
             style={{
               fontFamily: "'Outfit', sans-serif",
               fontWeight: 900,
-              fontSize: "clamp(2rem, 9.5vw, 7.5rem)",
+              fontSize: "clamp(4rem, 20vw, 18rem)",
               letterSpacing: "0.08em",
-              lineHeight: "1.2",
+              lineHeight: "0.8",
               textTransform: "uppercase",
               color: "#1B261B", 
               width: "100%",
@@ -160,7 +160,7 @@ export default function Home() {
           >
             otu
           </h1>
-          <p className="text-xl md:text-2xl font-sans font-bold tracking-[0.6em] text-[#1B261B]/80 ml-[0.6em] lowercase drop-shadow-sm">
+          <p className="text-2xl md:text-4xl font-sans font-bold tracking-[0.6em] text-[#1B261B]/80 ml-[0.6em] lowercase drop-shadow-sm mt-4">
             plant intelligence
           </p>
         </div>
