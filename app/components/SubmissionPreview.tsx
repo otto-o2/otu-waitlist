@@ -53,12 +53,12 @@ export function SubmissionPreview({ type, data }: SubmissionPreviewProps) {
       </div>
       
       <h3 className="text-2xl md:text-3xl font-sans font-bold text-[#F1E8C7] mb-2 font-black tracking-widest lowercase relative z-10">
-        {type === "waitlist" ? "you're in." : "we received it."}
+        {type === "waitlist" ? "you're in." : "loud and clear."}
       </h3>
       <p className="text-[#9CA764] text-sm md:text-base tracking-[0.2em] font-sans mb-8 relative z-10">
         {type === "waitlist" 
           ? <span dangerouslySetInnerHTML={{ __html: "we'll find you when it's time.<br/>until then, water something." }} />
-          : <span dangerouslySetInnerHTML={{ __html: "thank you for reaching out.<br/>we'll get back to you soon." }} />
+          : <span dangerouslySetInnerHTML={{ __html: "we're on it.<br/>talk soon." }} />
         }
       </p>
 
