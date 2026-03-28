@@ -10,14 +10,6 @@ export const metadata: Metadata = {
     description: "for plants, plant stuff, and plant people",
     url: "https://meetotu.com",
     siteName: "otu",
-    images: [
-      {
-        url: "/opengraph-image",
-        width: 1200,
-        height: 630,
-        alt: "You K*ll Plants. otu fixes that.",
-      },
-    ],
     locale: "en_US",
     type: "website",
   },
@@ -25,7 +17,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "You K*ll Plants. otu fixes that.",
     description: "for plants, plant stuff, and plant people",
-    images: ["/opengraph-image"],
   },
   verification: {
     google: "r27c0YD0o3rcuJvjFbK9k9TXriAEoVzLpIMP7yyIG3Q",
