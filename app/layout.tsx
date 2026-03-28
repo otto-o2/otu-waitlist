@@ -2,20 +2,20 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "otu — your plant's best friend",
-  description: "AI-powered plant identification, care planning, and journaling.",
+  title: "You K*ll Plants. otu fixes that.",
+  description: "for plants, plant stuff, and plant people",
   metadataBase: new URL("https://meetotu.com"),
   openGraph: {
-    title: "otu — your plant's best friend",
-    description: "AI-powered plant identification, care planning, and journaling.",
+    title: "You K*ll Plants. otu fixes that.",
+    description: "for plants, plant stuff, and plant people",
     url: "https://meetotu.com",
     siteName: "otu",
     images: [
       {
-        url: "/og-image.png",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "otu — your plant's best friend",
+        alt: "You K*ll Plants. otu fixes that.",
       },
     ],
     locale: "en_US",
@@ -23,9 +23,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "otu — your plant's best friend",
-    description: "AI-powered plant identification, care planning, and journaling.",
-    images: ["/og-image.png"],
+    title: "You K*ll Plants. otu fixes that.",
+    description: "for plants, plant stuff, and plant people",
+    images: ["/opengraph-image"],
   },
   verification: {
     google: "r27c0YD0o3rcuJvjFbK9k9TXriAEoVzLpIMP7yyIG3Q",
