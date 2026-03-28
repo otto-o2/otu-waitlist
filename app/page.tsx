@@ -154,7 +154,7 @@ export default function Home() {
               letterSpacing: "0.08em",
               lineHeight: "1.2",
               textTransform: "uppercase",
-              color: "#1B261B", 
+              color: "#1B261B",
               width: "100%",
             }}
           >
