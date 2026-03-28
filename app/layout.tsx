@@ -2,8 +2,34 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "haus der grünen",
-  description: "haus der grünen — a place where everything grows.",
+  title: "otu — your plant's best friend",
+  description: "AI-powered plant identification, care planning, and journaling.",
+  metadataBase: new URL("https://meetotu.com"),
+  openGraph: {
+    title: "otu — your plant's best friend",
+    description: "AI-powered plant identification, care planning, and journaling.",
+    url: "https://meetotu.com",
+    siteName: "otu",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "otu — your plant's best friend",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "otu — your plant's best friend",
+    description: "AI-powered plant identification, care planning, and journaling.",
+    images: ["/og-image.png"],
+  },
+  verification: {
+    google: "r27c0YD0o3rcuJvjFbK9k9TXriAEoVzLpIMP7yyIG3Q",
+  },
 };
 
 export default function RootLayout({
