@@ -86,48 +86,49 @@ p, span, a, li, button, input, textarea, select, label, blockquote, figcaption, 
 
 /* Hand-drawn arrow scroll indicator */
 @keyframes draw-arrow-shaft {
-  0% { stroke-dashoffset: 58; }
-  22% { stroke-dashoffset: 0; }
+  0%   { stroke-dashoffset: 82; }
+  7%   { stroke-dashoffset: 74; } /* slow pen-lift start */
+  26%  { stroke-dashoffset: 0; }
   100% { stroke-dashoffset: 0; }
 }
 
 @keyframes draw-arrow-wing-left {
-  0%, 19% { stroke-dashoffset: 16; }
-  33% { stroke-dashoffset: 0; }
-  100% { stroke-dashoffset: 0; }
+  0%, 23% { stroke-dashoffset: 30; }
+  37%     { stroke-dashoffset: 0; }
+  100%    { stroke-dashoffset: 0; }
 }
 
 @keyframes draw-arrow-wing-right {
-  0%, 22% { stroke-dashoffset: 16; }
-  36% { stroke-dashoffset: 0; }
-  100% { stroke-dashoffset: 0; }
+  0%, 27% { stroke-dashoffset: 30; }
+  41%     { stroke-dashoffset: 0; }
+  100%    { stroke-dashoffset: 0; }
 }
 
 @keyframes arrow-drift {
-  0%, 38% { transform: translateY(0px); }
-  55% { transform: translateY(6px); }
-  70% { transform: translateY(0px); }
-  83% { transform: translateY(4px); }
-  100% { transform: translateY(0px); }
+  0%, 43%  { transform: translateY(0px); }
+  58%      { transform: translateY(7px); }
+  73%      { transform: translateY(0px); }
+  85%      { transform: translateY(5px); }
+  100%     { transform: translateY(0px); }
 }
 
 .arrow-shaft {
-  stroke-dasharray: 58;
-  animation: draw-arrow-shaft 3.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  stroke-dasharray: 82;
+  animation: draw-arrow-shaft 4.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 .arrow-wing-left {
-  stroke-dasharray: 16;
-  animation: draw-arrow-wing-left 3.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  stroke-dasharray: 30;
+  animation: draw-arrow-wing-left 4.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 .arrow-wing-right {
-  stroke-dasharray: 16;
-  animation: draw-arrow-wing-right 3.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  stroke-dasharray: 30;
+  animation: draw-arrow-wing-right 4.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 .arrow-drift {
-  animation: arrow-drift 3.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation: arrow-drift 4.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 /* Technical Refinements from App Backend */
