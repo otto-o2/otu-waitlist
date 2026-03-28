@@ -24,15 +24,13 @@ export function ContactForm() {
     setErrorMessage("");
 
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          access_key: "c9fca685-5f69-46e5-8cd7-484ed7633655",
-          from_name: name,
+          name: name,
           email: email,
           message: message,
-          subject: "New message from meetotu.com"
         }),
       });
 

@@ -12,18 +12,21 @@ export async function POST(req: Request) {
       );
     }
 
-    // TODO: Connect to an email provider like Resend or SendGrid here!
-    // Example using Resend:
-    // import { Resend } from 'resend';
-    // const resend = new Resend(process.env.RESEND_API_KEY);
-    // await resend.emails.send({
-    //   from: 'onboarding@resend.dev',
-    //   to: 'otu.intelligence@gmail.com',
-    //   subject: `New Contact Request from ${name}`,
-    //   text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
-    // });
+    const resendApiKey = process.env.RESEND_API_KEY;
     
-    // For now, we will simulate success to ensure the frontend form completes!
+    if (resendApiKey) {
+      const { Resend } = await import('resend');
+      const resend = new Resend(resendApiKey);
+      await resend.emails.send({
+        from: 'otu <onboarding@resend.dev>',
+        to: 'otu.intelligence@gmail.com',
+        subject: `New message from ${name}`,
+        text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
+      });
+    } else {
+      console.warn('RESEND_API_KEY not found. Email not sent.');
+    }
+    
     console.log(`[CONTACT SUBMISSION LOGGED]: 
 Name: ${name}
 Email: ${email}
