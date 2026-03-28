@@ -165,11 +165,47 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Scroll Indicator: Minimalist Vertical Line */}
-        <div className="absolute bottom-12 flex flex-col items-center group">
-          <div className="w-[1px] h-20 bg-[#1B261B]/10 relative overflow-hidden rounded-full">
-            <div className="absolute top-0 left-0 w-full h-1/2 bg-[#9CA764]/40 animate-scroll-line" />
-          </div>
+        {/* Scroll Indicator: Hand-drawn arrow */}
+        <div className="absolute bottom-10 flex flex-col items-center arrow-drift">
+          <svg
+            width="28"
+            height="58"
+            viewBox="0 0 28 58"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            {/* Shaft — slightly wobbly for hand-drawn feel */}
+            <path
+              d="M 14 3 C 12.5 16, 15.5 31, 14 52"
+              stroke="#1B261B"
+              strokeWidth="1.4"
+              strokeLinecap="round"
+              fill="none"
+              opacity="0.55"
+              className="arrow-shaft"
+            />
+            {/* Left wing */}
+            <path
+              d="M 14 52 L 5 41"
+              stroke="#1B261B"
+              strokeWidth="1.4"
+              strokeLinecap="round"
+              fill="none"
+              opacity="0.55"
+              className="arrow-wing-left"
+            />
+            {/* Right wing */}
+            <path
+              d="M 14 52 L 23 41"
+              stroke="#1B261B"
+              strokeWidth="1.4"
+              strokeLinecap="round"
+              fill="none"
+              opacity="0.55"
+              className="arrow-wing-right"
+            />
+          </svg>
         </div>
       </section>
 
