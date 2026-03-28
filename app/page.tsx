@@ -165,45 +165,26 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Scroll Indicator: Hand-drawn arrow */}
+        {/* Scroll Indicator: Hand-drawn filled arrow */}
         <div className="absolute bottom-10 flex flex-col items-center arrow-drift">
           <svg
-            width="44"
-            height="76"
-            viewBox="0 0 44 76"
+            width="48"
+            height="72"
+            viewBox="0 0 48 72"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             aria-hidden="true"
           >
-            {/* Shaft — pronounced wobble for a genuine hand-drawn feel */}
+            {/*
+              Chunky filled arrow — slight asymmetry on every vertex
+              so it reads as hand-drawn rather than geometric.
+              Shaft is ~35% of total width; arrowhead spans ~90%.
+            */}
             <path
-              d="M 22 5 C 17 22, 27 40, 21 68"
-              stroke="#1B261B"
-              strokeWidth="2.4"
-              strokeLinecap="round"
-              fill="none"
-              opacity="0.62"
-              className="arrow-shaft"
-            />
-            {/* Left wing — curved stroke, not a straight line */}
-            <path
-              d="M 21 68 C 18 60, 9 54, 6 46"
-              stroke="#1B261B"
-              strokeWidth="2.4"
-              strokeLinecap="round"
-              fill="none"
-              opacity="0.62"
-              className="arrow-wing-left"
-            />
-            {/* Right wing — slightly different curve for natural asymmetry */}
-            <path
-              d="M 21 68 C 25 59, 34 55, 37 46"
-              stroke="#1B261B"
-              strokeWidth="2.4"
-              strokeLinecap="round"
-              fill="none"
-              opacity="0.62"
-              className="arrow-wing-right"
+              d="M 18 5 L 31 4 L 32 41 L 45 40 L 24 69 L 3 41 L 17 42 Z"
+              fill="#1B261B"
+              opacity="0.72"
+              className="arrow-filled"
             />
           </svg>
         </div>

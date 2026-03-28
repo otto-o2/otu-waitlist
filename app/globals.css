@@ -85,50 +85,28 @@ p, span, a, li, button, input, textarea, select, label, blockquote, figcaption, 
 }
 
 /* Hand-drawn arrow scroll indicator */
-@keyframes draw-arrow-shaft {
-  0%   { stroke-dashoffset: 82; }
-  7%   { stroke-dashoffset: 74; } /* slow pen-lift start */
-  26%  { stroke-dashoffset: 0; }
-  100% { stroke-dashoffset: 0; }
-}
-
-@keyframes draw-arrow-wing-left {
-  0%, 23% { stroke-dashoffset: 30; }
-  37%     { stroke-dashoffset: 0; }
-  100%    { stroke-dashoffset: 0; }
-}
-
-@keyframes draw-arrow-wing-right {
-  0%, 27% { stroke-dashoffset: 30; }
-  41%     { stroke-dashoffset: 0; }
-  100%    { stroke-dashoffset: 0; }
+/* Filled hand-drawn arrow — reveals top-to-bottom like a marker stroke */
+@keyframes draw-arrow-fill {
+  0%   { clip-path: inset(0 0 100% 0); }
+  5%   { clip-path: inset(0 0 98% 0); }  /* slow start — pen touching paper */
+  60%  { clip-path: inset(0 0 0% 0); }
+  100% { clip-path: inset(0 0 0% 0); }
 }
 
 @keyframes arrow-drift {
-  0%, 43%  { transform: translateY(0px); }
-  58%      { transform: translateY(7px); }
-  73%      { transform: translateY(0px); }
-  85%      { transform: translateY(5px); }
+  0%, 62%  { transform: translateY(0px); }
+  75%      { transform: translateY(7px); }
+  88%      { transform: translateY(0px); }
+  94%      { transform: translateY(5px); }
   100%     { transform: translateY(0px); }
 }
 
-.arrow-shaft {
-  stroke-dasharray: 82;
-  animation: draw-arrow-shaft 4.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-
-.arrow-wing-left {
-  stroke-dasharray: 30;
-  animation: draw-arrow-wing-left 4.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-
-.arrow-wing-right {
-  stroke-dasharray: 30;
-  animation: draw-arrow-wing-right 4.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+.arrow-filled {
+  animation: draw-arrow-fill 4.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 .arrow-drift {
-  animation: arrow-drift 4.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation: arrow-drift 4.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 /* Technical Refinements from App Backend */
