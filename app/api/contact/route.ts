@@ -12,19 +12,33 @@ export async function POST(req: Request) {
       );
     }
 
-    const resendApiKey = process.env.RESEND_API_KEY;
-    
-    if (resendApiKey) {
-      const { Resend } = await import('resend');
-      const resend = new Resend(resendApiKey);
-      await resend.emails.send({
-        from: 'otu <onboarding@resend.dev>',
-        to: 'otu.intelligence@gmail.com',
-        subject: `New message from ${name}`,
-        text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
-      });
+    const loopsApiKey = process.env.LOOPS_API_KEY;
+    const transactionalId = process.env.LOOPS_CONTACT_TRANSACTIONAL_ID;
+
+    if (loopsApiKey && transactionalId) {
+      try {
+        await fetch("https://app.loops.so/api/v1/transactional", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${loopsApiKey}`,
+          },
+          body: JSON.stringify({
+            email: "otu.intelligence@gmail.com",
+            transactionalId: transactionalId,
+            addToAudience: true,
+            dataVariables: {
+              name,
+              senderEmail: email,
+              message,
+            },
+          }),
+        });
+      } catch (error) {
+        console.error('Error sending email through Loops:', error);
+      }
     } else {
-      console.warn('RESEND_API_KEY not found. Email not sent.');
+      console.warn('LOOPS_API_KEY or LOOPS_CONTACT_TRANSACTIONAL_ID not found. Email not sent.');
     }
     
     console.log(`[CONTACT SUBMISSION LOGGED]: 

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     siteName: "otu",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://meetotu.com/og-image.png",
         width: 1536,
         height: 1024,
         alt: "Plants, Solved. otu.",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Plants, Solved. otu.",
     description: "identifies your plants, builds care reports, and lets you buy plants, plant stuff, and plant people. join the waitlist at meetotu.com.",
-    images: ["/og-image.png"],
+    images: ["https://meetotu.com/og-image.png"],
   },
   verification: {
     google: "r27c0YD0o3rcuJvjFbK9k9TXriAEoVzLpIMP7yyIG3Q",
