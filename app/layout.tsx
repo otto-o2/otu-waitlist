@@ -5,15 +5,15 @@ export const metadata: Metadata = {
   title: "Plants, Solved. otu.",
   description: "identifies your plants, builds care reports, and lets you buy plants, plant stuff, and plant people. join the waitlist at meetotu.com.",
   keywords: ["otu", "otu plants", "otu plant intelligence", "meet otu", "plant identifier", "plant care app"],
-  metadataBase: new URL("https://meetotu.com"),
+  metadataBase: new URL("https://www.meetotu.com"),
   openGraph: {
     title: "Plants, Solved. otu.",
     description: "identifies your plants, builds care reports, and lets you buy plants, plant stuff, and plant people. join the waitlist at meetotu.com.",
-    url: "https://meetotu.com",
+    url: "https://www.meetotu.com",
     siteName: "otu",
     images: [
       {
-        url: "https://meetotu.com/og-image.png",
+        url: "https://www.meetotu.com/og-image.png",
         width: 1536,
         height: 1024,
         alt: "Plants, Solved. otu.",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Plants, Solved. otu.",
     description: "identifies your plants, builds care reports, and lets you buy plants, plant stuff, and plant people. join the waitlist at meetotu.com.",
-    images: ["https://meetotu.com/og-image.png"],
+    images: ["https://www.meetotu.com/og-image.png"],
   },
   verification: {
     google: "r27c0YD0o3rcuJvjFbK9k9TXriAEoVzLpIMP7yyIG3Q",
