@@ -161,40 +161,7 @@ export default function Home() {
           </h1>
           
         </div>
-                    {/* Shaft — slightly wobbly for hand-drawn feel */}
-            <path
-              d="M 14 3 C 12.5 16, 15.5 31, 14 52"
-              stroke="#1B261B"
-              strokeWidth="1.4"
-              strokeLinecap="round"
-              fill="none"
-              opacity="0.55"
-              className="arrow-shaft"
-            />
-            {/* Left wing */}
-            <path
-              d="M 14 52 L 5 41"
-              stroke="#1B261B"
-              strokeWidth="1.4"
-              strokeLinecap="round"
-              fill="none"
-              opacity="0.55"
-              className="arrow-wing-left"
-            />
-            {/* Right wing */}
-            <path
-              d="M 14 52 L 23 41"
-              stroke="#1B261B"
-              strokeWidth="1.4"
-              strokeLinecap="round"
-              fill="none"
-              opacity="0.55"
-              className="arrow-wing-right"
-            />
-          </svg>
-        </div>
       </section>
-
       {/* PAGE 1: THE ANTICIPATION & WAITLIST */}
       <section className="relative z-20 w-full flex flex-col px-6 md:px-12 lg:px-24 bg-[#0A0F0A] overflow-hidden">
         {/* Cute Math Grid Notebook Overlay (Dark Theme) */}
