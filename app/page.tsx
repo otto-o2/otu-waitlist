@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { MeshGradient } from "@paper-design/shaders-react";
 import { BentoGrid, BentoCard } from "./components/Bento";
-import Clock from "./components/Clock";
 import { 
   ShieldAlert, 
   Map, 
@@ -201,21 +200,7 @@ export default function Home() {
         {/* Cute Math Grid Notebook Overlay (Dark Theme) */}
         <div className="absolute inset-0 opacity-[0.15] pointer-events-none" 
           style={{ backgroundImage: "linear-gradient(#9CA764 1px, transparent 1px), linear-gradient(90deg, #9CA764 1px, transparent 1px)", backgroundSize: "24px 24px" }} />
-        
-        {/* --- CLOCK SEGMENT --- */}
-        <div className="relative min-h-screen flex flex-col items-center justify-center py-24">
-          <div className="absolute top-8 right-12 font-mono text-[10px] tracking-[0.2em] uppercase text-[#9CA764]/70 hidden md:block">001: ANTICIPATE_MODE</div>
-          <div className="absolute bottom-12 left-12 font-mono text-[10px] tracking-[0.2em] uppercase text-[#9CA764]/70 hidden md:block">SYSTEM: ACTIVE</div>
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gradient-to-b from-[#9CA764]/10 to-transparent pointer-events-none" />
-          
-          <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center gap-8 sm:gap-16 md:gap-24 lg:gap-32 relative z-10 w-full">
-            <Clock />
-            <h2 className="text-4xl md:text-5xl lg:text-7xl font-sans text-[#F1E8C7] font-bold leading-[1.1] max-w-2xl tracking-tight text-center md:text-left drop-shadow-2xl">
-              they have only <br className="hidden md:block" /> been waiting for this <br className="hidden md:block" /> moment to arrive.
-            </h2>
-          </div>
-        </div>
-
+    
         {/* --- WAITLIST SEGMENT --- */}
         <div className="relative min-h-screen flex flex-col items-center justify-center py-24 pb-40">
           <div className="absolute top-8 left-12 font-mono text-[10px] tracking-[0.2em] uppercase text-[#9CA764]/70 hidden md:block">001.5: INTAKE_PROTOCOL</div>
