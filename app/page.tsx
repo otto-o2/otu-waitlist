@@ -150,7 +150,7 @@ export default function Home() {
             style={{
               fontFamily: "'Outfit', sans-serif",
               fontWeight: 900,
-              fontSize: "clamp(2rem, 8vw, 6.5rem)",
+              fontSize: "clamp(4rem, 20vw, 18rem)",
               letterSpacing: "0.08em",
               lineHeight: "1.2",
               textTransform: "uppercase",
@@ -160,22 +160,9 @@ export default function Home() {
           >
             otu
           </h1>
-          <p className="text-lg md:text-xl font-sans font-bold tracking-[0.6em] text-[#1B261B]/80 ml-[0.6em] lowercase drop-shadow-sm mt-4">
-            plant intelligence
-          </p>
+          
         </div>
-
-        {/* Scroll Indicator: Hand-drawn arrow */}
-        <div className="absolute bottom-10 flex flex-col items-center arrow-drift">
-          <svg
-            width="28"
-            height="58"
-            viewBox="0 0 28 58"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            {/* Shaft — slightly wobbly for hand-drawn feel */}
+                    {/* Shaft — slightly wobbly for hand-drawn feel */}
             <path
               d="M 14 3 C 12.5 16, 15.5 31, 14 52"
               stroke="#1B261B"
